@@ -16,6 +16,7 @@ import (
 	"time"
 	"bytes"
 	"fmt"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the JournalEntry type satisfies the MappedNullable interface at compile time
