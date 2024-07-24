@@ -13,6 +13,7 @@ package openapi
 
 import (
 	"encoding/json"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the PolicyAprTierResponse type satisfies the MappedNullable interface at compile time
@@ -32,7 +33,7 @@ type PolicyAprTierResponse struct {
 // will change when the set of required properties is changed
 func NewPolicyAprTierResponse() *PolicyAprTierResponse {
 	this := PolicyAprTierResponse{}
-	var apr decimal.Decimal = 0
+	var apr decimal.Decimal = decimal.NewFromInt(0)
 	this.Apr = &apr
 	return &this
 }
@@ -42,7 +43,7 @@ func NewPolicyAprTierResponse() *PolicyAprTierResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyAprTierResponseWithDefaults() *PolicyAprTierResponse {
 	this := PolicyAprTierResponse{}
-	var apr decimal.Decimal = 0
+	var apr decimal.Decimal = decimal.NewFromInt(0)
 	this.Apr = &apr
 	return &this
 }
