@@ -15,6 +15,7 @@ import (
 	"encoding/json"
 	"bytes"
 	"fmt"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the OrignalcreditRequestModel type satisfies the MappedNullable interface at compile time
