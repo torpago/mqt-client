@@ -23,7 +23,7 @@ var _ MappedNullable = &WithdrawalRequestModel{}
 // WithdrawalRequestModel struct for WithdrawalRequestModel
 type WithdrawalRequestModel struct {
 	AccountType *string `json:"account_type,omitempty"`
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CardAcceptor *CardAcceptorModel `json:"card_acceptor,omitempty"`
 	CardToken string `json:"card_token"`
 	Mid string `json:"mid"`
@@ -37,7 +37,7 @@ type _WithdrawalRequestModel WithdrawalRequestModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWithdrawalRequestModel(amount float32, cardToken string, mid string) *WithdrawalRequestModel {
+func NewWithdrawalRequestModel(amount decimal.Decimal, cardToken string, mid string) *WithdrawalRequestModel {
 	this := WithdrawalRequestModel{}
 	this.Amount = amount
 	this.CardToken = cardToken
@@ -86,9 +86,9 @@ func (o *WithdrawalRequestModel) SetAccountType(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *WithdrawalRequestModel) GetAmount() float32 {
+func (o *WithdrawalRequestModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -97,7 +97,7 @@ func (o *WithdrawalRequestModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *WithdrawalRequestModel) GetAmountOk() (*float32, bool) {
+func (o *WithdrawalRequestModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -105,7 +105,7 @@ func (o *WithdrawalRequestModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *WithdrawalRequestModel) SetAmount(v float32) {
+func (o *WithdrawalRequestModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

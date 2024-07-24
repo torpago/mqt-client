@@ -23,9 +23,9 @@ type RewardEntriesJournalEntriesResponse struct {
 	// Unique identifier of the related journal entry to which the reward rule was applied to trigger the reward entry.
 	RelatedJournalEntryToken *string `json:"related_journal_entry_token,omitempty"`
 	// The transaction amount to which the reward rule was applied. Used to determine the value of the reward entry.
-	TransactionAmount *float32 `json:"transaction_amount,omitempty"`
+	TransactionAmount *decimal.Decimal `json:"transaction_amount,omitempty"`
 	// Value of the reward entry.
-	Value *float32 `json:"value,omitempty"`
+	Value *decimal.Decimal `json:"value,omitempty"`
 }
 
 // NewRewardEntriesJournalEntriesResponse instantiates a new RewardEntriesJournalEntriesResponse object
@@ -78,9 +78,9 @@ func (o *RewardEntriesJournalEntriesResponse) SetRelatedJournalEntryToken(v stri
 }
 
 // GetTransactionAmount returns the TransactionAmount field value if set, zero value otherwise.
-func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmount() float32 {
+func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmount() decimal.Decimal {
 	if o == nil || IsNil(o.TransactionAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.TransactionAmount
@@ -88,7 +88,7 @@ func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmount() float32 {
 
 // GetTransactionAmountOk returns a tuple with the TransactionAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmountOk() (*float32, bool) {
+func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.TransactionAmount) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *RewardEntriesJournalEntriesResponse) HasTransactionAmount() bool {
 	return false
 }
 
-// SetTransactionAmount gets a reference to the given float32 and assigns it to the TransactionAmount field.
-func (o *RewardEntriesJournalEntriesResponse) SetTransactionAmount(v float32) {
+// SetTransactionAmount gets a reference to the given decimal.Decimal and assigns it to the TransactionAmount field.
+func (o *RewardEntriesJournalEntriesResponse) SetTransactionAmount(v decimal.Decimal) {
 	o.TransactionAmount = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *RewardEntriesJournalEntriesResponse) GetValue() float32 {
+func (o *RewardEntriesJournalEntriesResponse) GetValue() decimal.Decimal {
 	if o == nil || IsNil(o.Value) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Value
@@ -120,7 +120,7 @@ func (o *RewardEntriesJournalEntriesResponse) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RewardEntriesJournalEntriesResponse) GetValueOk() (*float32, bool) {
+func (o *RewardEntriesJournalEntriesResponse) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *RewardEntriesJournalEntriesResponse) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given float32 and assigns it to the Value field.
-func (o *RewardEntriesJournalEntriesResponse) SetValue(v float32) {
+// SetValue gets a reference to the given decimal.Decimal and assigns it to the Value field.
+func (o *RewardEntriesJournalEntriesResponse) SetValue(v decimal.Decimal) {
 	o.Value = &v
 }
 

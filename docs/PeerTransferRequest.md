@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the transfer. | 
+**Amount** | **decimal.Decimal** | Amount of the transfer. | 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
 **Memo** | Pointer to **string** | Additional descriptive text about the transfer. | [optional] 
 **RecipientBusinessToken** | Pointer to **string** | Specifies the business account holder that receives funds.  Send a &#x60;GET&#x60; request to &#x60;/businesses&#x60; to retrieve business tokens. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewPeerTransferRequest
 
-`func NewPeerTransferRequest(amount float32, currencyCode string, ) *PeerTransferRequest`
+`func NewPeerTransferRequest(amount decimal.Decimal, currencyCode string, ) *PeerTransferRequest`
 
 NewPeerTransferRequest instantiates a new PeerTransferRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *PeerTransferRequest) GetAmount() float32`
+`func (o *PeerTransferRequest) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PeerTransferRequest) GetAmountOk() (*float32, bool)`
+`func (o *PeerTransferRequest) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PeerTransferRequest) SetAmount(v float32)`
+`func (o *PeerTransferRequest) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

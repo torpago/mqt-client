@@ -26,7 +26,7 @@ type RedemptionsBalanceResponse struct {
 	// The ending date (or date-time) of a date range from which to return the redemption balance, in UTC.
 	EndDate time.Time `json:"end_date"`
 	// Total amount of rewards redeemed within a specified date range.
-	RedemptionTotalAmount float32 `json:"redemption_total_amount"`
+	RedemptionTotalAmount decimal.Decimal `json:"redemption_total_amount"`
 	// Unique identifier of the reward program for which to return the redemption balance.
 	RewardProgramToken string `json:"reward_program_token"`
 	// The starting date (or date-time) of a date range from which to return the redemption balance, in UTC.
@@ -39,7 +39,7 @@ type _RedemptionsBalanceResponse RedemptionsBalanceResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRedemptionsBalanceResponse(endDate time.Time, redemptionTotalAmount float32, rewardProgramToken string, startDate time.Time) *RedemptionsBalanceResponse {
+func NewRedemptionsBalanceResponse(endDate time.Time, redemptionTotalAmount decimal.Decimal, rewardProgramToken string, startDate time.Time) *RedemptionsBalanceResponse {
 	this := RedemptionsBalanceResponse{}
 	this.EndDate = endDate
 	this.RedemptionTotalAmount = redemptionTotalAmount
@@ -81,9 +81,9 @@ func (o *RedemptionsBalanceResponse) SetEndDate(v time.Time) {
 }
 
 // GetRedemptionTotalAmount returns the RedemptionTotalAmount field value
-func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmount() float32 {
+func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -92,7 +92,7 @@ func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmount() float32 {
 
 // GetRedemptionTotalAmountOk returns a tuple with the RedemptionTotalAmount field value
 // and a boolean to check if the value has been set.
-func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmountOk() (*float32, bool) {
+func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,7 +100,7 @@ func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmountOk() (*float32, boo
 }
 
 // SetRedemptionTotalAmount sets field value
-func (o *RedemptionsBalanceResponse) SetRedemptionTotalAmount(v float32) {
+func (o *RedemptionsBalanceResponse) SetRedemptionTotalAmount(v decimal.Decimal) {
 	o.RedemptionTotalAmount = v
 }
 

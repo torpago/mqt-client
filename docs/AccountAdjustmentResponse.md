@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account on which the adjustment was made. | 
 **AdjustmentDetailObject** | Pointer to **map[string]interface{}** | Contains the adjustment&#39;s full details.  The fields returned in this object depend on the adjustment type.  Interest returns interest details. For the specific fields returned, see the &#x60;detail_object&#x60; fields marked \&quot;Returned for interest journal entries\&quot; in the &lt;&lt;/core-api/credit-account-journal-entries#getAccountJournalEntry, account journal entry response fields&gt;&gt;.  Disputes return dispute details. For the specific fields returned, see the &lt;&lt;/core-api/credit-disputes#retrieveDispute, dispute response fields&gt;&gt;. | [optional] 
-**Amount** | **float32** | Amount of the adjustment. | 
+**Amount** | **decimal.Decimal** | Amount of the adjustment. | 
 **CreatedTime** | Pointer to **time.Time** | Date and time when the account adjustment was applied, in UTC. | [optional] 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Description** | **string** | Description of the adjustment. | 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewAccountAdjustmentResponse
 
-`func NewAccountAdjustmentResponse(accountToken string, amount float32, currencyCode CurrencyCode, description string, reason string, token string, type_ string, ) *AccountAdjustmentResponse`
+`func NewAccountAdjustmentResponse(accountToken string, amount decimal.Decimal, currencyCode CurrencyCode, description string, reason string, token string, type_ string, ) *AccountAdjustmentResponse`
 
 NewAccountAdjustmentResponse instantiates a new AccountAdjustmentResponse object
 This constructor will assign default values to properties that have it defined,
@@ -96,20 +96,20 @@ HasAdjustmentDetailObject returns a boolean if a field has been set.
 UnsetAdjustmentDetailObject ensures that no value is present for AdjustmentDetailObject, not even an explicit nil
 ### GetAmount
 
-`func (o *AccountAdjustmentResponse) GetAmount() float32`
+`func (o *AccountAdjustmentResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *AccountAdjustmentResponse) GetAmountOk() (*float32, bool)`
+`func (o *AccountAdjustmentResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *AccountAdjustmentResponse) SetAmount(v float32)`
+`func (o *AccountAdjustmentResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

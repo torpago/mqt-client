@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RelatedJournalEntryToken** | Pointer to **string** | Unique identifier of the related journal entry to which the reward rule was applied to trigger the reward entry. | [optional] 
-**TransactionAmount** | Pointer to **float32** | The transaction amount to which the reward rule was applied. Used to determine the value of the reward entry. | [optional] 
-**Value** | Pointer to **float32** | Value of the reward entry. | [optional] 
+**TransactionAmount** | Pointer to **decimal.Decimal** | The transaction amount to which the reward rule was applied. Used to determine the value of the reward entry. | [optional] 
+**Value** | Pointer to **decimal.Decimal** | Value of the reward entry. | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ HasRelatedJournalEntryToken returns a boolean if a field has been set.
 
 ### GetTransactionAmount
 
-`func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmount() float32`
+`func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmount() decimal.Decimal`
 
 GetTransactionAmount returns the TransactionAmount field if non-nil, zero value otherwise.
 
 ### GetTransactionAmountOk
 
-`func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmountOk() (*float32, bool)`
+`func (o *RewardEntriesJournalEntriesResponse) GetTransactionAmountOk() (*decimal.Decimal, bool)`
 
 GetTransactionAmountOk returns a tuple with the TransactionAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransactionAmount
 
-`func (o *RewardEntriesJournalEntriesResponse) SetTransactionAmount(v float32)`
+`func (o *RewardEntriesJournalEntriesResponse) SetTransactionAmount(v decimal.Decimal)`
 
 SetTransactionAmount sets TransactionAmount field to given value.
 
@@ -79,20 +79,20 @@ HasTransactionAmount returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *RewardEntriesJournalEntriesResponse) GetValue() float32`
+`func (o *RewardEntriesJournalEntriesResponse) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RewardEntriesJournalEntriesResponse) GetValueOk() (*float32, bool)`
+`func (o *RewardEntriesJournalEntriesResponse) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RewardEntriesJournalEntriesResponse) SetValue(v float32)`
+`func (o *RewardEntriesJournalEntriesResponse) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

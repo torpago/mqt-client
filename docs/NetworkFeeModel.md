@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | The amount of the network fee. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | The amount of the network fee. | [optional] 
 **CreditDebit** | Pointer to **string** | Indicates whether the fee is a credit or a debit.  * *C* indicates a credit * *D* indicates a debit | [optional] 
 **Type** | Pointer to **string** | The type of fee assessed by the card network. | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *NetworkFeeModel) GetAmount() float32`
+`func (o *NetworkFeeModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *NetworkFeeModel) GetAmountOk() (*float32, bool)`
+`func (o *NetworkFeeModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *NetworkFeeModel) SetAmount(v float32)`
+`func (o *NetworkFeeModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

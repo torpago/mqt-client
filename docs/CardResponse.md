@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **CardProductToken** | **string** | Unique identifier of the card product. | 
 **ChipCvvNumber** | Pointer to **string** | Three-digit card verification value (ICVV) stored on the chip of the card. | [optional] 
 **ContactlessExemptionCounter** | Pointer to **int32** | Running count of the contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the number of contactless transactions that can be performed without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see &lt;&lt;/core-api/card-products, Card Products&gt;&gt;. | [optional] 
-**ContactlessExemptionTotalAmount** | Pointer to **float32** | Running total of the money spent in contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the total amount that can be spent in contactless transactions without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see &lt;&lt;/core-api/card-products, Card Products&gt;&gt;. | [optional] 
+**ContactlessExemptionTotalAmount** | Pointer to **decimal.Decimal** | Running total of the money spent in contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the total amount that can be spent in contactless transactions without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see &lt;&lt;/core-api/card-products, Card Products&gt;&gt;. | [optional] 
 **CreatedTime** | **time.Time** | Date and time when the resource was created, in UTC. | 
 **CvvNumber** | Pointer to **string** | Three-digit card verification value (CVV2 or CVC2) printed on the card. | [optional] 
 **Expedite** | Pointer to **bool** | A value of &#x60;true&#x60; indicates that you requested expedited processing of the card from your card fulfillment provider. | [optional] [default to false]
@@ -193,20 +193,20 @@ HasContactlessExemptionCounter returns a boolean if a field has been set.
 
 ### GetContactlessExemptionTotalAmount
 
-`func (o *CardResponse) GetContactlessExemptionTotalAmount() float32`
+`func (o *CardResponse) GetContactlessExemptionTotalAmount() decimal.Decimal`
 
 GetContactlessExemptionTotalAmount returns the ContactlessExemptionTotalAmount field if non-nil, zero value otherwise.
 
 ### GetContactlessExemptionTotalAmountOk
 
-`func (o *CardResponse) GetContactlessExemptionTotalAmountOk() (*float32, bool)`
+`func (o *CardResponse) GetContactlessExemptionTotalAmountOk() (*decimal.Decimal, bool)`
 
 GetContactlessExemptionTotalAmountOk returns a tuple with the ContactlessExemptionTotalAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContactlessExemptionTotalAmount
 
-`func (o *CardResponse) SetContactlessExemptionTotalAmount(v float32)`
+`func (o *CardResponse) SetContactlessExemptionTotalAmount(v decimal.Decimal)`
 
 SetContactlessExemptionTotalAmount sets ContactlessExemptionTotalAmount field to given value.
 

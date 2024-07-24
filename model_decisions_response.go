@@ -43,11 +43,11 @@ type DecisionsResponse struct {
 	// Date when the decision model expires.
 	ExpireDate *string `json:"expire_date,omitempty"`
 	// Number of percentage points added to the prime rate, used to calculate the purchase APR.
-	Margin *float32 `json:"margin,omitempty"`
+	Margin *decimal.Decimal `json:"margin,omitempty"`
 	// The current prime rate set by the Fed.
-	PrimeRate *float32 `json:"prime_rate,omitempty"`
+	PrimeRate *decimal.Decimal `json:"prime_rate,omitempty"`
 	// The purchase APR approved for the user.
-	PurchaseApr *float32 `json:"purchase_apr,omitempty"`
+	PurchaseApr *decimal.Decimal `json:"purchase_apr,omitempty"`
 	// A value of `true` indicates that the user received the credit product's best APR.  If `false`, you must display to the user the following: `score_factors`, `credit_score`, `credit_score_date`, `credit_bureau`, `score_range`.
 	ReceivedBestRate *bool `json:"received_best_rate,omitempty"`
 	// Factors that the bureau used to determine the user's credit score.
@@ -414,9 +414,9 @@ func (o *DecisionsResponse) SetExpireDate(v string) {
 }
 
 // GetMargin returns the Margin field value if set, zero value otherwise.
-func (o *DecisionsResponse) GetMargin() float32 {
+func (o *DecisionsResponse) GetMargin() decimal.Decimal {
 	if o == nil || IsNil(o.Margin) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Margin
@@ -424,7 +424,7 @@ func (o *DecisionsResponse) GetMargin() float32 {
 
 // GetMarginOk returns a tuple with the Margin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DecisionsResponse) GetMarginOk() (*float32, bool) {
+func (o *DecisionsResponse) GetMarginOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Margin) {
 		return nil, false
 	}
@@ -440,15 +440,15 @@ func (o *DecisionsResponse) HasMargin() bool {
 	return false
 }
 
-// SetMargin gets a reference to the given float32 and assigns it to the Margin field.
-func (o *DecisionsResponse) SetMargin(v float32) {
+// SetMargin gets a reference to the given decimal.Decimal and assigns it to the Margin field.
+func (o *DecisionsResponse) SetMargin(v decimal.Decimal) {
 	o.Margin = &v
 }
 
 // GetPrimeRate returns the PrimeRate field value if set, zero value otherwise.
-func (o *DecisionsResponse) GetPrimeRate() float32 {
+func (o *DecisionsResponse) GetPrimeRate() decimal.Decimal {
 	if o == nil || IsNil(o.PrimeRate) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.PrimeRate
@@ -456,7 +456,7 @@ func (o *DecisionsResponse) GetPrimeRate() float32 {
 
 // GetPrimeRateOk returns a tuple with the PrimeRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DecisionsResponse) GetPrimeRateOk() (*float32, bool) {
+func (o *DecisionsResponse) GetPrimeRateOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.PrimeRate) {
 		return nil, false
 	}
@@ -472,15 +472,15 @@ func (o *DecisionsResponse) HasPrimeRate() bool {
 	return false
 }
 
-// SetPrimeRate gets a reference to the given float32 and assigns it to the PrimeRate field.
-func (o *DecisionsResponse) SetPrimeRate(v float32) {
+// SetPrimeRate gets a reference to the given decimal.Decimal and assigns it to the PrimeRate field.
+func (o *DecisionsResponse) SetPrimeRate(v decimal.Decimal) {
 	o.PrimeRate = &v
 }
 
 // GetPurchaseApr returns the PurchaseApr field value if set, zero value otherwise.
-func (o *DecisionsResponse) GetPurchaseApr() float32 {
+func (o *DecisionsResponse) GetPurchaseApr() decimal.Decimal {
 	if o == nil || IsNil(o.PurchaseApr) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.PurchaseApr
@@ -488,7 +488,7 @@ func (o *DecisionsResponse) GetPurchaseApr() float32 {
 
 // GetPurchaseAprOk returns a tuple with the PurchaseApr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DecisionsResponse) GetPurchaseAprOk() (*float32, bool) {
+func (o *DecisionsResponse) GetPurchaseAprOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.PurchaseApr) {
 		return nil, false
 	}
@@ -504,8 +504,8 @@ func (o *DecisionsResponse) HasPurchaseApr() bool {
 	return false
 }
 
-// SetPurchaseApr gets a reference to the given float32 and assigns it to the PurchaseApr field.
-func (o *DecisionsResponse) SetPurchaseApr(v float32) {
+// SetPurchaseApr gets a reference to the given decimal.Decimal and assigns it to the PurchaseApr field.
+func (o *DecisionsResponse) SetPurchaseApr(v decimal.Decimal) {
 	o.PurchaseApr = &v
 }
 

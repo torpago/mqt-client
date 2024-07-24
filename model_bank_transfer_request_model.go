@@ -23,7 +23,7 @@ var _ MappedNullable = &BankTransferRequestModel{}
 // BankTransferRequestModel struct for BankTransferRequestModel
 type BankTransferRequestModel struct {
 	// Amount to push or pull.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// default = API
 	Channel *string `json:"channel,omitempty"`
 	CreatedBy *string `json:"created_by,omitempty"`
@@ -51,7 +51,7 @@ type _BankTransferRequestModel BankTransferRequestModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferRequestModel(amount float32, fundingSourceToken string, type_ string) *BankTransferRequestModel {
+func NewBankTransferRequestModel(amount decimal.Decimal, fundingSourceToken string, type_ string) *BankTransferRequestModel {
 	this := BankTransferRequestModel{}
 	this.Amount = amount
 	this.FundingSourceToken = fundingSourceToken
@@ -68,9 +68,9 @@ func NewBankTransferRequestModelWithDefaults() *BankTransferRequestModel {
 }
 
 // GetAmount returns the Amount field value
-func (o *BankTransferRequestModel) GetAmount() float32 {
+func (o *BankTransferRequestModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -79,7 +79,7 @@ func (o *BankTransferRequestModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *BankTransferRequestModel) GetAmountOk() (*float32, bool) {
+func (o *BankTransferRequestModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -87,7 +87,7 @@ func (o *BankTransferRequestModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *BankTransferRequestModel) SetAmount(v float32) {
+func (o *BankTransferRequestModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

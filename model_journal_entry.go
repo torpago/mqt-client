@@ -26,7 +26,7 @@ type JournalEntry struct {
 	// Unique identifier of the credit account associated with the credit card used to make the journal entry.
 	AccountToken string `json:"account_token"`
 	// Amount of the journal entry.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Unique identifier of the credit card used to make the journal entry.
 	CardToken *string `json:"card_token,omitempty"`
 	// Date and time when the journal entry was created on Marqeta's credit platform, in UTC.
@@ -68,7 +68,7 @@ type _JournalEntry JournalEntry
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJournalEntry(accountToken string, amount float32, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, requestTime time.Time, status string, token string, type_ string, userToken string) *JournalEntry {
+func NewJournalEntry(accountToken string, amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, requestTime time.Time, status string, token string, type_ string, userToken string) *JournalEntry {
 	this := JournalEntry{}
 	this.AccountToken = accountToken
 	this.Amount = amount
@@ -121,9 +121,9 @@ func (o *JournalEntry) SetAccountToken(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *JournalEntry) GetAmount() float32 {
+func (o *JournalEntry) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -132,7 +132,7 @@ func (o *JournalEntry) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *JournalEntry) GetAmountOk() (*float32, bool) {
+func (o *JournalEntry) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -140,7 +140,7 @@ func (o *JournalEntry) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *JournalEntry) SetAmount(v float32) {
+func (o *JournalEntry) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

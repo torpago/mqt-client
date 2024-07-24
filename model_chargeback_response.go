@@ -24,7 +24,7 @@ var _ MappedNullable = &ChargebackResponse{}
 // ChargebackResponse Contains the chargeback object associated with this transaction if a chargeback has been initiated.
 type ChargebackResponse struct {
 	// Amount of the chargeback.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Channel the chargeback came through.
 	Channel string `json:"channel"`
 	// Date and time when the chargeback was created. Not returned for transactions when the associated chargeback is in the `INITIATED` state.
@@ -55,7 +55,7 @@ type _ChargebackResponse ChargebackResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewChargebackResponse(amount float32, channel string, createdTime time.Time, creditUser bool, lastModifiedTime time.Time, network string, state string, token string, transactionToken string) *ChargebackResponse {
+func NewChargebackResponse(amount decimal.Decimal, channel string, createdTime time.Time, creditUser bool, lastModifiedTime time.Time, network string, state string, token string, transactionToken string) *ChargebackResponse {
 	this := ChargebackResponse{}
 	this.Amount = amount
 	this.Channel = channel
@@ -80,9 +80,9 @@ func NewChargebackResponseWithDefaults() *ChargebackResponse {
 }
 
 // GetAmount returns the Amount field value
-func (o *ChargebackResponse) GetAmount() float32 {
+func (o *ChargebackResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -91,7 +91,7 @@ func (o *ChargebackResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *ChargebackResponse) GetAmountOk() (*float32, bool) {
+func (o *ChargebackResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -99,7 +99,7 @@ func (o *ChargebackResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *ChargebackResponse) SetAmount(v float32) {
+func (o *ChargebackResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

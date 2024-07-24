@@ -49,7 +49,7 @@ type ApplicationsResponse struct {
 	// Customer-defined additional information about the application.
 	MetaData map[string]interface{} `json:"meta_data,omitempty"`
 	// Monthly amount of the mortgage or rent that the user currently pays.
-	MonthlyMortgageOrRent *float32 `json:"monthly_mortgage_or_rent,omitempty"`
+	MonthlyMortgageOrRent *decimal.Decimal `json:"monthly_mortgage_or_rent,omitempty"`
 	// Unique identifier of the offer for a pre-screened applicant.
 	OfferId *string `json:"offer_id,omitempty"`
 	// Date and time when Marqeta accepted the Pre-qualified Offer Pre-terms, in UTC.  Returned if the user accepted their approved application.
@@ -72,7 +72,7 @@ type ApplicationsResponse struct {
 	// Unique identifier of the application.
 	Token string `json:"token"`
 	// The total amount of the user's annual income.
-	TotalAnnualIncome *float32 `json:"total_annual_income,omitempty"`
+	TotalAnnualIncome *decimal.Decimal `json:"total_annual_income,omitempty"`
 	Type ApplicationType `json:"type"`
 	// Date and time when the application was last updated on the Marqeta platform, in UTC.
 	UpdatedDate time.Time `json:"updated_date"`
@@ -535,9 +535,9 @@ func (o *ApplicationsResponse) SetMetaData(v map[string]interface{}) {
 }
 
 // GetMonthlyMortgageOrRent returns the MonthlyMortgageOrRent field value if set, zero value otherwise.
-func (o *ApplicationsResponse) GetMonthlyMortgageOrRent() float32 {
+func (o *ApplicationsResponse) GetMonthlyMortgageOrRent() decimal.Decimal {
 	if o == nil || IsNil(o.MonthlyMortgageOrRent) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MonthlyMortgageOrRent
@@ -545,7 +545,7 @@ func (o *ApplicationsResponse) GetMonthlyMortgageOrRent() float32 {
 
 // GetMonthlyMortgageOrRentOk returns a tuple with the MonthlyMortgageOrRent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationsResponse) GetMonthlyMortgageOrRentOk() (*float32, bool) {
+func (o *ApplicationsResponse) GetMonthlyMortgageOrRentOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MonthlyMortgageOrRent) {
 		return nil, false
 	}
@@ -561,8 +561,8 @@ func (o *ApplicationsResponse) HasMonthlyMortgageOrRent() bool {
 	return false
 }
 
-// SetMonthlyMortgageOrRent gets a reference to the given float32 and assigns it to the MonthlyMortgageOrRent field.
-func (o *ApplicationsResponse) SetMonthlyMortgageOrRent(v float32) {
+// SetMonthlyMortgageOrRent gets a reference to the given decimal.Decimal and assigns it to the MonthlyMortgageOrRent field.
+func (o *ApplicationsResponse) SetMonthlyMortgageOrRent(v decimal.Decimal) {
 	o.MonthlyMortgageOrRent = &v
 }
 
@@ -879,9 +879,9 @@ func (o *ApplicationsResponse) SetToken(v string) {
 }
 
 // GetTotalAnnualIncome returns the TotalAnnualIncome field value if set, zero value otherwise.
-func (o *ApplicationsResponse) GetTotalAnnualIncome() float32 {
+func (o *ApplicationsResponse) GetTotalAnnualIncome() decimal.Decimal {
 	if o == nil || IsNil(o.TotalAnnualIncome) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.TotalAnnualIncome
@@ -889,7 +889,7 @@ func (o *ApplicationsResponse) GetTotalAnnualIncome() float32 {
 
 // GetTotalAnnualIncomeOk returns a tuple with the TotalAnnualIncome field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationsResponse) GetTotalAnnualIncomeOk() (*float32, bool) {
+func (o *ApplicationsResponse) GetTotalAnnualIncomeOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.TotalAnnualIncome) {
 		return nil, false
 	}
@@ -905,8 +905,8 @@ func (o *ApplicationsResponse) HasTotalAnnualIncome() bool {
 	return false
 }
 
-// SetTotalAnnualIncome gets a reference to the given float32 and assigns it to the TotalAnnualIncome field.
-func (o *ApplicationsResponse) SetTotalAnnualIncome(v float32) {
+// SetTotalAnnualIncome gets a reference to the given decimal.Decimal and assigns it to the TotalAnnualIncome field.
+func (o *ApplicationsResponse) SetTotalAnnualIncome(v decimal.Decimal) {
 	o.TotalAnnualIncome = &v
 }
 

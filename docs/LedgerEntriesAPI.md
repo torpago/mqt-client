@@ -112,7 +112,7 @@ func main() {
 	statuses := []string{"Inner_example"} // []string | Array of statuses by which to filter ledger entries. (optional)
 	description := "description_example" // string | Description of the ledger entries to return. (optional)
 	groups := []string{"Inner_example"} // []string | Array of groups by which to filter ledger entries.  To return all ledger entry groups, do not include this query parameter. (optional)
-	amount := float32(8.14) // float32 | Number of ledger entries to return. (optional)
+	amount := decimal.Decimal(8.14) // decimal.Decimal | Number of ledger entries to return. (optional)
 	expand := []string{"Expand_example"} // []string | Embeds the specified object into the response. (optional)
 	sortBy := "sortBy_example" // string | Field on which to sort. Prefix the field name with a hyphen (`-`) to sort in descending order. Omit the hyphen to sort in ascending order.  *NOTE:* You must sort using system field names such as `createdTime`, and not by the field names appearing in response bodies such as `created_time`. (optional) (default to "-createdTime")
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
  **statuses** | **[]string** | Array of statuses by which to filter ledger entries. | 
  **description** | **string** | Description of the ledger entries to return. | 
  **groups** | **[]string** | Array of groups by which to filter ledger entries.  To return all ledger entry groups, do not include this query parameter. | 
- **amount** | **float32** | Number of ledger entries to return. | 
+ **amount** | **decimal.Decimal** | Number of ledger entries to return. | 
  **expand** | **[]string** | Embeds the specified object into the response. | 
  **sortBy** | **string** | Field on which to sort. Prefix the field name with a hyphen (&#x60;-&#x60;) to sort in descending order. Omit the hyphen to sort in ascending order.  *NOTE:* You must sort using system field names such as &#x60;createdTime&#x60;, and not by the field names appearing in response bodies such as &#x60;created_time&#x60;. | [default to &quot;-createdTime&quot;]
 

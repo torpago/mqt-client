@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IncludeFeesCharged** | [**[]ProductFeeType**](ProductFeeType.md) | One or more fee types to include when calculating the minimum payment. | 
-**PercentageOfBalance** | **float32** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | 
+**PercentageOfBalance** | **decimal.Decimal** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | 
 
 ## Methods
 
 ### NewProductMinPaymentPercentage
 
-`func NewProductMinPaymentPercentage(includeFeesCharged []ProductFeeType, percentageOfBalance float32, ) *ProductMinPaymentPercentage`
+`func NewProductMinPaymentPercentage(includeFeesCharged []ProductFeeType, percentageOfBalance decimal.Decimal, ) *ProductMinPaymentPercentage`
 
 NewProductMinPaymentPercentage instantiates a new ProductMinPaymentPercentage object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetIncludeFeesCharged sets IncludeFeesCharged field to given value.
 
 ### GetPercentageOfBalance
 
-`func (o *ProductMinPaymentPercentage) GetPercentageOfBalance() float32`
+`func (o *ProductMinPaymentPercentage) GetPercentageOfBalance() decimal.Decimal`
 
 GetPercentageOfBalance returns the PercentageOfBalance field if non-nil, zero value otherwise.
 
 ### GetPercentageOfBalanceOk
 
-`func (o *ProductMinPaymentPercentage) GetPercentageOfBalanceOk() (*float32, bool)`
+`func (o *ProductMinPaymentPercentage) GetPercentageOfBalanceOk() (*decimal.Decimal, bool)`
 
 GetPercentageOfBalanceOk returns a tuple with the PercentageOfBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPercentageOfBalance
 
-`func (o *ProductMinPaymentPercentage) SetPercentageOfBalance(v float32)`
+`func (o *ProductMinPaymentPercentage) SetPercentageOfBalance(v decimal.Decimal)`
 
 SetPercentageOfBalance sets PercentageOfBalance field to given value.
 

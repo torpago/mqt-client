@@ -25,7 +25,7 @@ var _ MappedNullable = &MsaReturns{}
 type MsaReturns struct {
 	Active bool `json:"active"`
 	AggregatedBalances MsaAggregatedBalances `json:"aggregated_balances"`
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	BusinessToken *string `json:"business_token,omitempty"`
 	CampaignToken string `json:"campaign_token"`
 	// yyyy-MM-ddTHH:mm:ssZ
@@ -40,13 +40,13 @@ type MsaReturns struct {
 	LastTransactionDate time.Time `json:"last_transaction_date"`
 	OrderBalances MsaBalances `json:"order_balances"`
 	OriginalOrderToken string `json:"original_order_token"`
-	RewardAmount float32 `json:"reward_amount"`
-	RewardTriggerAmount float32 `json:"reward_trigger_amount"`
+	RewardAmount decimal.Decimal `json:"reward_amount"`
+	RewardTriggerAmount decimal.Decimal `json:"reward_trigger_amount"`
 	// yyyy-MM-ddThh:mm:ssZ
 	StartDate *time.Time `json:"start_date,omitempty"`
 	Token *string `json:"token,omitempty"`
 	TransactionToken string `json:"transaction_token"`
-	UnloadedAmount *float32 `json:"unloaded_amount,omitempty"`
+	UnloadedAmount *decimal.Decimal `json:"unloaded_amount,omitempty"`
 	UserToken *string `json:"user_token,omitempty"`
 }
 
@@ -56,7 +56,7 @@ type _MsaReturns MsaReturns
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMsaReturns(active bool, aggregatedBalances MsaAggregatedBalances, amount float32, campaignToken string, createdTime time.Time, currencyCode string, funding Funding, lastModifiedTime time.Time, lastTransactionDate time.Time, orderBalances MsaBalances, originalOrderToken string, rewardAmount float32, rewardTriggerAmount float32, transactionToken string) *MsaReturns {
+func NewMsaReturns(active bool, aggregatedBalances MsaAggregatedBalances, amount decimal.Decimal, campaignToken string, createdTime time.Time, currencyCode string, funding Funding, lastModifiedTime time.Time, lastTransactionDate time.Time, orderBalances MsaBalances, originalOrderToken string, rewardAmount decimal.Decimal, rewardTriggerAmount decimal.Decimal, transactionToken string) *MsaReturns {
 	this := MsaReturns{}
 	this.Active = active
 	this.AggregatedBalances = aggregatedBalances
@@ -134,9 +134,9 @@ func (o *MsaReturns) SetAggregatedBalances(v MsaAggregatedBalances) {
 }
 
 // GetAmount returns the Amount field value
-func (o *MsaReturns) GetAmount() float32 {
+func (o *MsaReturns) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -145,7 +145,7 @@ func (o *MsaReturns) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *MsaReturns) GetAmountOk() (*float32, bool) {
+func (o *MsaReturns) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -153,7 +153,7 @@ func (o *MsaReturns) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *MsaReturns) SetAmount(v float32) {
+func (o *MsaReturns) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 
@@ -414,9 +414,9 @@ func (o *MsaReturns) SetOriginalOrderToken(v string) {
 }
 
 // GetRewardAmount returns the RewardAmount field value
-func (o *MsaReturns) GetRewardAmount() float32 {
+func (o *MsaReturns) GetRewardAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -425,7 +425,7 @@ func (o *MsaReturns) GetRewardAmount() float32 {
 
 // GetRewardAmountOk returns a tuple with the RewardAmount field value
 // and a boolean to check if the value has been set.
-func (o *MsaReturns) GetRewardAmountOk() (*float32, bool) {
+func (o *MsaReturns) GetRewardAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -433,14 +433,14 @@ func (o *MsaReturns) GetRewardAmountOk() (*float32, bool) {
 }
 
 // SetRewardAmount sets field value
-func (o *MsaReturns) SetRewardAmount(v float32) {
+func (o *MsaReturns) SetRewardAmount(v decimal.Decimal) {
 	o.RewardAmount = v
 }
 
 // GetRewardTriggerAmount returns the RewardTriggerAmount field value
-func (o *MsaReturns) GetRewardTriggerAmount() float32 {
+func (o *MsaReturns) GetRewardTriggerAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -449,7 +449,7 @@ func (o *MsaReturns) GetRewardTriggerAmount() float32 {
 
 // GetRewardTriggerAmountOk returns a tuple with the RewardTriggerAmount field value
 // and a boolean to check if the value has been set.
-func (o *MsaReturns) GetRewardTriggerAmountOk() (*float32, bool) {
+func (o *MsaReturns) GetRewardTriggerAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -457,7 +457,7 @@ func (o *MsaReturns) GetRewardTriggerAmountOk() (*float32, bool) {
 }
 
 // SetRewardTriggerAmount sets field value
-func (o *MsaReturns) SetRewardTriggerAmount(v float32) {
+func (o *MsaReturns) SetRewardTriggerAmount(v decimal.Decimal) {
 	o.RewardTriggerAmount = v
 }
 
@@ -550,9 +550,9 @@ func (o *MsaReturns) SetTransactionToken(v string) {
 }
 
 // GetUnloadedAmount returns the UnloadedAmount field value if set, zero value otherwise.
-func (o *MsaReturns) GetUnloadedAmount() float32 {
+func (o *MsaReturns) GetUnloadedAmount() decimal.Decimal {
 	if o == nil || IsNil(o.UnloadedAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.UnloadedAmount
@@ -560,7 +560,7 @@ func (o *MsaReturns) GetUnloadedAmount() float32 {
 
 // GetUnloadedAmountOk returns a tuple with the UnloadedAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MsaReturns) GetUnloadedAmountOk() (*float32, bool) {
+func (o *MsaReturns) GetUnloadedAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.UnloadedAmount) {
 		return nil, false
 	}
@@ -576,8 +576,8 @@ func (o *MsaReturns) HasUnloadedAmount() bool {
 	return false
 }
 
-// SetUnloadedAmount gets a reference to the given float32 and assigns it to the UnloadedAmount field.
-func (o *MsaReturns) SetUnloadedAmount(v float32) {
+// SetUnloadedAmount gets a reference to the given decimal.Decimal and assigns it to the UnloadedAmount field.
+func (o *MsaReturns) SetUnloadedAmount(v decimal.Decimal) {
 	o.UnloadedAmount = &v
 }
 

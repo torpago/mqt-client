@@ -23,7 +23,7 @@ var _ MappedNullable = &GpaRequest{}
 // GpaRequest struct for GpaRequest
 type GpaRequest struct {
 	// Amount to fund.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Unique identifier of the business.  Pass either a `business_token` or a `user_token`, not both.  Send a `GET` request to `/businesses` to retrieve business tokens.
 	BusinessToken *string `json:"business_token,omitempty"`
 	// Three-digit ISO 4217 currency code.
@@ -50,7 +50,7 @@ type _GpaRequest GpaRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGpaRequest(amount float32, currencyCode string, fundingSourceToken string) *GpaRequest {
+func NewGpaRequest(amount decimal.Decimal, currencyCode string, fundingSourceToken string) *GpaRequest {
 	this := GpaRequest{}
 	this.Amount = amount
 	this.CurrencyCode = currencyCode
@@ -67,9 +67,9 @@ func NewGpaRequestWithDefaults() *GpaRequest {
 }
 
 // GetAmount returns the Amount field value
-func (o *GpaRequest) GetAmount() float32 {
+func (o *GpaRequest) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *GpaRequest) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *GpaRequest) GetAmountOk() (*float32, bool) {
+func (o *GpaRequest) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *GpaRequest) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *GpaRequest) SetAmount(v float32) {
+func (o *GpaRequest) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

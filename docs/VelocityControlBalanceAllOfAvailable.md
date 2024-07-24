@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | Amount of money remaining for the user. This value is returned only if the user has a limit on the amount of money. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | Amount of money remaining for the user. This value is returned only if the user has a limit on the amount of money. | [optional] 
 **DaysRemaining** | Pointer to **int32** | Number of days remaining for the user. This value is returned only if the user has a limit on the number of days. | [optional] 
 **Uses** | Pointer to **int32** | Number of uses remaining for the user. This value is returned only if the user has a limit on the number of uses. | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *VelocityControlBalanceAllOfAvailable) GetAmount() float32`
+`func (o *VelocityControlBalanceAllOfAvailable) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *VelocityControlBalanceAllOfAvailable) GetAmountOk() (*float32, bool)`
+`func (o *VelocityControlBalanceAllOfAvailable) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *VelocityControlBalanceAllOfAvailable) SetAmount(v float32)`
+`func (o *VelocityControlBalanceAllOfAvailable) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account on which the dispute was created. | 
-**Amount** | **float32** | Amount of the dispute. | 
+**Amount** | **decimal.Decimal** | Amount of the dispute. | 
 **Category** | [**DisputeCategory**](DisputeCategory.md) |  | 
 **CreatedTime** | **time.Time** | Date and time when the dispute was created on Marqeta&#39;s credit platform, in UTC. | 
 **LedgerEntryToken** | **string** | Unique identifier of the journal entry (&#x60;authorization.clearing&#x60; type only) in dispute. | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewDisputeResponse
 
-`func NewDisputeResponse(accountToken string, amount float32, category DisputeCategory, createdTime time.Time, ledgerEntryToken string, status DisputeStatus, token string, updatedTime time.Time, ) *DisputeResponse`
+`func NewDisputeResponse(accountToken string, amount decimal.Decimal, category DisputeCategory, createdTime time.Time, ledgerEntryToken string, status DisputeStatus, token string, updatedTime time.Time, ) *DisputeResponse`
 
 NewDisputeResponse instantiates a new DisputeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -56,20 +56,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAmount
 
-`func (o *DisputeResponse) GetAmount() float32`
+`func (o *DisputeResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *DisputeResponse) GetAmountOk() (*float32, bool)`
+`func (o *DisputeResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *DisputeResponse) SetAmount(v float32)`
+`func (o *DisputeResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

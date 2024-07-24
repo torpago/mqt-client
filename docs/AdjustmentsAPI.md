@@ -32,7 +32,7 @@ import (
 
 func main() {
 	accountToken := "accountToken_example" // string | Unique identifier of the credit account for which you want to create an adjustment.  Send a `GET` request to `/credit/accounts` to retrieve existing credit account tokens.
-	accountAdjustmentReq := *openapiclient.NewAccountAdjustmentReq(float32(123), openapiclient.CurrencyCode("USD"), "Description_example") // AccountAdjustmentReq | 
+	accountAdjustmentReq := *openapiclient.NewAccountAdjustmentReq(decimal.Decimal(123), openapiclient.CurrencyCode("USD"), "Description_example") // AccountAdjustmentReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

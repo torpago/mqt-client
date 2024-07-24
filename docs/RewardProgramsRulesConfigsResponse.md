@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccrualType** | [**AccrualType**](AccrualType.md) |  | 
 **CreatedTime** | **time.Time** | Date and time when the reward rules config was created on the Marqeta platform, in UTC. | 
-**GreaterThan** | Pointer to **float32** | Minimum amount that the balance for a billing cycle can be to apply the specified reward percentage. For example, if the &#x60;greater_than&#x60; value is &#x60;500&#x60;, the account holder earns _x_% of the account balance if they spend over $500 during a billing cycle. | [optional] 
+**GreaterThan** | Pointer to **decimal.Decimal** | Minimum amount that the balance for a billing cycle can be to apply the specified reward percentage. For example, if the &#x60;greater_than&#x60; value is &#x60;500&#x60;, the account holder earns _x_% of the account balance if they spend over $500 during a billing cycle. | [optional] 
 **IsActive** | **bool** | A value of &#x60;true&#x60; indicates that the reward rules config is active. | 
-**LessThan** | Pointer to **float32** | Maximum amount that the balance for a billing cycle can be to apply the specified reward percentage. For example, if the &#x60;less_than&#x60; value is &#x60;1500&#x60;, the account holder earns _x_% of the account balance if they spend under $1500 during a billing cycle. | [optional] 
+**LessThan** | Pointer to **decimal.Decimal** | Maximum amount that the balance for a billing cycle can be to apply the specified reward percentage. For example, if the &#x60;less_than&#x60; value is &#x60;1500&#x60;, the account holder earns _x_% of the account balance if they spend under $1500 during a billing cycle. | [optional] 
 **Mcc** | Pointer to **string** | Merchant category code (MCC) of the related journal entry. | [optional] 
-**Percentage** | **float32** | The reward percentage applied when the balance for a billing cycle is within the range specified in the &#x60;less_than&#x60; and &#x60;greater_than&#x60; fields. For example, if the &#x60;percentage&#x60; is &#x60;1&#x60;, the account holder earns 1% of the account balance if they spend between the &#x60;less_than&#x60; and &#x60;greater_than&#x60; amounts during a billing cycle. | 
+**Percentage** | **decimal.Decimal** | The reward percentage applied when the balance for a billing cycle is within the range specified in the &#x60;less_than&#x60; and &#x60;greater_than&#x60; fields. For example, if the &#x60;percentage&#x60; is &#x60;1&#x60;, the account holder earns 1% of the account balance if they spend between the &#x60;less_than&#x60; and &#x60;greater_than&#x60; amounts during a billing cycle. | 
 **RewardProgramToken** | **string** | Unique identifier of the reward program on which the rules config is applied. | 
 **Token** | **string** | Unique identifier of the reward rules config. | 
 **UpdatedTime** | **time.Time** | Date and time when the reward rules config was last updated on the Marqeta platform, in UTC. | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewRewardProgramsRulesConfigsResponse
 
-`func NewRewardProgramsRulesConfigsResponse(accrualType AccrualType, createdTime time.Time, isActive bool, percentage float32, rewardProgramToken string, token string, updatedTime time.Time, ) *RewardProgramsRulesConfigsResponse`
+`func NewRewardProgramsRulesConfigsResponse(accrualType AccrualType, createdTime time.Time, isActive bool, percentage decimal.Decimal, rewardProgramToken string, token string, updatedTime time.Time, ) *RewardProgramsRulesConfigsResponse`
 
 NewRewardProgramsRulesConfigsResponse instantiates a new RewardProgramsRulesConfigsResponse object
 This constructor will assign default values to properties that have it defined,
@@ -76,20 +76,20 @@ SetCreatedTime sets CreatedTime field to given value.
 
 ### GetGreaterThan
 
-`func (o *RewardProgramsRulesConfigsResponse) GetGreaterThan() float32`
+`func (o *RewardProgramsRulesConfigsResponse) GetGreaterThan() decimal.Decimal`
 
 GetGreaterThan returns the GreaterThan field if non-nil, zero value otherwise.
 
 ### GetGreaterThanOk
 
-`func (o *RewardProgramsRulesConfigsResponse) GetGreaterThanOk() (*float32, bool)`
+`func (o *RewardProgramsRulesConfigsResponse) GetGreaterThanOk() (*decimal.Decimal, bool)`
 
 GetGreaterThanOk returns a tuple with the GreaterThan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGreaterThan
 
-`func (o *RewardProgramsRulesConfigsResponse) SetGreaterThan(v float32)`
+`func (o *RewardProgramsRulesConfigsResponse) SetGreaterThan(v decimal.Decimal)`
 
 SetGreaterThan sets GreaterThan field to given value.
 
@@ -121,20 +121,20 @@ SetIsActive sets IsActive field to given value.
 
 ### GetLessThan
 
-`func (o *RewardProgramsRulesConfigsResponse) GetLessThan() float32`
+`func (o *RewardProgramsRulesConfigsResponse) GetLessThan() decimal.Decimal`
 
 GetLessThan returns the LessThan field if non-nil, zero value otherwise.
 
 ### GetLessThanOk
 
-`func (o *RewardProgramsRulesConfigsResponse) GetLessThanOk() (*float32, bool)`
+`func (o *RewardProgramsRulesConfigsResponse) GetLessThanOk() (*decimal.Decimal, bool)`
 
 GetLessThanOk returns a tuple with the LessThan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLessThan
 
-`func (o *RewardProgramsRulesConfigsResponse) SetLessThan(v float32)`
+`func (o *RewardProgramsRulesConfigsResponse) SetLessThan(v decimal.Decimal)`
 
 SetLessThan sets LessThan field to given value.
 
@@ -171,20 +171,20 @@ HasMcc returns a boolean if a field has been set.
 
 ### GetPercentage
 
-`func (o *RewardProgramsRulesConfigsResponse) GetPercentage() float32`
+`func (o *RewardProgramsRulesConfigsResponse) GetPercentage() decimal.Decimal`
 
 GetPercentage returns the Percentage field if non-nil, zero value otherwise.
 
 ### GetPercentageOk
 
-`func (o *RewardProgramsRulesConfigsResponse) GetPercentageOk() (*float32, bool)`
+`func (o *RewardProgramsRulesConfigsResponse) GetPercentageOk() (*decimal.Decimal, bool)`
 
 GetPercentageOk returns a tuple with the Percentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPercentage
 
-`func (o *RewardProgramsRulesConfigsResponse) SetPercentage(v float32)`
+`func (o *RewardProgramsRulesConfigsResponse) SetPercentage(v decimal.Decimal)`
 
 SetPercentage sets Percentage field to given value.
 

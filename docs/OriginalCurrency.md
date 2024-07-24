@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | original amount | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | original amount | [optional] 
 **Code** | Pointer to **string** | Currency code, such as EUR or USD. | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *OriginalCurrency) GetAmount() float32`
+`func (o *OriginalCurrency) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *OriginalCurrency) GetAmountOk() (*float32, bool)`
+`func (o *OriginalCurrency) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *OriginalCurrency) SetAmount(v float32)`
+`func (o *OriginalCurrency) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

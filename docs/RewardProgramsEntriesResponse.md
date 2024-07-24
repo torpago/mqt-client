@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 **RewardRulesConfigToken** | **string** | Unique identifier of the reward rules config used to determine the value of the reward entry. | 
 **Status** | [**RewardEntryStatus**](RewardEntryStatus.md) |  | 
 **Token** | **string** | Unique identifier of the reward entry. | 
-**TransactionAmount** | **float32** | The transaction amount to which the reward rule was applied. Used to determine the value of the reward entry. | 
-**Value** | Pointer to **float32** | Value of the reward entry. | [optional] 
+**TransactionAmount** | **decimal.Decimal** | The transaction amount to which the reward rule was applied. Used to determine the value of the reward entry. | 
+**Value** | Pointer to **decimal.Decimal** | Value of the reward entry. | [optional] 
 
 ## Methods
 
 ### NewRewardProgramsEntriesResponse
 
-`func NewRewardProgramsEntriesResponse(createdTime time.Time, note string, relatedJournalEntryToken string, rewardProgramToken string, rewardRulesConfigToken string, status RewardEntryStatus, token string, transactionAmount float32, ) *RewardProgramsEntriesResponse`
+`func NewRewardProgramsEntriesResponse(createdTime time.Time, note string, relatedJournalEntryToken string, rewardProgramToken string, rewardRulesConfigToken string, status RewardEntryStatus, token string, transactionAmount decimal.Decimal, ) *RewardProgramsEntriesResponse`
 
 NewRewardProgramsEntriesResponse instantiates a new RewardProgramsEntriesResponse object
 This constructor will assign default values to properties that have it defined,
@@ -253,40 +253,40 @@ SetToken sets Token field to given value.
 
 ### GetTransactionAmount
 
-`func (o *RewardProgramsEntriesResponse) GetTransactionAmount() float32`
+`func (o *RewardProgramsEntriesResponse) GetTransactionAmount() decimal.Decimal`
 
 GetTransactionAmount returns the TransactionAmount field if non-nil, zero value otherwise.
 
 ### GetTransactionAmountOk
 
-`func (o *RewardProgramsEntriesResponse) GetTransactionAmountOk() (*float32, bool)`
+`func (o *RewardProgramsEntriesResponse) GetTransactionAmountOk() (*decimal.Decimal, bool)`
 
 GetTransactionAmountOk returns a tuple with the TransactionAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransactionAmount
 
-`func (o *RewardProgramsEntriesResponse) SetTransactionAmount(v float32)`
+`func (o *RewardProgramsEntriesResponse) SetTransactionAmount(v decimal.Decimal)`
 
 SetTransactionAmount sets TransactionAmount field to given value.
 
 
 ### GetValue
 
-`func (o *RewardProgramsEntriesResponse) GetValue() float32`
+`func (o *RewardProgramsEntriesResponse) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RewardProgramsEntriesResponse) GetValueOk() (*float32, bool)`
+`func (o *RewardProgramsEntriesResponse) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RewardProgramsEntriesResponse) SetValue(v float32)`
+`func (o *RewardProgramsEntriesResponse) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

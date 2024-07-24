@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IncludeOverlimitAmount** | **bool** | Whether to include the overlimit amount when calculating the minimum payment. | 
 **IncludePastDueAmount** | **bool** | Whether to include the past due amount when calculating the minimum payment. | 
-**MinPaymentFlatAmount** | Pointer to **float32** | Minimum payment, expressed as a flat amount, due on the payment due day. | [optional] 
+**MinPaymentFlatAmount** | Pointer to **decimal.Decimal** | Minimum payment, expressed as a flat amount, due on the payment due day. | [optional] 
 **MinPaymentPercentage** | Pointer to [**PolicyProductMinPaymentPercentage**](PolicyProductMinPaymentPercentage.md) |  | [optional] 
 
 ## Methods
@@ -70,20 +70,20 @@ SetIncludePastDueAmount sets IncludePastDueAmount field to given value.
 
 ### GetMinPaymentFlatAmount
 
-`func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmount() float32`
+`func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmount() decimal.Decimal`
 
 GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field if non-nil, zero value otherwise.
 
 ### GetMinPaymentFlatAmountOk
 
-`func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmountOk() (*float32, bool)`
+`func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool)`
 
 GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPaymentFlatAmount
 
-`func (o *PolicyProductMinPaymentCalculation) SetMinPaymentFlatAmount(v float32)`
+`func (o *PolicyProductMinPaymentCalculation) SetMinPaymentFlatAmount(v decimal.Decimal)`
 
 SetMinPaymentFlatAmount sets MinPaymentFlatAmount field to given value.
 

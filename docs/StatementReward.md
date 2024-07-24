@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedTime** | Pointer to **time.Time** | Date and time when the statement reward was created on Marqeta&#39;s credit platform, in UTC. | [optional] 
-**CurrentBillingCycleReward** | Pointer to **float32** | Amount of rewards received in the current billing cycle. | [optional] 
-**PreviousBillingCycleReward** | Pointer to **float32** | Amount of rewards received in the previous billing cycle. | [optional] 
+**CurrentBillingCycleReward** | Pointer to **decimal.Decimal** | Amount of rewards received in the current billing cycle. | [optional] 
+**PreviousBillingCycleReward** | Pointer to **decimal.Decimal** | Amount of rewards received in the previous billing cycle. | [optional] 
 **Token** | Pointer to **string** | Unique identifier of the rewards for a specific statement. | [optional] 
 
 ## Methods
@@ -55,20 +55,20 @@ HasCreatedTime returns a boolean if a field has been set.
 
 ### GetCurrentBillingCycleReward
 
-`func (o *StatementReward) GetCurrentBillingCycleReward() float32`
+`func (o *StatementReward) GetCurrentBillingCycleReward() decimal.Decimal`
 
 GetCurrentBillingCycleReward returns the CurrentBillingCycleReward field if non-nil, zero value otherwise.
 
 ### GetCurrentBillingCycleRewardOk
 
-`func (o *StatementReward) GetCurrentBillingCycleRewardOk() (*float32, bool)`
+`func (o *StatementReward) GetCurrentBillingCycleRewardOk() (*decimal.Decimal, bool)`
 
 GetCurrentBillingCycleRewardOk returns a tuple with the CurrentBillingCycleReward field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentBillingCycleReward
 
-`func (o *StatementReward) SetCurrentBillingCycleReward(v float32)`
+`func (o *StatementReward) SetCurrentBillingCycleReward(v decimal.Decimal)`
 
 SetCurrentBillingCycleReward sets CurrentBillingCycleReward field to given value.
 
@@ -80,20 +80,20 @@ HasCurrentBillingCycleReward returns a boolean if a field has been set.
 
 ### GetPreviousBillingCycleReward
 
-`func (o *StatementReward) GetPreviousBillingCycleReward() float32`
+`func (o *StatementReward) GetPreviousBillingCycleReward() decimal.Decimal`
 
 GetPreviousBillingCycleReward returns the PreviousBillingCycleReward field if non-nil, zero value otherwise.
 
 ### GetPreviousBillingCycleRewardOk
 
-`func (o *StatementReward) GetPreviousBillingCycleRewardOk() (*float32, bool)`
+`func (o *StatementReward) GetPreviousBillingCycleRewardOk() (*decimal.Decimal, bool)`
 
 GetPreviousBillingCycleRewardOk returns a tuple with the PreviousBillingCycleReward field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPreviousBillingCycleReward
 
-`func (o *StatementReward) SetPreviousBillingCycleReward(v float32)`
+`func (o *StatementReward) SetPreviousBillingCycleReward(v decimal.Decimal)`
 
 SetPreviousBillingCycleReward sets PreviousBillingCycleReward field to given value.
 

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EffectiveDate** | Pointer to **time.Time** | Date and time when the fee goes into effect, in UTC. | [optional] 
 **Method** | [**FeeMethod**](FeeMethod.md) |  | 
-**Value** | **float32** | Amount of the fee. | 
+**Value** | **decimal.Decimal** | Amount of the fee. | 
 
 ## Methods
 
 ### NewConfigFeeScheduleEntry
 
-`func NewConfigFeeScheduleEntry(method FeeMethod, value float32, ) *ConfigFeeScheduleEntry`
+`func NewConfigFeeScheduleEntry(method FeeMethod, value decimal.Decimal, ) *ConfigFeeScheduleEntry`
 
 NewConfigFeeScheduleEntry instantiates a new ConfigFeeScheduleEntry object
 This constructor will assign default values to properties that have it defined,
@@ -74,20 +74,20 @@ SetMethod sets Method field to given value.
 
 ### GetValue
 
-`func (o *ConfigFeeScheduleEntry) GetValue() float32`
+`func (o *ConfigFeeScheduleEntry) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ConfigFeeScheduleEntry) GetValueOk() (*float32, bool)`
+`func (o *ConfigFeeScheduleEntry) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ConfigFeeScheduleEntry) SetValue(v float32)`
+`func (o *ConfigFeeScheduleEntry) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

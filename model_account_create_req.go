@@ -30,7 +30,7 @@ type AccountCreateReq struct {
 	BusinessToken *string `json:"business_token,omitempty"`
 	Config *AccountConfigReq `json:"config,omitempty"`
 	// Maximum balance the credit account can carry.
-	CreditLimit float32 `json:"credit_limit"`
+	CreditLimit decimal.Decimal `json:"credit_limit"`
 	// Unique identifier of the associated credit product.  This field is required if passing `external_offer_id`.  You must pass either both `credit_product_token` and `external_offer_id` or `bundle_token`.
 	CreditProductToken *string `json:"credit_product_token,omitempty"`
 	// Description for the credit account.
@@ -53,7 +53,7 @@ type _AccountCreateReq AccountCreateReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountCreateReq(creditLimit float32, usages []AccountUsageCreateReq) *AccountCreateReq {
+func NewAccountCreateReq(creditLimit decimal.Decimal, usages []AccountUsageCreateReq) *AccountCreateReq {
 	this := AccountCreateReq{}
 	this.CreditLimit = creditLimit
 	this.Usages = usages
@@ -197,9 +197,9 @@ func (o *AccountCreateReq) SetConfig(v AccountConfigReq) {
 }
 
 // GetCreditLimit returns the CreditLimit field value
-func (o *AccountCreateReq) GetCreditLimit() float32 {
+func (o *AccountCreateReq) GetCreditLimit() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -208,7 +208,7 @@ func (o *AccountCreateReq) GetCreditLimit() float32 {
 
 // GetCreditLimitOk returns a tuple with the CreditLimit field value
 // and a boolean to check if the value has been set.
-func (o *AccountCreateReq) GetCreditLimitOk() (*float32, bool) {
+func (o *AccountCreateReq) GetCreditLimitOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -216,7 +216,7 @@ func (o *AccountCreateReq) GetCreditLimitOk() (*float32, bool) {
 }
 
 // SetCreditLimit sets field value
-func (o *AccountCreateReq) SetCreditLimit(v float32) {
+func (o *AccountCreateReq) SetCreditLimit(v decimal.Decimal) {
 	o.CreditLimit = v
 }
 

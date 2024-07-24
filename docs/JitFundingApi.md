@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AccountNameVerification** | Pointer to [**JitAccountNameVerification**](JitAccountNameVerification.md) |  | [optional] 
 **ActingUserToken** | Pointer to **string** | User who conducted the transaction.  Can be a child user configured to share its parent&#39;s account balance. | [optional] 
 **AddressVerification** | Pointer to [**JitAddressVerification**](JitAddressVerification.md) |  | [optional] 
-**Amount** | **float32** | Requested amount of funding. | 
+**Amount** | **decimal.Decimal** | Requested amount of funding. | 
 **Balances** | Pointer to [**map[string]CardholderBalance**](CardholderBalance.md) | Contains the GPA&#39;s balance details. | [optional] 
 **BusinessToken** | Pointer to **string** | Holder of the business account that was funded. | [optional] 
 **DeclineReason** | Pointer to **string** | Reason why the transaction was declined. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewJitFundingApi
 
-`func NewJitFundingApi(amount float32, method string, token string, userToken string, ) *JitFundingApi`
+`func NewJitFundingApi(amount decimal.Decimal, method string, token string, userToken string, ) *JitFundingApi`
 
 NewJitFundingApi instantiates a new JitFundingApi object
 This constructor will assign default values to properties that have it defined,
@@ -116,20 +116,20 @@ HasAddressVerification returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *JitFundingApi) GetAmount() float32`
+`func (o *JitFundingApi) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *JitFundingApi) GetAmountOk() (*float32, bool)`
+`func (o *JitFundingApi) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *JitFundingApi) SetAmount(v float32)`
+`func (o *JitFundingApi) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

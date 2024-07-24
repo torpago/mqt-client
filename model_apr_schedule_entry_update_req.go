@@ -28,11 +28,11 @@ type AprScheduleEntryUpdateReq struct {
 	// Date and time when the APR goes into effect, in UTC.  If you do not include a date-time value, the system uses the date and time when the API request was received.  *NOTE:* When passing multiple `schedule` objects, this field is required in all objects but the first. If you do not include `effective_date` in the first `schedule`, the system uses the date and time when the API request was received.
 	EffectiveDate *time.Time `json:"effective_date,omitempty"`
 	// Number of percentage points added to the prime rate, used to calculate a variable value.  Used for variable values only.
-	Margin *float32 `json:"margin,omitempty"`
+	Margin *decimal.Decimal `json:"margin,omitempty"`
 	// Indicates whether the APR value is fixed or variable.
 	Type *string `json:"type,omitempty"`
 	// Percentage value of the APR.  If the APR type is `FIXED`, this is the value of the fixed rate. If the APR type is `VARIABLE`, the value is calculated by adding the margin to the prime rate that was stored on Marqeta's credit platform when your credit program was created.  When backdating an APR, this value cannot be greater than the value of the effective APR on the backdated date.
-	Value float32 `json:"value"`
+	Value decimal.Decimal `json:"value"`
 }
 
 type _AprScheduleEntryUpdateReq AprScheduleEntryUpdateReq
@@ -41,7 +41,7 @@ type _AprScheduleEntryUpdateReq AprScheduleEntryUpdateReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAprScheduleEntryUpdateReq(value float32) *AprScheduleEntryUpdateReq {
+func NewAprScheduleEntryUpdateReq(value decimal.Decimal) *AprScheduleEntryUpdateReq {
 	this := AprScheduleEntryUpdateReq{}
 	var applyNextCycle bool = false
 	this.ApplyNextCycle = &applyNextCycle
@@ -128,9 +128,9 @@ func (o *AprScheduleEntryUpdateReq) SetEffectiveDate(v time.Time) {
 }
 
 // GetMargin returns the Margin field value if set, zero value otherwise.
-func (o *AprScheduleEntryUpdateReq) GetMargin() float32 {
+func (o *AprScheduleEntryUpdateReq) GetMargin() decimal.Decimal {
 	if o == nil || IsNil(o.Margin) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Margin
@@ -138,7 +138,7 @@ func (o *AprScheduleEntryUpdateReq) GetMargin() float32 {
 
 // GetMarginOk returns a tuple with the Margin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AprScheduleEntryUpdateReq) GetMarginOk() (*float32, bool) {
+func (o *AprScheduleEntryUpdateReq) GetMarginOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Margin) {
 		return nil, false
 	}
@@ -154,8 +154,8 @@ func (o *AprScheduleEntryUpdateReq) HasMargin() bool {
 	return false
 }
 
-// SetMargin gets a reference to the given float32 and assigns it to the Margin field.
-func (o *AprScheduleEntryUpdateReq) SetMargin(v float32) {
+// SetMargin gets a reference to the given decimal.Decimal and assigns it to the Margin field.
+func (o *AprScheduleEntryUpdateReq) SetMargin(v decimal.Decimal) {
 	o.Margin = &v
 }
 
@@ -192,9 +192,9 @@ func (o *AprScheduleEntryUpdateReq) SetType(v string) {
 }
 
 // GetValue returns the Value field value
-func (o *AprScheduleEntryUpdateReq) GetValue() float32 {
+func (o *AprScheduleEntryUpdateReq) GetValue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -203,7 +203,7 @@ func (o *AprScheduleEntryUpdateReq) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *AprScheduleEntryUpdateReq) GetValueOk() (*float32, bool) {
+func (o *AprScheduleEntryUpdateReq) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -211,7 +211,7 @@ func (o *AprScheduleEntryUpdateReq) GetValueOk() (*float32, bool) {
 }
 
 // SetValue sets field value
-func (o *AprScheduleEntryUpdateReq) SetValue(v float32) {
+func (o *AprScheduleEntryUpdateReq) SetValue(v decimal.Decimal) {
 	o.Value = v
 }
 

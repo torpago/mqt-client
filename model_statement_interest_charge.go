@@ -21,13 +21,13 @@ var _ MappedNullable = &StatementInterestCharge{}
 // StatementInterestCharge Contains information on statement interest charges.
 type StatementInterestCharge struct {
 	// Amount of interest calculated for the billing period.
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	// Type of APR.
 	AprType *string `json:"apr_type,omitempty"`
 	// Annual percentage rate.
-	AprValue *float32 `json:"apr_value,omitempty"`
+	AprValue *decimal.Decimal `json:"apr_value,omitempty"`
 	// Average daily balance used to calculate interest.
-	BalanceSubjectToInterestRate *float32 `json:"balance_subject_to_interest_rate,omitempty"`
+	BalanceSubjectToInterestRate *decimal.Decimal `json:"balance_subject_to_interest_rate,omitempty"`
 	// Type of balance.  * `PURCHASE` - The balance on purchases.
 	BalanceType *string `json:"balance_type,omitempty"`
 }
@@ -50,9 +50,9 @@ func NewStatementInterestChargeWithDefaults() *StatementInterestCharge {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *StatementInterestCharge) GetAmount() float32 {
+func (o *StatementInterestCharge) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -60,7 +60,7 @@ func (o *StatementInterestCharge) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementInterestCharge) GetAmountOk() (*float32, bool) {
+func (o *StatementInterestCharge) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -76,8 +76,8 @@ func (o *StatementInterestCharge) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *StatementInterestCharge) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *StatementInterestCharge) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 
@@ -114,9 +114,9 @@ func (o *StatementInterestCharge) SetAprType(v string) {
 }
 
 // GetAprValue returns the AprValue field value if set, zero value otherwise.
-func (o *StatementInterestCharge) GetAprValue() float32 {
+func (o *StatementInterestCharge) GetAprValue() decimal.Decimal {
 	if o == nil || IsNil(o.AprValue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AprValue
@@ -124,7 +124,7 @@ func (o *StatementInterestCharge) GetAprValue() float32 {
 
 // GetAprValueOk returns a tuple with the AprValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementInterestCharge) GetAprValueOk() (*float32, bool) {
+func (o *StatementInterestCharge) GetAprValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AprValue) {
 		return nil, false
 	}
@@ -140,15 +140,15 @@ func (o *StatementInterestCharge) HasAprValue() bool {
 	return false
 }
 
-// SetAprValue gets a reference to the given float32 and assigns it to the AprValue field.
-func (o *StatementInterestCharge) SetAprValue(v float32) {
+// SetAprValue gets a reference to the given decimal.Decimal and assigns it to the AprValue field.
+func (o *StatementInterestCharge) SetAprValue(v decimal.Decimal) {
 	o.AprValue = &v
 }
 
 // GetBalanceSubjectToInterestRate returns the BalanceSubjectToInterestRate field value if set, zero value otherwise.
-func (o *StatementInterestCharge) GetBalanceSubjectToInterestRate() float32 {
+func (o *StatementInterestCharge) GetBalanceSubjectToInterestRate() decimal.Decimal {
 	if o == nil || IsNil(o.BalanceSubjectToInterestRate) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.BalanceSubjectToInterestRate
@@ -156,7 +156,7 @@ func (o *StatementInterestCharge) GetBalanceSubjectToInterestRate() float32 {
 
 // GetBalanceSubjectToInterestRateOk returns a tuple with the BalanceSubjectToInterestRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementInterestCharge) GetBalanceSubjectToInterestRateOk() (*float32, bool) {
+func (o *StatementInterestCharge) GetBalanceSubjectToInterestRateOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.BalanceSubjectToInterestRate) {
 		return nil, false
 	}
@@ -172,8 +172,8 @@ func (o *StatementInterestCharge) HasBalanceSubjectToInterestRate() bool {
 	return false
 }
 
-// SetBalanceSubjectToInterestRate gets a reference to the given float32 and assigns it to the BalanceSubjectToInterestRate field.
-func (o *StatementInterestCharge) SetBalanceSubjectToInterestRate(v float32) {
+// SetBalanceSubjectToInterestRate gets a reference to the given decimal.Decimal and assigns it to the BalanceSubjectToInterestRate field.
+func (o *StatementInterestCharge) SetBalanceSubjectToInterestRate(v decimal.Decimal) {
 	o.BalanceSubjectToInterestRate = &v
 }
 

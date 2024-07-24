@@ -25,7 +25,7 @@ type AccountFee struct {
 	Method Method `json:"method"`
 	Type FeeType `json:"type"`
 	// Value of the fee, either a flat fee amount or percentage value.
-	Value *float32 `json:"value,omitempty"`
+	Value *decimal.Decimal `json:"value,omitempty"`
 }
 
 type _AccountFee AccountFee
@@ -98,9 +98,9 @@ func (o *AccountFee) SetType(v FeeType) {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *AccountFee) GetValue() float32 {
+func (o *AccountFee) GetValue() decimal.Decimal {
 	if o == nil || IsNil(o.Value) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Value
@@ -108,7 +108,7 @@ func (o *AccountFee) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountFee) GetValueOk() (*float32, bool) {
+func (o *AccountFee) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -124,8 +124,8 @@ func (o *AccountFee) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given float32 and assigns it to the Value field.
-func (o *AccountFee) SetValue(v float32) {
+// SetValue gets a reference to the given decimal.Decimal and assigns it to the Value field.
+func (o *AccountFee) SetValue(v decimal.Decimal) {
 	o.Value = &v
 }
 

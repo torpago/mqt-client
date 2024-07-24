@@ -35,7 +35,7 @@ type InterestCalculation struct {
 	// Method of interest calculation.
 	Method string `json:"method"`
 	// When interest is applied, this value determines the minimum amount of interest that can be charged.
-	MinimumInterest float32 `json:"minimum_interest"`
+	MinimumInterest decimal.Decimal `json:"minimum_interest"`
 }
 
 type _InterestCalculation InterestCalculation
@@ -44,7 +44,7 @@ type _InterestCalculation InterestCalculation
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInterestCalculation(applicationOfCredits ApplicationOfCredits, dayCount string, graceDaysApplication string, interestApplication []string, interestOnGraceReactivation InterestOnGraceReactivationEnum, method string, minimumInterest float32) *InterestCalculation {
+func NewInterestCalculation(applicationOfCredits ApplicationOfCredits, dayCount string, graceDaysApplication string, interestApplication []string, interestOnGraceReactivation InterestOnGraceReactivationEnum, method string, minimumInterest decimal.Decimal) *InterestCalculation {
 	this := InterestCalculation{}
 	this.ApplicationOfCredits = applicationOfCredits
 	this.DayCount = dayCount
@@ -241,9 +241,9 @@ func (o *InterestCalculation) SetMethod(v string) {
 }
 
 // GetMinimumInterest returns the MinimumInterest field value
-func (o *InterestCalculation) GetMinimumInterest() float32 {
+func (o *InterestCalculation) GetMinimumInterest() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -252,7 +252,7 @@ func (o *InterestCalculation) GetMinimumInterest() float32 {
 
 // GetMinimumInterestOk returns a tuple with the MinimumInterest field value
 // and a boolean to check if the value has been set.
-func (o *InterestCalculation) GetMinimumInterestOk() (*float32, bool) {
+func (o *InterestCalculation) GetMinimumInterestOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -260,7 +260,7 @@ func (o *InterestCalculation) GetMinimumInterestOk() (*float32, bool) {
 }
 
 // SetMinimumInterest sets field value
-func (o *InterestCalculation) SetMinimumInterest(v float32) {
+func (o *InterestCalculation) SetMinimumInterest(v decimal.Decimal) {
 	o.MinimumInterest = v
 }
 

@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingCycleClosingDate** | **time.Time** | Closing date of the billing cycle for which rewards were accrued, in UTC. | 
 **BillingCycleOpeningDate** | **time.Time** | Opening date of the billing cycle for which rewards were accrued, in UTC. | 
-**NetBalance** | **float32** | The net balance for a billing cycle, which is total amount spent during a billing cycle, minus any refunds or reversals. Used to determine reward accrual. | 
-**PendingRewardBalance** | **float32** | The pending balance of the rewards accrued for the current billing cycle. Pending rewards cannot be redeemed. | 
-**Percentage** | **float32** | The reward percentage applied to the balance for the current billing cycle. Determined by the reward rules config. | 
+**NetBalance** | **decimal.Decimal** | The net balance for a billing cycle, which is total amount spent during a billing cycle, minus any refunds or reversals. Used to determine reward accrual. | 
+**PendingRewardBalance** | **decimal.Decimal** | The pending balance of the rewards accrued for the current billing cycle. Pending rewards cannot be redeemed. | 
+**Percentage** | **decimal.Decimal** | The reward percentage applied to the balance for the current billing cycle. Determined by the reward rules config. | 
 **RewardProgramToken** | **string** | Unique identifier of reward program for which to return balances. | 
-**TotalRewardBalance** | **float32** | The total balance of the rewards accrued to date minus the rewards redeemed to date. | 
+**TotalRewardBalance** | **decimal.Decimal** | The total balance of the rewards accrued to date minus the rewards redeemed to date. | 
 
 ## Methods
 
 ### NewRewardProgramsBalancesResponse
 
-`func NewRewardProgramsBalancesResponse(billingCycleClosingDate time.Time, billingCycleOpeningDate time.Time, netBalance float32, pendingRewardBalance float32, percentage float32, rewardProgramToken string, totalRewardBalance float32, ) *RewardProgramsBalancesResponse`
+`func NewRewardProgramsBalancesResponse(billingCycleClosingDate time.Time, billingCycleOpeningDate time.Time, netBalance decimal.Decimal, pendingRewardBalance decimal.Decimal, percentage decimal.Decimal, rewardProgramToken string, totalRewardBalance decimal.Decimal, ) *RewardProgramsBalancesResponse`
 
 NewRewardProgramsBalancesResponse instantiates a new RewardProgramsBalancesResponse object
 This constructor will assign default values to properties that have it defined,
@@ -73,60 +73,60 @@ SetBillingCycleOpeningDate sets BillingCycleOpeningDate field to given value.
 
 ### GetNetBalance
 
-`func (o *RewardProgramsBalancesResponse) GetNetBalance() float32`
+`func (o *RewardProgramsBalancesResponse) GetNetBalance() decimal.Decimal`
 
 GetNetBalance returns the NetBalance field if non-nil, zero value otherwise.
 
 ### GetNetBalanceOk
 
-`func (o *RewardProgramsBalancesResponse) GetNetBalanceOk() (*float32, bool)`
+`func (o *RewardProgramsBalancesResponse) GetNetBalanceOk() (*decimal.Decimal, bool)`
 
 GetNetBalanceOk returns a tuple with the NetBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetBalance
 
-`func (o *RewardProgramsBalancesResponse) SetNetBalance(v float32)`
+`func (o *RewardProgramsBalancesResponse) SetNetBalance(v decimal.Decimal)`
 
 SetNetBalance sets NetBalance field to given value.
 
 
 ### GetPendingRewardBalance
 
-`func (o *RewardProgramsBalancesResponse) GetPendingRewardBalance() float32`
+`func (o *RewardProgramsBalancesResponse) GetPendingRewardBalance() decimal.Decimal`
 
 GetPendingRewardBalance returns the PendingRewardBalance field if non-nil, zero value otherwise.
 
 ### GetPendingRewardBalanceOk
 
-`func (o *RewardProgramsBalancesResponse) GetPendingRewardBalanceOk() (*float32, bool)`
+`func (o *RewardProgramsBalancesResponse) GetPendingRewardBalanceOk() (*decimal.Decimal, bool)`
 
 GetPendingRewardBalanceOk returns a tuple with the PendingRewardBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPendingRewardBalance
 
-`func (o *RewardProgramsBalancesResponse) SetPendingRewardBalance(v float32)`
+`func (o *RewardProgramsBalancesResponse) SetPendingRewardBalance(v decimal.Decimal)`
 
 SetPendingRewardBalance sets PendingRewardBalance field to given value.
 
 
 ### GetPercentage
 
-`func (o *RewardProgramsBalancesResponse) GetPercentage() float32`
+`func (o *RewardProgramsBalancesResponse) GetPercentage() decimal.Decimal`
 
 GetPercentage returns the Percentage field if non-nil, zero value otherwise.
 
 ### GetPercentageOk
 
-`func (o *RewardProgramsBalancesResponse) GetPercentageOk() (*float32, bool)`
+`func (o *RewardProgramsBalancesResponse) GetPercentageOk() (*decimal.Decimal, bool)`
 
 GetPercentageOk returns a tuple with the Percentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPercentage
 
-`func (o *RewardProgramsBalancesResponse) SetPercentage(v float32)`
+`func (o *RewardProgramsBalancesResponse) SetPercentage(v decimal.Decimal)`
 
 SetPercentage sets Percentage field to given value.
 
@@ -153,20 +153,20 @@ SetRewardProgramToken sets RewardProgramToken field to given value.
 
 ### GetTotalRewardBalance
 
-`func (o *RewardProgramsBalancesResponse) GetTotalRewardBalance() float32`
+`func (o *RewardProgramsBalancesResponse) GetTotalRewardBalance() decimal.Decimal`
 
 GetTotalRewardBalance returns the TotalRewardBalance field if non-nil, zero value otherwise.
 
 ### GetTotalRewardBalanceOk
 
-`func (o *RewardProgramsBalancesResponse) GetTotalRewardBalanceOk() (*float32, bool)`
+`func (o *RewardProgramsBalancesResponse) GetTotalRewardBalanceOk() (*decimal.Decimal, bool)`
 
 GetTotalRewardBalanceOk returns a tuple with the TotalRewardBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalRewardBalance
 
-`func (o *RewardProgramsBalancesResponse) SetTotalRewardBalance(v float32)`
+`func (o *RewardProgramsBalancesResponse) SetTotalRewardBalance(v decimal.Decimal)`
 
 SetTotalRewardBalance sets TotalRewardBalance field to given value.
 

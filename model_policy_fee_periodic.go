@@ -23,9 +23,9 @@ type PolicyFeePeriodic struct {
 	// Whether the periodic fee is excluded from interest calculation.
 	ExcludeFromInterestCalc *bool `json:"exclude_from_interest_calc,omitempty"`
 	// Amount of the fee.
-	FeeAmount *float32 `json:"fee_amount,omitempty"`
+	FeeAmount *decimal.Decimal `json:"fee_amount,omitempty"`
 	// Number of days after an account is activated that the initial fee is charged. For example, if the value in this field is `30`, then the initial fee is charged 30 days after an account is activated.
-	NumberOfDaysPostActivation *float32 `json:"number_of_days_post_activation,omitempty"`
+	NumberOfDaysPostActivation *decimal.Decimal `json:"number_of_days_post_activation,omitempty"`
 }
 
 // NewPolicyFeePeriodic instantiates a new PolicyFeePeriodic object
@@ -78,9 +78,9 @@ func (o *PolicyFeePeriodic) SetExcludeFromInterestCalc(v bool) {
 }
 
 // GetFeeAmount returns the FeeAmount field value if set, zero value otherwise.
-func (o *PolicyFeePeriodic) GetFeeAmount() float32 {
+func (o *PolicyFeePeriodic) GetFeeAmount() decimal.Decimal {
 	if o == nil || IsNil(o.FeeAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.FeeAmount
@@ -88,7 +88,7 @@ func (o *PolicyFeePeriodic) GetFeeAmount() float32 {
 
 // GetFeeAmountOk returns a tuple with the FeeAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyFeePeriodic) GetFeeAmountOk() (*float32, bool) {
+func (o *PolicyFeePeriodic) GetFeeAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.FeeAmount) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *PolicyFeePeriodic) HasFeeAmount() bool {
 	return false
 }
 
-// SetFeeAmount gets a reference to the given float32 and assigns it to the FeeAmount field.
-func (o *PolicyFeePeriodic) SetFeeAmount(v float32) {
+// SetFeeAmount gets a reference to the given decimal.Decimal and assigns it to the FeeAmount field.
+func (o *PolicyFeePeriodic) SetFeeAmount(v decimal.Decimal) {
 	o.FeeAmount = &v
 }
 
 // GetNumberOfDaysPostActivation returns the NumberOfDaysPostActivation field value if set, zero value otherwise.
-func (o *PolicyFeePeriodic) GetNumberOfDaysPostActivation() float32 {
+func (o *PolicyFeePeriodic) GetNumberOfDaysPostActivation() decimal.Decimal {
 	if o == nil || IsNil(o.NumberOfDaysPostActivation) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.NumberOfDaysPostActivation
@@ -120,7 +120,7 @@ func (o *PolicyFeePeriodic) GetNumberOfDaysPostActivation() float32 {
 
 // GetNumberOfDaysPostActivationOk returns a tuple with the NumberOfDaysPostActivation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyFeePeriodic) GetNumberOfDaysPostActivationOk() (*float32, bool) {
+func (o *PolicyFeePeriodic) GetNumberOfDaysPostActivationOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.NumberOfDaysPostActivation) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *PolicyFeePeriodic) HasNumberOfDaysPostActivation() bool {
 	return false
 }
 
-// SetNumberOfDaysPostActivation gets a reference to the given float32 and assigns it to the NumberOfDaysPostActivation field.
-func (o *PolicyFeePeriodic) SetNumberOfDaysPostActivation(v float32) {
+// SetNumberOfDaysPostActivation gets a reference to the given decimal.Decimal and assigns it to the NumberOfDaysPostActivation field.
+func (o *PolicyFeePeriodic) SetNumberOfDaysPostActivation(v decimal.Decimal) {
 	o.NumberOfDaysPostActivation = &v
 }
 

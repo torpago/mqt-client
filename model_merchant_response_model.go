@@ -34,8 +34,8 @@ type MerchantResponseModel struct {
 	CreatedTime time.Time `json:"created_time"`
 	// yyyy-MM-ddTHH:mm:ssZ
 	LastModifiedTime time.Time `json:"last_modified_time"`
-	Latitude *float32 `json:"latitude,omitempty"`
-	Longitude *float32 `json:"longitude,omitempty"`
+	Latitude *decimal.Decimal `json:"latitude,omitempty"`
+	Longitude *decimal.Decimal `json:"longitude,omitempty"`
 	Name string `json:"name"`
 	PartialAuthFlag *bool `json:"partial_auth_flag,omitempty"`
 	Phone *string `json:"phone,omitempty"`
@@ -349,9 +349,9 @@ func (o *MerchantResponseModel) SetLastModifiedTime(v time.Time) {
 }
 
 // GetLatitude returns the Latitude field value if set, zero value otherwise.
-func (o *MerchantResponseModel) GetLatitude() float32 {
+func (o *MerchantResponseModel) GetLatitude() decimal.Decimal {
 	if o == nil || IsNil(o.Latitude) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Latitude
@@ -359,7 +359,7 @@ func (o *MerchantResponseModel) GetLatitude() float32 {
 
 // GetLatitudeOk returns a tuple with the Latitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantResponseModel) GetLatitudeOk() (*float32, bool) {
+func (o *MerchantResponseModel) GetLatitudeOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Latitude) {
 		return nil, false
 	}
@@ -375,15 +375,15 @@ func (o *MerchantResponseModel) HasLatitude() bool {
 	return false
 }
 
-// SetLatitude gets a reference to the given float32 and assigns it to the Latitude field.
-func (o *MerchantResponseModel) SetLatitude(v float32) {
+// SetLatitude gets a reference to the given decimal.Decimal and assigns it to the Latitude field.
+func (o *MerchantResponseModel) SetLatitude(v decimal.Decimal) {
 	o.Latitude = &v
 }
 
 // GetLongitude returns the Longitude field value if set, zero value otherwise.
-func (o *MerchantResponseModel) GetLongitude() float32 {
+func (o *MerchantResponseModel) GetLongitude() decimal.Decimal {
 	if o == nil || IsNil(o.Longitude) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Longitude
@@ -391,7 +391,7 @@ func (o *MerchantResponseModel) GetLongitude() float32 {
 
 // GetLongitudeOk returns a tuple with the Longitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantResponseModel) GetLongitudeOk() (*float32, bool) {
+func (o *MerchantResponseModel) GetLongitudeOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Longitude) {
 		return nil, false
 	}
@@ -407,8 +407,8 @@ func (o *MerchantResponseModel) HasLongitude() bool {
 	return false
 }
 
-// SetLongitude gets a reference to the given float32 and assigns it to the Longitude field.
-func (o *MerchantResponseModel) SetLongitude(v float32) {
+// SetLongitude gets a reference to the given decimal.Decimal and assigns it to the Longitude field.
+func (o *MerchantResponseModel) SetLongitude(v decimal.Decimal) {
 	o.Longitude = &v
 }
 

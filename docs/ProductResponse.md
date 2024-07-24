@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description of the credit product. | [optional] 
 **InterestCalculation** | Pointer to [**InterestCalculation**](InterestCalculation.md) |  | [optional] 
 **MinPaymentCalculation** | Pointer to [**ProductMinPaymentCalculation**](ProductMinPaymentCalculation.md) |  | [optional] 
-**MinPaymentFlatAmount** | Pointer to **float32** | Minimum payment, expressed as a flat amount, due on the payment due day. | [optional] 
-**MinPaymentPercentage** | Pointer to **float32** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | [optional] 
+**MinPaymentFlatAmount** | Pointer to **decimal.Decimal** | Minimum payment, expressed as a flat amount, due on the payment due day. | [optional] 
+**MinPaymentPercentage** | Pointer to **decimal.Decimal** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | [optional] 
 **Name** | Pointer to **string** | Name of the credit product. | [optional] 
 **ParentProductToken** | Pointer to **string** | Unique identifier of the parent credit product. | [optional] 
 **PaymentAllocationOrder** | Pointer to [**[]PaymentAllocationOrderEnum**](PaymentAllocationOrderEnum.md) | Ordered list of balance types to which payments are allocated, from first to last. | [optional] [default to ["INTEREST","FEES","PRINCIPAL"]]
@@ -271,20 +271,20 @@ HasMinPaymentCalculation returns a boolean if a field has been set.
 
 ### GetMinPaymentFlatAmount
 
-`func (o *ProductResponse) GetMinPaymentFlatAmount() float32`
+`func (o *ProductResponse) GetMinPaymentFlatAmount() decimal.Decimal`
 
 GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field if non-nil, zero value otherwise.
 
 ### GetMinPaymentFlatAmountOk
 
-`func (o *ProductResponse) GetMinPaymentFlatAmountOk() (*float32, bool)`
+`func (o *ProductResponse) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool)`
 
 GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPaymentFlatAmount
 
-`func (o *ProductResponse) SetMinPaymentFlatAmount(v float32)`
+`func (o *ProductResponse) SetMinPaymentFlatAmount(v decimal.Decimal)`
 
 SetMinPaymentFlatAmount sets MinPaymentFlatAmount field to given value.
 
@@ -296,20 +296,20 @@ HasMinPaymentFlatAmount returns a boolean if a field has been set.
 
 ### GetMinPaymentPercentage
 
-`func (o *ProductResponse) GetMinPaymentPercentage() float32`
+`func (o *ProductResponse) GetMinPaymentPercentage() decimal.Decimal`
 
 GetMinPaymentPercentage returns the MinPaymentPercentage field if non-nil, zero value otherwise.
 
 ### GetMinPaymentPercentageOk
 
-`func (o *ProductResponse) GetMinPaymentPercentageOk() (*float32, bool)`
+`func (o *ProductResponse) GetMinPaymentPercentageOk() (*decimal.Decimal, bool)`
 
 GetMinPaymentPercentageOk returns a tuple with the MinPaymentPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPaymentPercentage
 
-`func (o *ProductResponse) SetMinPaymentPercentage(v float32)`
+`func (o *ProductResponse) SetMinPaymentPercentage(v decimal.Decimal)`
 
 SetMinPaymentPercentage sets MinPaymentPercentage field to given value.
 

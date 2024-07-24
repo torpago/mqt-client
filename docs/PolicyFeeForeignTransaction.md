@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultMethod** | Pointer to **string** | Method used to calculate the fee value. | [optional] 
-**DefaultValue** | Pointer to **float32** | Percentage value for the foreign transaction fee. | [optional] 
+**DefaultValue** | Pointer to **decimal.Decimal** | Percentage value for the foreign transaction fee. | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasDefaultMethod returns a boolean if a field has been set.
 
 ### GetDefaultValue
 
-`func (o *PolicyFeeForeignTransaction) GetDefaultValue() float32`
+`func (o *PolicyFeeForeignTransaction) GetDefaultValue() decimal.Decimal`
 
 GetDefaultValue returns the DefaultValue field if non-nil, zero value otherwise.
 
 ### GetDefaultValueOk
 
-`func (o *PolicyFeeForeignTransaction) GetDefaultValueOk() (*float32, bool)`
+`func (o *PolicyFeeForeignTransaction) GetDefaultValueOk() (*decimal.Decimal, bool)`
 
 GetDefaultValueOk returns a tuple with the DefaultValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultValue
 
-`func (o *PolicyFeeForeignTransaction) SetDefaultValue(v float32)`
+`func (o *PolicyFeeForeignTransaction) SetDefaultValue(v decimal.Decimal)`
 
 SetDefaultValue sets DefaultValue field to given value.
 

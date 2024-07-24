@@ -24,7 +24,7 @@ var _ MappedNullable = &ProgramTransferResponse{}
 // ProgramTransferResponse Contains information about a program transfer, which moves funds from an account holder's GPA to a program funding source.
 type ProgramTransferResponse struct {
 	// Amount of program transfer.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Unique identifier of the business account holder. Returned if `user_token` is not specified.
 	BusinessToken *string `json:"business_token,omitempty"`
 	// Date and time when the program transfer object was created, in UTC.
@@ -54,7 +54,7 @@ type _ProgramTransferResponse ProgramTransferResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProgramTransferResponse(amount float32, currencyCode string, transactionToken string, typeToken string) *ProgramTransferResponse {
+func NewProgramTransferResponse(amount decimal.Decimal, currencyCode string, transactionToken string, typeToken string) *ProgramTransferResponse {
 	this := ProgramTransferResponse{}
 	this.Amount = amount
 	this.CurrencyCode = currencyCode
@@ -72,9 +72,9 @@ func NewProgramTransferResponseWithDefaults() *ProgramTransferResponse {
 }
 
 // GetAmount returns the Amount field value
-func (o *ProgramTransferResponse) GetAmount() float32 {
+func (o *ProgramTransferResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *ProgramTransferResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *ProgramTransferResponse) GetAmountOk() (*float32, bool) {
+func (o *ProgramTransferResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *ProgramTransferResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *ProgramTransferResponse) SetAmount(v float32) {
+func (o *ProgramTransferResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvailableBalance** | **float32** |  | 
+**AvailableBalance** | **decimal.Decimal** |  | 
 **Balances** | [**map[string]MsaAggregatedBalances**](MsaAggregatedBalances.md) |  | 
-**CachedBalance** | **float32** |  | 
-**CreditBalance** | **float32** |  | 
+**CachedBalance** | **decimal.Decimal** |  | 
+**CreditBalance** | **decimal.Decimal** |  | 
 **CurrencyCode** | **string** |  | 
-**ImpactedAmount** | Pointer to **float32** |  | [optional] 
+**ImpactedAmount** | Pointer to **decimal.Decimal** |  | [optional] 
 **LastUpdatedTime** | **time.Time** |  | 
-**LedgerBalance** | **float32** |  | 
-**PendingCredits** | **float32** |  | 
+**LedgerBalance** | **decimal.Decimal** |  | 
+**PendingCredits** | **decimal.Decimal** |  | 
 
 ## Methods
 
 ### NewMsaAggregatedBalances
 
-`func NewMsaAggregatedBalances(availableBalance float32, balances map[string]MsaAggregatedBalances, cachedBalance float32, creditBalance float32, currencyCode string, lastUpdatedTime time.Time, ledgerBalance float32, pendingCredits float32, ) *MsaAggregatedBalances`
+`func NewMsaAggregatedBalances(availableBalance decimal.Decimal, balances map[string]MsaAggregatedBalances, cachedBalance decimal.Decimal, creditBalance decimal.Decimal, currencyCode string, lastUpdatedTime time.Time, ledgerBalance decimal.Decimal, pendingCredits decimal.Decimal, ) *MsaAggregatedBalances`
 
 NewMsaAggregatedBalances instantiates a new MsaAggregatedBalances object
 This constructor will assign default values to properties that have it defined,
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAvailableBalance
 
-`func (o *MsaAggregatedBalances) GetAvailableBalance() float32`
+`func (o *MsaAggregatedBalances) GetAvailableBalance() decimal.Decimal`
 
 GetAvailableBalance returns the AvailableBalance field if non-nil, zero value otherwise.
 
 ### GetAvailableBalanceOk
 
-`func (o *MsaAggregatedBalances) GetAvailableBalanceOk() (*float32, bool)`
+`func (o *MsaAggregatedBalances) GetAvailableBalanceOk() (*decimal.Decimal, bool)`
 
 GetAvailableBalanceOk returns a tuple with the AvailableBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableBalance
 
-`func (o *MsaAggregatedBalances) SetAvailableBalance(v float32)`
+`func (o *MsaAggregatedBalances) SetAvailableBalance(v decimal.Decimal)`
 
 SetAvailableBalance sets AvailableBalance field to given value.
 
@@ -75,40 +75,40 @@ SetBalances sets Balances field to given value.
 
 ### GetCachedBalance
 
-`func (o *MsaAggregatedBalances) GetCachedBalance() float32`
+`func (o *MsaAggregatedBalances) GetCachedBalance() decimal.Decimal`
 
 GetCachedBalance returns the CachedBalance field if non-nil, zero value otherwise.
 
 ### GetCachedBalanceOk
 
-`func (o *MsaAggregatedBalances) GetCachedBalanceOk() (*float32, bool)`
+`func (o *MsaAggregatedBalances) GetCachedBalanceOk() (*decimal.Decimal, bool)`
 
 GetCachedBalanceOk returns a tuple with the CachedBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCachedBalance
 
-`func (o *MsaAggregatedBalances) SetCachedBalance(v float32)`
+`func (o *MsaAggregatedBalances) SetCachedBalance(v decimal.Decimal)`
 
 SetCachedBalance sets CachedBalance field to given value.
 
 
 ### GetCreditBalance
 
-`func (o *MsaAggregatedBalances) GetCreditBalance() float32`
+`func (o *MsaAggregatedBalances) GetCreditBalance() decimal.Decimal`
 
 GetCreditBalance returns the CreditBalance field if non-nil, zero value otherwise.
 
 ### GetCreditBalanceOk
 
-`func (o *MsaAggregatedBalances) GetCreditBalanceOk() (*float32, bool)`
+`func (o *MsaAggregatedBalances) GetCreditBalanceOk() (*decimal.Decimal, bool)`
 
 GetCreditBalanceOk returns a tuple with the CreditBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreditBalance
 
-`func (o *MsaAggregatedBalances) SetCreditBalance(v float32)`
+`func (o *MsaAggregatedBalances) SetCreditBalance(v decimal.Decimal)`
 
 SetCreditBalance sets CreditBalance field to given value.
 
@@ -135,20 +135,20 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 ### GetImpactedAmount
 
-`func (o *MsaAggregatedBalances) GetImpactedAmount() float32`
+`func (o *MsaAggregatedBalances) GetImpactedAmount() decimal.Decimal`
 
 GetImpactedAmount returns the ImpactedAmount field if non-nil, zero value otherwise.
 
 ### GetImpactedAmountOk
 
-`func (o *MsaAggregatedBalances) GetImpactedAmountOk() (*float32, bool)`
+`func (o *MsaAggregatedBalances) GetImpactedAmountOk() (*decimal.Decimal, bool)`
 
 GetImpactedAmountOk returns a tuple with the ImpactedAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImpactedAmount
 
-`func (o *MsaAggregatedBalances) SetImpactedAmount(v float32)`
+`func (o *MsaAggregatedBalances) SetImpactedAmount(v decimal.Decimal)`
 
 SetImpactedAmount sets ImpactedAmount field to given value.
 
@@ -180,40 +180,40 @@ SetLastUpdatedTime sets LastUpdatedTime field to given value.
 
 ### GetLedgerBalance
 
-`func (o *MsaAggregatedBalances) GetLedgerBalance() float32`
+`func (o *MsaAggregatedBalances) GetLedgerBalance() decimal.Decimal`
 
 GetLedgerBalance returns the LedgerBalance field if non-nil, zero value otherwise.
 
 ### GetLedgerBalanceOk
 
-`func (o *MsaAggregatedBalances) GetLedgerBalanceOk() (*float32, bool)`
+`func (o *MsaAggregatedBalances) GetLedgerBalanceOk() (*decimal.Decimal, bool)`
 
 GetLedgerBalanceOk returns a tuple with the LedgerBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLedgerBalance
 
-`func (o *MsaAggregatedBalances) SetLedgerBalance(v float32)`
+`func (o *MsaAggregatedBalances) SetLedgerBalance(v decimal.Decimal)`
 
 SetLedgerBalance sets LedgerBalance field to given value.
 
 
 ### GetPendingCredits
 
-`func (o *MsaAggregatedBalances) GetPendingCredits() float32`
+`func (o *MsaAggregatedBalances) GetPendingCredits() decimal.Decimal`
 
 GetPendingCredits returns the PendingCredits field if non-nil, zero value otherwise.
 
 ### GetPendingCreditsOk
 
-`func (o *MsaAggregatedBalances) GetPendingCreditsOk() (*float32, bool)`
+`func (o *MsaAggregatedBalances) GetPendingCreditsOk() (*decimal.Decimal, bool)`
 
 GetPendingCreditsOk returns a tuple with the PendingCredits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPendingCredits
 
-`func (o *MsaAggregatedBalances) SetPendingCredits(v float32)`
+`func (o *MsaAggregatedBalances) SetPendingCredits(v decimal.Decimal)`
 
 SetPendingCredits sets PendingCredits field to given value.
 

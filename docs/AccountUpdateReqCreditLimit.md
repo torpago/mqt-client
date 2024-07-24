@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | **float32** | Maximum balance the credit account can carry. | 
+**Value** | **decimal.Decimal** | Maximum balance the credit account can carry. | 
 
 ## Methods
 
 ### NewAccountUpdateReqCreditLimit
 
-`func NewAccountUpdateReqCreditLimit(value float32, ) *AccountUpdateReqCreditLimit`
+`func NewAccountUpdateReqCreditLimit(value decimal.Decimal, ) *AccountUpdateReqCreditLimit`
 
 NewAccountUpdateReqCreditLimit instantiates a new AccountUpdateReqCreditLimit object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *AccountUpdateReqCreditLimit) GetValue() float32`
+`func (o *AccountUpdateReqCreditLimit) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *AccountUpdateReqCreditLimit) GetValueOk() (*float32, bool)`
+`func (o *AccountUpdateReqCreditLimit) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *AccountUpdateReqCreditLimit) SetValue(v float32)`
+`func (o *AccountUpdateReqCreditLimit) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

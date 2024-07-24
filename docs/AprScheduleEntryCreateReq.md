@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Margin** | Pointer to **float32** | Number of percentage points added to the prime rate, used to calculate a variable value.  Used for variable values only. | [optional] 
+**Margin** | Pointer to **decimal.Decimal** | Number of percentage points added to the prime rate, used to calculate a variable value.  Used for variable values only. | [optional] 
 **Type** | Pointer to **string** | Indicates whether the APR value is fixed or variable. | [optional] [default to "FIXED"]
-**Value** | **float32** | Percentage value of the APR.  If the APR type is &#x60;FIXED&#x60;, this is the value of the fixed rate. If the APR type is &#x60;VARIABLE&#x60;, the value is calculated by adding the margin to the prime rate that was stored on Marqeta&#39;s credit platform when your credit program was created.  When backdating an APR, this value cannot be greater than the value of the effective APR on the backdated date. | 
+**Value** | **decimal.Decimal** | Percentage value of the APR.  If the APR type is &#x60;FIXED&#x60;, this is the value of the fixed rate. If the APR type is &#x60;VARIABLE&#x60;, the value is calculated by adding the margin to the prime rate that was stored on Marqeta&#39;s credit platform when your credit program was created.  When backdating an APR, this value cannot be greater than the value of the effective APR on the backdated date. | 
 
 ## Methods
 
 ### NewAprScheduleEntryCreateReq
 
-`func NewAprScheduleEntryCreateReq(value float32, ) *AprScheduleEntryCreateReq`
+`func NewAprScheduleEntryCreateReq(value decimal.Decimal, ) *AprScheduleEntryCreateReq`
 
 NewAprScheduleEntryCreateReq instantiates a new AprScheduleEntryCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMargin
 
-`func (o *AprScheduleEntryCreateReq) GetMargin() float32`
+`func (o *AprScheduleEntryCreateReq) GetMargin() decimal.Decimal`
 
 GetMargin returns the Margin field if non-nil, zero value otherwise.
 
 ### GetMarginOk
 
-`func (o *AprScheduleEntryCreateReq) GetMarginOk() (*float32, bool)`
+`func (o *AprScheduleEntryCreateReq) GetMarginOk() (*decimal.Decimal, bool)`
 
 GetMarginOk returns a tuple with the Margin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMargin
 
-`func (o *AprScheduleEntryCreateReq) SetMargin(v float32)`
+`func (o *AprScheduleEntryCreateReq) SetMargin(v decimal.Decimal)`
 
 SetMargin sets Margin field to given value.
 
@@ -79,20 +79,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *AprScheduleEntryCreateReq) GetValue() float32`
+`func (o *AprScheduleEntryCreateReq) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *AprScheduleEntryCreateReq) GetValueOk() (*float32, bool)`
+`func (o *AprScheduleEntryCreateReq) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *AprScheduleEntryCreateReq) SetValue(v float32)`
+`func (o *AprScheduleEntryCreateReq) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

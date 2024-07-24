@@ -24,7 +24,7 @@ var _ MappedNullable = &BankTransferResponseModel{}
 // BankTransferResponseModel struct for BankTransferResponseModel
 type BankTransferResponseModel struct {
 	// Amount to push or pull.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Field required in older versions of the API, but no longer used.
 	BatchNumber *string `json:"batch_number,omitempty"`
 	// default = API
@@ -66,7 +66,7 @@ type _BankTransferResponseModel BankTransferResponseModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferResponseModel(amount float32, fundingSourceToken string, type_ string) *BankTransferResponseModel {
+func NewBankTransferResponseModel(amount decimal.Decimal, fundingSourceToken string, type_ string) *BankTransferResponseModel {
 	this := BankTransferResponseModel{}
 	this.Amount = amount
 	this.FundingSourceToken = fundingSourceToken
@@ -83,9 +83,9 @@ func NewBankTransferResponseModelWithDefaults() *BankTransferResponseModel {
 }
 
 // GetAmount returns the Amount field value
-func (o *BankTransferResponseModel) GetAmount() float32 {
+func (o *BankTransferResponseModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -94,7 +94,7 @@ func (o *BankTransferResponseModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *BankTransferResponseModel) GetAmountOk() (*float32, bool) {
+func (o *BankTransferResponseModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -102,7 +102,7 @@ func (o *BankTransferResponseModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *BankTransferResponseModel) SetAmount(v float32) {
+func (o *BankTransferResponseModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

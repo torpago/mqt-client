@@ -24,7 +24,7 @@ var _ MappedNullable = &PeerTransferResponse{}
 // PeerTransferResponse Contains information about a peer transfer, including sender and recipient tokens, transfer amount, and currency code.
 type PeerTransferResponse struct {
 	// Amount of the transfer.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CreatedTime time.Time `json:"created_time"`
 	// Three-digit ISO 4217 currency code.
 	CurrencyCode string `json:"currency_code"`
@@ -50,7 +50,7 @@ type _PeerTransferResponse PeerTransferResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPeerTransferResponse(amount float32, createdTime time.Time, currencyCode string, token string) *PeerTransferResponse {
+func NewPeerTransferResponse(amount decimal.Decimal, createdTime time.Time, currencyCode string, token string) *PeerTransferResponse {
 	this := PeerTransferResponse{}
 	this.Amount = amount
 	this.CreatedTime = createdTime
@@ -68,9 +68,9 @@ func NewPeerTransferResponseWithDefaults() *PeerTransferResponse {
 }
 
 // GetAmount returns the Amount field value
-func (o *PeerTransferResponse) GetAmount() float32 {
+func (o *PeerTransferResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -79,7 +79,7 @@ func (o *PeerTransferResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *PeerTransferResponse) GetAmountOk() (*float32, bool) {
+func (o *PeerTransferResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -87,7 +87,7 @@ func (o *PeerTransferResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *PeerTransferResponse) SetAmount(v float32) {
+func (o *PeerTransferResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

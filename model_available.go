@@ -23,7 +23,7 @@ var _ MappedNullable = &Available{}
 // Available Specifies the available balances of the velocity controls associated with a user.  This object is not returned if the velocity control window is `TRANSACTION`, because available balances do not apply to single-transaction velocity windows.
 type Available struct {
 	// Total amount of spend remaining in the velocity control.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Number of days remaining in the velocity control time window.
 	DaysRemaining *int32 `json:"days_remaining,omitempty"`
 	// Number of uses remaining in the velocity control.
@@ -36,7 +36,7 @@ type _Available Available
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvailable(amount float32, uses int32) *Available {
+func NewAvailable(amount decimal.Decimal, uses int32) *Available {
 	this := Available{}
 	this.Amount = amount
 	this.Uses = uses
@@ -54,9 +54,9 @@ func NewAvailableWithDefaults() *Available {
 }
 
 // GetAmount returns the Amount field value
-func (o *Available) GetAmount() float32 {
+func (o *Available) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -65,7 +65,7 @@ func (o *Available) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *Available) GetAmountOk() (*float32, bool) {
+func (o *Available) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -73,7 +73,7 @@ func (o *Available) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *Available) SetAmount(v float32) {
+func (o *Available) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

@@ -23,7 +23,7 @@ var _ MappedNullable = &RewardCreateReq{}
 // RewardCreateReq struct for RewardCreateReq
 type RewardCreateReq struct {
 	// Amount of the reward.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
 	// Description of the reward.
 	Description string `json:"description"`
@@ -39,7 +39,7 @@ type _RewardCreateReq RewardCreateReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRewardCreateReq(amount float32, currencyCode CurrencyCode, description string) *RewardCreateReq {
+func NewRewardCreateReq(amount decimal.Decimal, currencyCode CurrencyCode, description string) *RewardCreateReq {
 	this := RewardCreateReq{}
 	this.Amount = amount
 	this.CurrencyCode = currencyCode
@@ -58,9 +58,9 @@ func NewRewardCreateReqWithDefaults() *RewardCreateReq {
 }
 
 // GetAmount returns the Amount field value
-func (o *RewardCreateReq) GetAmount() float32 {
+func (o *RewardCreateReq) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -69,7 +69,7 @@ func (o *RewardCreateReq) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *RewardCreateReq) GetAmountOk() (*float32, bool) {
+func (o *RewardCreateReq) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -77,7 +77,7 @@ func (o *RewardCreateReq) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *RewardCreateReq) SetAmount(v float32) {
+func (o *RewardCreateReq) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

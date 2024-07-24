@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account associated with the credit card used to make the journal entry. | 
-**Amount** | **float32** | Amount of the journal entry. | 
+**Amount** | **decimal.Decimal** | Amount of the journal entry. | 
 **CardToken** | Pointer to **string** | Unique identifier of the credit card used to make the journal entry. | [optional] 
 **CreatedTime** | **time.Time** | Date and time when the journal entry was created on Marqeta&#39;s credit platform, in UTC. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewJournalEntry
 
-`func NewJournalEntry(accountToken string, amount float32, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, requestTime time.Time, status string, token string, type_ string, userToken string, ) *JournalEntry`
+`func NewJournalEntry(accountToken string, amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, requestTime time.Time, status string, token string, type_ string, userToken string, ) *JournalEntry`
 
 NewJournalEntry instantiates a new JournalEntry object
 This constructor will assign default values to properties that have it defined,
@@ -66,20 +66,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAmount
 
-`func (o *JournalEntry) GetAmount() float32`
+`func (o *JournalEntry) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *JournalEntry) GetAmountOk() (*float32, bool)`
+`func (o *JournalEntry) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *JournalEntry) SetAmount(v float32)`
+`func (o *JournalEntry) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

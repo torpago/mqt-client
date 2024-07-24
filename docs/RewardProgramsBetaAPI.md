@@ -118,7 +118,7 @@ import (
 
 func main() {
 	token := "token_example" // string | Unique identifier of the reward program.
-	createRewardProgramsEntriesRequest := *openapiclient.NewCreateRewardProgramsEntriesRequest("Note_example", float32(123)) // CreateRewardProgramsEntriesRequest | 
+	createRewardProgramsEntriesRequest := *openapiclient.NewCreateRewardProgramsEntriesRequest("Note_example", decimal.Decimal(123)) // CreateRewardProgramsEntriesRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

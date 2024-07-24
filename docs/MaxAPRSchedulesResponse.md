@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **EndDate** | **time.Time** | Date and time when the override APR ends, in UTC. | 
 **Reason** | **string** | Reason for the override APR. | 
 **StartDate** | **time.Time** | Date and time when the override APR goes into effect, in UTC. | 
-**Value** | **float32** | The APR percentage value. This is the value of the fixed rate during the override period. The APR value must adhere to the constraints of the main schedule, such as maximum allowable values. | 
+**Value** | **decimal.Decimal** | The APR percentage value. This is the value of the fixed rate during the override period. The APR value must adhere to the constraints of the main schedule, such as maximum allowable values. | 
 
 ## Methods
 
 ### NewMaxAPRSchedulesResponse
 
-`func NewMaxAPRSchedulesResponse(endDate time.Time, reason string, startDate time.Time, value float32, ) *MaxAPRSchedulesResponse`
+`func NewMaxAPRSchedulesResponse(endDate time.Time, reason string, startDate time.Time, value decimal.Decimal, ) *MaxAPRSchedulesResponse`
 
 NewMaxAPRSchedulesResponse instantiates a new MaxAPRSchedulesResponse object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetStartDate sets StartDate field to given value.
 
 ### GetValue
 
-`func (o *MaxAPRSchedulesResponse) GetValue() float32`
+`func (o *MaxAPRSchedulesResponse) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *MaxAPRSchedulesResponse) GetValueOk() (*float32, bool)`
+`func (o *MaxAPRSchedulesResponse) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *MaxAPRSchedulesResponse) SetValue(v float32)`
+`func (o *MaxAPRSchedulesResponse) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Indicates whether the ACH funding source is active. | [optional] [default to false]
-**VerifyAmount1** | Pointer to **float32** | Verification amount. | [optional] 
-**VerifyAmount2** | Pointer to **float32** | Verification amount. | [optional] 
+**VerifyAmount1** | Pointer to **decimal.Decimal** | Verification amount. | [optional] 
+**VerifyAmount2** | Pointer to **decimal.Decimal** | Verification amount. | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetVerifyAmount1
 
-`func (o *AchVerificationModel) GetVerifyAmount1() float32`
+`func (o *AchVerificationModel) GetVerifyAmount1() decimal.Decimal`
 
 GetVerifyAmount1 returns the VerifyAmount1 field if non-nil, zero value otherwise.
 
 ### GetVerifyAmount1Ok
 
-`func (o *AchVerificationModel) GetVerifyAmount1Ok() (*float32, bool)`
+`func (o *AchVerificationModel) GetVerifyAmount1Ok() (*decimal.Decimal, bool)`
 
 GetVerifyAmount1Ok returns a tuple with the VerifyAmount1 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVerifyAmount1
 
-`func (o *AchVerificationModel) SetVerifyAmount1(v float32)`
+`func (o *AchVerificationModel) SetVerifyAmount1(v decimal.Decimal)`
 
 SetVerifyAmount1 sets VerifyAmount1 field to given value.
 
@@ -79,20 +79,20 @@ HasVerifyAmount1 returns a boolean if a field has been set.
 
 ### GetVerifyAmount2
 
-`func (o *AchVerificationModel) GetVerifyAmount2() float32`
+`func (o *AchVerificationModel) GetVerifyAmount2() decimal.Decimal`
 
 GetVerifyAmount2 returns the VerifyAmount2 field if non-nil, zero value otherwise.
 
 ### GetVerifyAmount2Ok
 
-`func (o *AchVerificationModel) GetVerifyAmount2Ok() (*float32, bool)`
+`func (o *AchVerificationModel) GetVerifyAmount2Ok() (*decimal.Decimal, bool)`
 
 GetVerifyAmount2Ok returns a tuple with the VerifyAmount2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVerifyAmount2
 
-`func (o *AchVerificationModel) SetVerifyAmount2(v float32)`
+`func (o *AchVerificationModel) SetVerifyAmount2(v decimal.Decimal)`
 
 SetVerifyAmount2 sets VerifyAmount2 field to given value.
 

@@ -30,7 +30,7 @@ type MaxAPRSchedulesResponse struct {
 	// Date and time when the override APR goes into effect, in UTC.
 	StartDate time.Time `json:"start_date"`
 	// The APR percentage value. This is the value of the fixed rate during the override period. The APR value must adhere to the constraints of the main schedule, such as maximum allowable values.
-	Value float32 `json:"value"`
+	Value decimal.Decimal `json:"value"`
 }
 
 type _MaxAPRSchedulesResponse MaxAPRSchedulesResponse
@@ -39,7 +39,7 @@ type _MaxAPRSchedulesResponse MaxAPRSchedulesResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxAPRSchedulesResponse(endDate time.Time, reason string, startDate time.Time, value float32) *MaxAPRSchedulesResponse {
+func NewMaxAPRSchedulesResponse(endDate time.Time, reason string, startDate time.Time, value decimal.Decimal) *MaxAPRSchedulesResponse {
 	this := MaxAPRSchedulesResponse{}
 	this.EndDate = endDate
 	this.Reason = reason
@@ -129,9 +129,9 @@ func (o *MaxAPRSchedulesResponse) SetStartDate(v time.Time) {
 }
 
 // GetValue returns the Value field value
-func (o *MaxAPRSchedulesResponse) GetValue() float32 {
+func (o *MaxAPRSchedulesResponse) GetValue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -140,7 +140,7 @@ func (o *MaxAPRSchedulesResponse) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *MaxAPRSchedulesResponse) GetValueOk() (*float32, bool) {
+func (o *MaxAPRSchedulesResponse) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -148,7 +148,7 @@ func (o *MaxAPRSchedulesResponse) GetValueOk() (*float32, bool) {
 }
 
 // SetValue sets field value
-func (o *MaxAPRSchedulesResponse) SetValue(v float32) {
+func (o *MaxAPRSchedulesResponse) SetValue(v decimal.Decimal) {
 	o.Value = v
 }
 

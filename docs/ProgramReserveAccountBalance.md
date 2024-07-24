@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvailableBalance** | Pointer to **float32** | Ledger balance, minus any authorized transactions that have not yet cleared. When using JIT Funding, this balance is usually equal to $0.00. | [optional] [readonly] 
+**AvailableBalance** | Pointer to **decimal.Decimal** | Ledger balance, minus any authorized transactions that have not yet cleared. When using JIT Funding, this balance is usually equal to $0.00. | [optional] [readonly] 
 **Balances** | Pointer to [**map[string]ProgramReserveAccountBalance**](ProgramReserveAccountBalance.md) | Contains program reserve account balance information, organized by currency code. Sometimes referred to as a _program funding account_. | [optional] 
-**CreditBalance** | Pointer to **float32** | Not currently in use. | [optional] [readonly] 
+**CreditBalance** | Pointer to **decimal.Decimal** | Not currently in use. | [optional] [readonly] 
 **CurrencyCode** | Pointer to **string** | Three-digit ISO 4217 currency code. | [optional] 
-**LedgerBalance** | Pointer to **float32** | When using standard funding: The funds that are available to spend immediately, including funds from any authorized transactions that have not yet cleared. When using Just-in-Time (JIT) Funding: Authorized funds that are currently on hold, but not yet cleared. | [optional] [readonly] 
-**PendingCredits** | Pointer to **float32** | ACH loads that have been accepted, but for which the funding time has not yet elapsed. | [optional] [readonly] 
+**LedgerBalance** | Pointer to **decimal.Decimal** | When using standard funding: The funds that are available to spend immediately, including funds from any authorized transactions that have not yet cleared. When using Just-in-Time (JIT) Funding: Authorized funds that are currently on hold, but not yet cleared. | [optional] [readonly] 
+**PendingCredits** | Pointer to **decimal.Decimal** | ACH loads that have been accepted, but for which the funding time has not yet elapsed. | [optional] [readonly] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAvailableBalance
 
-`func (o *ProgramReserveAccountBalance) GetAvailableBalance() float32`
+`func (o *ProgramReserveAccountBalance) GetAvailableBalance() decimal.Decimal`
 
 GetAvailableBalance returns the AvailableBalance field if non-nil, zero value otherwise.
 
 ### GetAvailableBalanceOk
 
-`func (o *ProgramReserveAccountBalance) GetAvailableBalanceOk() (*float32, bool)`
+`func (o *ProgramReserveAccountBalance) GetAvailableBalanceOk() (*decimal.Decimal, bool)`
 
 GetAvailableBalanceOk returns a tuple with the AvailableBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableBalance
 
-`func (o *ProgramReserveAccountBalance) SetAvailableBalance(v float32)`
+`func (o *ProgramReserveAccountBalance) SetAvailableBalance(v decimal.Decimal)`
 
 SetAvailableBalance sets AvailableBalance field to given value.
 
@@ -82,20 +82,20 @@ HasBalances returns a boolean if a field has been set.
 
 ### GetCreditBalance
 
-`func (o *ProgramReserveAccountBalance) GetCreditBalance() float32`
+`func (o *ProgramReserveAccountBalance) GetCreditBalance() decimal.Decimal`
 
 GetCreditBalance returns the CreditBalance field if non-nil, zero value otherwise.
 
 ### GetCreditBalanceOk
 
-`func (o *ProgramReserveAccountBalance) GetCreditBalanceOk() (*float32, bool)`
+`func (o *ProgramReserveAccountBalance) GetCreditBalanceOk() (*decimal.Decimal, bool)`
 
 GetCreditBalanceOk returns a tuple with the CreditBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreditBalance
 
-`func (o *ProgramReserveAccountBalance) SetCreditBalance(v float32)`
+`func (o *ProgramReserveAccountBalance) SetCreditBalance(v decimal.Decimal)`
 
 SetCreditBalance sets CreditBalance field to given value.
 
@@ -132,20 +132,20 @@ HasCurrencyCode returns a boolean if a field has been set.
 
 ### GetLedgerBalance
 
-`func (o *ProgramReserveAccountBalance) GetLedgerBalance() float32`
+`func (o *ProgramReserveAccountBalance) GetLedgerBalance() decimal.Decimal`
 
 GetLedgerBalance returns the LedgerBalance field if non-nil, zero value otherwise.
 
 ### GetLedgerBalanceOk
 
-`func (o *ProgramReserveAccountBalance) GetLedgerBalanceOk() (*float32, bool)`
+`func (o *ProgramReserveAccountBalance) GetLedgerBalanceOk() (*decimal.Decimal, bool)`
 
 GetLedgerBalanceOk returns a tuple with the LedgerBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLedgerBalance
 
-`func (o *ProgramReserveAccountBalance) SetLedgerBalance(v float32)`
+`func (o *ProgramReserveAccountBalance) SetLedgerBalance(v decimal.Decimal)`
 
 SetLedgerBalance sets LedgerBalance field to given value.
 
@@ -157,20 +157,20 @@ HasLedgerBalance returns a boolean if a field has been set.
 
 ### GetPendingCredits
 
-`func (o *ProgramReserveAccountBalance) GetPendingCredits() float32`
+`func (o *ProgramReserveAccountBalance) GetPendingCredits() decimal.Decimal`
 
 GetPendingCredits returns the PendingCredits field if non-nil, zero value otherwise.
 
 ### GetPendingCreditsOk
 
-`func (o *ProgramReserveAccountBalance) GetPendingCreditsOk() (*float32, bool)`
+`func (o *ProgramReserveAccountBalance) GetPendingCreditsOk() (*decimal.Decimal, bool)`
 
 GetPendingCreditsOk returns a tuple with the PendingCredits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPendingCredits
 
-`func (o *ProgramReserveAccountBalance) SetPendingCredits(v float32)`
+`func (o *ProgramReserveAccountBalance) SetPendingCredits(v decimal.Decimal)`
 
 SetPendingCredits sets PendingCredits field to given value.
 

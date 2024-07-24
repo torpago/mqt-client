@@ -23,7 +23,7 @@ var _ MappedNullable = &Funding{}
 // Funding Contains funding information for the transaction, including funding amount, type, and time.
 type Funding struct {
 	// Amount of funds loaded into the GPA.
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	GatewayLog *GatewayLogModel `json:"gateway_log,omitempty"`
 	Source FundingSourceModel `json:"source"`
 	SourceAddress *CardholderAddressResponse `json:"source_address,omitempty"`
@@ -50,9 +50,9 @@ func NewFundingWithDefaults() *Funding {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *Funding) GetAmount() float32 {
+func (o *Funding) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -60,7 +60,7 @@ func (o *Funding) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Funding) GetAmountOk() (*float32, bool) {
+func (o *Funding) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -76,8 +76,8 @@ func (o *Funding) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *Funding) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *Funding) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 

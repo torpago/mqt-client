@@ -23,7 +23,7 @@ var _ MappedNullable = &PeerTransferRequest{}
 // PeerTransferRequest struct for PeerTransferRequest
 type PeerTransferRequest struct {
 	// Amount of the transfer.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Three-digit ISO 4217 currency code.
 	CurrencyCode string `json:"currency_code"`
 	// Additional descriptive text about the transfer.
@@ -48,7 +48,7 @@ type _PeerTransferRequest PeerTransferRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPeerTransferRequest(amount float32, currencyCode string) *PeerTransferRequest {
+func NewPeerTransferRequest(amount decimal.Decimal, currencyCode string) *PeerTransferRequest {
 	this := PeerTransferRequest{}
 	this.Amount = amount
 	this.CurrencyCode = currencyCode
@@ -64,9 +64,9 @@ func NewPeerTransferRequestWithDefaults() *PeerTransferRequest {
 }
 
 // GetAmount returns the Amount field value
-func (o *PeerTransferRequest) GetAmount() float32 {
+func (o *PeerTransferRequest) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -75,7 +75,7 @@ func (o *PeerTransferRequest) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *PeerTransferRequest) GetAmountOk() (*float32, bool) {
+func (o *PeerTransferRequest) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -83,7 +83,7 @@ func (o *PeerTransferRequest) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *PeerTransferRequest) SetAmount(v float32) {
+func (o *PeerTransferRequest) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

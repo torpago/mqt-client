@@ -21,8 +21,8 @@ var _ MappedNullable = &AtcInformation{}
 // AtcInformation struct for AtcInformation
 type AtcInformation struct {
 	AtcDiscrepancyIndicator *string `json:"atc_discrepancy_indicator,omitempty"`
-	AtcDiscrepancyValue *float32 `json:"atc_discrepancy_value,omitempty"`
-	AtcValue *float32 `json:"atc_value,omitempty"`
+	AtcDiscrepancyValue *decimal.Decimal `json:"atc_discrepancy_value,omitempty"`
+	AtcValue *decimal.Decimal `json:"atc_value,omitempty"`
 }
 
 // NewAtcInformation instantiates a new AtcInformation object
@@ -75,9 +75,9 @@ func (o *AtcInformation) SetAtcDiscrepancyIndicator(v string) {
 }
 
 // GetAtcDiscrepancyValue returns the AtcDiscrepancyValue field value if set, zero value otherwise.
-func (o *AtcInformation) GetAtcDiscrepancyValue() float32 {
+func (o *AtcInformation) GetAtcDiscrepancyValue() decimal.Decimal {
 	if o == nil || IsNil(o.AtcDiscrepancyValue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AtcDiscrepancyValue
@@ -85,7 +85,7 @@ func (o *AtcInformation) GetAtcDiscrepancyValue() float32 {
 
 // GetAtcDiscrepancyValueOk returns a tuple with the AtcDiscrepancyValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AtcInformation) GetAtcDiscrepancyValueOk() (*float32, bool) {
+func (o *AtcInformation) GetAtcDiscrepancyValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AtcDiscrepancyValue) {
 		return nil, false
 	}
@@ -101,15 +101,15 @@ func (o *AtcInformation) HasAtcDiscrepancyValue() bool {
 	return false
 }
 
-// SetAtcDiscrepancyValue gets a reference to the given float32 and assigns it to the AtcDiscrepancyValue field.
-func (o *AtcInformation) SetAtcDiscrepancyValue(v float32) {
+// SetAtcDiscrepancyValue gets a reference to the given decimal.Decimal and assigns it to the AtcDiscrepancyValue field.
+func (o *AtcInformation) SetAtcDiscrepancyValue(v decimal.Decimal) {
 	o.AtcDiscrepancyValue = &v
 }
 
 // GetAtcValue returns the AtcValue field value if set, zero value otherwise.
-func (o *AtcInformation) GetAtcValue() float32 {
+func (o *AtcInformation) GetAtcValue() decimal.Decimal {
 	if o == nil || IsNil(o.AtcValue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AtcValue
@@ -117,7 +117,7 @@ func (o *AtcInformation) GetAtcValue() float32 {
 
 // GetAtcValueOk returns a tuple with the AtcValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AtcInformation) GetAtcValueOk() (*float32, bool) {
+func (o *AtcInformation) GetAtcValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AtcValue) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *AtcInformation) HasAtcValue() bool {
 	return false
 }
 
-// SetAtcValue gets a reference to the given float32 and assigns it to the AtcValue field.
-func (o *AtcInformation) SetAtcValue(v float32) {
+// SetAtcValue gets a reference to the given decimal.Decimal and assigns it to the AtcValue field.
+func (o *AtcInformation) SetAtcValue(v decimal.Decimal) {
 	o.AtcValue = &v
 }
 

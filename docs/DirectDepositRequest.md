@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountNumber** | **string** |  | 
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **CompanyDiscretionaryData** | Pointer to **string** |  | [optional] 
 **CompanyEntryDescription** | Pointer to **string** |  | [optional] 
 **CompanyIdentification** | Pointer to **string** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewDirectDepositRequest
 
-`func NewDirectDepositRequest(accountNumber string, amount float32, settlementDate time.Time, type_ string, ) *DirectDepositRequest`
+`func NewDirectDepositRequest(accountNumber string, amount decimal.Decimal, settlementDate time.Time, type_ string, ) *DirectDepositRequest`
 
 NewDirectDepositRequest instantiates a new DirectDepositRequest object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetAccountNumber sets AccountNumber field to given value.
 
 ### GetAmount
 
-`func (o *DirectDepositRequest) GetAmount() float32`
+`func (o *DirectDepositRequest) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *DirectDepositRequest) GetAmountOk() (*float32, bool)`
+`func (o *DirectDepositRequest) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *DirectDepositRequest) SetAmount(v float32)`
+`func (o *DirectDepositRequest) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

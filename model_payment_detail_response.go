@@ -28,7 +28,7 @@ type PaymentDetailResponse struct {
 	// List of objects which contain information on how payment is allocated.
 	Allocations []PaymentAllocationResponse `json:"allocations,omitempty"`
 	// Total amount of the payment.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Date and time when the payment was created on Marqeta's credit platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
@@ -67,7 +67,7 @@ type _PaymentDetailResponse PaymentDetailResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentDetailResponse(accountToken string, amount float32, createdTime time.Time, currencyCode CurrencyCode, description string, holdDays int32, method string, status PaymentStatus, token string, transitions []PaymentTransitionResponse, updatedTime time.Time) *PaymentDetailResponse {
+func NewPaymentDetailResponse(accountToken string, amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, description string, holdDays int32, method string, status PaymentStatus, token string, transitions []PaymentTransitionResponse, updatedTime time.Time) *PaymentDetailResponse {
 	this := PaymentDetailResponse{}
 	this.AccountToken = accountToken
 	this.Amount = amount
@@ -160,9 +160,9 @@ func (o *PaymentDetailResponse) SetAllocations(v []PaymentAllocationResponse) {
 }
 
 // GetAmount returns the Amount field value
-func (o *PaymentDetailResponse) GetAmount() float32 {
+func (o *PaymentDetailResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -171,7 +171,7 @@ func (o *PaymentDetailResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *PaymentDetailResponse) GetAmountOk() (*float32, bool) {
+func (o *PaymentDetailResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -179,7 +179,7 @@ func (o *PaymentDetailResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *PaymentDetailResponse) SetAmount(v float32) {
+func (o *PaymentDetailResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

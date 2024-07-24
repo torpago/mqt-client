@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account on which the payment is made. | 
 **Allocations** | Pointer to [**[]PaymentAllocationResponse**](PaymentAllocationResponse.md) | List of objects which contain information on how payment is allocated. | [optional] 
-**Amount** | **float32** | Total amount of the payment. | 
+**Amount** | **decimal.Decimal** | Total amount of the payment. | 
 **CreatedTime** | **time.Time** | Date and time when the payment was created on Marqeta&#39;s credit platform, in UTC. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Description** | **string** | Description of the payment. | 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewPaymentDetailResponse
 
-`func NewPaymentDetailResponse(accountToken string, amount float32, createdTime time.Time, currencyCode CurrencyCode, description string, holdDays int32, method string, status PaymentStatus, token string, transitions []PaymentTransitionResponse, updatedTime time.Time, ) *PaymentDetailResponse`
+`func NewPaymentDetailResponse(accountToken string, amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, description string, holdDays int32, method string, status PaymentStatus, token string, transitions []PaymentTransitionResponse, updatedTime time.Time, ) *PaymentDetailResponse`
 
 NewPaymentDetailResponse instantiates a new PaymentDetailResponse object
 This constructor will assign default values to properties that have it defined,
@@ -91,20 +91,20 @@ HasAllocations returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *PaymentDetailResponse) GetAmount() float32`
+`func (o *PaymentDetailResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PaymentDetailResponse) GetAmountOk() (*float32, bool)`
+`func (o *PaymentDetailResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PaymentDetailResponse) SetAmount(v float32)`
+`func (o *PaymentDetailResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

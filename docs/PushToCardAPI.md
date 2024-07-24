@@ -314,7 +314,7 @@ import (
 )
 
 func main() {
-	pushToCardDisburseRequest := *openapiclient.NewPushToCardDisburseRequest(float32(123), "CurrencyCode_example", "PaymentInstrumentToken_example") // PushToCardDisburseRequest |  (optional)
+	pushToCardDisburseRequest := *openapiclient.NewPushToCardDisburseRequest(decimal.Decimal(123), "CurrencyCode_example", "PaymentInstrumentToken_example") // PushToCardDisburseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

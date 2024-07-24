@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | token of account the redemption is for. | 
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **CompletionTime** | Pointer to **time.Time** | yyyy-MM-ddThh:mm:ssZ | [optional] 
 **CreatedTime** | **time.Time** | yyyy-MM-ddThh:mm:ssZ | 
 **Destination** | [**DestinationType**](DestinationType.md) |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewRedemptionsBySettlementDateResponse
 
-`func NewRedemptionsBySettlementDateResponse(accountToken string, amount float32, createdTime time.Time, destination DestinationType, note string, redemptionToken string, rewardProgramToken string, status RedemptionStatus, type_ RedemptionType, updatedTime time.Time, ) *RedemptionsBySettlementDateResponse`
+`func NewRedemptionsBySettlementDateResponse(accountToken string, amount decimal.Decimal, createdTime time.Time, destination DestinationType, note string, redemptionToken string, rewardProgramToken string, status RedemptionStatus, type_ RedemptionType, updatedTime time.Time, ) *RedemptionsBySettlementDateResponse`
 
 NewRedemptionsBySettlementDateResponse instantiates a new RedemptionsBySettlementDateResponse object
 This constructor will assign default values to properties that have it defined,
@@ -57,20 +57,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAmount
 
-`func (o *RedemptionsBySettlementDateResponse) GetAmount() float32`
+`func (o *RedemptionsBySettlementDateResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *RedemptionsBySettlementDateResponse) GetAmountOk() (*float32, bool)`
+`func (o *RedemptionsBySettlementDateResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *RedemptionsBySettlementDateResponse) SetAmount(v float32)`
+`func (o *RedemptionsBySettlementDateResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

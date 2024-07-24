@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DeviceData** | Pointer to [**DeviceData**](DeviceData.md) |  | [optional] 
 **EDisclosureTrackingToken** | **string** | The tracking token of the eDisclosure.  This is the &#x60;tracking_token&#x60; returned in the &#x60;E_DISCLOSURE&#x60; object when sending a &#x60;GET&#x60; request to the &#x60;/credit/applications/files&#x60; endpoint before a decision on the application is made. | 
 **MetaData** | Pointer to **map[string]interface{}** | Customer-defined additional information about the application. | [optional] 
-**MonthlyMortgageOrRent** | **float32** | Monthly amount of the mortgage or rent that the user currently pays.  Required when retrieving an application. | 
+**MonthlyMortgageOrRent** | **decimal.Decimal** | Monthly amount of the mortgage or rent that the user currently pays.  Required when retrieving an application. | 
 **OfferId** | Pointer to **string** | Unique identifier of the offer for a pre-screened applicant. | [optional] 
 **PrequalifiedOfferPreTermsTrackingToken** | Pointer to **string** | The tracking token of the Pre-qualified Offer Pre-Terms.  This is the &#x60;tracking_token&#x60; returned in the &#x60;PREQUALIFICATION_PRE_TERMS&#x60; object when sending a &#x60;GET&#x60; request to the &#x60;/credit/applications/files&#x60; endpoint before a decision on the application is made. | [optional] 
 **PrimaryIncomeSource** | **string** | Whether the primary income source comes from the user being employed, unemployed, self-employment, or another situation.  Required when retrieving an application. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **RewardsDisclosurePreTermsTrackingToken** | Pointer to **string** | The tracking token of the Rewards Disclosure Pre-terms.  This is the &#x60;tracking_token&#x60; returned in the &#x60;REWARDS_DISCLOSURE_PRE_TERMS&#x60; object when sending a &#x60;GET&#x60; request to the &#x60;/credit/applications/files&#x60; endpoint before a decision on the application is made. | [optional] 
 **SoctTrackingToken** | **string** | The tracking token of the Summary of Credit Terms (SOCT).  This is the &#x60;tracking_token&#x60; returned in the &#x60;SOCT&#x60; object when sending a &#x60;GET&#x60; request to the &#x60;/credit/applications/files&#x60; endpoint before a decision on the application is made. | 
 **Token** | Pointer to **string** | Unique identifier of the application. | [optional] 
-**TotalAnnualIncome** | **float32** | The total amount of the user&#39;s annual income.  Required when retrieving an application. | 
+**TotalAnnualIncome** | **decimal.Decimal** | The total amount of the user&#39;s annual income.  Required when retrieving an application. | 
 **Type** | Pointer to [**ApplicationType**](ApplicationType.md) |  | [optional] 
 **UserToken** | **string** | Unique identifier of the applicant, the user applying for a credit account. | 
 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewCreateApplicationsRequest
 
-`func NewCreateApplicationsRequest(anyNonTaxableIncome bool, bundleToken string, eDisclosureTrackingToken string, monthlyMortgageOrRent float32, primaryIncomeSource string, privacyPolicyTrackingToken string, residenceType string, soctTrackingToken string, totalAnnualIncome float32, userToken string, ) *CreateApplicationsRequest`
+`func NewCreateApplicationsRequest(anyNonTaxableIncome bool, bundleToken string, eDisclosureTrackingToken string, monthlyMortgageOrRent decimal.Decimal, primaryIncomeSource string, privacyPolicyTrackingToken string, residenceType string, soctTrackingToken string, totalAnnualIncome decimal.Decimal, userToken string, ) *CreateApplicationsRequest`
 
 NewCreateApplicationsRequest instantiates a new CreateApplicationsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -153,20 +153,20 @@ HasMetaData returns a boolean if a field has been set.
 
 ### GetMonthlyMortgageOrRent
 
-`func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRent() float32`
+`func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRent() decimal.Decimal`
 
 GetMonthlyMortgageOrRent returns the MonthlyMortgageOrRent field if non-nil, zero value otherwise.
 
 ### GetMonthlyMortgageOrRentOk
 
-`func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRentOk() (*float32, bool)`
+`func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRentOk() (*decimal.Decimal, bool)`
 
 GetMonthlyMortgageOrRentOk returns a tuple with the MonthlyMortgageOrRent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonthlyMortgageOrRent
 
-`func (o *CreateApplicationsRequest) SetMonthlyMortgageOrRent(v float32)`
+`func (o *CreateApplicationsRequest) SetMonthlyMortgageOrRent(v decimal.Decimal)`
 
 SetMonthlyMortgageOrRent sets MonthlyMortgageOrRent field to given value.
 
@@ -353,20 +353,20 @@ HasToken returns a boolean if a field has been set.
 
 ### GetTotalAnnualIncome
 
-`func (o *CreateApplicationsRequest) GetTotalAnnualIncome() float32`
+`func (o *CreateApplicationsRequest) GetTotalAnnualIncome() decimal.Decimal`
 
 GetTotalAnnualIncome returns the TotalAnnualIncome field if non-nil, zero value otherwise.
 
 ### GetTotalAnnualIncomeOk
 
-`func (o *CreateApplicationsRequest) GetTotalAnnualIncomeOk() (*float32, bool)`
+`func (o *CreateApplicationsRequest) GetTotalAnnualIncomeOk() (*decimal.Decimal, bool)`
 
 GetTotalAnnualIncomeOk returns a tuple with the TotalAnnualIncome field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalAnnualIncome
 
-`func (o *CreateApplicationsRequest) SetTotalAnnualIncome(v float32)`
+`func (o *CreateApplicationsRequest) SetTotalAnnualIncome(v decimal.Decimal)`
 
 SetTotalAnnualIncome sets TotalAnnualIncome field to given value.
 

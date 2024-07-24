@@ -25,7 +25,7 @@ type FeeRequest struct {
 	// Indicates whether the fee is active.
 	Active *bool `json:"active,omitempty"`
 	// Amount of the fee.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Specifies if the fee is a standalone fee or a real-time fee.
 	Category *string `json:"category,omitempty"`
 	// Three-digit ISO 4217 currency code.
@@ -47,7 +47,7 @@ type _FeeRequest FeeRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFeeRequest(amount float32, currencyCode string, name string) *FeeRequest {
+func NewFeeRequest(amount decimal.Decimal, currencyCode string, name string) *FeeRequest {
 	this := FeeRequest{}
 	var active bool = true
 	this.Active = &active
@@ -100,9 +100,9 @@ func (o *FeeRequest) SetActive(v bool) {
 }
 
 // GetAmount returns the Amount field value
-func (o *FeeRequest) GetAmount() float32 {
+func (o *FeeRequest) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -111,7 +111,7 @@ func (o *FeeRequest) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *FeeRequest) GetAmountOk() (*float32, bool) {
+func (o *FeeRequest) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,7 +119,7 @@ func (o *FeeRequest) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *FeeRequest) SetAmount(v float32) {
+func (o *FeeRequest) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

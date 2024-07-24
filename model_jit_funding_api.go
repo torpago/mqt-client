@@ -27,7 +27,7 @@ type JitFundingApi struct {
 	ActingUserToken *string `json:"acting_user_token,omitempty"`
 	AddressVerification *JitAddressVerification `json:"address_verification,omitempty"`
 	// Requested amount of funding.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Contains the GPA's balance details.
 	Balances *map[string]CardholderBalance `json:"balances,omitempty"`
 	// Holder of the business account that was funded.
@@ -57,7 +57,7 @@ type _JitFundingApi JitFundingApi
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJitFundingApi(amount float32, method string, token string, userToken string) *JitFundingApi {
+func NewJitFundingApi(amount decimal.Decimal, method string, token string, userToken string) *JitFundingApi {
 	this := JitFundingApi{}
 	this.Amount = amount
 	this.Method = method
@@ -171,9 +171,9 @@ func (o *JitFundingApi) SetAddressVerification(v JitAddressVerification) {
 }
 
 // GetAmount returns the Amount field value
-func (o *JitFundingApi) GetAmount() float32 {
+func (o *JitFundingApi) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -182,7 +182,7 @@ func (o *JitFundingApi) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *JitFundingApi) GetAmountOk() (*float32, bool) {
+func (o *JitFundingApi) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -190,7 +190,7 @@ func (o *JitFundingApi) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *JitFundingApi) SetAmount(v float32) {
+func (o *JitFundingApi) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

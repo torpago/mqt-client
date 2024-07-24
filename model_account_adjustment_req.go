@@ -23,7 +23,7 @@ var _ MappedNullable = &AccountAdjustmentReq{}
 // AccountAdjustmentReq Contains information relevant to creating an account adjustment.
 type AccountAdjustmentReq struct {
 	// Amount of the adjustment.  Value must be negative if `original_ledger_entry_token` is not passed.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
 	// Description of the adjustment.
 	Description string `json:"description"`
@@ -45,7 +45,7 @@ type _AccountAdjustmentReq AccountAdjustmentReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountAdjustmentReq(amount float32, currencyCode CurrencyCode, description string) *AccountAdjustmentReq {
+func NewAccountAdjustmentReq(amount decimal.Decimal, currencyCode CurrencyCode, description string) *AccountAdjustmentReq {
 	this := AccountAdjustmentReq{}
 	this.Amount = amount
 	this.CurrencyCode = currencyCode
@@ -64,9 +64,9 @@ func NewAccountAdjustmentReqWithDefaults() *AccountAdjustmentReq {
 }
 
 // GetAmount returns the Amount field value
-func (o *AccountAdjustmentReq) GetAmount() float32 {
+func (o *AccountAdjustmentReq) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -75,7 +75,7 @@ func (o *AccountAdjustmentReq) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *AccountAdjustmentReq) GetAmountOk() (*float32, bool) {
+func (o *AccountAdjustmentReq) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -83,7 +83,7 @@ func (o *AccountAdjustmentReq) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *AccountAdjustmentReq) SetAmount(v float32) {
+func (o *AccountAdjustmentReq) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

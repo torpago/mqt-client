@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account that needs the credit balance refund. | 
-**Amount** | **float32** | Amount of the credit balance refund.  The maximum refund amount is the amount that brings the account balance to $0. For example, $4000 is the maximum refund amount for a -$4000 account balance. | 
+**Amount** | **decimal.Decimal** | Amount of the credit balance refund.  The maximum refund amount is the amount that brings the account balance to $0. For example, $4000 is the maximum refund amount for a -$4000 account balance. | 
 **CreatedTime** | **time.Time** | Date and time when the credit balance refund was created. | 
 **Description** | **string** | Description for the credit credit balance refund. | 
 **Method** | [**RefundMethod**](RefundMethod.md) |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAccountCreditBalanceRefundResponse
 
-`func NewAccountCreditBalanceRefundResponse(accountToken string, amount float32, createdTime time.Time, description string, method RefundMethod, status PaymentStatus, token string, updatedTime time.Time, ) *AccountCreditBalanceRefundResponse`
+`func NewAccountCreditBalanceRefundResponse(accountToken string, amount decimal.Decimal, createdTime time.Time, description string, method RefundMethod, status PaymentStatus, token string, updatedTime time.Time, ) *AccountCreditBalanceRefundResponse`
 
 NewAccountCreditBalanceRefundResponse instantiates a new AccountCreditBalanceRefundResponse object
 This constructor will assign default values to properties that have it defined,
@@ -54,20 +54,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAmount
 
-`func (o *AccountCreditBalanceRefundResponse) GetAmount() float32`
+`func (o *AccountCreditBalanceRefundResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *AccountCreditBalanceRefundResponse) GetAmountOk() (*float32, bool)`
+`func (o *AccountCreditBalanceRefundResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *AccountCreditBalanceRefundResponse) SetAmount(v float32)`
+`func (o *AccountCreditBalanceRefundResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

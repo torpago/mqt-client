@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Disclosure** | Pointer to **string** | Statement disclosure in the case of negative or no amortization, or no lifetime repayment for the minimum payment warning type.  * &#x60;NEGATIVE_OR_NO_AMORTIZATION&#x60; - Occurs when the interest amount is higher than the minimum payment; results in the outstanding balance remaining in perpetuity. * &#x60;NO_LIFETIME_REPAYMENT&#x60; - Occurs when the interest amount is just below the minimum payment; results in the outstanding balance taking longer than a lifetime to pay off. | [optional] 
-**InterestPaid** | Pointer to **float32** | For the minimum payment warning type, this value represents the total amount of interest to pay off the statement balance if only making the minimum payment each month.  For the 3 Year warning type, this value represents the total amount of interest if paying off the statement balance in three years. | [optional] 
-**MonthlyPayment** | Pointer to **float32** | For the minimum payment warning type, this value is 0.  For the 3 Year warning type, this value represents the fixed monthly payment amount required to pay off the statement balance in three years. | [optional] 
+**InterestPaid** | Pointer to **decimal.Decimal** | For the minimum payment warning type, this value represents the total amount of interest to pay off the statement balance if only making the minimum payment each month.  For the 3 Year warning type, this value represents the total amount of interest if paying off the statement balance in three years. | [optional] 
+**MonthlyPayment** | Pointer to **decimal.Decimal** | For the minimum payment warning type, this value is 0.  For the 3 Year warning type, this value represents the fixed monthly payment amount required to pay off the statement balance in three years. | [optional] 
 **PayOffPeriod** | Pointer to **int32** | For the minimum payment warning type, this value represents the number of periods required to pay off the statement balance.  For the 3 Year warning type, this value is 36 (months). | [optional] 
 **PeriodType** | Pointer to **string** | Time unit of the pay off period. | [optional] 
-**TotalPaid** | Pointer to **float32** | For the minimum payment warning type, this value represents the total amount of principal and interest to pay off the statement balance if only making the minimum payment each month.  For the 3 Year warning type, this value represents the total amount of principal and interest if paying off the statement balance in three years. | [optional] 
+**TotalPaid** | Pointer to **decimal.Decimal** | For the minimum payment warning type, this value represents the total amount of principal and interest to pay off the statement balance if only making the minimum payment each month.  For the 3 Year warning type, this value represents the total amount of principal and interest if paying off the statement balance in three years. | [optional] 
 **Type** | Pointer to **string** | Type of statement warning.  * &#x60;MIN_PAYMENT&#x60; - Displays the total estimated payment amount and how long it would take to pay off the statement balance if only making minimum payments. * &#x60;3_YEAR&#x60; - Displays the monthly payment amount and total estimated payment amount if paying off the statement balance in three years. | [optional] 
 
 ## Methods
@@ -58,20 +58,20 @@ HasDisclosure returns a boolean if a field has been set.
 
 ### GetInterestPaid
 
-`func (o *StatementPaymentWarning) GetInterestPaid() float32`
+`func (o *StatementPaymentWarning) GetInterestPaid() decimal.Decimal`
 
 GetInterestPaid returns the InterestPaid field if non-nil, zero value otherwise.
 
 ### GetInterestPaidOk
 
-`func (o *StatementPaymentWarning) GetInterestPaidOk() (*float32, bool)`
+`func (o *StatementPaymentWarning) GetInterestPaidOk() (*decimal.Decimal, bool)`
 
 GetInterestPaidOk returns a tuple with the InterestPaid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterestPaid
 
-`func (o *StatementPaymentWarning) SetInterestPaid(v float32)`
+`func (o *StatementPaymentWarning) SetInterestPaid(v decimal.Decimal)`
 
 SetInterestPaid sets InterestPaid field to given value.
 
@@ -83,20 +83,20 @@ HasInterestPaid returns a boolean if a field has been set.
 
 ### GetMonthlyPayment
 
-`func (o *StatementPaymentWarning) GetMonthlyPayment() float32`
+`func (o *StatementPaymentWarning) GetMonthlyPayment() decimal.Decimal`
 
 GetMonthlyPayment returns the MonthlyPayment field if non-nil, zero value otherwise.
 
 ### GetMonthlyPaymentOk
 
-`func (o *StatementPaymentWarning) GetMonthlyPaymentOk() (*float32, bool)`
+`func (o *StatementPaymentWarning) GetMonthlyPaymentOk() (*decimal.Decimal, bool)`
 
 GetMonthlyPaymentOk returns a tuple with the MonthlyPayment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonthlyPayment
 
-`func (o *StatementPaymentWarning) SetMonthlyPayment(v float32)`
+`func (o *StatementPaymentWarning) SetMonthlyPayment(v decimal.Decimal)`
 
 SetMonthlyPayment sets MonthlyPayment field to given value.
 
@@ -158,20 +158,20 @@ HasPeriodType returns a boolean if a field has been set.
 
 ### GetTotalPaid
 
-`func (o *StatementPaymentWarning) GetTotalPaid() float32`
+`func (o *StatementPaymentWarning) GetTotalPaid() decimal.Decimal`
 
 GetTotalPaid returns the TotalPaid field if non-nil, zero value otherwise.
 
 ### GetTotalPaidOk
 
-`func (o *StatementPaymentWarning) GetTotalPaidOk() (*float32, bool)`
+`func (o *StatementPaymentWarning) GetTotalPaidOk() (*decimal.Decimal, bool)`
 
 GetTotalPaidOk returns a tuple with the TotalPaid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalPaid
 
-`func (o *StatementPaymentWarning) SetTotalPaid(v float32)`
+`func (o *StatementPaymentWarning) SetTotalPaid(v decimal.Decimal)`
 
 SetTotalPaid sets TotalPaid field to given value.
 

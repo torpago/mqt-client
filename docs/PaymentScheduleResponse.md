@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account on which the payment schedule is made. | 
-**Amount** | Pointer to **NullableFloat32** | Amount of the payment.  Returned if the &#x60;amount_category&#x60; is &#x60;FIXED&#x60;. | [optional] 
+**Amount** | Pointer to **NullableDecimal.Decimal** | Amount of the payment.  Returned if the &#x60;amount_category&#x60; is &#x60;FIXED&#x60;. | [optional] 
 **AmountCategory** | [**PaymentScheduleAmountCategory**](PaymentScheduleAmountCategory.md) |  | 
 **CreatedTime** | Pointer to **time.Time** | Date and time when the payment schedule was created on Marqeta&#39;s credit platform, in UTC. | [optional] 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
@@ -59,20 +59,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAmount
 
-`func (o *PaymentScheduleResponse) GetAmount() float32`
+`func (o *PaymentScheduleResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PaymentScheduleResponse) GetAmountOk() (*float32, bool)`
+`func (o *PaymentScheduleResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PaymentScheduleResponse) SetAmount(v float32)`
+`func (o *PaymentScheduleResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

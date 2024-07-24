@@ -23,9 +23,9 @@ var _ MappedNullable = &PolicyRewardRuleOutcome{}
 // PolicyRewardRuleOutcome Contains information on the outcome of a reward rule.
 type PolicyRewardRuleOutcome struct {
 	// Max amount of the reward.
-	MaxAmount *float32 `json:"max_amount,omitempty"`
+	MaxAmount *decimal.Decimal `json:"max_amount,omitempty"`
 	// Reward percentage applied when the balance for a billing cycle is within the range specified in the `filters.amount.greater_than` and `filters.amount.less_than` fields. For example, if the percentage is `1`, the account holder earns 1% of the account balance if they spend between the `greater_than` and `less_than` amounts during a billing cycle.
-	Percentage float32 `json:"percentage"`
+	Percentage decimal.Decimal `json:"percentage"`
 }
 
 type _PolicyRewardRuleOutcome PolicyRewardRuleOutcome
@@ -34,7 +34,7 @@ type _PolicyRewardRuleOutcome PolicyRewardRuleOutcome
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPolicyRewardRuleOutcome(percentage float32) *PolicyRewardRuleOutcome {
+func NewPolicyRewardRuleOutcome(percentage decimal.Decimal) *PolicyRewardRuleOutcome {
 	this := PolicyRewardRuleOutcome{}
 	this.Percentage = percentage
 	return &this
@@ -49,9 +49,9 @@ func NewPolicyRewardRuleOutcomeWithDefaults() *PolicyRewardRuleOutcome {
 }
 
 // GetMaxAmount returns the MaxAmount field value if set, zero value otherwise.
-func (o *PolicyRewardRuleOutcome) GetMaxAmount() float32 {
+func (o *PolicyRewardRuleOutcome) GetMaxAmount() decimal.Decimal {
 	if o == nil || IsNil(o.MaxAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MaxAmount
@@ -59,7 +59,7 @@ func (o *PolicyRewardRuleOutcome) GetMaxAmount() float32 {
 
 // GetMaxAmountOk returns a tuple with the MaxAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyRewardRuleOutcome) GetMaxAmountOk() (*float32, bool) {
+func (o *PolicyRewardRuleOutcome) GetMaxAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MaxAmount) {
 		return nil, false
 	}
@@ -75,15 +75,15 @@ func (o *PolicyRewardRuleOutcome) HasMaxAmount() bool {
 	return false
 }
 
-// SetMaxAmount gets a reference to the given float32 and assigns it to the MaxAmount field.
-func (o *PolicyRewardRuleOutcome) SetMaxAmount(v float32) {
+// SetMaxAmount gets a reference to the given decimal.Decimal and assigns it to the MaxAmount field.
+func (o *PolicyRewardRuleOutcome) SetMaxAmount(v decimal.Decimal) {
 	o.MaxAmount = &v
 }
 
 // GetPercentage returns the Percentage field value
-func (o *PolicyRewardRuleOutcome) GetPercentage() float32 {
+func (o *PolicyRewardRuleOutcome) GetPercentage() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -92,7 +92,7 @@ func (o *PolicyRewardRuleOutcome) GetPercentage() float32 {
 
 // GetPercentageOk returns a tuple with the Percentage field value
 // and a boolean to check if the value has been set.
-func (o *PolicyRewardRuleOutcome) GetPercentageOk() (*float32, bool) {
+func (o *PolicyRewardRuleOutcome) GetPercentageOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,7 +100,7 @@ func (o *PolicyRewardRuleOutcome) GetPercentageOk() (*float32, bool) {
 }
 
 // SetPercentage sets field value
-func (o *PolicyRewardRuleOutcome) SetPercentage(v float32) {
+func (o *PolicyRewardRuleOutcome) SetPercentage(v decimal.Decimal) {
 	o.Percentage = v
 }
 

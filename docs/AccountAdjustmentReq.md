@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the adjustment.  Value must be negative if &#x60;original_ledger_entry_token&#x60; is not passed. | 
+**Amount** | **decimal.Decimal** | Amount of the adjustment.  Value must be negative if &#x60;original_ledger_entry_token&#x60; is not passed. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Description** | **string** | Description of the adjustment. | 
 **ExternalAdjustmentId** | Pointer to **string** | Unique identifier you provide of an associated external adjustment that exists outside Marqeta&#39;s credit platform. | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAccountAdjustmentReq
 
-`func NewAccountAdjustmentReq(amount float32, currencyCode CurrencyCode, description string, ) *AccountAdjustmentReq`
+`func NewAccountAdjustmentReq(amount decimal.Decimal, currencyCode CurrencyCode, description string, ) *AccountAdjustmentReq`
 
 NewAccountAdjustmentReq instantiates a new AccountAdjustmentReq object
 This constructor will assign default values to properties that have it defined,
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *AccountAdjustmentReq) GetAmount() float32`
+`func (o *AccountAdjustmentReq) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *AccountAdjustmentReq) GetAmountOk() (*float32, bool)`
+`func (o *AccountAdjustmentReq) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *AccountAdjustmentReq) SetAmount(v float32)`
+`func (o *AccountAdjustmentReq) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

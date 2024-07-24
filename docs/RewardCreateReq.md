@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the reward. | 
+**Amount** | **decimal.Decimal** | Amount of the reward. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Description** | **string** | Description of the reward. | 
 **Note** | Pointer to **string** | Additional information about the reward. | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewRewardCreateReq
 
-`func NewRewardCreateReq(amount float32, currencyCode CurrencyCode, description string, ) *RewardCreateReq`
+`func NewRewardCreateReq(amount decimal.Decimal, currencyCode CurrencyCode, description string, ) *RewardCreateReq`
 
 NewRewardCreateReq instantiates a new RewardCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *RewardCreateReq) GetAmount() float32`
+`func (o *RewardCreateReq) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *RewardCreateReq) GetAmountOk() (*float32, bool)`
+`func (o *RewardCreateReq) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *RewardCreateReq) SetAmount(v float32)`
+`func (o *RewardCreateReq) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -26,34 +26,34 @@ type StatementSummary struct {
 	// Unique identifier of the credit account on which the statement summary is generated.
 	AccountToken string `json:"account_token"`
 	// Amount available to spend on the credit account, as of the statement closing date.
-	AvailableCredit float32 `json:"available_credit"`
+	AvailableCredit decimal.Decimal `json:"available_credit"`
 	// Balance of the credit account when the statement period ended.
-	ClosingBalance float32 `json:"closing_balance"`
+	ClosingBalance decimal.Decimal `json:"closing_balance"`
 	// Date and time when the statement period ended.
 	ClosingDate time.Time `json:"closing_date"`
 	// Date and time when the statement summary was created on Marqeta's credit platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	// Maximum balance the credit account can carry, as of the statement closing date.
-	CreditLimit *float32 `json:"credit_limit,omitempty"`
+	CreditLimit *decimal.Decimal `json:"credit_limit,omitempty"`
 	// Total amount of credits received during the statement period.
-	Credits float32 `json:"credits"`
+	Credits decimal.Decimal `json:"credits"`
 	CycleType CycleType `json:"cycle_type"`
 	// Number of days in the billing cycle, also known as the statement period.
 	DaysInBillingCycle int32 `json:"days_in_billing_cycle"`
 	// Total amount of fees charged during the statement period. Does not include periodic fees.
-	Fees float32 `json:"fees"`
+	Fees decimal.Decimal `json:"fees"`
 	// Total amount of interest charged during the statement period.
-	Interest float32 `json:"interest"`
+	Interest decimal.Decimal `json:"interest"`
 	// Balance of the credit account when the statement period began.
-	OpeningBalance float32 `json:"opening_balance"`
+	OpeningBalance decimal.Decimal `json:"opening_balance"`
 	// Date and time when the statement period began.
 	OpeningDate time.Time `json:"opening_date"`
 	// Total payment amount, required to make the account current.
-	PastDueAmount float32 `json:"past_due_amount"`
+	PastDueAmount decimal.Decimal `json:"past_due_amount"`
 	// Total amount of payments made during the statement period.
-	Payments float32 `json:"payments"`
+	Payments decimal.Decimal `json:"payments"`
 	// Total amount of purchases made during the statement period.
-	Purchases float32 `json:"purchases"`
+	Purchases decimal.Decimal `json:"purchases"`
 	// Unique identifier of the statement summary.
 	Token string `json:"token"`
 }
@@ -64,7 +64,7 @@ type _StatementSummary StatementSummary
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStatementSummary(accountToken string, availableCredit float32, closingBalance float32, closingDate time.Time, createdTime time.Time, credits float32, cycleType CycleType, daysInBillingCycle int32, fees float32, interest float32, openingBalance float32, openingDate time.Time, pastDueAmount float32, payments float32, purchases float32, token string) *StatementSummary {
+func NewStatementSummary(accountToken string, availableCredit decimal.Decimal, closingBalance decimal.Decimal, closingDate time.Time, createdTime time.Time, credits decimal.Decimal, cycleType CycleType, daysInBillingCycle int32, fees decimal.Decimal, interest decimal.Decimal, openingBalance decimal.Decimal, openingDate time.Time, pastDueAmount decimal.Decimal, payments decimal.Decimal, purchases decimal.Decimal, token string) *StatementSummary {
 	this := StatementSummary{}
 	this.AccountToken = accountToken
 	this.AvailableCredit = availableCredit
@@ -118,9 +118,9 @@ func (o *StatementSummary) SetAccountToken(v string) {
 }
 
 // GetAvailableCredit returns the AvailableCredit field value
-func (o *StatementSummary) GetAvailableCredit() float32 {
+func (o *StatementSummary) GetAvailableCredit() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -129,7 +129,7 @@ func (o *StatementSummary) GetAvailableCredit() float32 {
 
 // GetAvailableCreditOk returns a tuple with the AvailableCredit field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetAvailableCreditOk() (*float32, bool) {
+func (o *StatementSummary) GetAvailableCreditOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -137,14 +137,14 @@ func (o *StatementSummary) GetAvailableCreditOk() (*float32, bool) {
 }
 
 // SetAvailableCredit sets field value
-func (o *StatementSummary) SetAvailableCredit(v float32) {
+func (o *StatementSummary) SetAvailableCredit(v decimal.Decimal) {
 	o.AvailableCredit = v
 }
 
 // GetClosingBalance returns the ClosingBalance field value
-func (o *StatementSummary) GetClosingBalance() float32 {
+func (o *StatementSummary) GetClosingBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -153,7 +153,7 @@ func (o *StatementSummary) GetClosingBalance() float32 {
 
 // GetClosingBalanceOk returns a tuple with the ClosingBalance field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetClosingBalanceOk() (*float32, bool) {
+func (o *StatementSummary) GetClosingBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -161,7 +161,7 @@ func (o *StatementSummary) GetClosingBalanceOk() (*float32, bool) {
 }
 
 // SetClosingBalance sets field value
-func (o *StatementSummary) SetClosingBalance(v float32) {
+func (o *StatementSummary) SetClosingBalance(v decimal.Decimal) {
 	o.ClosingBalance = v
 }
 
@@ -214,9 +214,9 @@ func (o *StatementSummary) SetCreatedTime(v time.Time) {
 }
 
 // GetCreditLimit returns the CreditLimit field value if set, zero value otherwise.
-func (o *StatementSummary) GetCreditLimit() float32 {
+func (o *StatementSummary) GetCreditLimit() decimal.Decimal {
 	if o == nil || IsNil(o.CreditLimit) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.CreditLimit
@@ -224,7 +224,7 @@ func (o *StatementSummary) GetCreditLimit() float32 {
 
 // GetCreditLimitOk returns a tuple with the CreditLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetCreditLimitOk() (*float32, bool) {
+func (o *StatementSummary) GetCreditLimitOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.CreditLimit) {
 		return nil, false
 	}
@@ -240,15 +240,15 @@ func (o *StatementSummary) HasCreditLimit() bool {
 	return false
 }
 
-// SetCreditLimit gets a reference to the given float32 and assigns it to the CreditLimit field.
-func (o *StatementSummary) SetCreditLimit(v float32) {
+// SetCreditLimit gets a reference to the given decimal.Decimal and assigns it to the CreditLimit field.
+func (o *StatementSummary) SetCreditLimit(v decimal.Decimal) {
 	o.CreditLimit = &v
 }
 
 // GetCredits returns the Credits field value
-func (o *StatementSummary) GetCredits() float32 {
+func (o *StatementSummary) GetCredits() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -257,7 +257,7 @@ func (o *StatementSummary) GetCredits() float32 {
 
 // GetCreditsOk returns a tuple with the Credits field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetCreditsOk() (*float32, bool) {
+func (o *StatementSummary) GetCreditsOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -265,7 +265,7 @@ func (o *StatementSummary) GetCreditsOk() (*float32, bool) {
 }
 
 // SetCredits sets field value
-func (o *StatementSummary) SetCredits(v float32) {
+func (o *StatementSummary) SetCredits(v decimal.Decimal) {
 	o.Credits = v
 }
 
@@ -318,9 +318,9 @@ func (o *StatementSummary) SetDaysInBillingCycle(v int32) {
 }
 
 // GetFees returns the Fees field value
-func (o *StatementSummary) GetFees() float32 {
+func (o *StatementSummary) GetFees() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -329,7 +329,7 @@ func (o *StatementSummary) GetFees() float32 {
 
 // GetFeesOk returns a tuple with the Fees field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetFeesOk() (*float32, bool) {
+func (o *StatementSummary) GetFeesOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -337,14 +337,14 @@ func (o *StatementSummary) GetFeesOk() (*float32, bool) {
 }
 
 // SetFees sets field value
-func (o *StatementSummary) SetFees(v float32) {
+func (o *StatementSummary) SetFees(v decimal.Decimal) {
 	o.Fees = v
 }
 
 // GetInterest returns the Interest field value
-func (o *StatementSummary) GetInterest() float32 {
+func (o *StatementSummary) GetInterest() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -353,7 +353,7 @@ func (o *StatementSummary) GetInterest() float32 {
 
 // GetInterestOk returns a tuple with the Interest field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetInterestOk() (*float32, bool) {
+func (o *StatementSummary) GetInterestOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -361,14 +361,14 @@ func (o *StatementSummary) GetInterestOk() (*float32, bool) {
 }
 
 // SetInterest sets field value
-func (o *StatementSummary) SetInterest(v float32) {
+func (o *StatementSummary) SetInterest(v decimal.Decimal) {
 	o.Interest = v
 }
 
 // GetOpeningBalance returns the OpeningBalance field value
-func (o *StatementSummary) GetOpeningBalance() float32 {
+func (o *StatementSummary) GetOpeningBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -377,7 +377,7 @@ func (o *StatementSummary) GetOpeningBalance() float32 {
 
 // GetOpeningBalanceOk returns a tuple with the OpeningBalance field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetOpeningBalanceOk() (*float32, bool) {
+func (o *StatementSummary) GetOpeningBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -385,7 +385,7 @@ func (o *StatementSummary) GetOpeningBalanceOk() (*float32, bool) {
 }
 
 // SetOpeningBalance sets field value
-func (o *StatementSummary) SetOpeningBalance(v float32) {
+func (o *StatementSummary) SetOpeningBalance(v decimal.Decimal) {
 	o.OpeningBalance = v
 }
 
@@ -414,9 +414,9 @@ func (o *StatementSummary) SetOpeningDate(v time.Time) {
 }
 
 // GetPastDueAmount returns the PastDueAmount field value
-func (o *StatementSummary) GetPastDueAmount() float32 {
+func (o *StatementSummary) GetPastDueAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -425,7 +425,7 @@ func (o *StatementSummary) GetPastDueAmount() float32 {
 
 // GetPastDueAmountOk returns a tuple with the PastDueAmount field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetPastDueAmountOk() (*float32, bool) {
+func (o *StatementSummary) GetPastDueAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -433,14 +433,14 @@ func (o *StatementSummary) GetPastDueAmountOk() (*float32, bool) {
 }
 
 // SetPastDueAmount sets field value
-func (o *StatementSummary) SetPastDueAmount(v float32) {
+func (o *StatementSummary) SetPastDueAmount(v decimal.Decimal) {
 	o.PastDueAmount = v
 }
 
 // GetPayments returns the Payments field value
-func (o *StatementSummary) GetPayments() float32 {
+func (o *StatementSummary) GetPayments() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -449,7 +449,7 @@ func (o *StatementSummary) GetPayments() float32 {
 
 // GetPaymentsOk returns a tuple with the Payments field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetPaymentsOk() (*float32, bool) {
+func (o *StatementSummary) GetPaymentsOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -457,14 +457,14 @@ func (o *StatementSummary) GetPaymentsOk() (*float32, bool) {
 }
 
 // SetPayments sets field value
-func (o *StatementSummary) SetPayments(v float32) {
+func (o *StatementSummary) SetPayments(v decimal.Decimal) {
 	o.Payments = v
 }
 
 // GetPurchases returns the Purchases field value
-func (o *StatementSummary) GetPurchases() float32 {
+func (o *StatementSummary) GetPurchases() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -473,7 +473,7 @@ func (o *StatementSummary) GetPurchases() float32 {
 
 // GetPurchasesOk returns a tuple with the Purchases field value
 // and a boolean to check if the value has been set.
-func (o *StatementSummary) GetPurchasesOk() (*float32, bool) {
+func (o *StatementSummary) GetPurchasesOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -481,7 +481,7 @@ func (o *StatementSummary) GetPurchasesOk() (*float32, bool) {
 }
 
 // SetPurchases sets field value
-func (o *StatementSummary) SetPurchases(v float32) {
+func (o *StatementSummary) SetPurchases(v decimal.Decimal) {
 	o.Purchases = v
 }
 

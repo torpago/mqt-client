@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Updated amount of the dispute, based on the resolution. | 
+**Amount** | **decimal.Decimal** | Updated amount of the dispute, based on the resolution. | 
 **Notes** | Pointer to **string** | Additional information on the dispute update (for example, a reason for the dispute update). | [optional] 
 **Status** | [**DisputeStatus**](DisputeStatus.md) |  | 
 **Token** | Pointer to **string** | Unique identifier of the dispute update. | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewDisputeTransitionReq
 
-`func NewDisputeTransitionReq(amount float32, status DisputeStatus, ) *DisputeTransitionReq`
+`func NewDisputeTransitionReq(amount decimal.Decimal, status DisputeStatus, ) *DisputeTransitionReq`
 
 NewDisputeTransitionReq instantiates a new DisputeTransitionReq object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *DisputeTransitionReq) GetAmount() float32`
+`func (o *DisputeTransitionReq) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *DisputeTransitionReq) GetAmountOk() (*float32, bool)`
+`func (o *DisputeTransitionReq) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *DisputeTransitionReq) SetAmount(v float32)`
+`func (o *DisputeTransitionReq) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

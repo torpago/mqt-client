@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GreaterThan** | Pointer to **float32** | Minimum amount that a balance for a billing cycle can be to earn the reward. | [optional] 
-**LessThan** | Pointer to **float32** | Maximum amount that a balance for a billing cycle can be to earn the reward. | [optional] 
+**GreaterThan** | Pointer to **decimal.Decimal** | Minimum amount that a balance for a billing cycle can be to earn the reward. | [optional] 
+**LessThan** | Pointer to **decimal.Decimal** | Maximum amount that a balance for a billing cycle can be to earn the reward. | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGreaterThan
 
-`func (o *AmountFilter) GetGreaterThan() float32`
+`func (o *AmountFilter) GetGreaterThan() decimal.Decimal`
 
 GetGreaterThan returns the GreaterThan field if non-nil, zero value otherwise.
 
 ### GetGreaterThanOk
 
-`func (o *AmountFilter) GetGreaterThanOk() (*float32, bool)`
+`func (o *AmountFilter) GetGreaterThanOk() (*decimal.Decimal, bool)`
 
 GetGreaterThanOk returns a tuple with the GreaterThan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGreaterThan
 
-`func (o *AmountFilter) SetGreaterThan(v float32)`
+`func (o *AmountFilter) SetGreaterThan(v decimal.Decimal)`
 
 SetGreaterThan sets GreaterThan field to given value.
 
@@ -53,20 +53,20 @@ HasGreaterThan returns a boolean if a field has been set.
 
 ### GetLessThan
 
-`func (o *AmountFilter) GetLessThan() float32`
+`func (o *AmountFilter) GetLessThan() decimal.Decimal`
 
 GetLessThan returns the LessThan field if non-nil, zero value otherwise.
 
 ### GetLessThanOk
 
-`func (o *AmountFilter) GetLessThanOk() (*float32, bool)`
+`func (o *AmountFilter) GetLessThanOk() (*decimal.Decimal, bool)`
 
 GetLessThanOk returns a tuple with the LessThan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLessThan
 
-`func (o *AmountFilter) SetLessThan(v float32)`
+`func (o *AmountFilter) SetLessThan(v decimal.Decimal)`
 
 SetLessThan sets LessThan field to given value.
 

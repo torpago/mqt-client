@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the transfer. | 
+**Amount** | **decimal.Decimal** | Amount of the transfer. | 
 **CreatedTime** | **time.Time** |  | 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
 **Memo** | Pointer to **string** | Additional descriptive text about the peer transfer. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewPeerTransferResponse
 
-`func NewPeerTransferResponse(amount float32, createdTime time.Time, currencyCode string, token string, ) *PeerTransferResponse`
+`func NewPeerTransferResponse(amount decimal.Decimal, createdTime time.Time, currencyCode string, token string, ) *PeerTransferResponse`
 
 NewPeerTransferResponse instantiates a new PeerTransferResponse object
 This constructor will assign default values to properties that have it defined,
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *PeerTransferResponse) GetAmount() float32`
+`func (o *PeerTransferResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PeerTransferResponse) GetAmountOk() (*float32, bool)`
+`func (o *PeerTransferResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PeerTransferResponse) SetAmount(v float32)`
+`func (o *PeerTransferResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

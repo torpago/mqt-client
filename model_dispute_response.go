@@ -26,7 +26,7 @@ type DisputeResponse struct {
 	// Unique identifier of the credit account on which the dispute was created.
 	AccountToken string `json:"account_token"`
 	// Amount of the dispute.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	Category DisputeCategory `json:"category"`
 	// Date and time when the dispute was created on Marqeta's credit platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
@@ -49,7 +49,7 @@ type _DisputeResponse DisputeResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDisputeResponse(accountToken string, amount float32, category DisputeCategory, createdTime time.Time, ledgerEntryToken string, status DisputeStatus, token string, updatedTime time.Time) *DisputeResponse {
+func NewDisputeResponse(accountToken string, amount decimal.Decimal, category DisputeCategory, createdTime time.Time, ledgerEntryToken string, status DisputeStatus, token string, updatedTime time.Time) *DisputeResponse {
 	this := DisputeResponse{}
 	this.AccountToken = accountToken
 	this.Amount = amount
@@ -95,9 +95,9 @@ func (o *DisputeResponse) SetAccountToken(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *DisputeResponse) GetAmount() float32 {
+func (o *DisputeResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -106,7 +106,7 @@ func (o *DisputeResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *DisputeResponse) GetAmountOk() (*float32, bool) {
+func (o *DisputeResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -114,7 +114,7 @@ func (o *DisputeResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *DisputeResponse) SetAmount(v float32) {
+func (o *DisputeResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

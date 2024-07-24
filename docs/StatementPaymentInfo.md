@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedTime** | Pointer to **time.Time** | Date and time when the statement payment information was created on Marqeta&#39;s credit platform, in UTC. | [optional] 
-**MinimumPaymentDue** | Pointer to **float32** | Minimum payment amount for the current statement period, based on the associated credit product settings. | [optional] 
-**NewStatementBalance** | Pointer to **float32** | Balance on the credit account when the statement period ended. | [optional] 
+**MinimumPaymentDue** | Pointer to **decimal.Decimal** | Minimum payment amount for the current statement period, based on the associated credit product settings. | [optional] 
+**NewStatementBalance** | Pointer to **decimal.Decimal** | Balance on the credit account when the statement period ended. | [optional] 
 **PaymentCutoffDate** | Pointer to **time.Time** | Last day a payment can be made before interest and fees are charged to the account. | [optional] 
 **PaymentDueDate** | Pointer to **time.Time** | Payment due date, based on the credit account settings. | [optional] 
 **StatementSummaryToken** | Pointer to **string** | Unique identifier of the statement summary. | [optional] 
-**ThreeYearSavings** | Pointer to **float32** | Savings amount if the balance is paid off in three years versus only making minimum payments. | [optional] 
+**ThreeYearSavings** | Pointer to **decimal.Decimal** | Savings amount if the balance is paid off in three years versus only making minimum payments. | [optional] 
 **Token** | Pointer to **string** | Unique identifier of the statement payment. | [optional] 
 **Warnings** | Pointer to [**[]StatementPaymentWarning**](StatementPaymentWarning.md) | One or more payoff warnings. | [optional] 
 
@@ -60,20 +60,20 @@ HasCreatedTime returns a boolean if a field has been set.
 
 ### GetMinimumPaymentDue
 
-`func (o *StatementPaymentInfo) GetMinimumPaymentDue() float32`
+`func (o *StatementPaymentInfo) GetMinimumPaymentDue() decimal.Decimal`
 
 GetMinimumPaymentDue returns the MinimumPaymentDue field if non-nil, zero value otherwise.
 
 ### GetMinimumPaymentDueOk
 
-`func (o *StatementPaymentInfo) GetMinimumPaymentDueOk() (*float32, bool)`
+`func (o *StatementPaymentInfo) GetMinimumPaymentDueOk() (*decimal.Decimal, bool)`
 
 GetMinimumPaymentDueOk returns a tuple with the MinimumPaymentDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumPaymentDue
 
-`func (o *StatementPaymentInfo) SetMinimumPaymentDue(v float32)`
+`func (o *StatementPaymentInfo) SetMinimumPaymentDue(v decimal.Decimal)`
 
 SetMinimumPaymentDue sets MinimumPaymentDue field to given value.
 
@@ -85,20 +85,20 @@ HasMinimumPaymentDue returns a boolean if a field has been set.
 
 ### GetNewStatementBalance
 
-`func (o *StatementPaymentInfo) GetNewStatementBalance() float32`
+`func (o *StatementPaymentInfo) GetNewStatementBalance() decimal.Decimal`
 
 GetNewStatementBalance returns the NewStatementBalance field if non-nil, zero value otherwise.
 
 ### GetNewStatementBalanceOk
 
-`func (o *StatementPaymentInfo) GetNewStatementBalanceOk() (*float32, bool)`
+`func (o *StatementPaymentInfo) GetNewStatementBalanceOk() (*decimal.Decimal, bool)`
 
 GetNewStatementBalanceOk returns a tuple with the NewStatementBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNewStatementBalance
 
-`func (o *StatementPaymentInfo) SetNewStatementBalance(v float32)`
+`func (o *StatementPaymentInfo) SetNewStatementBalance(v decimal.Decimal)`
 
 SetNewStatementBalance sets NewStatementBalance field to given value.
 
@@ -185,20 +185,20 @@ HasStatementSummaryToken returns a boolean if a field has been set.
 
 ### GetThreeYearSavings
 
-`func (o *StatementPaymentInfo) GetThreeYearSavings() float32`
+`func (o *StatementPaymentInfo) GetThreeYearSavings() decimal.Decimal`
 
 GetThreeYearSavings returns the ThreeYearSavings field if non-nil, zero value otherwise.
 
 ### GetThreeYearSavingsOk
 
-`func (o *StatementPaymentInfo) GetThreeYearSavingsOk() (*float32, bool)`
+`func (o *StatementPaymentInfo) GetThreeYearSavingsOk() (*decimal.Decimal, bool)`
 
 GetThreeYearSavingsOk returns a tuple with the ThreeYearSavings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetThreeYearSavings
 
-`func (o *StatementPaymentInfo) SetThreeYearSavings(v float32)`
+`func (o *StatementPaymentInfo) SetThreeYearSavings(v decimal.Decimal)`
 
 SetThreeYearSavings sets ThreeYearSavings field to given value.
 

@@ -24,9 +24,9 @@ type StatementReward struct {
 	// Date and time when the statement reward was created on Marqeta's credit platform, in UTC.
 	CreatedTime *time.Time `json:"created_time,omitempty"`
 	// Amount of rewards received in the current billing cycle.
-	CurrentBillingCycleReward *float32 `json:"current_billing_cycle_reward,omitempty"`
+	CurrentBillingCycleReward *decimal.Decimal `json:"current_billing_cycle_reward,omitempty"`
 	// Amount of rewards received in the previous billing cycle.
-	PreviousBillingCycleReward *float32 `json:"previous_billing_cycle_reward,omitempty"`
+	PreviousBillingCycleReward *decimal.Decimal `json:"previous_billing_cycle_reward,omitempty"`
 	// Unique identifier of the rewards for a specific statement.
 	Token *string `json:"token,omitempty"`
 }
@@ -81,9 +81,9 @@ func (o *StatementReward) SetCreatedTime(v time.Time) {
 }
 
 // GetCurrentBillingCycleReward returns the CurrentBillingCycleReward field value if set, zero value otherwise.
-func (o *StatementReward) GetCurrentBillingCycleReward() float32 {
+func (o *StatementReward) GetCurrentBillingCycleReward() decimal.Decimal {
 	if o == nil || IsNil(o.CurrentBillingCycleReward) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.CurrentBillingCycleReward
@@ -91,7 +91,7 @@ func (o *StatementReward) GetCurrentBillingCycleReward() float32 {
 
 // GetCurrentBillingCycleRewardOk returns a tuple with the CurrentBillingCycleReward field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementReward) GetCurrentBillingCycleRewardOk() (*float32, bool) {
+func (o *StatementReward) GetCurrentBillingCycleRewardOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.CurrentBillingCycleReward) {
 		return nil, false
 	}
@@ -107,15 +107,15 @@ func (o *StatementReward) HasCurrentBillingCycleReward() bool {
 	return false
 }
 
-// SetCurrentBillingCycleReward gets a reference to the given float32 and assigns it to the CurrentBillingCycleReward field.
-func (o *StatementReward) SetCurrentBillingCycleReward(v float32) {
+// SetCurrentBillingCycleReward gets a reference to the given decimal.Decimal and assigns it to the CurrentBillingCycleReward field.
+func (o *StatementReward) SetCurrentBillingCycleReward(v decimal.Decimal) {
 	o.CurrentBillingCycleReward = &v
 }
 
 // GetPreviousBillingCycleReward returns the PreviousBillingCycleReward field value if set, zero value otherwise.
-func (o *StatementReward) GetPreviousBillingCycleReward() float32 {
+func (o *StatementReward) GetPreviousBillingCycleReward() decimal.Decimal {
 	if o == nil || IsNil(o.PreviousBillingCycleReward) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.PreviousBillingCycleReward
@@ -123,7 +123,7 @@ func (o *StatementReward) GetPreviousBillingCycleReward() float32 {
 
 // GetPreviousBillingCycleRewardOk returns a tuple with the PreviousBillingCycleReward field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementReward) GetPreviousBillingCycleRewardOk() (*float32, bool) {
+func (o *StatementReward) GetPreviousBillingCycleRewardOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.PreviousBillingCycleReward) {
 		return nil, false
 	}
@@ -139,8 +139,8 @@ func (o *StatementReward) HasPreviousBillingCycleReward() bool {
 	return false
 }
 
-// SetPreviousBillingCycleReward gets a reference to the given float32 and assigns it to the PreviousBillingCycleReward field.
-func (o *StatementReward) SetPreviousBillingCycleReward(v float32) {
+// SetPreviousBillingCycleReward gets a reference to the given decimal.Decimal and assigns it to the PreviousBillingCycleReward field.
+func (o *StatementReward) SetPreviousBillingCycleReward(v decimal.Decimal) {
 	o.PreviousBillingCycleReward = &v
 }
 

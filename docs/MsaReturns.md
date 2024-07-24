@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | **bool** |  | [default to false]
 **AggregatedBalances** | [**MsaAggregatedBalances**](MsaAggregatedBalances.md) |  | 
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **BusinessToken** | Pointer to **string** |  | [optional] 
 **CampaignToken** | **string** |  | 
 **CreatedTime** | **time.Time** | yyyy-MM-ddTHH:mm:ssZ | 
@@ -17,19 +17,19 @@ Name | Type | Description | Notes
 **LastTransactionDate** | **time.Time** | yyyy-MM-ddThh:mm:ssZ | 
 **OrderBalances** | [**MsaBalances**](MsaBalances.md) |  | 
 **OriginalOrderToken** | **string** |  | 
-**RewardAmount** | **float32** |  | 
-**RewardTriggerAmount** | **float32** |  | 
+**RewardAmount** | **decimal.Decimal** |  | 
+**RewardTriggerAmount** | **decimal.Decimal** |  | 
 **StartDate** | Pointer to **time.Time** | yyyy-MM-ddThh:mm:ssZ | [optional] 
 **Token** | Pointer to **string** |  | [optional] 
 **TransactionToken** | **string** |  | 
-**UnloadedAmount** | Pointer to **float32** |  | [optional] 
+**UnloadedAmount** | Pointer to **decimal.Decimal** |  | [optional] 
 **UserToken** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewMsaReturns
 
-`func NewMsaReturns(active bool, aggregatedBalances MsaAggregatedBalances, amount float32, campaignToken string, createdTime time.Time, currencyCode string, funding Funding, lastModifiedTime time.Time, lastTransactionDate time.Time, orderBalances MsaBalances, originalOrderToken string, rewardAmount float32, rewardTriggerAmount float32, transactionToken string, ) *MsaReturns`
+`func NewMsaReturns(active bool, aggregatedBalances MsaAggregatedBalances, amount decimal.Decimal, campaignToken string, createdTime time.Time, currencyCode string, funding Funding, lastModifiedTime time.Time, lastTransactionDate time.Time, orderBalances MsaBalances, originalOrderToken string, rewardAmount decimal.Decimal, rewardTriggerAmount decimal.Decimal, transactionToken string, ) *MsaReturns`
 
 NewMsaReturns instantiates a new MsaReturns object
 This constructor will assign default values to properties that have it defined,
@@ -86,20 +86,20 @@ SetAggregatedBalances sets AggregatedBalances field to given value.
 
 ### GetAmount
 
-`func (o *MsaReturns) GetAmount() float32`
+`func (o *MsaReturns) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *MsaReturns) GetAmountOk() (*float32, bool)`
+`func (o *MsaReturns) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *MsaReturns) SetAmount(v float32)`
+`func (o *MsaReturns) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 
@@ -316,40 +316,40 @@ SetOriginalOrderToken sets OriginalOrderToken field to given value.
 
 ### GetRewardAmount
 
-`func (o *MsaReturns) GetRewardAmount() float32`
+`func (o *MsaReturns) GetRewardAmount() decimal.Decimal`
 
 GetRewardAmount returns the RewardAmount field if non-nil, zero value otherwise.
 
 ### GetRewardAmountOk
 
-`func (o *MsaReturns) GetRewardAmountOk() (*float32, bool)`
+`func (o *MsaReturns) GetRewardAmountOk() (*decimal.Decimal, bool)`
 
 GetRewardAmountOk returns a tuple with the RewardAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRewardAmount
 
-`func (o *MsaReturns) SetRewardAmount(v float32)`
+`func (o *MsaReturns) SetRewardAmount(v decimal.Decimal)`
 
 SetRewardAmount sets RewardAmount field to given value.
 
 
 ### GetRewardTriggerAmount
 
-`func (o *MsaReturns) GetRewardTriggerAmount() float32`
+`func (o *MsaReturns) GetRewardTriggerAmount() decimal.Decimal`
 
 GetRewardTriggerAmount returns the RewardTriggerAmount field if non-nil, zero value otherwise.
 
 ### GetRewardTriggerAmountOk
 
-`func (o *MsaReturns) GetRewardTriggerAmountOk() (*float32, bool)`
+`func (o *MsaReturns) GetRewardTriggerAmountOk() (*decimal.Decimal, bool)`
 
 GetRewardTriggerAmountOk returns a tuple with the RewardTriggerAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRewardTriggerAmount
 
-`func (o *MsaReturns) SetRewardTriggerAmount(v float32)`
+`func (o *MsaReturns) SetRewardTriggerAmount(v decimal.Decimal)`
 
 SetRewardTriggerAmount sets RewardTriggerAmount field to given value.
 
@@ -426,20 +426,20 @@ SetTransactionToken sets TransactionToken field to given value.
 
 ### GetUnloadedAmount
 
-`func (o *MsaReturns) GetUnloadedAmount() float32`
+`func (o *MsaReturns) GetUnloadedAmount() decimal.Decimal`
 
 GetUnloadedAmount returns the UnloadedAmount field if non-nil, zero value otherwise.
 
 ### GetUnloadedAmountOk
 
-`func (o *MsaReturns) GetUnloadedAmountOk() (*float32, bool)`
+`func (o *MsaReturns) GetUnloadedAmountOk() (*decimal.Decimal, bool)`
 
 GetUnloadedAmountOk returns a tuple with the UnloadedAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnloadedAmount
 
-`func (o *MsaReturns) SetUnloadedAmount(v float32)`
+`func (o *MsaReturns) SetUnloadedAmount(v decimal.Decimal)`
 
 SetUnloadedAmount sets UnloadedAmount field to given value.
 

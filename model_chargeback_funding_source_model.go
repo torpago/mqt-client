@@ -12,10 +12,9 @@ Contact: support@marqeta.com
 package openapi
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
-	"time"
 )
 
 // checks if the ChargebackFundingSourceModel type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ var _ MappedNullable = &ChargebackFundingSourceModel{}
 // ChargebackFundingSourceModel struct for ChargebackFundingSourceModel
 type ChargebackFundingSourceModel struct {
 	FundingSourceModel
-	Credit bool   `json:"credit"`
-	Name   string `json:"name"`
+	Credit bool `json:"credit"`
+	Name string `json:"name"`
 }
 
 type _ChargebackFundingSourceModel ChargebackFundingSourceModel
@@ -104,7 +103,7 @@ func (o *ChargebackFundingSourceModel) SetName(v string) {
 }
 
 func (o ChargebackFundingSourceModel) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -146,10 +145,10 @@ func (o *ChargebackFundingSourceModel) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -205,3 +204,5 @@ func (v *NullableChargebackFundingSourceModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

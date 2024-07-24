@@ -35,7 +35,7 @@ type CardResponse struct {
 	// Running count of the contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the number of contactless transactions that can be performed without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see <</core-api/card-products, Card Products>>.
 	ContactlessExemptionCounter *int32 `json:"contactless_exemption_counter,omitempty"`
 	// Running total of the money spent in contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the total amount that can be spent in contactless transactions without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see <</core-api/card-products, Card Products>>.
-	ContactlessExemptionTotalAmount *float32 `json:"contactless_exemption_total_amount,omitempty"`
+	ContactlessExemptionTotalAmount *decimal.Decimal `json:"contactless_exemption_total_amount,omitempty"`
 	// Date and time when the resource was created, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	// Three-digit card verification value (CVV2 or CVC2) printed on the card.
@@ -293,9 +293,9 @@ func (o *CardResponse) SetContactlessExemptionCounter(v int32) {
 }
 
 // GetContactlessExemptionTotalAmount returns the ContactlessExemptionTotalAmount field value if set, zero value otherwise.
-func (o *CardResponse) GetContactlessExemptionTotalAmount() float32 {
+func (o *CardResponse) GetContactlessExemptionTotalAmount() decimal.Decimal {
 	if o == nil || IsNil(o.ContactlessExemptionTotalAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ContactlessExemptionTotalAmount
@@ -303,7 +303,7 @@ func (o *CardResponse) GetContactlessExemptionTotalAmount() float32 {
 
 // GetContactlessExemptionTotalAmountOk returns a tuple with the ContactlessExemptionTotalAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CardResponse) GetContactlessExemptionTotalAmountOk() (*float32, bool) {
+func (o *CardResponse) GetContactlessExemptionTotalAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ContactlessExemptionTotalAmount) {
 		return nil, false
 	}
@@ -319,8 +319,8 @@ func (o *CardResponse) HasContactlessExemptionTotalAmount() bool {
 	return false
 }
 
-// SetContactlessExemptionTotalAmount gets a reference to the given float32 and assigns it to the ContactlessExemptionTotalAmount field.
-func (o *CardResponse) SetContactlessExemptionTotalAmount(v float32) {
+// SetContactlessExemptionTotalAmount gets a reference to the given decimal.Decimal and assigns it to the ContactlessExemptionTotalAmount field.
+func (o *CardResponse) SetContactlessExemptionTotalAmount(v decimal.Decimal) {
 	o.ContactlessExemptionTotalAmount = &v
 }
 

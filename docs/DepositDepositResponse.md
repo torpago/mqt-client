@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | Amount being debited or credited. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | Amount being debited or credited. | [optional] 
 **BusinessToken** | Pointer to **string** | The unique identifier of the business account holder. | [optional] 
 **CompanyDiscretionaryData** | Pointer to **string** | Company-specific data provided by the direct deposit originator. | [optional] 
 **CompanyEntryDescription** | Pointer to **string** | Company-specific data provided by the direct deposit originator. | [optional] 
@@ -45,20 +45,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *DepositDepositResponse) GetAmount() float32`
+`func (o *DepositDepositResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *DepositDepositResponse) GetAmountOk() (*float32, bool)`
+`func (o *DepositDepositResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *DepositDepositResponse) SetAmount(v float32)`
+`func (o *DepositDepositResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

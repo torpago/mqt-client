@@ -32,7 +32,7 @@ type CreateApplicationsRequest struct {
 	// Customer-defined additional information about the application.
 	MetaData map[string]interface{} `json:"meta_data,omitempty"`
 	// Monthly amount of the mortgage or rent that the user currently pays.  Required when retrieving an application.
-	MonthlyMortgageOrRent float32 `json:"monthly_mortgage_or_rent"`
+	MonthlyMortgageOrRent decimal.Decimal `json:"monthly_mortgage_or_rent"`
 	// Unique identifier of the offer for a pre-screened applicant.
 	OfferId *string `json:"offer_id,omitempty"`
 	// The tracking token of the Pre-qualified Offer Pre-Terms.  This is the `tracking_token` returned in the `PREQUALIFICATION_PRE_TERMS` object when sending a `GET` request to the `/credit/applications/files` endpoint before a decision on the application is made.
@@ -50,7 +50,7 @@ type CreateApplicationsRequest struct {
 	// Unique identifier of the application.
 	Token *string `json:"token,omitempty"`
 	// The total amount of the user's annual income.  Required when retrieving an application.
-	TotalAnnualIncome float32 `json:"total_annual_income"`
+	TotalAnnualIncome decimal.Decimal `json:"total_annual_income"`
 	Type *ApplicationType `json:"type,omitempty"`
 	// Unique identifier of the applicant, the user applying for a credit account.
 	UserToken string `json:"user_token"`
@@ -62,7 +62,7 @@ type _CreateApplicationsRequest CreateApplicationsRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateApplicationsRequest(anyNonTaxableIncome bool, bundleToken string, eDisclosureTrackingToken string, monthlyMortgageOrRent float32, primaryIncomeSource string, privacyPolicyTrackingToken string, residenceType string, soctTrackingToken string, totalAnnualIncome float32, userToken string) *CreateApplicationsRequest {
+func NewCreateApplicationsRequest(anyNonTaxableIncome bool, bundleToken string, eDisclosureTrackingToken string, monthlyMortgageOrRent decimal.Decimal, primaryIncomeSource string, privacyPolicyTrackingToken string, residenceType string, soctTrackingToken string, totalAnnualIncome decimal.Decimal, userToken string) *CreateApplicationsRequest {
 	this := CreateApplicationsRequest{}
 	this.AnyNonTaxableIncome = anyNonTaxableIncome
 	this.BundleToken = bundleToken
@@ -222,9 +222,9 @@ func (o *CreateApplicationsRequest) SetMetaData(v map[string]interface{}) {
 }
 
 // GetMonthlyMortgageOrRent returns the MonthlyMortgageOrRent field value
-func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRent() float32 {
+func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRent() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -233,7 +233,7 @@ func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRent() float32 {
 
 // GetMonthlyMortgageOrRentOk returns a tuple with the MonthlyMortgageOrRent field value
 // and a boolean to check if the value has been set.
-func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRentOk() (*float32, bool) {
+func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRentOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -241,7 +241,7 @@ func (o *CreateApplicationsRequest) GetMonthlyMortgageOrRentOk() (*float32, bool
 }
 
 // SetMonthlyMortgageOrRent sets field value
-func (o *CreateApplicationsRequest) SetMonthlyMortgageOrRent(v float32) {
+func (o *CreateApplicationsRequest) SetMonthlyMortgageOrRent(v decimal.Decimal) {
 	o.MonthlyMortgageOrRent = v
 }
 
@@ -470,9 +470,9 @@ func (o *CreateApplicationsRequest) SetToken(v string) {
 }
 
 // GetTotalAnnualIncome returns the TotalAnnualIncome field value
-func (o *CreateApplicationsRequest) GetTotalAnnualIncome() float32 {
+func (o *CreateApplicationsRequest) GetTotalAnnualIncome() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -481,7 +481,7 @@ func (o *CreateApplicationsRequest) GetTotalAnnualIncome() float32 {
 
 // GetTotalAnnualIncomeOk returns a tuple with the TotalAnnualIncome field value
 // and a boolean to check if the value has been set.
-func (o *CreateApplicationsRequest) GetTotalAnnualIncomeOk() (*float32, bool) {
+func (o *CreateApplicationsRequest) GetTotalAnnualIncomeOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -489,7 +489,7 @@ func (o *CreateApplicationsRequest) GetTotalAnnualIncomeOk() (*float32, bool) {
 }
 
 // SetTotalAnnualIncome sets field value
-func (o *CreateApplicationsRequest) SetTotalAnnualIncome(v float32) {
+func (o *CreateApplicationsRequest) SetTotalAnnualIncome(v decimal.Decimal) {
 	o.TotalAnnualIncome = v
 }
 

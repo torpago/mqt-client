@@ -5,22 +5,22 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActivationTime** | Pointer to **time.Time** | Date and time when the credit account was activated on Marqeta&#39;s credit platform, in UTC. | [optional] 
-**AvailableCredit** | **float32** | Amount of credit available for use on the credit account. | 
+**AvailableCredit** | **decimal.Decimal** | Amount of credit available for use on the credit account. | 
 **BundleToken** | Pointer to **string** | Unique identifier of the associated bundle product. | [optional] 
 **BusinessToken** | Pointer to **string** | Unique identifier of the parent business program.  Either a &#x60;user_token&#x60; or &#x60;business_token&#x60; is returned, not both. | [optional] 
 **Config** | [**AccountConfigResponse**](AccountConfigResponse.md) |  | 
 **CreatedTime** | **time.Time** | Date and time when the credit account was created on Marqeta&#39;s credit platform, in UTC. | 
-**CreditLimit** | **float32** | Maximum balance the credit account can carry. | 
+**CreditLimit** | **decimal.Decimal** | Maximum balance the credit account can carry. | 
 **CreditProductToken** | Pointer to **string** | Unique identifier of the associated credit product. | [optional] 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
-**CurrentBalance** | **float32** | Current purchase balance on the credit account. | 
+**CurrentBalance** | **decimal.Decimal** | Current purchase balance on the credit account. | 
 **Description** | Pointer to **string** | Description for the credit account. | [optional] 
 **ExternalOfferId** | Pointer to **string** | Unique identifier you provide of the associated external credit offer. | [optional] 
 **LatestStatementCycleType** | Pointer to [**CycleType**](CycleType.md) |  | [optional] 
 **MaxAprSchedules** | Pointer to [**[]MaxAPRSchedulesResponse**](MaxAPRSchedulesResponse.md) | Contains &#x60;max_apr_schedule&#x60; objects, which provide information about any temporary overrides of the APRs on the credit account. This could include special APR rates due to account/user sub status changes. | [optional] 
 **Name** | Pointer to **string** | Name of the credit account. | [optional] 
-**RemainingMinPaymentDue** | **float32** | Amount remaining on the latest statement&#39;s minimum payment, after it&#39;s adjusted for payments, returned payments, and applicable credits that occurred after the latest statement&#39;s closing date. | 
-**RemainingStatementBalance** | **float32** | Amount remaining on the latest statement&#39;s balance, after it&#39;s adjusted for payments, returned payments, and applicable credits that occurred after the latest statement&#39;s closing date. | 
+**RemainingMinPaymentDue** | **decimal.Decimal** | Amount remaining on the latest statement&#39;s minimum payment, after it&#39;s adjusted for payments, returned payments, and applicable credits that occurred after the latest statement&#39;s closing date. | 
+**RemainingStatementBalance** | **decimal.Decimal** | Amount remaining on the latest statement&#39;s balance, after it&#39;s adjusted for payments, returned payments, and applicable credits that occurred after the latest statement&#39;s closing date. | 
 **Status** | [**AccountStatusEnum**](AccountStatusEnum.md) |  | 
 **Substatuses** | Pointer to **[]string** | Substatuses of the credit account. | [optional] 
 **Token** | **string** | Unique identifier of the credit account. | 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewAccountResponse
 
-`func NewAccountResponse(availableCredit float32, config AccountConfigResponse, createdTime time.Time, creditLimit float32, currencyCode CurrencyCode, currentBalance float32, remainingMinPaymentDue float32, remainingStatementBalance float32, status AccountStatusEnum, token string, updatedTime time.Time, usages []AccountUsageResponse, ) *AccountResponse`
+`func NewAccountResponse(availableCredit decimal.Decimal, config AccountConfigResponse, createdTime time.Time, creditLimit decimal.Decimal, currencyCode CurrencyCode, currentBalance decimal.Decimal, remainingMinPaymentDue decimal.Decimal, remainingStatementBalance decimal.Decimal, status AccountStatusEnum, token string, updatedTime time.Time, usages []AccountUsageResponse, ) *AccountResponse`
 
 NewAccountResponse instantiates a new AccountResponse object
 This constructor will assign default values to properties that have it defined,
@@ -76,20 +76,20 @@ HasActivationTime returns a boolean if a field has been set.
 
 ### GetAvailableCredit
 
-`func (o *AccountResponse) GetAvailableCredit() float32`
+`func (o *AccountResponse) GetAvailableCredit() decimal.Decimal`
 
 GetAvailableCredit returns the AvailableCredit field if non-nil, zero value otherwise.
 
 ### GetAvailableCreditOk
 
-`func (o *AccountResponse) GetAvailableCreditOk() (*float32, bool)`
+`func (o *AccountResponse) GetAvailableCreditOk() (*decimal.Decimal, bool)`
 
 GetAvailableCreditOk returns a tuple with the AvailableCredit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableCredit
 
-`func (o *AccountResponse) SetAvailableCredit(v float32)`
+`func (o *AccountResponse) SetAvailableCredit(v decimal.Decimal)`
 
 SetAvailableCredit sets AvailableCredit field to given value.
 
@@ -186,20 +186,20 @@ SetCreatedTime sets CreatedTime field to given value.
 
 ### GetCreditLimit
 
-`func (o *AccountResponse) GetCreditLimit() float32`
+`func (o *AccountResponse) GetCreditLimit() decimal.Decimal`
 
 GetCreditLimit returns the CreditLimit field if non-nil, zero value otherwise.
 
 ### GetCreditLimitOk
 
-`func (o *AccountResponse) GetCreditLimitOk() (*float32, bool)`
+`func (o *AccountResponse) GetCreditLimitOk() (*decimal.Decimal, bool)`
 
 GetCreditLimitOk returns a tuple with the CreditLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreditLimit
 
-`func (o *AccountResponse) SetCreditLimit(v float32)`
+`func (o *AccountResponse) SetCreditLimit(v decimal.Decimal)`
 
 SetCreditLimit sets CreditLimit field to given value.
 
@@ -251,20 +251,20 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 ### GetCurrentBalance
 
-`func (o *AccountResponse) GetCurrentBalance() float32`
+`func (o *AccountResponse) GetCurrentBalance() decimal.Decimal`
 
 GetCurrentBalance returns the CurrentBalance field if non-nil, zero value otherwise.
 
 ### GetCurrentBalanceOk
 
-`func (o *AccountResponse) GetCurrentBalanceOk() (*float32, bool)`
+`func (o *AccountResponse) GetCurrentBalanceOk() (*decimal.Decimal, bool)`
 
 GetCurrentBalanceOk returns a tuple with the CurrentBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentBalance
 
-`func (o *AccountResponse) SetCurrentBalance(v float32)`
+`func (o *AccountResponse) SetCurrentBalance(v decimal.Decimal)`
 
 SetCurrentBalance sets CurrentBalance field to given value.
 
@@ -396,40 +396,40 @@ HasName returns a boolean if a field has been set.
 
 ### GetRemainingMinPaymentDue
 
-`func (o *AccountResponse) GetRemainingMinPaymentDue() float32`
+`func (o *AccountResponse) GetRemainingMinPaymentDue() decimal.Decimal`
 
 GetRemainingMinPaymentDue returns the RemainingMinPaymentDue field if non-nil, zero value otherwise.
 
 ### GetRemainingMinPaymentDueOk
 
-`func (o *AccountResponse) GetRemainingMinPaymentDueOk() (*float32, bool)`
+`func (o *AccountResponse) GetRemainingMinPaymentDueOk() (*decimal.Decimal, bool)`
 
 GetRemainingMinPaymentDueOk returns a tuple with the RemainingMinPaymentDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRemainingMinPaymentDue
 
-`func (o *AccountResponse) SetRemainingMinPaymentDue(v float32)`
+`func (o *AccountResponse) SetRemainingMinPaymentDue(v decimal.Decimal)`
 
 SetRemainingMinPaymentDue sets RemainingMinPaymentDue field to given value.
 
 
 ### GetRemainingStatementBalance
 
-`func (o *AccountResponse) GetRemainingStatementBalance() float32`
+`func (o *AccountResponse) GetRemainingStatementBalance() decimal.Decimal`
 
 GetRemainingStatementBalance returns the RemainingStatementBalance field if non-nil, zero value otherwise.
 
 ### GetRemainingStatementBalanceOk
 
-`func (o *AccountResponse) GetRemainingStatementBalanceOk() (*float32, bool)`
+`func (o *AccountResponse) GetRemainingStatementBalanceOk() (*decimal.Decimal, bool)`
 
 GetRemainingStatementBalanceOk returns a tuple with the RemainingStatementBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRemainingStatementBalance
 
-`func (o *AccountResponse) SetRemainingStatementBalance(v float32)`
+`func (o *AccountResponse) SetRemainingStatementBalance(v decimal.Decimal)`
 
 SetRemainingStatementBalance sets RemainingStatementBalance field to given value.
 

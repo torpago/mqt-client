@@ -26,7 +26,7 @@ type PaymentScheduleResponse struct {
 	// Unique identifier of the credit account on which the payment schedule is made.
 	AccountToken string `json:"account_token"`
 	// Amount of the payment.  Returned if the `amount_category` is `FIXED`.
-	Amount NullableFloat32 `json:"amount,omitempty"`
+	Amount NullableDecimal.Decimal `json:"amount,omitempty"`
 	AmountCategory PaymentScheduleAmountCategory `json:"amount_category"`
 	// Date and time when the payment schedule was created on Marqeta's credit platform, in UTC.
 	CreatedTime *time.Time `json:"created_time,omitempty"`
@@ -100,9 +100,9 @@ func (o *PaymentScheduleResponse) SetAccountToken(v string) {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PaymentScheduleResponse) GetAmount() float32 {
+func (o *PaymentScheduleResponse) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount.Get()) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount.Get()
@@ -111,7 +111,7 @@ func (o *PaymentScheduleResponse) GetAmount() float32 {
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PaymentScheduleResponse) GetAmountOk() (*float32, bool) {
+func (o *PaymentScheduleResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *PaymentScheduleResponse) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given NullableFloat32 and assigns it to the Amount field.
-func (o *PaymentScheduleResponse) SetAmount(v float32) {
+// SetAmount gets a reference to the given NullableDecimal.Decimal and assigns it to the Amount field.
+func (o *PaymentScheduleResponse) SetAmount(v decimal.Decimal) {
 	o.Amount.Set(&v)
 }
 // SetAmountNil sets the value for Amount to be an explicit nil

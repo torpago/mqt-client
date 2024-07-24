@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Indicates whether the fee is active. | [optional] [default to true]
-**Amount** | **float32** | Amount of the fee. | 
+**Amount** | **decimal.Decimal** | Amount of the fee. | 
 **Category** | Pointer to **string** | Specifies if the fee is a standalone fee or a real-time fee. | [optional] 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
 **FeeAttributes** | Pointer to [**FeeAttributes**](FeeAttributes.md) |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewFeeRequest
 
-`func NewFeeRequest(amount float32, currencyCode string, name string, ) *FeeRequest`
+`func NewFeeRequest(amount decimal.Decimal, currencyCode string, name string, ) *FeeRequest`
 
 NewFeeRequest instantiates a new FeeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -60,20 +60,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *FeeRequest) GetAmount() float32`
+`func (o *FeeRequest) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *FeeRequest) GetAmountOk() (*float32, bool)`
+`func (o *FeeRequest) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *FeeRequest) SetAmount(v float32)`
+`func (o *FeeRequest) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

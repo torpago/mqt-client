@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **BundleToken** | Pointer to **string** | Unique identifier of the associated bundle.  You must pass either &#x60;bundle_token&#x60; or both &#x60;credit_product_token&#x60; and &#x60;external_offer_id&#x60;. | [optional] 
 **BusinessToken** | Pointer to **string** | Unique identifier of the parent business program.  Pass either a &#x60;user_token&#x60; or &#x60;business_token&#x60;. | [optional] 
 **Config** | Pointer to [**AccountConfigReq**](AccountConfigReq.md) |  | [optional] 
-**CreditLimit** | **float32** | Maximum balance the credit account can carry. | 
+**CreditLimit** | **decimal.Decimal** | Maximum balance the credit account can carry. | 
 **CreditProductToken** | Pointer to **string** | Unique identifier of the associated credit product.  This field is required if passing &#x60;external_offer_id&#x60;.  You must pass either both &#x60;credit_product_token&#x60; and &#x60;external_offer_id&#x60; or &#x60;bundle_token&#x60;. | [optional] 
 **Description** | Pointer to **string** | Description for the credit account. | [optional] 
 **ExternalOfferId** | Pointer to **string** | Unique identifier you provide of the associated external credit offer.  This field is required if passing &#x60;credit_product_token&#x60;.  You must pass either both &#x60;external_offer_id&#x60; and &#x60;credit_product_token&#x60; or &#x60;bundle_token&#x60;. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAccountCreateReq
 
-`func NewAccountCreateReq(creditLimit float32, usages []AccountUsageCreateReq, ) *AccountCreateReq`
+`func NewAccountCreateReq(creditLimit decimal.Decimal, usages []AccountUsageCreateReq, ) *AccountCreateReq`
 
 NewAccountCreateReq instantiates a new AccountCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -138,20 +138,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetCreditLimit
 
-`func (o *AccountCreateReq) GetCreditLimit() float32`
+`func (o *AccountCreateReq) GetCreditLimit() decimal.Decimal`
 
 GetCreditLimit returns the CreditLimit field if non-nil, zero value otherwise.
 
 ### GetCreditLimitOk
 
-`func (o *AccountCreateReq) GetCreditLimitOk() (*float32, bool)`
+`func (o *AccountCreateReq) GetCreditLimitOk() (*decimal.Decimal, bool)`
 
 GetCreditLimitOk returns a tuple with the CreditLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreditLimit
 
-`func (o *AccountCreateReq) SetCreditLimit(v float32)`
+`func (o *AccountCreateReq) SetCreditLimit(v decimal.Decimal)`
 
 SetCreditLimit sets CreditLimit field to given value.
 

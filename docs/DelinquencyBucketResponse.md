@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BucketNumber** | **int32** | Delinquency bucket number in the returned array. Delinquency buckets are returned from most recent to least; the most recent delinquency bucket is &#x60;1&#x60;. | 
-**CurrentDue** | **float32** | Current amount that is due for this delinquency bucket. | 
+**CurrentDue** | **decimal.Decimal** | Current amount that is due for this delinquency bucket. | 
 **DaysPastDue** | **int32** | Total number of days that the payment is past due for this delinquency bucket. | 
-**PastDueCarriedForward** | **float32** | Amount that is past due and carried forward from previous delinquency buckets. | 
+**PastDueCarriedForward** | **decimal.Decimal** | Amount that is past due and carried forward from previous delinquency buckets. | 
 **PaymentDueDate** | **time.Time** | Date that the payment was due for this delinquency bucket. | 
-**TotalDue** | **float32** | Total amount that is due for this delinquency bucket; the sum of &#x60;past_due_carried_forward&#x60; and &#x60;current_due&#x60;. | 
+**TotalDue** | **decimal.Decimal** | Total amount that is due for this delinquency bucket; the sum of &#x60;past_due_carried_forward&#x60; and &#x60;current_due&#x60;. | 
 
 ## Methods
 
 ### NewDelinquencyBucketResponse
 
-`func NewDelinquencyBucketResponse(bucketNumber int32, currentDue float32, daysPastDue int32, pastDueCarriedForward float32, paymentDueDate time.Time, totalDue float32, ) *DelinquencyBucketResponse`
+`func NewDelinquencyBucketResponse(bucketNumber int32, currentDue decimal.Decimal, daysPastDue int32, pastDueCarriedForward decimal.Decimal, paymentDueDate time.Time, totalDue decimal.Decimal, ) *DelinquencyBucketResponse`
 
 NewDelinquencyBucketResponse instantiates a new DelinquencyBucketResponse object
 This constructor will assign default values to properties that have it defined,
@@ -52,20 +52,20 @@ SetBucketNumber sets BucketNumber field to given value.
 
 ### GetCurrentDue
 
-`func (o *DelinquencyBucketResponse) GetCurrentDue() float32`
+`func (o *DelinquencyBucketResponse) GetCurrentDue() decimal.Decimal`
 
 GetCurrentDue returns the CurrentDue field if non-nil, zero value otherwise.
 
 ### GetCurrentDueOk
 
-`func (o *DelinquencyBucketResponse) GetCurrentDueOk() (*float32, bool)`
+`func (o *DelinquencyBucketResponse) GetCurrentDueOk() (*decimal.Decimal, bool)`
 
 GetCurrentDueOk returns a tuple with the CurrentDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentDue
 
-`func (o *DelinquencyBucketResponse) SetCurrentDue(v float32)`
+`func (o *DelinquencyBucketResponse) SetCurrentDue(v decimal.Decimal)`
 
 SetCurrentDue sets CurrentDue field to given value.
 
@@ -92,20 +92,20 @@ SetDaysPastDue sets DaysPastDue field to given value.
 
 ### GetPastDueCarriedForward
 
-`func (o *DelinquencyBucketResponse) GetPastDueCarriedForward() float32`
+`func (o *DelinquencyBucketResponse) GetPastDueCarriedForward() decimal.Decimal`
 
 GetPastDueCarriedForward returns the PastDueCarriedForward field if non-nil, zero value otherwise.
 
 ### GetPastDueCarriedForwardOk
 
-`func (o *DelinquencyBucketResponse) GetPastDueCarriedForwardOk() (*float32, bool)`
+`func (o *DelinquencyBucketResponse) GetPastDueCarriedForwardOk() (*decimal.Decimal, bool)`
 
 GetPastDueCarriedForwardOk returns a tuple with the PastDueCarriedForward field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPastDueCarriedForward
 
-`func (o *DelinquencyBucketResponse) SetPastDueCarriedForward(v float32)`
+`func (o *DelinquencyBucketResponse) SetPastDueCarriedForward(v decimal.Decimal)`
 
 SetPastDueCarriedForward sets PastDueCarriedForward field to given value.
 
@@ -132,20 +132,20 @@ SetPaymentDueDate sets PaymentDueDate field to given value.
 
 ### GetTotalDue
 
-`func (o *DelinquencyBucketResponse) GetTotalDue() float32`
+`func (o *DelinquencyBucketResponse) GetTotalDue() decimal.Decimal`
 
 GetTotalDue returns the TotalDue field if non-nil, zero value otherwise.
 
 ### GetTotalDueOk
 
-`func (o *DelinquencyBucketResponse) GetTotalDueOk() (*float32, bool)`
+`func (o *DelinquencyBucketResponse) GetTotalDueOk() (*decimal.Decimal, bool)`
 
 GetTotalDueOk returns a tuple with the TotalDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalDue
 
-`func (o *DelinquencyBucketResponse) SetTotalDue(v float32)`
+`func (o *DelinquencyBucketResponse) SetTotalDue(v decimal.Decimal)`
 
 SetTotalDue sets TotalDue field to given value.
 

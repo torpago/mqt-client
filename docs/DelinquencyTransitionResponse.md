@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account. | 
-**BucketCount** | Pointer to **float32** | Number of buckets for the account after the triggering event occurred. | [optional] 
+**BucketCount** | Pointer to **decimal.Decimal** | Number of buckets for the account after the triggering event occurred. | [optional] 
 **CreatedTime** | **time.Time** | Date and time when the delinquency state transition was created on Marqeta&#39;s credit platform, in UTC. | 
-**CurrentDue** | Pointer to **float32** | Current amount that is due after the triggering event occurred.  Equivalent to &#x60;current_due&#x60; for the account&#39;s most recent delinquency bucket. To retrieve delinquency buckets for an account, send a &#x60;GET&#x60; request to &#x60;/credit/accounts/{account_token}/delinquencystate&#x60;. | [optional] 
+**CurrentDue** | Pointer to **decimal.Decimal** | Current amount that is due after the triggering event occurred.  Equivalent to &#x60;current_due&#x60; for the account&#39;s most recent delinquency bucket. To retrieve delinquency buckets for an account, send a &#x60;GET&#x60; request to &#x60;/credit/accounts/{account_token}/delinquencystate&#x60;. | [optional] 
 **ImpactTime** | **time.Time** | Date and time when the triggering event impacted the account, in UTC. | 
 **IsRolledBack** | **bool** | A value of &#x60;true&#x60; indicates that the system invalidated and rolled back the delinquency transition.  This is a temporary field that allows Marqeta to handle occasional cases of out-of-order processing. This can occur when two delinquency state transition webhooks are sent near-simultaneously.  For example, if a credit and a payment that bring an account current are made around the same time, two delinquency state transitions are sent very close together. In these cases, one of the transitions is rolled back and invalidated. For the transition that is rolled back, &#x60;is_rolled_back&#x60; is &#x60;true&#x60; and the transition should be ignored.  This field is temporary and to be deprecated when out-of-order processing is addressed in a future release. | 
 **OldestPaymentDueDate** | Pointer to **time.Time** | Payment due date of the account&#39;s oldest delinquency bucket, in UTC.  Useful when used with the delinquency state transition&#39;s &#x60;created_time&#x60; to determine the total number of days a payment is past due. | [optional] 
 **OriginalStatus** | [**DelinquencyStatus**](DelinquencyStatus.md) |  | 
 **Status** | [**DelinquencyStatus**](DelinquencyStatus.md) |  | 
 **Token** | **string** | Unique identifier of the delinquency state transition. | 
-**TotalDue** | Pointer to **float32** | Total amount that is due after the triggering event occurred; the sum of &#x60;total_past_due&#x60; and &#x60;current_due&#x60;.  Equivalent to &#x60;total_due&#x60; for the account&#39;s most recent delinquency bucket. To retrieve delinquency buckets for an account, send a &#x60;GET&#x60; request to &#x60;/credit/accounts/{account_token}/delinquencystate&#x60;. | [optional] 
-**TotalPastDue** | Pointer to **float32** | Total amount that is past due after the triggering event occurred.  Equivalent to &#x60;past_due_carried_forward&#x60; for the account&#39;s most recent delinquency bucket. To retrieve delinquency buckets for an account, send a &#x60;GET&#x60; request to &#x60;/credit/accounts/{account_token}/delinquencystate&#x60;. | [optional] 
+**TotalDue** | Pointer to **decimal.Decimal** | Total amount that is due after the triggering event occurred; the sum of &#x60;total_past_due&#x60; and &#x60;current_due&#x60;.  Equivalent to &#x60;total_due&#x60; for the account&#39;s most recent delinquency bucket. To retrieve delinquency buckets for an account, send a &#x60;GET&#x60; request to &#x60;/credit/accounts/{account_token}/delinquencystate&#x60;. | [optional] 
+**TotalPastDue** | Pointer to **decimal.Decimal** | Total amount that is past due after the triggering event occurred.  Equivalent to &#x60;past_due_carried_forward&#x60; for the account&#39;s most recent delinquency bucket. To retrieve delinquency buckets for an account, send a &#x60;GET&#x60; request to &#x60;/credit/accounts/{account_token}/delinquencystate&#x60;. | [optional] 
 **TransitionTriggerReason** | [**DelinquencyTransitionTriggerReason**](DelinquencyTransitionTriggerReason.md) |  | 
 **TransitionTriggerTime** | **time.Time** | Date and time when the triggering event caused the account&#39;s delinquency state to transition, in UTC.  For &lt;&lt;/core-api/credit-account-journal-entries, journal entries&gt;&gt;, equivalent to &#x60;request_time&#x60;. For &lt;&lt;/core-api/credit-account-statements#listStatementJournalEntries, statement journal entries&gt;&gt;, equivalent to &#x60;impact_time&#x60;, | 
 **UpdatedTime** | Pointer to **time.Time** | Date and time when the delinquency state transition was last updated on Marqeta&#39;s credit platform, in UTC. | [optional] 
@@ -61,20 +61,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetBucketCount
 
-`func (o *DelinquencyTransitionResponse) GetBucketCount() float32`
+`func (o *DelinquencyTransitionResponse) GetBucketCount() decimal.Decimal`
 
 GetBucketCount returns the BucketCount field if non-nil, zero value otherwise.
 
 ### GetBucketCountOk
 
-`func (o *DelinquencyTransitionResponse) GetBucketCountOk() (*float32, bool)`
+`func (o *DelinquencyTransitionResponse) GetBucketCountOk() (*decimal.Decimal, bool)`
 
 GetBucketCountOk returns a tuple with the BucketCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBucketCount
 
-`func (o *DelinquencyTransitionResponse) SetBucketCount(v float32)`
+`func (o *DelinquencyTransitionResponse) SetBucketCount(v decimal.Decimal)`
 
 SetBucketCount sets BucketCount field to given value.
 
@@ -106,20 +106,20 @@ SetCreatedTime sets CreatedTime field to given value.
 
 ### GetCurrentDue
 
-`func (o *DelinquencyTransitionResponse) GetCurrentDue() float32`
+`func (o *DelinquencyTransitionResponse) GetCurrentDue() decimal.Decimal`
 
 GetCurrentDue returns the CurrentDue field if non-nil, zero value otherwise.
 
 ### GetCurrentDueOk
 
-`func (o *DelinquencyTransitionResponse) GetCurrentDueOk() (*float32, bool)`
+`func (o *DelinquencyTransitionResponse) GetCurrentDueOk() (*decimal.Decimal, bool)`
 
 GetCurrentDueOk returns a tuple with the CurrentDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentDue
 
-`func (o *DelinquencyTransitionResponse) SetCurrentDue(v float32)`
+`func (o *DelinquencyTransitionResponse) SetCurrentDue(v decimal.Decimal)`
 
 SetCurrentDue sets CurrentDue field to given value.
 
@@ -256,20 +256,20 @@ SetToken sets Token field to given value.
 
 ### GetTotalDue
 
-`func (o *DelinquencyTransitionResponse) GetTotalDue() float32`
+`func (o *DelinquencyTransitionResponse) GetTotalDue() decimal.Decimal`
 
 GetTotalDue returns the TotalDue field if non-nil, zero value otherwise.
 
 ### GetTotalDueOk
 
-`func (o *DelinquencyTransitionResponse) GetTotalDueOk() (*float32, bool)`
+`func (o *DelinquencyTransitionResponse) GetTotalDueOk() (*decimal.Decimal, bool)`
 
 GetTotalDueOk returns a tuple with the TotalDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalDue
 
-`func (o *DelinquencyTransitionResponse) SetTotalDue(v float32)`
+`func (o *DelinquencyTransitionResponse) SetTotalDue(v decimal.Decimal)`
 
 SetTotalDue sets TotalDue field to given value.
 
@@ -281,20 +281,20 @@ HasTotalDue returns a boolean if a field has been set.
 
 ### GetTotalPastDue
 
-`func (o *DelinquencyTransitionResponse) GetTotalPastDue() float32`
+`func (o *DelinquencyTransitionResponse) GetTotalPastDue() decimal.Decimal`
 
 GetTotalPastDue returns the TotalPastDue field if non-nil, zero value otherwise.
 
 ### GetTotalPastDueOk
 
-`func (o *DelinquencyTransitionResponse) GetTotalPastDueOk() (*float32, bool)`
+`func (o *DelinquencyTransitionResponse) GetTotalPastDueOk() (*decimal.Decimal, bool)`
 
 GetTotalPastDueOk returns a tuple with the TotalPastDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalPastDue
 
-`func (o *DelinquencyTransitionResponse) SetTotalPastDue(v float32)`
+`func (o *DelinquencyTransitionResponse) SetTotalPastDue(v decimal.Decimal)`
 
 SetTotalPastDue sets TotalPastDue field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount to fund. | 
+**Amount** | **decimal.Decimal** | Amount to fund. | 
 **BusinessToken** | Pointer to **string** | Unique identifier of the business.  Pass either a &#x60;business_token&#x60; or a &#x60;user_token&#x60;, not both.  Send a &#x60;GET&#x60; request to &#x60;/businesses&#x60; to retrieve business tokens. | [optional] 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
 **Fees** | Pointer to [**[]FeeModel**](FeeModel.md) | List of fees associated with the funding transaction. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewGpaRequest
 
-`func NewGpaRequest(amount float32, currencyCode string, fundingSourceToken string, ) *GpaRequest`
+`func NewGpaRequest(amount decimal.Decimal, currencyCode string, fundingSourceToken string, ) *GpaRequest`
 
 NewGpaRequest instantiates a new GpaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *GpaRequest) GetAmount() float32`
+`func (o *GpaRequest) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *GpaRequest) GetAmountOk() (*float32, bool)`
+`func (o *GpaRequest) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *GpaRequest) SetAmount(v float32)`
+`func (o *GpaRequest) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -27,15 +27,15 @@ type RewardProgramsRulesConfigsResponse struct {
 	// Date and time when the reward rules config was created on the Marqeta platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	// Minimum amount that the balance for a billing cycle can be to apply the specified reward percentage. For example, if the `greater_than` value is `500`, the account holder earns _x_% of the account balance if they spend over $500 during a billing cycle.
-	GreaterThan *float32 `json:"greater_than,omitempty"`
+	GreaterThan *decimal.Decimal `json:"greater_than,omitempty"`
 	// A value of `true` indicates that the reward rules config is active.
 	IsActive bool `json:"is_active"`
 	// Maximum amount that the balance for a billing cycle can be to apply the specified reward percentage. For example, if the `less_than` value is `1500`, the account holder earns _x_% of the account balance if they spend under $1500 during a billing cycle.
-	LessThan *float32 `json:"less_than,omitempty"`
+	LessThan *decimal.Decimal `json:"less_than,omitempty"`
 	// Merchant category code (MCC) of the related journal entry.
 	Mcc *string `json:"mcc,omitempty"`
 	// The reward percentage applied when the balance for a billing cycle is within the range specified in the `less_than` and `greater_than` fields. For example, if the `percentage` is `1`, the account holder earns 1% of the account balance if they spend between the `less_than` and `greater_than` amounts during a billing cycle.
-	Percentage float32 `json:"percentage"`
+	Percentage decimal.Decimal `json:"percentage"`
 	// Unique identifier of the reward program on which the rules config is applied.
 	RewardProgramToken string `json:"reward_program_token"`
 	// Unique identifier of the reward rules config.
@@ -50,7 +50,7 @@ type _RewardProgramsRulesConfigsResponse RewardProgramsRulesConfigsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRewardProgramsRulesConfigsResponse(accrualType AccrualType, createdTime time.Time, isActive bool, percentage float32, rewardProgramToken string, token string, updatedTime time.Time) *RewardProgramsRulesConfigsResponse {
+func NewRewardProgramsRulesConfigsResponse(accrualType AccrualType, createdTime time.Time, isActive bool, percentage decimal.Decimal, rewardProgramToken string, token string, updatedTime time.Time) *RewardProgramsRulesConfigsResponse {
 	this := RewardProgramsRulesConfigsResponse{}
 	this.AccrualType = accrualType
 	this.CreatedTime = createdTime
@@ -119,9 +119,9 @@ func (o *RewardProgramsRulesConfigsResponse) SetCreatedTime(v time.Time) {
 }
 
 // GetGreaterThan returns the GreaterThan field value if set, zero value otherwise.
-func (o *RewardProgramsRulesConfigsResponse) GetGreaterThan() float32 {
+func (o *RewardProgramsRulesConfigsResponse) GetGreaterThan() decimal.Decimal {
 	if o == nil || IsNil(o.GreaterThan) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.GreaterThan
@@ -129,7 +129,7 @@ func (o *RewardProgramsRulesConfigsResponse) GetGreaterThan() float32 {
 
 // GetGreaterThanOk returns a tuple with the GreaterThan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsRulesConfigsResponse) GetGreaterThanOk() (*float32, bool) {
+func (o *RewardProgramsRulesConfigsResponse) GetGreaterThanOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.GreaterThan) {
 		return nil, false
 	}
@@ -145,8 +145,8 @@ func (o *RewardProgramsRulesConfigsResponse) HasGreaterThan() bool {
 	return false
 }
 
-// SetGreaterThan gets a reference to the given float32 and assigns it to the GreaterThan field.
-func (o *RewardProgramsRulesConfigsResponse) SetGreaterThan(v float32) {
+// SetGreaterThan gets a reference to the given decimal.Decimal and assigns it to the GreaterThan field.
+func (o *RewardProgramsRulesConfigsResponse) SetGreaterThan(v decimal.Decimal) {
 	o.GreaterThan = &v
 }
 
@@ -175,9 +175,9 @@ func (o *RewardProgramsRulesConfigsResponse) SetIsActive(v bool) {
 }
 
 // GetLessThan returns the LessThan field value if set, zero value otherwise.
-func (o *RewardProgramsRulesConfigsResponse) GetLessThan() float32 {
+func (o *RewardProgramsRulesConfigsResponse) GetLessThan() decimal.Decimal {
 	if o == nil || IsNil(o.LessThan) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.LessThan
@@ -185,7 +185,7 @@ func (o *RewardProgramsRulesConfigsResponse) GetLessThan() float32 {
 
 // GetLessThanOk returns a tuple with the LessThan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsRulesConfigsResponse) GetLessThanOk() (*float32, bool) {
+func (o *RewardProgramsRulesConfigsResponse) GetLessThanOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.LessThan) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *RewardProgramsRulesConfigsResponse) HasLessThan() bool {
 	return false
 }
 
-// SetLessThan gets a reference to the given float32 and assigns it to the LessThan field.
-func (o *RewardProgramsRulesConfigsResponse) SetLessThan(v float32) {
+// SetLessThan gets a reference to the given decimal.Decimal and assigns it to the LessThan field.
+func (o *RewardProgramsRulesConfigsResponse) SetLessThan(v decimal.Decimal) {
 	o.LessThan = &v
 }
 
@@ -239,9 +239,9 @@ func (o *RewardProgramsRulesConfigsResponse) SetMcc(v string) {
 }
 
 // GetPercentage returns the Percentage field value
-func (o *RewardProgramsRulesConfigsResponse) GetPercentage() float32 {
+func (o *RewardProgramsRulesConfigsResponse) GetPercentage() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -250,7 +250,7 @@ func (o *RewardProgramsRulesConfigsResponse) GetPercentage() float32 {
 
 // GetPercentageOk returns a tuple with the Percentage field value
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsRulesConfigsResponse) GetPercentageOk() (*float32, bool) {
+func (o *RewardProgramsRulesConfigsResponse) GetPercentageOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -258,7 +258,7 @@ func (o *RewardProgramsRulesConfigsResponse) GetPercentageOk() (*float32, bool) 
 }
 
 // SetPercentage sets field value
-func (o *RewardProgramsRulesConfigsResponse) SetPercentage(v float32) {
+func (o *RewardProgramsRulesConfigsResponse) SetPercentage(v decimal.Decimal) {
 	o.Percentage = v
 }
 

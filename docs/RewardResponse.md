@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | Pointer to **string** | Unique identifier of the account on which the reward exists. | [optional] 
-**Amount** | **float32** | Amount of the reward. | 
-**AppliedToAmount** | Pointer to **float32** | Total amount to which a percentage reward method is applied (for example, if a 3% reward is applied to 100, then &#x60;100&#x60; is the &#x60;applied_to_amount&#x60; value).  This field is not applicable for a flat fee method.  Returned for auto-cash back reward types only. | [optional] 
+**Amount** | **decimal.Decimal** | Amount of the reward. | 
+**AppliedToAmount** | Pointer to **decimal.Decimal** | Total amount to which a percentage reward method is applied (for example, if a 3% reward is applied to 100, then &#x60;100&#x60; is the &#x60;applied_to_amount&#x60; value).  This field is not applicable for a flat fee method.  Returned for auto-cash back reward types only. | [optional] 
 **CreatedTime** | **time.Time** | Date and time when the reward was created on Marqeta&#39;s credit platform, in UTC. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Description** | **string** | Description of the reward. | 
@@ -15,13 +15,13 @@ Name | Type | Description | Notes
 **Token** | **string** | Unique identifier of the reward.  If in the &#x60;detail_object&#x60;, unique identifier of the detail object. | 
 **Type** | [**RewardType**](RewardType.md) |  | 
 **UpdatedTime** | **time.Time** | Date and time when the reward was last updated on Marqeta&#39;s credit platform, in UTC. | 
-**Value** | Pointer to **float32** | Value of the percentage or flat amount.  Returned for auto-cash back reward types only. | [optional] 
+**Value** | Pointer to **decimal.Decimal** | Value of the percentage or flat amount.  Returned for auto-cash back reward types only. | [optional] 
 
 ## Methods
 
 ### NewRewardResponse
 
-`func NewRewardResponse(amount float32, createdTime time.Time, currencyCode CurrencyCode, description string, token string, type_ RewardType, updatedTime time.Time, ) *RewardResponse`
+`func NewRewardResponse(amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, description string, token string, type_ RewardType, updatedTime time.Time, ) *RewardResponse`
 
 NewRewardResponse instantiates a new RewardResponse object
 This constructor will assign default values to properties that have it defined,
@@ -63,40 +63,40 @@ HasAccountToken returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *RewardResponse) GetAmount() float32`
+`func (o *RewardResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *RewardResponse) GetAmountOk() (*float32, bool)`
+`func (o *RewardResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *RewardResponse) SetAmount(v float32)`
+`func (o *RewardResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 
 
 ### GetAppliedToAmount
 
-`func (o *RewardResponse) GetAppliedToAmount() float32`
+`func (o *RewardResponse) GetAppliedToAmount() decimal.Decimal`
 
 GetAppliedToAmount returns the AppliedToAmount field if non-nil, zero value otherwise.
 
 ### GetAppliedToAmountOk
 
-`func (o *RewardResponse) GetAppliedToAmountOk() (*float32, bool)`
+`func (o *RewardResponse) GetAppliedToAmountOk() (*decimal.Decimal, bool)`
 
 GetAppliedToAmountOk returns a tuple with the AppliedToAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAppliedToAmount
 
-`func (o *RewardResponse) SetAppliedToAmount(v float32)`
+`func (o *RewardResponse) SetAppliedToAmount(v decimal.Decimal)`
 
 SetAppliedToAmount sets AppliedToAmount field to given value.
 
@@ -278,20 +278,20 @@ SetUpdatedTime sets UpdatedTime field to given value.
 
 ### GetValue
 
-`func (o *RewardResponse) GetValue() float32`
+`func (o *RewardResponse) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RewardResponse) GetValueOk() (*float32, bool)`
+`func (o *RewardResponse) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RewardResponse) SetValue(v float32)`
+`func (o *RewardResponse) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

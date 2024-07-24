@@ -22,7 +22,7 @@ var _ MappedNullable = &PushToCardDisburseRequest{}
 
 // PushToCardDisburseRequest struct for PushToCardDisburseRequest
 type PushToCardDisburseRequest struct {
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CurrencyCode string `json:"currency_code"`
 	Memo *string `json:"memo,omitempty"`
 	PaymentInstrumentToken string `json:"payment_instrument_token"`
@@ -37,7 +37,7 @@ type _PushToCardDisburseRequest PushToCardDisburseRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPushToCardDisburseRequest(amount float32, currencyCode string, paymentInstrumentToken string) *PushToCardDisburseRequest {
+func NewPushToCardDisburseRequest(amount decimal.Decimal, currencyCode string, paymentInstrumentToken string) *PushToCardDisburseRequest {
 	this := PushToCardDisburseRequest{}
 	this.Amount = amount
 	this.CurrencyCode = currencyCode
@@ -54,9 +54,9 @@ func NewPushToCardDisburseRequestWithDefaults() *PushToCardDisburseRequest {
 }
 
 // GetAmount returns the Amount field value
-func (o *PushToCardDisburseRequest) GetAmount() float32 {
+func (o *PushToCardDisburseRequest) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -65,7 +65,7 @@ func (o *PushToCardDisburseRequest) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *PushToCardDisburseRequest) GetAmountOk() (*float32, bool) {
+func (o *PushToCardDisburseRequest) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -73,7 +73,7 @@ func (o *PushToCardDisburseRequest) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *PushToCardDisburseRequest) SetAmount(v float32) {
+func (o *PushToCardDisburseRequest) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

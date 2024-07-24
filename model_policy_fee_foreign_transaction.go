@@ -23,7 +23,7 @@ type PolicyFeeForeignTransaction struct {
 	// Method used to calculate the fee value.
 	DefaultMethod *string `json:"default_method,omitempty"`
 	// Percentage value for the foreign transaction fee.
-	DefaultValue *float32 `json:"default_value,omitempty"`
+	DefaultValue *decimal.Decimal `json:"default_value,omitempty"`
 }
 
 // NewPolicyFeeForeignTransaction instantiates a new PolicyFeeForeignTransaction object
@@ -76,9 +76,9 @@ func (o *PolicyFeeForeignTransaction) SetDefaultMethod(v string) {
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
-func (o *PolicyFeeForeignTransaction) GetDefaultValue() float32 {
+func (o *PolicyFeeForeignTransaction) GetDefaultValue() decimal.Decimal {
 	if o == nil || IsNil(o.DefaultValue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.DefaultValue
@@ -86,7 +86,7 @@ func (o *PolicyFeeForeignTransaction) GetDefaultValue() float32 {
 
 // GetDefaultValueOk returns a tuple with the DefaultValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyFeeForeignTransaction) GetDefaultValueOk() (*float32, bool) {
+func (o *PolicyFeeForeignTransaction) GetDefaultValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.DefaultValue) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *PolicyFeeForeignTransaction) HasDefaultValue() bool {
 	return false
 }
 
-// SetDefaultValue gets a reference to the given float32 and assigns it to the DefaultValue field.
-func (o *PolicyFeeForeignTransaction) SetDefaultValue(v float32) {
+// SetDefaultValue gets a reference to the given decimal.Decimal and assigns it to the DefaultValue field.
+func (o *PolicyFeeForeignTransaction) SetDefaultValue(v decimal.Decimal) {
 	o.DefaultValue = &v
 }
 

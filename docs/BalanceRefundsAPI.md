@@ -30,7 +30,7 @@ import (
 
 func main() {
 	accountToken := "accountToken_example" // string | Unique identifier of the credit account for which you want to create a balance refund.  Send a `GET` request to `/credit/accounts` to retrieve existing credit account tokens.
-	accountCreditBalanceRefundReq := *openapiclient.NewAccountCreditBalanceRefundReq(float32(123), openapiclient.CurrencyCode("USD"), "Description_example", openapiclient.RefundMethod("CHECK")) // AccountCreditBalanceRefundReq | 
+	accountCreditBalanceRefundReq := *openapiclient.NewAccountCreditBalanceRefundReq(decimal.Decimal(123), openapiclient.CurrencyCode("USD"), "Description_example", openapiclient.RefundMethod("CHECK")) // AccountCreditBalanceRefundReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

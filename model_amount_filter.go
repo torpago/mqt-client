@@ -21,9 +21,9 @@ var _ MappedNullable = &AmountFilter{}
 // AmountFilter Contains information on the minimum and maximum amounts that the balance for a billing cycle can be to earn the reward.
 type AmountFilter struct {
 	// Minimum amount that a balance for a billing cycle can be to earn the reward.
-	GreaterThan *float32 `json:"greater_than,omitempty"`
+	GreaterThan *decimal.Decimal `json:"greater_than,omitempty"`
 	// Maximum amount that a balance for a billing cycle can be to earn the reward.
-	LessThan *float32 `json:"less_than,omitempty"`
+	LessThan *decimal.Decimal `json:"less_than,omitempty"`
 }
 
 // NewAmountFilter instantiates a new AmountFilter object
@@ -44,9 +44,9 @@ func NewAmountFilterWithDefaults() *AmountFilter {
 }
 
 // GetGreaterThan returns the GreaterThan field value if set, zero value otherwise.
-func (o *AmountFilter) GetGreaterThan() float32 {
+func (o *AmountFilter) GetGreaterThan() decimal.Decimal {
 	if o == nil || IsNil(o.GreaterThan) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.GreaterThan
@@ -54,7 +54,7 @@ func (o *AmountFilter) GetGreaterThan() float32 {
 
 // GetGreaterThanOk returns a tuple with the GreaterThan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AmountFilter) GetGreaterThanOk() (*float32, bool) {
+func (o *AmountFilter) GetGreaterThanOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.GreaterThan) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *AmountFilter) HasGreaterThan() bool {
 	return false
 }
 
-// SetGreaterThan gets a reference to the given float32 and assigns it to the GreaterThan field.
-func (o *AmountFilter) SetGreaterThan(v float32) {
+// SetGreaterThan gets a reference to the given decimal.Decimal and assigns it to the GreaterThan field.
+func (o *AmountFilter) SetGreaterThan(v decimal.Decimal) {
 	o.GreaterThan = &v
 }
 
 // GetLessThan returns the LessThan field value if set, zero value otherwise.
-func (o *AmountFilter) GetLessThan() float32 {
+func (o *AmountFilter) GetLessThan() decimal.Decimal {
 	if o == nil || IsNil(o.LessThan) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.LessThan
@@ -86,7 +86,7 @@ func (o *AmountFilter) GetLessThan() float32 {
 
 // GetLessThanOk returns a tuple with the LessThan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AmountFilter) GetLessThanOk() (*float32, bool) {
+func (o *AmountFilter) GetLessThanOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.LessThan) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *AmountFilter) HasLessThan() bool {
 	return false
 }
 
-// SetLessThan gets a reference to the given float32 and assigns it to the LessThan field.
-func (o *AmountFilter) SetLessThan(v float32) {
+// SetLessThan gets a reference to the given decimal.Decimal and assigns it to the LessThan field.
+func (o *AmountFilter) SetLessThan(v decimal.Decimal) {
 	o.LessThan = &v
 }
 

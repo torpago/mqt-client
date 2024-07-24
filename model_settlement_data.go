@@ -21,9 +21,9 @@ var _ MappedNullable = &SettlementData{}
 // SettlementData Contains information from the card network about currency conversion at the time of settlement, including the original currency of the transaction, the amount of the transaction in the original currency, and the conversion rate.
 type SettlementData struct {
 	// The settled amount.
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	// Returned when the transaction currency is different from the origination currency.  Conversion rate between the origination currency and the settlement currency.
-	ConversionRate *float32 `json:"conversion_rate,omitempty"`
+	ConversionRate *decimal.Decimal `json:"conversion_rate,omitempty"`
 	// The ISO 4217 code of the currency used in the transaction.
 	CurrencyCode *string `json:"currency_code,omitempty"`
 }
@@ -46,9 +46,9 @@ func NewSettlementDataWithDefaults() *SettlementData {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *SettlementData) GetAmount() float32 {
+func (o *SettlementData) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -56,7 +56,7 @@ func (o *SettlementData) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SettlementData) GetAmountOk() (*float32, bool) {
+func (o *SettlementData) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -72,15 +72,15 @@ func (o *SettlementData) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *SettlementData) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *SettlementData) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 
 // GetConversionRate returns the ConversionRate field value if set, zero value otherwise.
-func (o *SettlementData) GetConversionRate() float32 {
+func (o *SettlementData) GetConversionRate() decimal.Decimal {
 	if o == nil || IsNil(o.ConversionRate) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ConversionRate
@@ -88,7 +88,7 @@ func (o *SettlementData) GetConversionRate() float32 {
 
 // GetConversionRateOk returns a tuple with the ConversionRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SettlementData) GetConversionRateOk() (*float32, bool) {
+func (o *SettlementData) GetConversionRateOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ConversionRate) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *SettlementData) HasConversionRate() bool {
 	return false
 }
 
-// SetConversionRate gets a reference to the given float32 and assigns it to the ConversionRate field.
-func (o *SettlementData) SetConversionRate(v float32) {
+// SetConversionRate gets a reference to the given decimal.Decimal and assigns it to the ConversionRate field.
+func (o *SettlementData) SetConversionRate(v decimal.Decimal) {
 	o.ConversionRate = &v
 }
 

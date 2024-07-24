@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplyNextCycle** | Pointer to **bool** | Whether the APR can be ignored for the current billing cycle and applied on the next. | [optional] [default to false]
 **EffectiveDate** | Pointer to **time.Time** | Date and time when the APR goes into effect, in UTC.  If you do not include a date-time value, the system uses the date and time when the API request was received.  *NOTE:* When passing multiple &#x60;schedule&#x60; objects, this field is required in all objects but the first. If you do not include &#x60;effective_date&#x60; in the first &#x60;schedule&#x60;, the system uses the date and time when the API request was received. | [optional] 
-**Margin** | Pointer to **float32** | Number of percentage points added to the prime rate, used to calculate a variable value.  Used for variable values only. | [optional] 
+**Margin** | Pointer to **decimal.Decimal** | Number of percentage points added to the prime rate, used to calculate a variable value.  Used for variable values only. | [optional] 
 **Type** | Pointer to **string** | Indicates whether the APR value is fixed or variable. | [optional] [default to "FIXED"]
-**Value** | **float32** | Percentage value of the APR.  If the APR type is &#x60;FIXED&#x60;, this is the value of the fixed rate. If the APR type is &#x60;VARIABLE&#x60;, the value is calculated by adding the margin to the prime rate that was stored on Marqeta&#39;s credit platform when your credit program was created.  When backdating an APR, this value cannot be greater than the value of the effective APR on the backdated date. | 
+**Value** | **decimal.Decimal** | Percentage value of the APR.  If the APR type is &#x60;FIXED&#x60;, this is the value of the fixed rate. If the APR type is &#x60;VARIABLE&#x60;, the value is calculated by adding the margin to the prime rate that was stored on Marqeta&#39;s credit platform when your credit program was created.  When backdating an APR, this value cannot be greater than the value of the effective APR on the backdated date. | 
 
 ## Methods
 
 ### NewAprScheduleEntryUpdateReq
 
-`func NewAprScheduleEntryUpdateReq(value float32, ) *AprScheduleEntryUpdateReq`
+`func NewAprScheduleEntryUpdateReq(value decimal.Decimal, ) *AprScheduleEntryUpdateReq`
 
 NewAprScheduleEntryUpdateReq instantiates a new AprScheduleEntryUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -81,20 +81,20 @@ HasEffectiveDate returns a boolean if a field has been set.
 
 ### GetMargin
 
-`func (o *AprScheduleEntryUpdateReq) GetMargin() float32`
+`func (o *AprScheduleEntryUpdateReq) GetMargin() decimal.Decimal`
 
 GetMargin returns the Margin field if non-nil, zero value otherwise.
 
 ### GetMarginOk
 
-`func (o *AprScheduleEntryUpdateReq) GetMarginOk() (*float32, bool)`
+`func (o *AprScheduleEntryUpdateReq) GetMarginOk() (*decimal.Decimal, bool)`
 
 GetMarginOk returns a tuple with the Margin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMargin
 
-`func (o *AprScheduleEntryUpdateReq) SetMargin(v float32)`
+`func (o *AprScheduleEntryUpdateReq) SetMargin(v decimal.Decimal)`
 
 SetMargin sets Margin field to given value.
 
@@ -131,20 +131,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *AprScheduleEntryUpdateReq) GetValue() float32`
+`func (o *AprScheduleEntryUpdateReq) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *AprScheduleEntryUpdateReq) GetValueOk() (*float32, bool)`
+`func (o *AprScheduleEntryUpdateReq) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *AprScheduleEntryUpdateReq) SetValue(v float32)`
+`func (o *AprScheduleEntryUpdateReq) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

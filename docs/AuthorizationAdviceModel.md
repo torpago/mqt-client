@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **NetworkFees** | Pointer to [**[]NetworkFeeModel**](NetworkFeeModel.md) |  | [optional] 
 **OriginalTransactionToken** | **string** |  | 
 **TransactionOptions** | Pointer to [**TransactionOptions**](TransactionOptions.md) |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewAuthorizationAdviceModel
 
-`func NewAuthorizationAdviceModel(amount float32, originalTransactionToken string, ) *AuthorizationAdviceModel`
+`func NewAuthorizationAdviceModel(amount decimal.Decimal, originalTransactionToken string, ) *AuthorizationAdviceModel`
 
 NewAuthorizationAdviceModel instantiates a new AuthorizationAdviceModel object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *AuthorizationAdviceModel) GetAmount() float32`
+`func (o *AuthorizationAdviceModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *AuthorizationAdviceModel) GetAmountOk() (*float32, bool)`
+`func (o *AuthorizationAdviceModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *AuthorizationAdviceModel) SetAmount(v float32)`
+`func (o *AuthorizationAdviceModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

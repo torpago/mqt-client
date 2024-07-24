@@ -25,7 +25,7 @@ type ProductMinPaymentPercentage struct {
 	// One or more fee types to include when calculating the minimum payment.
 	IncludeFeesCharged []ProductFeeType `json:"include_fees_charged"`
 	// Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day.
-	PercentageOfBalance float32 `json:"percentage_of_balance"`
+	PercentageOfBalance decimal.Decimal `json:"percentage_of_balance"`
 }
 
 type _ProductMinPaymentPercentage ProductMinPaymentPercentage
@@ -34,7 +34,7 @@ type _ProductMinPaymentPercentage ProductMinPaymentPercentage
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductMinPaymentPercentage(includeFeesCharged []ProductFeeType, percentageOfBalance float32) *ProductMinPaymentPercentage {
+func NewProductMinPaymentPercentage(includeFeesCharged []ProductFeeType, percentageOfBalance decimal.Decimal) *ProductMinPaymentPercentage {
 	this := ProductMinPaymentPercentage{}
 	this.IncludeFeesCharged = includeFeesCharged
 	this.PercentageOfBalance = percentageOfBalance
@@ -74,9 +74,9 @@ func (o *ProductMinPaymentPercentage) SetIncludeFeesCharged(v []ProductFeeType) 
 }
 
 // GetPercentageOfBalance returns the PercentageOfBalance field value
-func (o *ProductMinPaymentPercentage) GetPercentageOfBalance() float32 {
+func (o *ProductMinPaymentPercentage) GetPercentageOfBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -85,7 +85,7 @@ func (o *ProductMinPaymentPercentage) GetPercentageOfBalance() float32 {
 
 // GetPercentageOfBalanceOk returns a tuple with the PercentageOfBalance field value
 // and a boolean to check if the value has been set.
-func (o *ProductMinPaymentPercentage) GetPercentageOfBalanceOk() (*float32, bool) {
+func (o *ProductMinPaymentPercentage) GetPercentageOfBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *ProductMinPaymentPercentage) GetPercentageOfBalanceOk() (*float32, bool
 }
 
 // SetPercentageOfBalance sets field value
-func (o *ProductMinPaymentPercentage) SetPercentageOfBalance(v float32) {
+func (o *ProductMinPaymentPercentage) SetPercentageOfBalance(v decimal.Decimal) {
 	o.PercentageOfBalance = v
 }
 

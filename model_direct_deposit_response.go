@@ -21,7 +21,7 @@ var _ MappedNullable = &DirectDepositResponse{}
 
 // DirectDepositResponse struct for DirectDepositResponse
 type DirectDepositResponse struct {
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	BusinessToken *string `json:"business_token,omitempty"`
 	CompanyDiscretionaryData *string `json:"company_discretionary_data,omitempty"`
 	CompanyEntryDescription *string `json:"company_entry_description,omitempty"`
@@ -67,9 +67,9 @@ func NewDirectDepositResponseWithDefaults() *DirectDepositResponse {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *DirectDepositResponse) GetAmount() float32 {
+func (o *DirectDepositResponse) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -77,7 +77,7 @@ func (o *DirectDepositResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DirectDepositResponse) GetAmountOk() (*float32, bool) {
+func (o *DirectDepositResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -93,8 +93,8 @@ func (o *DirectDepositResponse) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *DirectDepositResponse) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *DirectDepositResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 

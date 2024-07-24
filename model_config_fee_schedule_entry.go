@@ -27,7 +27,7 @@ type ConfigFeeScheduleEntry struct {
 	EffectiveDate *time.Time `json:"effective_date,omitempty"`
 	Method FeeMethod `json:"method"`
 	// Amount of the fee.
-	Value float32 `json:"value"`
+	Value decimal.Decimal `json:"value"`
 }
 
 type _ConfigFeeScheduleEntry ConfigFeeScheduleEntry
@@ -36,7 +36,7 @@ type _ConfigFeeScheduleEntry ConfigFeeScheduleEntry
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConfigFeeScheduleEntry(method FeeMethod, value float32) *ConfigFeeScheduleEntry {
+func NewConfigFeeScheduleEntry(method FeeMethod, value decimal.Decimal) *ConfigFeeScheduleEntry {
 	this := ConfigFeeScheduleEntry{}
 	this.Method = method
 	this.Value = value
@@ -108,9 +108,9 @@ func (o *ConfigFeeScheduleEntry) SetMethod(v FeeMethod) {
 }
 
 // GetValue returns the Value field value
-func (o *ConfigFeeScheduleEntry) GetValue() float32 {
+func (o *ConfigFeeScheduleEntry) GetValue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -119,7 +119,7 @@ func (o *ConfigFeeScheduleEntry) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *ConfigFeeScheduleEntry) GetValueOk() (*float32, bool) {
+func (o *ConfigFeeScheduleEntry) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -127,7 +127,7 @@ func (o *ConfigFeeScheduleEntry) GetValueOk() (*float32, bool) {
 }
 
 // SetValue sets field value
-func (o *ConfigFeeScheduleEntry) SetValue(v float32) {
+func (o *ConfigFeeScheduleEntry) SetValue(v decimal.Decimal) {
 	o.Value = v
 }
 

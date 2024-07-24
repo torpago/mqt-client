@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the payment. | 
+**Amount** | **decimal.Decimal** | Amount of the payment. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Description** | **string** | Description of the payment. | 
 **ImpactTime** | Pointer to **time.Time** | Date and time when the payment impacts the account balance and fee calculations. | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewPaymentCreateReq
 
-`func NewPaymentCreateReq(amount float32, currencyCode CurrencyCode, description string, method string, ) *PaymentCreateReq`
+`func NewPaymentCreateReq(amount decimal.Decimal, currencyCode CurrencyCode, description string, method string, ) *PaymentCreateReq`
 
 NewPaymentCreateReq instantiates a new PaymentCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *PaymentCreateReq) GetAmount() float32`
+`func (o *PaymentCreateReq) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PaymentCreateReq) GetAmountOk() (*float32, bool)`
+`func (o *PaymentCreateReq) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PaymentCreateReq) SetAmount(v float32)`
+`func (o *PaymentCreateReq) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

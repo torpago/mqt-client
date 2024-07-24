@@ -33,9 +33,9 @@ type ProductCreateReq struct {
 	InterestCalculation InterestCalculation `json:"interest_calculation"`
 	MinPaymentCalculation *ProductMinPaymentCalculation `json:"min_payment_calculation,omitempty"`
 	// Minimum payment, expressed as a flat amount, due on the payment due day.
-	MinPaymentFlatAmount float32 `json:"min_payment_flat_amount"`
+	MinPaymentFlatAmount decimal.Decimal `json:"min_payment_flat_amount"`
 	// Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day.
-	MinPaymentPercentage float32 `json:"min_payment_percentage"`
+	MinPaymentPercentage decimal.Decimal `json:"min_payment_percentage"`
 	// Name of the credit product.
 	Name string `json:"name"`
 	// Ordered list of balance types to which payments are allocated, from first to last.
@@ -55,7 +55,7 @@ type _ProductCreateReq ProductCreateReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductCreateReq(cardProductTokens []string, classification ProductClassification, config ProductConfig, creditLine ProductCreditLine, currencyCode CurrencyCode, interestCalculation InterestCalculation, minPaymentFlatAmount float32, minPaymentPercentage float32, name string, paymentAllocationOrder []PaymentAllocationOrderEnum, productSubType ProductSubType, productType ProductType, usage []BalanceType) *ProductCreateReq {
+func NewProductCreateReq(cardProductTokens []string, classification ProductClassification, config ProductConfig, creditLine ProductCreditLine, currencyCode CurrencyCode, interestCalculation InterestCalculation, minPaymentFlatAmount decimal.Decimal, minPaymentPercentage decimal.Decimal, name string, paymentAllocationOrder []PaymentAllocationOrderEnum, productSubType ProductSubType, productType ProductType, usage []BalanceType) *ProductCreateReq {
 	this := ProductCreateReq{}
 	this.CardProductTokens = cardProductTokens
 	this.Classification = classification
@@ -298,9 +298,9 @@ func (o *ProductCreateReq) SetMinPaymentCalculation(v ProductMinPaymentCalculati
 }
 
 // GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field value
-func (o *ProductCreateReq) GetMinPaymentFlatAmount() float32 {
+func (o *ProductCreateReq) GetMinPaymentFlatAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -309,7 +309,7 @@ func (o *ProductCreateReq) GetMinPaymentFlatAmount() float32 {
 
 // GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field value
 // and a boolean to check if the value has been set.
-func (o *ProductCreateReq) GetMinPaymentFlatAmountOk() (*float32, bool) {
+func (o *ProductCreateReq) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -317,14 +317,14 @@ func (o *ProductCreateReq) GetMinPaymentFlatAmountOk() (*float32, bool) {
 }
 
 // SetMinPaymentFlatAmount sets field value
-func (o *ProductCreateReq) SetMinPaymentFlatAmount(v float32) {
+func (o *ProductCreateReq) SetMinPaymentFlatAmount(v decimal.Decimal) {
 	o.MinPaymentFlatAmount = v
 }
 
 // GetMinPaymentPercentage returns the MinPaymentPercentage field value
-func (o *ProductCreateReq) GetMinPaymentPercentage() float32 {
+func (o *ProductCreateReq) GetMinPaymentPercentage() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -333,7 +333,7 @@ func (o *ProductCreateReq) GetMinPaymentPercentage() float32 {
 
 // GetMinPaymentPercentageOk returns a tuple with the MinPaymentPercentage field value
 // and a boolean to check if the value has been set.
-func (o *ProductCreateReq) GetMinPaymentPercentageOk() (*float32, bool) {
+func (o *ProductCreateReq) GetMinPaymentPercentageOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -341,7 +341,7 @@ func (o *ProductCreateReq) GetMinPaymentPercentageOk() (*float32, bool) {
 }
 
 // SetMinPaymentPercentage sets field value
-func (o *ProductCreateReq) SetMinPaymentPercentage(v float32) {
+func (o *ProductCreateReq) SetMinPaymentPercentage(v decimal.Decimal) {
 	o.MinPaymentPercentage = v
 }
 

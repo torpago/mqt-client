@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConversionRate** | Pointer to **float32** | Conversion rate between the origination currency and the settlement currency.  Returned when the transaction currency is different from the origination currency. | [optional] 
+**ConversionRate** | Pointer to **decimal.Decimal** | Conversion rate between the origination currency and the settlement currency.  Returned when the transaction currency is different from the origination currency. | [optional] 
 **DynamicCurrencyConversion** | Pointer to **bool** | Indicates whether currency conversion was performed dynamically at the point of sale. | [optional] [default to false]
-**OriginalAmount** | Pointer to **float32** | Amount of the transaction in the currency in which it originated. | [optional] 
+**OriginalAmount** | Pointer to **decimal.Decimal** | Amount of the transaction in the currency in which it originated. | [optional] 
 **OriginalCurrencyCode** | Pointer to **string** | Currency type of the origination currency. | [optional] 
 **SettlementData** | Pointer to [**SettlementData**](SettlementData.md) |  | [optional] 
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConversionRate
 
-`func (o *Network) GetConversionRate() float32`
+`func (o *Network) GetConversionRate() decimal.Decimal`
 
 GetConversionRate returns the ConversionRate field if non-nil, zero value otherwise.
 
 ### GetConversionRateOk
 
-`func (o *Network) GetConversionRateOk() (*float32, bool)`
+`func (o *Network) GetConversionRateOk() (*decimal.Decimal, bool)`
 
 GetConversionRateOk returns a tuple with the ConversionRate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConversionRate
 
-`func (o *Network) SetConversionRate(v float32)`
+`func (o *Network) SetConversionRate(v decimal.Decimal)`
 
 SetConversionRate sets ConversionRate field to given value.
 
@@ -81,20 +81,20 @@ HasDynamicCurrencyConversion returns a boolean if a field has been set.
 
 ### GetOriginalAmount
 
-`func (o *Network) GetOriginalAmount() float32`
+`func (o *Network) GetOriginalAmount() decimal.Decimal`
 
 GetOriginalAmount returns the OriginalAmount field if non-nil, zero value otherwise.
 
 ### GetOriginalAmountOk
 
-`func (o *Network) GetOriginalAmountOk() (*float32, bool)`
+`func (o *Network) GetOriginalAmountOk() (*decimal.Decimal, bool)`
 
 GetOriginalAmountOk returns a tuple with the OriginalAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOriginalAmount
 
-`func (o *Network) SetOriginalAmount(v float32)`
+`func (o *Network) SetOriginalAmount(v decimal.Decimal)`
 
 SetOriginalAmount sets OriginalAmount field to given value.
 

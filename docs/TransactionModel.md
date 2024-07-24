@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **AccountFunding** | Pointer to [**AccountFunding**](AccountFunding.md) |  | [optional] 
 **AccountNameVerification** | Pointer to [**AccountNameVerificationModel**](AccountNameVerificationModel.md) |  | [optional] 
 **Acquirer** | Pointer to [**Acquirer**](Acquirer.md) |  | [optional] 
-**AcquirerFeeAmount** | Pointer to **float32** | Indicates the amount of the acquirer fee. Account holders are sometimes charged an acquirer fee for card use at ATMs, fuel dispensers, and so on. | [optional] 
+**AcquirerFeeAmount** | Pointer to **decimal.Decimal** | Indicates the amount of the acquirer fee. Account holders are sometimes charged an acquirer fee for card use at ATMs, fuel dispensers, and so on. | [optional] 
 **AcquirerReferenceData** | Pointer to **string** |  | [optional] 
 **AcquirerReferenceId** | Pointer to **string** | Acquirer-assigned unique identifier of the transaction. Useful for settlement and reconciliation. | [optional] 
 **ActingUserToken** | **string** | Unique identifier of the user who conducted the transaction. This might be a child user configured to share its parent&#39;s account balance. | 
 **AddressVerification** | Pointer to [**AddressVerificationModel**](AddressVerificationModel.md) |  | [optional] 
 **AdviceReasonCode** | Pointer to **string** |  | [optional] 
 **AdviceReasonDetails** | Pointer to **string** |  | [optional] 
-**Amount** | **float32** | Amount of the transaction. | 
-**AmountToBeReleased** | Pointer to **float32** | Amount of original authorization to be released. This field appears in final clearing transactions where the clearing amount is lower than the authorization amount. | [optional] 
+**Amount** | **decimal.Decimal** | Amount of the transaction. | 
+**AmountToBeReleased** | Pointer to **decimal.Decimal** | Amount of original authorization to be released. This field appears in final clearing transactions where the clearing amount is lower than the authorization amount. | [optional] 
 **ApprovalCode** | Pointer to **string** | Unique identifier assigned to an authorization, printed on the receipt at point of sale. | [optional] 
 **AtcInformation** | Pointer to [**AtcInformation**](AtcInformation.md) |  | [optional] 
 **AutoReload** | Pointer to [**AutoReloadModel**](AutoReloadModel.md) |  | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **CardSecurityCodeVerification** | Pointer to [**CardSecurityCodeVerification**](CardSecurityCodeVerification.md) |  | [optional] 
 **CardToken** | Pointer to **string** | Unique identifier of the card. Useful when a single account holder has multiple cards. | [optional] 
 **CardholderAuthenticationData** | Pointer to [**CardholderAuthenticationData**](CardholderAuthenticationData.md) |  | [optional] 
-**CashBackAmount** | Pointer to **float32** | Amount of cash back requested by the cardholder during the transaction. Included in the total transaction amount. | [optional] 
+**CashBackAmount** | Pointer to **decimal.Decimal** | Amount of cash back requested by the cardholder during the transaction. Included in the total transaction amount. | [optional] 
 **Chargeback** | Pointer to [**ChargebackResponse**](ChargebackResponse.md) |  | [optional] 
 **ClearingRecordSequenceNumber** | Pointer to **string** | A sequence number that identifies a specific clearing message among multiple clearing messages for an authorization. | [optional] 
 **CreatedTime** | Pointer to **time.Time** | Date and time when the Marqeta platform created the transaction entry, in UTC format. For example, when Marqeta processed the clearing record for a refund. | [optional] 
@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 **IsFinalClearing** | Pointer to **bool** | Indicates the final clearing event for an authorization. If the final cleared amount is lower than the authorized amount, you must release the hold on the funds per the value in the &#x60;amount_to_be_released&#x60; field. | [optional] 
 **IsPreauthorization** | Pointer to **bool** | Indicates if the transaction is a pre-authorization. | [optional] [default to false]
 **IsaIndicator** | Pointer to **string** | The international service assessment indicator indicates if an ISA fee is applicable to the transaction. | [optional] 
-**IssuerInterchangeAmount** | Pointer to **float32** | The amount of interchange charged by the card issuer. | [optional] 
+**IssuerInterchangeAmount** | Pointer to **decimal.Decimal** | The amount of interchange charged by the card issuer. | [optional] 
 **IssuerPaymentNode** | Pointer to **string** | Unique identifier of the Marqeta platform server that received the transaction from the card network. | [optional] 
 **IssuerReceivedTime** | Pointer to **string** | Date and time when the Marqeta platform received the transaction from the card network, in UTC. | [optional] 
 **LocalTransactionDate** | Pointer to **time.Time** | Indicates the local time of the transaction at the card acceptor&#39;s location. You can use this field to determine the correct time of the transaction when filing a dispute. | [optional] 
@@ -80,7 +80,7 @@ Name | Type | Description | Notes
 **Program** | Pointer to [**Program**](Program.md) |  | [optional] 
 **ProgramTransfer** | Pointer to [**ProgramTransferResponse**](ProgramTransferResponse.md) |  | [optional] 
 **RealTimeFeeGroup** | Pointer to [**RealTimeFeeGroup**](RealTimeFeeGroup.md) |  | [optional] 
-**RequestAmount** | Pointer to **float32** | Merchant-requested amount, including any fees. | [optional] 
+**RequestAmount** | Pointer to **decimal.Decimal** | Merchant-requested amount, including any fees. | [optional] 
 **Response** | Pointer to [**Response**](Response.md) |  | [optional] 
 **SettlementDate** | Pointer to **time.Time** | Date and time when funds were moved for a transaction, in UTC. For example, in the case of a refund, when funds were credited to the cardholder. | [optional] 
 **SettlementIndicator** | Pointer to **string** | Indicates the settlement service used for the transaction. | [optional] 
@@ -102,7 +102,7 @@ Name | Type | Description | Notes
 
 ### NewTransactionModel
 
-`func NewTransactionModel(actingUserToken string, amount float32, state string, token string, type_ string, ) *TransactionModel`
+`func NewTransactionModel(actingUserToken string, amount decimal.Decimal, state string, token string, type_ string, ) *TransactionModel`
 
 NewTransactionModel instantiates a new TransactionModel object
 This constructor will assign default values to properties that have it defined,
@@ -194,20 +194,20 @@ HasAcquirer returns a boolean if a field has been set.
 
 ### GetAcquirerFeeAmount
 
-`func (o *TransactionModel) GetAcquirerFeeAmount() float32`
+`func (o *TransactionModel) GetAcquirerFeeAmount() decimal.Decimal`
 
 GetAcquirerFeeAmount returns the AcquirerFeeAmount field if non-nil, zero value otherwise.
 
 ### GetAcquirerFeeAmountOk
 
-`func (o *TransactionModel) GetAcquirerFeeAmountOk() (*float32, bool)`
+`func (o *TransactionModel) GetAcquirerFeeAmountOk() (*decimal.Decimal, bool)`
 
 GetAcquirerFeeAmountOk returns a tuple with the AcquirerFeeAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAcquirerFeeAmount
 
-`func (o *TransactionModel) SetAcquirerFeeAmount(v float32)`
+`func (o *TransactionModel) SetAcquirerFeeAmount(v decimal.Decimal)`
 
 SetAcquirerFeeAmount sets AcquirerFeeAmount field to given value.
 
@@ -364,40 +364,40 @@ HasAdviceReasonDetails returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *TransactionModel) GetAmount() float32`
+`func (o *TransactionModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *TransactionModel) GetAmountOk() (*float32, bool)`
+`func (o *TransactionModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *TransactionModel) SetAmount(v float32)`
+`func (o *TransactionModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 
 
 ### GetAmountToBeReleased
 
-`func (o *TransactionModel) GetAmountToBeReleased() float32`
+`func (o *TransactionModel) GetAmountToBeReleased() decimal.Decimal`
 
 GetAmountToBeReleased returns the AmountToBeReleased field if non-nil, zero value otherwise.
 
 ### GetAmountToBeReleasedOk
 
-`func (o *TransactionModel) GetAmountToBeReleasedOk() (*float32, bool)`
+`func (o *TransactionModel) GetAmountToBeReleasedOk() (*decimal.Decimal, bool)`
 
 GetAmountToBeReleasedOk returns a tuple with the AmountToBeReleased field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmountToBeReleased
 
-`func (o *TransactionModel) SetAmountToBeReleased(v float32)`
+`func (o *TransactionModel) SetAmountToBeReleased(v decimal.Decimal)`
 
 SetAmountToBeReleased sets AmountToBeReleased field to given value.
 
@@ -784,20 +784,20 @@ HasCardholderAuthenticationData returns a boolean if a field has been set.
 
 ### GetCashBackAmount
 
-`func (o *TransactionModel) GetCashBackAmount() float32`
+`func (o *TransactionModel) GetCashBackAmount() decimal.Decimal`
 
 GetCashBackAmount returns the CashBackAmount field if non-nil, zero value otherwise.
 
 ### GetCashBackAmountOk
 
-`func (o *TransactionModel) GetCashBackAmountOk() (*float32, bool)`
+`func (o *TransactionModel) GetCashBackAmountOk() (*decimal.Decimal, bool)`
 
 GetCashBackAmountOk returns a tuple with the CashBackAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCashBackAmount
 
-`func (o *TransactionModel) SetCashBackAmount(v float32)`
+`func (o *TransactionModel) SetCashBackAmount(v decimal.Decimal)`
 
 SetCashBackAmount sets CashBackAmount field to given value.
 
@@ -1459,20 +1459,20 @@ HasIsaIndicator returns a boolean if a field has been set.
 
 ### GetIssuerInterchangeAmount
 
-`func (o *TransactionModel) GetIssuerInterchangeAmount() float32`
+`func (o *TransactionModel) GetIssuerInterchangeAmount() decimal.Decimal`
 
 GetIssuerInterchangeAmount returns the IssuerInterchangeAmount field if non-nil, zero value otherwise.
 
 ### GetIssuerInterchangeAmountOk
 
-`func (o *TransactionModel) GetIssuerInterchangeAmountOk() (*float32, bool)`
+`func (o *TransactionModel) GetIssuerInterchangeAmountOk() (*decimal.Decimal, bool)`
 
 GetIssuerInterchangeAmountOk returns a tuple with the IssuerInterchangeAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerInterchangeAmount
 
-`func (o *TransactionModel) SetIssuerInterchangeAmount(v float32)`
+`func (o *TransactionModel) SetIssuerInterchangeAmount(v decimal.Decimal)`
 
 SetIssuerInterchangeAmount sets IssuerInterchangeAmount field to given value.
 
@@ -2009,20 +2009,20 @@ HasRealTimeFeeGroup returns a boolean if a field has been set.
 
 ### GetRequestAmount
 
-`func (o *TransactionModel) GetRequestAmount() float32`
+`func (o *TransactionModel) GetRequestAmount() decimal.Decimal`
 
 GetRequestAmount returns the RequestAmount field if non-nil, zero value otherwise.
 
 ### GetRequestAmountOk
 
-`func (o *TransactionModel) GetRequestAmountOk() (*float32, bool)`
+`func (o *TransactionModel) GetRequestAmountOk() (*decimal.Decimal, bool)`
 
 GetRequestAmountOk returns a tuple with the RequestAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestAmount
 
-`func (o *TransactionModel) SetRequestAmount(v float32)`
+`func (o *TransactionModel) SetRequestAmount(v decimal.Decimal)`
 
 SetRequestAmount sets RequestAmount field to given value.
 

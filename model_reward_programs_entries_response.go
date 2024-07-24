@@ -43,9 +43,9 @@ type RewardProgramsEntriesResponse struct {
 	// Unique identifier of the reward entry.
 	Token string `json:"token"`
 	// The transaction amount to which the reward rule was applied. Used to determine the value of the reward entry.
-	TransactionAmount float32 `json:"transaction_amount"`
+	TransactionAmount decimal.Decimal `json:"transaction_amount"`
 	// Value of the reward entry.
-	Value *float32 `json:"value,omitempty"`
+	Value *decimal.Decimal `json:"value,omitempty"`
 }
 
 type _RewardProgramsEntriesResponse RewardProgramsEntriesResponse
@@ -54,7 +54,7 @@ type _RewardProgramsEntriesResponse RewardProgramsEntriesResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRewardProgramsEntriesResponse(createdTime time.Time, note string, relatedJournalEntryToken string, rewardProgramToken string, rewardRulesConfigToken string, status RewardEntryStatus, token string, transactionAmount float32) *RewardProgramsEntriesResponse {
+func NewRewardProgramsEntriesResponse(createdTime time.Time, note string, relatedJournalEntryToken string, rewardProgramToken string, rewardRulesConfigToken string, status RewardEntryStatus, token string, transactionAmount decimal.Decimal) *RewardProgramsEntriesResponse {
 	this := RewardProgramsEntriesResponse{}
 	this.CreatedTime = createdTime
 	this.Note = note
@@ -340,9 +340,9 @@ func (o *RewardProgramsEntriesResponse) SetToken(v string) {
 }
 
 // GetTransactionAmount returns the TransactionAmount field value
-func (o *RewardProgramsEntriesResponse) GetTransactionAmount() float32 {
+func (o *RewardProgramsEntriesResponse) GetTransactionAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -351,7 +351,7 @@ func (o *RewardProgramsEntriesResponse) GetTransactionAmount() float32 {
 
 // GetTransactionAmountOk returns a tuple with the TransactionAmount field value
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsEntriesResponse) GetTransactionAmountOk() (*float32, bool) {
+func (o *RewardProgramsEntriesResponse) GetTransactionAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -359,14 +359,14 @@ func (o *RewardProgramsEntriesResponse) GetTransactionAmountOk() (*float32, bool
 }
 
 // SetTransactionAmount sets field value
-func (o *RewardProgramsEntriesResponse) SetTransactionAmount(v float32) {
+func (o *RewardProgramsEntriesResponse) SetTransactionAmount(v decimal.Decimal) {
 	o.TransactionAmount = v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *RewardProgramsEntriesResponse) GetValue() float32 {
+func (o *RewardProgramsEntriesResponse) GetValue() decimal.Decimal {
 	if o == nil || IsNil(o.Value) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Value
@@ -374,7 +374,7 @@ func (o *RewardProgramsEntriesResponse) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsEntriesResponse) GetValueOk() (*float32, bool) {
+func (o *RewardProgramsEntriesResponse) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -390,8 +390,8 @@ func (o *RewardProgramsEntriesResponse) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given float32 and assigns it to the Value field.
-func (o *RewardProgramsEntriesResponse) SetValue(v float32) {
+// SetValue gets a reference to the given decimal.Decimal and assigns it to the Value field.
+func (o *RewardProgramsEntriesResponse) SetValue(v decimal.Decimal) {
 	o.Value = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the funding. | 
+**Amount** | **decimal.Decimal** | Amount of the funding. | 
 **CreatedTime** | **time.Time** | Timestamp when the funding entry was created. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Memo** | **string** | Additional notes for the funding entry. | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewProgramFundingResponse
 
-`func NewProgramFundingResponse(amount float32, createdTime time.Time, currencyCode CurrencyCode, memo string, postTime time.Time, shortCode string, token string, updatedTime time.Time, ) *ProgramFundingResponse`
+`func NewProgramFundingResponse(amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, memo string, postTime time.Time, shortCode string, token string, updatedTime time.Time, ) *ProgramFundingResponse`
 
 NewProgramFundingResponse instantiates a new ProgramFundingResponse object
 This constructor will assign default values to properties that have it defined,
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *ProgramFundingResponse) GetAmount() float32`
+`func (o *ProgramFundingResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *ProgramFundingResponse) GetAmountOk() (*float32, bool)`
+`func (o *ProgramFundingResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *ProgramFundingResponse) SetAmount(v float32)`
+`func (o *ProgramFundingResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

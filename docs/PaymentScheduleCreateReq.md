@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | Amount of the payment.  Required if &#x60;amount_category&#x60; is &#x60;FIXED&#x60;. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | Amount of the payment.  Required if &#x60;amount_category&#x60; is &#x60;FIXED&#x60;. | [optional] 
 **AmountCategory** | [**PaymentScheduleAmountCategory**](PaymentScheduleAmountCategory.md) |  | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
 **Description** | Pointer to **string** | Description of the payment schedule. | [optional] 
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *PaymentScheduleCreateReq) GetAmount() float32`
+`func (o *PaymentScheduleCreateReq) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PaymentScheduleCreateReq) GetAmountOk() (*float32, bool)`
+`func (o *PaymentScheduleCreateReq) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PaymentScheduleCreateReq) SetAmount(v float32)`
+`func (o *PaymentScheduleCreateReq) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

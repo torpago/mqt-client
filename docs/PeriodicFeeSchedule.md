@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | fee amount | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | fee amount | [optional] 
 **EffectiveDate** | Pointer to **string** | date the fee becomes effective | [optional] 
 **NextFeeImpactDate** | Pointer to **string** | date of the next time fee will be charged | [optional] 
 **Type** | Pointer to **string** | type of fee to be charged | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *PeriodicFeeSchedule) GetAmount() float32`
+`func (o *PeriodicFeeSchedule) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PeriodicFeeSchedule) GetAmountOk() (*float32, bool)`
+`func (o *PeriodicFeeSchedule) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PeriodicFeeSchedule) SetAmount(v float32)`
+`func (o *PeriodicFeeSchedule) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

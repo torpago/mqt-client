@@ -331,7 +331,7 @@ import (
 )
 
 func main() {
-	peerTransferRequest := *openapiclient.NewPeerTransferRequest(float32(123), "CurrencyCode_example") // PeerTransferRequest |  (optional)
+	peerTransferRequest := *openapiclient.NewPeerTransferRequest(decimal.Decimal(123), "CurrencyCode_example") // PeerTransferRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

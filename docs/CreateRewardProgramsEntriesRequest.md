@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **CreatedTime** | Pointer to **time.Time** | Date and time when the reward entry was created on the Marqeta platform, in UTC. | [optional] 
 **Note** | **string** | A note explaining why the reward entry is being created manually. | 
 **Token** | Pointer to **string** | Unique identifier of the reward entry. | [optional] 
-**Value** | **float32** | Value of the reward granted to the account. | 
+**Value** | **decimal.Decimal** | Value of the reward granted to the account. | 
 
 ## Methods
 
 ### NewCreateRewardProgramsEntriesRequest
 
-`func NewCreateRewardProgramsEntriesRequest(note string, value float32, ) *CreateRewardProgramsEntriesRequest`
+`func NewCreateRewardProgramsEntriesRequest(note string, value decimal.Decimal, ) *CreateRewardProgramsEntriesRequest`
 
 NewCreateRewardProgramsEntriesRequest instantiates a new CreateRewardProgramsEntriesRequest object
 This constructor will assign default values to properties that have it defined,
@@ -100,20 +100,20 @@ HasToken returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *CreateRewardProgramsEntriesRequest) GetValue() float32`
+`func (o *CreateRewardProgramsEntriesRequest) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CreateRewardProgramsEntriesRequest) GetValueOk() (*float32, bool)`
+`func (o *CreateRewardProgramsEntriesRequest) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CreateRewardProgramsEntriesRequest) SetValue(v float32)`
+`func (o *CreateRewardProgramsEntriesRequest) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

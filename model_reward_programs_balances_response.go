@@ -28,15 +28,15 @@ type RewardProgramsBalancesResponse struct {
 	// Opening date of the billing cycle for which rewards were accrued, in UTC.
 	BillingCycleOpeningDate time.Time `json:"billing_cycle_opening_date"`
 	// The net balance for a billing cycle, which is total amount spent during a billing cycle, minus any refunds or reversals. Used to determine reward accrual.
-	NetBalance float32 `json:"net_balance"`
+	NetBalance decimal.Decimal `json:"net_balance"`
 	// The pending balance of the rewards accrued for the current billing cycle. Pending rewards cannot be redeemed.
-	PendingRewardBalance float32 `json:"pending_reward_balance"`
+	PendingRewardBalance decimal.Decimal `json:"pending_reward_balance"`
 	// The reward percentage applied to the balance for the current billing cycle. Determined by the reward rules config.
-	Percentage float32 `json:"percentage"`
+	Percentage decimal.Decimal `json:"percentage"`
 	// Unique identifier of reward program for which to return balances.
 	RewardProgramToken string `json:"reward_program_token"`
 	// The total balance of the rewards accrued to date minus the rewards redeemed to date.
-	TotalRewardBalance float32 `json:"total_reward_balance"`
+	TotalRewardBalance decimal.Decimal `json:"total_reward_balance"`
 }
 
 type _RewardProgramsBalancesResponse RewardProgramsBalancesResponse
@@ -45,7 +45,7 @@ type _RewardProgramsBalancesResponse RewardProgramsBalancesResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRewardProgramsBalancesResponse(billingCycleClosingDate time.Time, billingCycleOpeningDate time.Time, netBalance float32, pendingRewardBalance float32, percentage float32, rewardProgramToken string, totalRewardBalance float32) *RewardProgramsBalancesResponse {
+func NewRewardProgramsBalancesResponse(billingCycleClosingDate time.Time, billingCycleOpeningDate time.Time, netBalance decimal.Decimal, pendingRewardBalance decimal.Decimal, percentage decimal.Decimal, rewardProgramToken string, totalRewardBalance decimal.Decimal) *RewardProgramsBalancesResponse {
 	this := RewardProgramsBalancesResponse{}
 	this.BillingCycleClosingDate = billingCycleClosingDate
 	this.BillingCycleOpeningDate = billingCycleOpeningDate
@@ -114,9 +114,9 @@ func (o *RewardProgramsBalancesResponse) SetBillingCycleOpeningDate(v time.Time)
 }
 
 // GetNetBalance returns the NetBalance field value
-func (o *RewardProgramsBalancesResponse) GetNetBalance() float32 {
+func (o *RewardProgramsBalancesResponse) GetNetBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -125,7 +125,7 @@ func (o *RewardProgramsBalancesResponse) GetNetBalance() float32 {
 
 // GetNetBalanceOk returns a tuple with the NetBalance field value
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsBalancesResponse) GetNetBalanceOk() (*float32, bool) {
+func (o *RewardProgramsBalancesResponse) GetNetBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -133,14 +133,14 @@ func (o *RewardProgramsBalancesResponse) GetNetBalanceOk() (*float32, bool) {
 }
 
 // SetNetBalance sets field value
-func (o *RewardProgramsBalancesResponse) SetNetBalance(v float32) {
+func (o *RewardProgramsBalancesResponse) SetNetBalance(v decimal.Decimal) {
 	o.NetBalance = v
 }
 
 // GetPendingRewardBalance returns the PendingRewardBalance field value
-func (o *RewardProgramsBalancesResponse) GetPendingRewardBalance() float32 {
+func (o *RewardProgramsBalancesResponse) GetPendingRewardBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -149,7 +149,7 @@ func (o *RewardProgramsBalancesResponse) GetPendingRewardBalance() float32 {
 
 // GetPendingRewardBalanceOk returns a tuple with the PendingRewardBalance field value
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsBalancesResponse) GetPendingRewardBalanceOk() (*float32, bool) {
+func (o *RewardProgramsBalancesResponse) GetPendingRewardBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -157,14 +157,14 @@ func (o *RewardProgramsBalancesResponse) GetPendingRewardBalanceOk() (*float32, 
 }
 
 // SetPendingRewardBalance sets field value
-func (o *RewardProgramsBalancesResponse) SetPendingRewardBalance(v float32) {
+func (o *RewardProgramsBalancesResponse) SetPendingRewardBalance(v decimal.Decimal) {
 	o.PendingRewardBalance = v
 }
 
 // GetPercentage returns the Percentage field value
-func (o *RewardProgramsBalancesResponse) GetPercentage() float32 {
+func (o *RewardProgramsBalancesResponse) GetPercentage() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -173,7 +173,7 @@ func (o *RewardProgramsBalancesResponse) GetPercentage() float32 {
 
 // GetPercentageOk returns a tuple with the Percentage field value
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsBalancesResponse) GetPercentageOk() (*float32, bool) {
+func (o *RewardProgramsBalancesResponse) GetPercentageOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -181,7 +181,7 @@ func (o *RewardProgramsBalancesResponse) GetPercentageOk() (*float32, bool) {
 }
 
 // SetPercentage sets field value
-func (o *RewardProgramsBalancesResponse) SetPercentage(v float32) {
+func (o *RewardProgramsBalancesResponse) SetPercentage(v decimal.Decimal) {
 	o.Percentage = v
 }
 
@@ -210,9 +210,9 @@ func (o *RewardProgramsBalancesResponse) SetRewardProgramToken(v string) {
 }
 
 // GetTotalRewardBalance returns the TotalRewardBalance field value
-func (o *RewardProgramsBalancesResponse) GetTotalRewardBalance() float32 {
+func (o *RewardProgramsBalancesResponse) GetTotalRewardBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -221,7 +221,7 @@ func (o *RewardProgramsBalancesResponse) GetTotalRewardBalance() float32 {
 
 // GetTotalRewardBalanceOk returns a tuple with the TotalRewardBalance field value
 // and a boolean to check if the value has been set.
-func (o *RewardProgramsBalancesResponse) GetTotalRewardBalanceOk() (*float32, bool) {
+func (o *RewardProgramsBalancesResponse) GetTotalRewardBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -229,7 +229,7 @@ func (o *RewardProgramsBalancesResponse) GetTotalRewardBalanceOk() (*float32, bo
 }
 
 // SetTotalRewardBalance sets field value
-func (o *RewardProgramsBalancesResponse) SetTotalRewardBalance(v float32) {
+func (o *RewardProgramsBalancesResponse) SetTotalRewardBalance(v decimal.Decimal) {
 	o.TotalRewardBalance = v
 }
 

@@ -26,7 +26,7 @@ type LedgerEntry struct {
 	// Unique identifier of the credit account associated with the credit card used to make the ledger entry.
 	AccountToken string `json:"account_token"`
 	// Amount of the ledger entry.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Unique identifier of the credit card used to make the ledger entry.
 	CardToken string `json:"card_token"`
 	// Date and time when the ledger entry was created on Marqeta's credit platform, in UTC.
@@ -67,7 +67,7 @@ type _LedgerEntry LedgerEntry
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLedgerEntry(accountToken string, amount float32, cardToken string, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, memo string, requestTime time.Time, status string, token string, type_ string) *LedgerEntry {
+func NewLedgerEntry(accountToken string, amount decimal.Decimal, cardToken string, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, memo string, requestTime time.Time, status string, token string, type_ string) *LedgerEntry {
 	this := LedgerEntry{}
 	this.AccountToken = accountToken
 	this.Amount = amount
@@ -121,9 +121,9 @@ func (o *LedgerEntry) SetAccountToken(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *LedgerEntry) GetAmount() float32 {
+func (o *LedgerEntry) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -132,7 +132,7 @@ func (o *LedgerEntry) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *LedgerEntry) GetAmountOk() (*float32, bool) {
+func (o *LedgerEntry) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -140,7 +140,7 @@ func (o *LedgerEntry) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *LedgerEntry) SetAmount(v float32) {
+func (o *LedgerEntry) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

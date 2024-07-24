@@ -21,11 +21,11 @@ var _ MappedNullable = &Network{}
 // Network Contains information from the card network about currency conversion, including the original currency of the transaction, the amount of the transaction in the original currency, and the conversion rate.
 type Network struct {
 	// Conversion rate between the origination currency and the settlement currency.  Returned when the transaction currency is different from the origination currency.
-	ConversionRate *float32 `json:"conversion_rate,omitempty"`
+	ConversionRate *decimal.Decimal `json:"conversion_rate,omitempty"`
 	// Indicates whether currency conversion was performed dynamically at the point of sale.
 	DynamicCurrencyConversion *bool `json:"dynamic_currency_conversion,omitempty"`
 	// Amount of the transaction in the currency in which it originated.
-	OriginalAmount *float32 `json:"original_amount,omitempty"`
+	OriginalAmount *decimal.Decimal `json:"original_amount,omitempty"`
 	// Currency type of the origination currency.
 	OriginalCurrencyCode *string `json:"original_currency_code,omitempty"`
 	SettlementData *SettlementData `json:"settlement_data,omitempty"`
@@ -53,9 +53,9 @@ func NewNetworkWithDefaults() *Network {
 }
 
 // GetConversionRate returns the ConversionRate field value if set, zero value otherwise.
-func (o *Network) GetConversionRate() float32 {
+func (o *Network) GetConversionRate() decimal.Decimal {
 	if o == nil || IsNil(o.ConversionRate) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ConversionRate
@@ -63,7 +63,7 @@ func (o *Network) GetConversionRate() float32 {
 
 // GetConversionRateOk returns a tuple with the ConversionRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetConversionRateOk() (*float32, bool) {
+func (o *Network) GetConversionRateOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ConversionRate) {
 		return nil, false
 	}
@@ -79,8 +79,8 @@ func (o *Network) HasConversionRate() bool {
 	return false
 }
 
-// SetConversionRate gets a reference to the given float32 and assigns it to the ConversionRate field.
-func (o *Network) SetConversionRate(v float32) {
+// SetConversionRate gets a reference to the given decimal.Decimal and assigns it to the ConversionRate field.
+func (o *Network) SetConversionRate(v decimal.Decimal) {
 	o.ConversionRate = &v
 }
 
@@ -117,9 +117,9 @@ func (o *Network) SetDynamicCurrencyConversion(v bool) {
 }
 
 // GetOriginalAmount returns the OriginalAmount field value if set, zero value otherwise.
-func (o *Network) GetOriginalAmount() float32 {
+func (o *Network) GetOriginalAmount() decimal.Decimal {
 	if o == nil || IsNil(o.OriginalAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.OriginalAmount
@@ -127,7 +127,7 @@ func (o *Network) GetOriginalAmount() float32 {
 
 // GetOriginalAmountOk returns a tuple with the OriginalAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetOriginalAmountOk() (*float32, bool) {
+func (o *Network) GetOriginalAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.OriginalAmount) {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *Network) HasOriginalAmount() bool {
 	return false
 }
 
-// SetOriginalAmount gets a reference to the given float32 and assigns it to the OriginalAmount field.
-func (o *Network) SetOriginalAmount(v float32) {
+// SetOriginalAmount gets a reference to the given decimal.Decimal and assigns it to the OriginalAmount field.
+func (o *Network) SetOriginalAmount(v decimal.Decimal) {
 	o.OriginalAmount = &v
 }
 

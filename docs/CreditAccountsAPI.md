@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-	accountCreateReq := *openapiclient.NewAccountCreateReq(float32(123), []openapiclient.AccountUsageCreateReq{*openapiclient.NewAccountUsageCreateReq([]openapiclient.AprScheduleCreateReq{*openapiclient.NewAprScheduleCreateReq([]openapiclient.AprScheduleEntryCreateReq{*openapiclient.NewAprScheduleEntryCreateReq(float32(123))}, openapiclient.AccountAprType("GO_TO"))}, openapiclient.BalanceType("PURCHASE"))}) // AccountCreateReq | 
+	accountCreateReq := *openapiclient.NewAccountCreateReq(decimal.Decimal(123), []openapiclient.AccountUsageCreateReq{*openapiclient.NewAccountUsageCreateReq([]openapiclient.AprScheduleCreateReq{*openapiclient.NewAprScheduleCreateReq([]openapiclient.AprScheduleEntryCreateReq{*openapiclient.NewAprScheduleEntryCreateReq(decimal.Decimal(123))}, openapiclient.AccountAprType("GO_TO"))}, openapiclient.BalanceType("PURCHASE"))}) // AccountCreateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

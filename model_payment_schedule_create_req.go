@@ -23,7 +23,7 @@ var _ MappedNullable = &PaymentScheduleCreateReq{}
 // PaymentScheduleCreateReq Information to create a payment schedule.
 type PaymentScheduleCreateReq struct {
 	// Amount of the payment.  Required if `amount_category` is `FIXED`.
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	AmountCategory PaymentScheduleAmountCategory `json:"amount_category"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
 	// Description of the payment schedule.
@@ -65,9 +65,9 @@ func NewPaymentScheduleCreateReqWithDefaults() *PaymentScheduleCreateReq {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *PaymentScheduleCreateReq) GetAmount() float32 {
+func (o *PaymentScheduleCreateReq) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -75,7 +75,7 @@ func (o *PaymentScheduleCreateReq) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentScheduleCreateReq) GetAmountOk() (*float32, bool) {
+func (o *PaymentScheduleCreateReq) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *PaymentScheduleCreateReq) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *PaymentScheduleCreateReq) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *PaymentScheduleCreateReq) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **CardAcceptor** | Pointer to [**CardAcceptorModel**](CardAcceptorModel.md) |  | [optional] 
 **CardOptions** | Pointer to [**CardOptions**](CardOptions.md) |  | [optional] 
 **CardToken** | **string** |  | 
-**CashBackAmount** | Pointer to **float32** |  | [optional] 
+**CashBackAmount** | Pointer to **decimal.Decimal** |  | [optional] 
 **IsPreAuth** | Pointer to **bool** |  | [optional] [default to false]
 **Mid** | **string** |  | 
 **NetworkFees** | Pointer to [**[]NetworkFeeModel**](NetworkFeeModel.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAuthRequestModel
 
-`func NewAuthRequestModel(amount float32, cardToken string, mid string, ) *AuthRequestModel`
+`func NewAuthRequestModel(amount decimal.Decimal, cardToken string, mid string, ) *AuthRequestModel`
 
 NewAuthRequestModel instantiates a new AuthRequestModel object
 This constructor will assign default values to properties that have it defined,
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *AuthRequestModel) GetAmount() float32`
+`func (o *AuthRequestModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *AuthRequestModel) GetAmountOk() (*float32, bool)`
+`func (o *AuthRequestModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *AuthRequestModel) SetAmount(v float32)`
+`func (o *AuthRequestModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 
@@ -128,20 +128,20 @@ SetCardToken sets CardToken field to given value.
 
 ### GetCashBackAmount
 
-`func (o *AuthRequestModel) GetCashBackAmount() float32`
+`func (o *AuthRequestModel) GetCashBackAmount() decimal.Decimal`
 
 GetCashBackAmount returns the CashBackAmount field if non-nil, zero value otherwise.
 
 ### GetCashBackAmountOk
 
-`func (o *AuthRequestModel) GetCashBackAmountOk() (*float32, bool)`
+`func (o *AuthRequestModel) GetCashBackAmountOk() (*decimal.Decimal, bool)`
 
 GetCashBackAmountOk returns a tuple with the CashBackAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCashBackAmount
 
-`func (o *AuthRequestModel) SetCashBackAmount(v float32)`
+`func (o *AuthRequestModel) SetCashBackAmount(v decimal.Decimal)`
 
 SetCashBackAmount sets CashBackAmount field to given value.
 

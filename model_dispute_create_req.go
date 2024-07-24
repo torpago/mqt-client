@@ -23,7 +23,7 @@ var _ MappedNullable = &DisputeCreateReq{}
 // DisputeCreateReq Information about a transaction dispute creation request.
 type DisputeCreateReq struct {
 	// Amount of the dispute. Max value is equal to the value of the original transaction.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	Category DisputeCategory `json:"category"`
 	// Unique identifier of the journal entry (`authorization.clearing` type only) in dispute.
 	LedgerEntryToken string `json:"ledger_entry_token"`
@@ -39,7 +39,7 @@ type _DisputeCreateReq DisputeCreateReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDisputeCreateReq(amount float32, category DisputeCategory, ledgerEntryToken string) *DisputeCreateReq {
+func NewDisputeCreateReq(amount decimal.Decimal, category DisputeCategory, ledgerEntryToken string) *DisputeCreateReq {
 	this := DisputeCreateReq{}
 	this.Amount = amount
 	this.Category = category
@@ -56,9 +56,9 @@ func NewDisputeCreateReqWithDefaults() *DisputeCreateReq {
 }
 
 // GetAmount returns the Amount field value
-func (o *DisputeCreateReq) GetAmount() float32 {
+func (o *DisputeCreateReq) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -67,7 +67,7 @@ func (o *DisputeCreateReq) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *DisputeCreateReq) GetAmountOk() (*float32, bool) {
+func (o *DisputeCreateReq) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -75,7 +75,7 @@ func (o *DisputeCreateReq) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *DisputeCreateReq) SetAmount(v float32) {
+func (o *DisputeCreateReq) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Total amount of spend remaining in the velocity control. | 
+**Amount** | **decimal.Decimal** | Total amount of spend remaining in the velocity control. | 
 **DaysRemaining** | Pointer to **int32** | Number of days remaining in the velocity control time window. | [optional] 
 **Uses** | **int32** | Number of uses remaining in the velocity control. | [default to 0]
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewAvailable
 
-`func NewAvailable(amount float32, uses int32, ) *Available`
+`func NewAvailable(amount decimal.Decimal, uses int32, ) *Available`
 
 NewAvailable instantiates a new Available object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *Available) GetAmount() float32`
+`func (o *Available) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *Available) GetAmountOk() (*float32, bool)`
+`func (o *Available) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *Available) SetAmount(v float32)`
+`func (o *Available) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

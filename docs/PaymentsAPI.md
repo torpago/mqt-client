@@ -35,7 +35,7 @@ import (
 
 func main() {
 	accountToken := "accountToken_example" // string | Unique identifier of the credit account for which to create a payment.  Send a `GET` request to `/credit/accounts` to retrieve existing credit account tokens.
-	paymentCreateReq := *openapiclient.NewPaymentCreateReq(float32(123), openapiclient.CurrencyCode("USD"), "Description_example", "Method_example") // PaymentCreateReq | 
+	paymentCreateReq := *openapiclient.NewPaymentCreateReq(decimal.Decimal(123), openapiclient.CurrencyCode("USD"), "Description_example", "Method_example") // PaymentCreateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

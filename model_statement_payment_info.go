@@ -24,9 +24,9 @@ type StatementPaymentInfo struct {
 	// Date and time when the statement payment information was created on Marqeta's credit platform, in UTC.
 	CreatedTime *time.Time `json:"created_time,omitempty"`
 	// Minimum payment amount for the current statement period, based on the associated credit product settings.
-	MinimumPaymentDue *float32 `json:"minimum_payment_due,omitempty"`
+	MinimumPaymentDue *decimal.Decimal `json:"minimum_payment_due,omitempty"`
 	// Balance on the credit account when the statement period ended.
-	NewStatementBalance *float32 `json:"new_statement_balance,omitempty"`
+	NewStatementBalance *decimal.Decimal `json:"new_statement_balance,omitempty"`
 	// Last day a payment can be made before interest and fees are charged to the account.
 	PaymentCutoffDate *time.Time `json:"payment_cutoff_date,omitempty"`
 	// Payment due date, based on the credit account settings.
@@ -34,7 +34,7 @@ type StatementPaymentInfo struct {
 	// Unique identifier of the statement summary.
 	StatementSummaryToken *string `json:"statement_summary_token,omitempty"`
 	// Savings amount if the balance is paid off in three years versus only making minimum payments.
-	ThreeYearSavings *float32 `json:"three_year_savings,omitempty"`
+	ThreeYearSavings *decimal.Decimal `json:"three_year_savings,omitempty"`
 	// Unique identifier of the statement payment.
 	Token *string `json:"token,omitempty"`
 	// One or more payoff warnings.
@@ -91,9 +91,9 @@ func (o *StatementPaymentInfo) SetCreatedTime(v time.Time) {
 }
 
 // GetMinimumPaymentDue returns the MinimumPaymentDue field value if set, zero value otherwise.
-func (o *StatementPaymentInfo) GetMinimumPaymentDue() float32 {
+func (o *StatementPaymentInfo) GetMinimumPaymentDue() decimal.Decimal {
 	if o == nil || IsNil(o.MinimumPaymentDue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MinimumPaymentDue
@@ -101,7 +101,7 @@ func (o *StatementPaymentInfo) GetMinimumPaymentDue() float32 {
 
 // GetMinimumPaymentDueOk returns a tuple with the MinimumPaymentDue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementPaymentInfo) GetMinimumPaymentDueOk() (*float32, bool) {
+func (o *StatementPaymentInfo) GetMinimumPaymentDueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MinimumPaymentDue) {
 		return nil, false
 	}
@@ -117,15 +117,15 @@ func (o *StatementPaymentInfo) HasMinimumPaymentDue() bool {
 	return false
 }
 
-// SetMinimumPaymentDue gets a reference to the given float32 and assigns it to the MinimumPaymentDue field.
-func (o *StatementPaymentInfo) SetMinimumPaymentDue(v float32) {
+// SetMinimumPaymentDue gets a reference to the given decimal.Decimal and assigns it to the MinimumPaymentDue field.
+func (o *StatementPaymentInfo) SetMinimumPaymentDue(v decimal.Decimal) {
 	o.MinimumPaymentDue = &v
 }
 
 // GetNewStatementBalance returns the NewStatementBalance field value if set, zero value otherwise.
-func (o *StatementPaymentInfo) GetNewStatementBalance() float32 {
+func (o *StatementPaymentInfo) GetNewStatementBalance() decimal.Decimal {
 	if o == nil || IsNil(o.NewStatementBalance) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.NewStatementBalance
@@ -133,7 +133,7 @@ func (o *StatementPaymentInfo) GetNewStatementBalance() float32 {
 
 // GetNewStatementBalanceOk returns a tuple with the NewStatementBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementPaymentInfo) GetNewStatementBalanceOk() (*float32, bool) {
+func (o *StatementPaymentInfo) GetNewStatementBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.NewStatementBalance) {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *StatementPaymentInfo) HasNewStatementBalance() bool {
 	return false
 }
 
-// SetNewStatementBalance gets a reference to the given float32 and assigns it to the NewStatementBalance field.
-func (o *StatementPaymentInfo) SetNewStatementBalance(v float32) {
+// SetNewStatementBalance gets a reference to the given decimal.Decimal and assigns it to the NewStatementBalance field.
+func (o *StatementPaymentInfo) SetNewStatementBalance(v decimal.Decimal) {
 	o.NewStatementBalance = &v
 }
 
@@ -251,9 +251,9 @@ func (o *StatementPaymentInfo) SetStatementSummaryToken(v string) {
 }
 
 // GetThreeYearSavings returns the ThreeYearSavings field value if set, zero value otherwise.
-func (o *StatementPaymentInfo) GetThreeYearSavings() float32 {
+func (o *StatementPaymentInfo) GetThreeYearSavings() decimal.Decimal {
 	if o == nil || IsNil(o.ThreeYearSavings) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ThreeYearSavings
@@ -261,7 +261,7 @@ func (o *StatementPaymentInfo) GetThreeYearSavings() float32 {
 
 // GetThreeYearSavingsOk returns a tuple with the ThreeYearSavings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementPaymentInfo) GetThreeYearSavingsOk() (*float32, bool) {
+func (o *StatementPaymentInfo) GetThreeYearSavingsOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ThreeYearSavings) {
 		return nil, false
 	}
@@ -277,8 +277,8 @@ func (o *StatementPaymentInfo) HasThreeYearSavings() bool {
 	return false
 }
 
-// SetThreeYearSavings gets a reference to the given float32 and assigns it to the ThreeYearSavings field.
-func (o *StatementPaymentInfo) SetThreeYearSavings(v float32) {
+// SetThreeYearSavings gets a reference to the given decimal.Decimal and assigns it to the ThreeYearSavings field.
+func (o *StatementPaymentInfo) SetThreeYearSavings(v decimal.Decimal) {
 	o.ThreeYearSavings = &v
 }
 

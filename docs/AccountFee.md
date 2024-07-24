@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Method** | [**Method**](Method.md) |  | 
 **Type** | [**FeeType**](FeeType.md) |  | 
-**Value** | Pointer to **float32** | Value of the fee, either a flat fee amount or percentage value. | [optional] 
+**Value** | Pointer to **decimal.Decimal** | Value of the fee, either a flat fee amount or percentage value. | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetType sets Type field to given value.
 
 ### GetValue
 
-`func (o *AccountFee) GetValue() float32`
+`func (o *AccountFee) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *AccountFee) GetValueOk() (*float32, bool)`
+`func (o *AccountFee) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *AccountFee) SetValue(v float32)`
+`func (o *AccountFee) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

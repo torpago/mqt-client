@@ -5,28 +5,28 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account on which the statement summary is generated. | 
-**AvailableCredit** | **float32** | Amount available to spend on the credit account, as of the statement closing date. | 
-**ClosingBalance** | **float32** | Balance of the credit account when the statement period ended. | 
+**AvailableCredit** | **decimal.Decimal** | Amount available to spend on the credit account, as of the statement closing date. | 
+**ClosingBalance** | **decimal.Decimal** | Balance of the credit account when the statement period ended. | 
 **ClosingDate** | **time.Time** | Date and time when the statement period ended. | 
 **CreatedTime** | **time.Time** | Date and time when the statement summary was created on Marqeta&#39;s credit platform, in UTC. | 
-**CreditLimit** | Pointer to **float32** | Maximum balance the credit account can carry, as of the statement closing date. | [optional] 
-**Credits** | **float32** | Total amount of credits received during the statement period. | 
+**CreditLimit** | Pointer to **decimal.Decimal** | Maximum balance the credit account can carry, as of the statement closing date. | [optional] 
+**Credits** | **decimal.Decimal** | Total amount of credits received during the statement period. | 
 **CycleType** | [**CycleType**](CycleType.md) |  | 
 **DaysInBillingCycle** | **int32** | Number of days in the billing cycle, also known as the statement period. | 
-**Fees** | **float32** | Total amount of fees charged during the statement period. Does not include periodic fees. | 
-**Interest** | **float32** | Total amount of interest charged during the statement period. | 
-**OpeningBalance** | **float32** | Balance of the credit account when the statement period began. | 
+**Fees** | **decimal.Decimal** | Total amount of fees charged during the statement period. Does not include periodic fees. | 
+**Interest** | **decimal.Decimal** | Total amount of interest charged during the statement period. | 
+**OpeningBalance** | **decimal.Decimal** | Balance of the credit account when the statement period began. | 
 **OpeningDate** | **time.Time** | Date and time when the statement period began. | 
-**PastDueAmount** | **float32** | Total payment amount, required to make the account current. | 
-**Payments** | **float32** | Total amount of payments made during the statement period. | 
-**Purchases** | **float32** | Total amount of purchases made during the statement period. | 
+**PastDueAmount** | **decimal.Decimal** | Total payment amount, required to make the account current. | 
+**Payments** | **decimal.Decimal** | Total amount of payments made during the statement period. | 
+**Purchases** | **decimal.Decimal** | Total amount of purchases made during the statement period. | 
 **Token** | **string** | Unique identifier of the statement summary. | 
 
 ## Methods
 
 ### NewStatementSummary
 
-`func NewStatementSummary(accountToken string, availableCredit float32, closingBalance float32, closingDate time.Time, createdTime time.Time, credits float32, cycleType CycleType, daysInBillingCycle int32, fees float32, interest float32, openingBalance float32, openingDate time.Time, pastDueAmount float32, payments float32, purchases float32, token string, ) *StatementSummary`
+`func NewStatementSummary(accountToken string, availableCredit decimal.Decimal, closingBalance decimal.Decimal, closingDate time.Time, createdTime time.Time, credits decimal.Decimal, cycleType CycleType, daysInBillingCycle int32, fees decimal.Decimal, interest decimal.Decimal, openingBalance decimal.Decimal, openingDate time.Time, pastDueAmount decimal.Decimal, payments decimal.Decimal, purchases decimal.Decimal, token string, ) *StatementSummary`
 
 NewStatementSummary instantiates a new StatementSummary object
 This constructor will assign default values to properties that have it defined,
@@ -63,40 +63,40 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAvailableCredit
 
-`func (o *StatementSummary) GetAvailableCredit() float32`
+`func (o *StatementSummary) GetAvailableCredit() decimal.Decimal`
 
 GetAvailableCredit returns the AvailableCredit field if non-nil, zero value otherwise.
 
 ### GetAvailableCreditOk
 
-`func (o *StatementSummary) GetAvailableCreditOk() (*float32, bool)`
+`func (o *StatementSummary) GetAvailableCreditOk() (*decimal.Decimal, bool)`
 
 GetAvailableCreditOk returns a tuple with the AvailableCredit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableCredit
 
-`func (o *StatementSummary) SetAvailableCredit(v float32)`
+`func (o *StatementSummary) SetAvailableCredit(v decimal.Decimal)`
 
 SetAvailableCredit sets AvailableCredit field to given value.
 
 
 ### GetClosingBalance
 
-`func (o *StatementSummary) GetClosingBalance() float32`
+`func (o *StatementSummary) GetClosingBalance() decimal.Decimal`
 
 GetClosingBalance returns the ClosingBalance field if non-nil, zero value otherwise.
 
 ### GetClosingBalanceOk
 
-`func (o *StatementSummary) GetClosingBalanceOk() (*float32, bool)`
+`func (o *StatementSummary) GetClosingBalanceOk() (*decimal.Decimal, bool)`
 
 GetClosingBalanceOk returns a tuple with the ClosingBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClosingBalance
 
-`func (o *StatementSummary) SetClosingBalance(v float32)`
+`func (o *StatementSummary) SetClosingBalance(v decimal.Decimal)`
 
 SetClosingBalance sets ClosingBalance field to given value.
 
@@ -143,20 +143,20 @@ SetCreatedTime sets CreatedTime field to given value.
 
 ### GetCreditLimit
 
-`func (o *StatementSummary) GetCreditLimit() float32`
+`func (o *StatementSummary) GetCreditLimit() decimal.Decimal`
 
 GetCreditLimit returns the CreditLimit field if non-nil, zero value otherwise.
 
 ### GetCreditLimitOk
 
-`func (o *StatementSummary) GetCreditLimitOk() (*float32, bool)`
+`func (o *StatementSummary) GetCreditLimitOk() (*decimal.Decimal, bool)`
 
 GetCreditLimitOk returns a tuple with the CreditLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreditLimit
 
-`func (o *StatementSummary) SetCreditLimit(v float32)`
+`func (o *StatementSummary) SetCreditLimit(v decimal.Decimal)`
 
 SetCreditLimit sets CreditLimit field to given value.
 
@@ -168,20 +168,20 @@ HasCreditLimit returns a boolean if a field has been set.
 
 ### GetCredits
 
-`func (o *StatementSummary) GetCredits() float32`
+`func (o *StatementSummary) GetCredits() decimal.Decimal`
 
 GetCredits returns the Credits field if non-nil, zero value otherwise.
 
 ### GetCreditsOk
 
-`func (o *StatementSummary) GetCreditsOk() (*float32, bool)`
+`func (o *StatementSummary) GetCreditsOk() (*decimal.Decimal, bool)`
 
 GetCreditsOk returns a tuple with the Credits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCredits
 
-`func (o *StatementSummary) SetCredits(v float32)`
+`func (o *StatementSummary) SetCredits(v decimal.Decimal)`
 
 SetCredits sets Credits field to given value.
 
@@ -228,60 +228,60 @@ SetDaysInBillingCycle sets DaysInBillingCycle field to given value.
 
 ### GetFees
 
-`func (o *StatementSummary) GetFees() float32`
+`func (o *StatementSummary) GetFees() decimal.Decimal`
 
 GetFees returns the Fees field if non-nil, zero value otherwise.
 
 ### GetFeesOk
 
-`func (o *StatementSummary) GetFeesOk() (*float32, bool)`
+`func (o *StatementSummary) GetFeesOk() (*decimal.Decimal, bool)`
 
 GetFeesOk returns a tuple with the Fees field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFees
 
-`func (o *StatementSummary) SetFees(v float32)`
+`func (o *StatementSummary) SetFees(v decimal.Decimal)`
 
 SetFees sets Fees field to given value.
 
 
 ### GetInterest
 
-`func (o *StatementSummary) GetInterest() float32`
+`func (o *StatementSummary) GetInterest() decimal.Decimal`
 
 GetInterest returns the Interest field if non-nil, zero value otherwise.
 
 ### GetInterestOk
 
-`func (o *StatementSummary) GetInterestOk() (*float32, bool)`
+`func (o *StatementSummary) GetInterestOk() (*decimal.Decimal, bool)`
 
 GetInterestOk returns a tuple with the Interest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterest
 
-`func (o *StatementSummary) SetInterest(v float32)`
+`func (o *StatementSummary) SetInterest(v decimal.Decimal)`
 
 SetInterest sets Interest field to given value.
 
 
 ### GetOpeningBalance
 
-`func (o *StatementSummary) GetOpeningBalance() float32`
+`func (o *StatementSummary) GetOpeningBalance() decimal.Decimal`
 
 GetOpeningBalance returns the OpeningBalance field if non-nil, zero value otherwise.
 
 ### GetOpeningBalanceOk
 
-`func (o *StatementSummary) GetOpeningBalanceOk() (*float32, bool)`
+`func (o *StatementSummary) GetOpeningBalanceOk() (*decimal.Decimal, bool)`
 
 GetOpeningBalanceOk returns a tuple with the OpeningBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOpeningBalance
 
-`func (o *StatementSummary) SetOpeningBalance(v float32)`
+`func (o *StatementSummary) SetOpeningBalance(v decimal.Decimal)`
 
 SetOpeningBalance sets OpeningBalance field to given value.
 
@@ -308,60 +308,60 @@ SetOpeningDate sets OpeningDate field to given value.
 
 ### GetPastDueAmount
 
-`func (o *StatementSummary) GetPastDueAmount() float32`
+`func (o *StatementSummary) GetPastDueAmount() decimal.Decimal`
 
 GetPastDueAmount returns the PastDueAmount field if non-nil, zero value otherwise.
 
 ### GetPastDueAmountOk
 
-`func (o *StatementSummary) GetPastDueAmountOk() (*float32, bool)`
+`func (o *StatementSummary) GetPastDueAmountOk() (*decimal.Decimal, bool)`
 
 GetPastDueAmountOk returns a tuple with the PastDueAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPastDueAmount
 
-`func (o *StatementSummary) SetPastDueAmount(v float32)`
+`func (o *StatementSummary) SetPastDueAmount(v decimal.Decimal)`
 
 SetPastDueAmount sets PastDueAmount field to given value.
 
 
 ### GetPayments
 
-`func (o *StatementSummary) GetPayments() float32`
+`func (o *StatementSummary) GetPayments() decimal.Decimal`
 
 GetPayments returns the Payments field if non-nil, zero value otherwise.
 
 ### GetPaymentsOk
 
-`func (o *StatementSummary) GetPaymentsOk() (*float32, bool)`
+`func (o *StatementSummary) GetPaymentsOk() (*decimal.Decimal, bool)`
 
 GetPaymentsOk returns a tuple with the Payments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayments
 
-`func (o *StatementSummary) SetPayments(v float32)`
+`func (o *StatementSummary) SetPayments(v decimal.Decimal)`
 
 SetPayments sets Payments field to given value.
 
 
 ### GetPurchases
 
-`func (o *StatementSummary) GetPurchases() float32`
+`func (o *StatementSummary) GetPurchases() decimal.Decimal`
 
 GetPurchases returns the Purchases field if non-nil, zero value otherwise.
 
 ### GetPurchasesOk
 
-`func (o *StatementSummary) GetPurchasesOk() (*float32, bool)`
+`func (o *StatementSummary) GetPurchasesOk() (*decimal.Decimal, bool)`
 
 GetPurchasesOk returns a tuple with the Purchases field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPurchases
 
-`func (o *StatementSummary) SetPurchases(v float32)`
+`func (o *StatementSummary) SetPurchases(v decimal.Decimal)`
 
 SetPurchases sets Purchases field to given value.
 

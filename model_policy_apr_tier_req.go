@@ -23,7 +23,7 @@ var _ MappedNullable = &PolicyAprTierReq{}
 // PolicyAprTierReq Request details for the APR for a risk tier.
 type PolicyAprTierReq struct {
 	// Number of percentage points added to the prime rate, used to calculate a variable APR value.
-	MarginRate float32 `json:"margin_rate"`
+	MarginRate decimal.Decimal `json:"margin_rate"`
 }
 
 type _PolicyAprTierReq PolicyAprTierReq
@@ -32,7 +32,7 @@ type _PolicyAprTierReq PolicyAprTierReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPolicyAprTierReq(marginRate float32) *PolicyAprTierReq {
+func NewPolicyAprTierReq(marginRate decimal.Decimal) *PolicyAprTierReq {
 	this := PolicyAprTierReq{}
 	this.MarginRate = marginRate
 	return &this
@@ -47,9 +47,9 @@ func NewPolicyAprTierReqWithDefaults() *PolicyAprTierReq {
 }
 
 // GetMarginRate returns the MarginRate field value
-func (o *PolicyAprTierReq) GetMarginRate() float32 {
+func (o *PolicyAprTierReq) GetMarginRate() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -58,7 +58,7 @@ func (o *PolicyAprTierReq) GetMarginRate() float32 {
 
 // GetMarginRateOk returns a tuple with the MarginRate field value
 // and a boolean to check if the value has been set.
-func (o *PolicyAprTierReq) GetMarginRateOk() (*float32, bool) {
+func (o *PolicyAprTierReq) GetMarginRateOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *PolicyAprTierReq) GetMarginRateOk() (*float32, bool) {
 }
 
 // SetMarginRate sets field value
-func (o *PolicyAprTierReq) SetMarginRate(v float32) {
+func (o *PolicyAprTierReq) SetMarginRate(v decimal.Decimal) {
 	o.MarginRate = v
 }
 

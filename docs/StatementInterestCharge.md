@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | Amount of interest calculated for the billing period. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | Amount of interest calculated for the billing period. | [optional] 
 **AprType** | Pointer to **string** | Type of APR. | [optional] 
-**AprValue** | Pointer to **float32** | Annual percentage rate. | [optional] 
-**BalanceSubjectToInterestRate** | Pointer to **float32** | Average daily balance used to calculate interest. | [optional] 
+**AprValue** | Pointer to **decimal.Decimal** | Annual percentage rate. | [optional] 
+**BalanceSubjectToInterestRate** | Pointer to **decimal.Decimal** | Average daily balance used to calculate interest. | [optional] 
 **BalanceType** | Pointer to **string** | Type of balance.  * &#x60;PURCHASE&#x60; - The balance on purchases. | [optional] 
 
 ## Methods
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *StatementInterestCharge) GetAmount() float32`
+`func (o *StatementInterestCharge) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *StatementInterestCharge) GetAmountOk() (*float32, bool)`
+`func (o *StatementInterestCharge) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *StatementInterestCharge) SetAmount(v float32)`
+`func (o *StatementInterestCharge) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 
@@ -81,20 +81,20 @@ HasAprType returns a boolean if a field has been set.
 
 ### GetAprValue
 
-`func (o *StatementInterestCharge) GetAprValue() float32`
+`func (o *StatementInterestCharge) GetAprValue() decimal.Decimal`
 
 GetAprValue returns the AprValue field if non-nil, zero value otherwise.
 
 ### GetAprValueOk
 
-`func (o *StatementInterestCharge) GetAprValueOk() (*float32, bool)`
+`func (o *StatementInterestCharge) GetAprValueOk() (*decimal.Decimal, bool)`
 
 GetAprValueOk returns a tuple with the AprValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAprValue
 
-`func (o *StatementInterestCharge) SetAprValue(v float32)`
+`func (o *StatementInterestCharge) SetAprValue(v decimal.Decimal)`
 
 SetAprValue sets AprValue field to given value.
 
@@ -106,20 +106,20 @@ HasAprValue returns a boolean if a field has been set.
 
 ### GetBalanceSubjectToInterestRate
 
-`func (o *StatementInterestCharge) GetBalanceSubjectToInterestRate() float32`
+`func (o *StatementInterestCharge) GetBalanceSubjectToInterestRate() decimal.Decimal`
 
 GetBalanceSubjectToInterestRate returns the BalanceSubjectToInterestRate field if non-nil, zero value otherwise.
 
 ### GetBalanceSubjectToInterestRateOk
 
-`func (o *StatementInterestCharge) GetBalanceSubjectToInterestRateOk() (*float32, bool)`
+`func (o *StatementInterestCharge) GetBalanceSubjectToInterestRateOk() (*decimal.Decimal, bool)`
 
 GetBalanceSubjectToInterestRateOk returns a tuple with the BalanceSubjectToInterestRate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBalanceSubjectToInterestRate
 
-`func (o *StatementInterestCharge) SetBalanceSubjectToInterestRate(v float32)`
+`func (o *StatementInterestCharge) SetBalanceSubjectToInterestRate(v decimal.Decimal)`
 
 SetBalanceSubjectToInterestRate sets BalanceSubjectToInterestRate field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the dispute. Max value is equal to the value of the original transaction. | 
+**Amount** | **decimal.Decimal** | Amount of the dispute. Max value is equal to the value of the original transaction. | 
 **Category** | [**DisputeCategory**](DisputeCategory.md) |  | 
 **LedgerEntryToken** | **string** | Unique identifier of the journal entry (&#x60;authorization.clearing&#x60; type only) in dispute. | 
 **Notes** | Pointer to **string** | Additional information on the dispute (for example, a reason for the dispute). | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewDisputeCreateReq
 
-`func NewDisputeCreateReq(amount float32, category DisputeCategory, ledgerEntryToken string, ) *DisputeCreateReq`
+`func NewDisputeCreateReq(amount decimal.Decimal, category DisputeCategory, ledgerEntryToken string, ) *DisputeCreateReq`
 
 NewDisputeCreateReq instantiates a new DisputeCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *DisputeCreateReq) GetAmount() float32`
+`func (o *DisputeCreateReq) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *DisputeCreateReq) GetAmountOk() (*float32, bool)`
+`func (o *DisputeCreateReq) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *DisputeCreateReq) SetAmount(v float32)`
+`func (o *DisputeCreateReq) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

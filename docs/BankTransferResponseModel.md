@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount to push or pull. | 
+**Amount** | **decimal.Decimal** | Amount to push or pull. | 
 **BatchNumber** | Pointer to **string** | Field required in older versions of the API, but no longer used. | [optional] 
 **Channel** | Pointer to **string** | default &#x3D; API | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewBankTransferResponseModel
 
-`func NewBankTransferResponseModel(amount float32, fundingSourceToken string, type_ string, ) *BankTransferResponseModel`
+`func NewBankTransferResponseModel(amount decimal.Decimal, fundingSourceToken string, type_ string, ) *BankTransferResponseModel`
 
 NewBankTransferResponseModel instantiates a new BankTransferResponseModel object
 This constructor will assign default values to properties that have it defined,
@@ -44,20 +44,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *BankTransferResponseModel) GetAmount() float32`
+`func (o *BankTransferResponseModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *BankTransferResponseModel) GetAmountOk() (*float32, bool)`
+`func (o *BankTransferResponseModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *BankTransferResponseModel) SetAmount(v float32)`
+`func (o *BankTransferResponseModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of funds returned to the funding source. | 
+**Amount** | **decimal.Decimal** | Amount of funds returned to the funding source. | 
 **CreatedTime** | **time.Time** | Date and time when the GPA unload order was created, in UTC. | 
 **Funding** | [**Funding**](Funding.md) |  | 
 **FundingSourceAddressToken** | Pointer to **string** | Identifies the funding source used for this order. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewGpaReturns
 
-`func NewGpaReturns(amount float32, createdTime time.Time, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string, ) *GpaReturns`
+`func NewGpaReturns(amount decimal.Decimal, createdTime time.Time, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string, ) *GpaReturns`
 
 NewGpaReturns instantiates a new GpaReturns object
 This constructor will assign default values to properties that have it defined,
@@ -40,20 +40,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *GpaReturns) GetAmount() float32`
+`func (o *GpaReturns) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *GpaReturns) GetAmountOk() (*float32, bool)`
+`func (o *GpaReturns) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *GpaReturns) SetAmount(v float32)`
+`func (o *GpaReturns) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

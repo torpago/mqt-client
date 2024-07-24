@@ -28,7 +28,7 @@ type AccountAdjustmentResponse struct {
 	// Contains the adjustment's full details.  The fields returned in this object depend on the adjustment type.  Interest returns interest details. For the specific fields returned, see the `detail_object` fields marked \"Returned for interest journal entries\" in the <</core-api/credit-account-journal-entries#getAccountJournalEntry, account journal entry response fields>>.  Disputes return dispute details. For the specific fields returned, see the <</core-api/credit-disputes#retrieveDispute, dispute response fields>>.
 	AdjustmentDetailObject map[string]interface{} `json:"adjustment_detail_object,omitempty"`
 	// Amount of the adjustment.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Date and time when the account adjustment was applied, in UTC.
 	CreatedTime *time.Time `json:"created_time,omitempty"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
@@ -60,7 +60,7 @@ type _AccountAdjustmentResponse AccountAdjustmentResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountAdjustmentResponse(accountToken string, amount float32, currencyCode CurrencyCode, description string, reason string, token string, type_ string) *AccountAdjustmentResponse {
+func NewAccountAdjustmentResponse(accountToken string, amount decimal.Decimal, currencyCode CurrencyCode, description string, reason string, token string, type_ string) *AccountAdjustmentResponse {
 	this := AccountAdjustmentResponse{}
 	this.AccountToken = accountToken
 	this.Amount = amount
@@ -140,9 +140,9 @@ func (o *AccountAdjustmentResponse) SetAdjustmentDetailObject(v map[string]inter
 }
 
 // GetAmount returns the Amount field value
-func (o *AccountAdjustmentResponse) GetAmount() float32 {
+func (o *AccountAdjustmentResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -151,7 +151,7 @@ func (o *AccountAdjustmentResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *AccountAdjustmentResponse) GetAmountOk() (*float32, bool) {
+func (o *AccountAdjustmentResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -159,7 +159,7 @@ func (o *AccountAdjustmentResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *AccountAdjustmentResponse) SetAmount(v float32) {
+func (o *AccountAdjustmentResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

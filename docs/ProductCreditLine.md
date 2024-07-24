@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Max** | **float32** | Maximum credit limit. | 
-**Min** | **float32** | Minimum credit limit. | 
+**Max** | **decimal.Decimal** | Maximum credit limit. | 
+**Min** | **decimal.Decimal** | Minimum credit limit. | 
 
 ## Methods
 
 ### NewProductCreditLine
 
-`func NewProductCreditLine(max float32, min float32, ) *ProductCreditLine`
+`func NewProductCreditLine(max decimal.Decimal, min decimal.Decimal, ) *ProductCreditLine`
 
 NewProductCreditLine instantiates a new ProductCreditLine object
 This constructor will assign default values to properties that have it defined,
@@ -28,40 +28,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMax
 
-`func (o *ProductCreditLine) GetMax() float32`
+`func (o *ProductCreditLine) GetMax() decimal.Decimal`
 
 GetMax returns the Max field if non-nil, zero value otherwise.
 
 ### GetMaxOk
 
-`func (o *ProductCreditLine) GetMaxOk() (*float32, bool)`
+`func (o *ProductCreditLine) GetMaxOk() (*decimal.Decimal, bool)`
 
 GetMaxOk returns a tuple with the Max field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMax
 
-`func (o *ProductCreditLine) SetMax(v float32)`
+`func (o *ProductCreditLine) SetMax(v decimal.Decimal)`
 
 SetMax sets Max field to given value.
 
 
 ### GetMin
 
-`func (o *ProductCreditLine) GetMin() float32`
+`func (o *ProductCreditLine) GetMin() decimal.Decimal`
 
 GetMin returns the Min field if non-nil, zero value otherwise.
 
 ### GetMinOk
 
-`func (o *ProductCreditLine) GetMinOk() (*float32, bool)`
+`func (o *ProductCreditLine) GetMinOk() (*decimal.Decimal, bool)`
 
 GetMinOk returns a tuple with the Min field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMin
 
-`func (o *ProductCreditLine) SetMin(v float32)`
+`func (o *ProductCreditLine) SetMin(v decimal.Decimal)`
 
 SetMin sets Min field to given value.
 

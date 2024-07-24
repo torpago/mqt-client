@@ -325,7 +325,7 @@ import (
 )
 
 func main() {
-	programTransfer := *openapiclient.NewProgramTransfer(float32(123), "CurrencyCode_example", "TypeToken_example") // ProgramTransfer |  (optional)
+	programTransfer := *openapiclient.NewProgramTransfer(decimal.Decimal(123), "CurrencyCode_example", "TypeToken_example") // ProgramTransfer |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

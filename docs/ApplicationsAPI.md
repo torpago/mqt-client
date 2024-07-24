@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-	createApplicationsRequest := *openapiclient.NewCreateApplicationsRequest(false, "BundleToken_example", "EDisclosureTrackingToken_example", float32(123), "PrimaryIncomeSource_example", "PrivacyPolicyTrackingToken_example", "ResidenceType_example", "SoctTrackingToken_example", float32(123), "UserToken_example") // CreateApplicationsRequest |  (optional)
+	createApplicationsRequest := *openapiclient.NewCreateApplicationsRequest(false, "BundleToken_example", "EDisclosureTrackingToken_example", decimal.Decimal(123), "PrimaryIncomeSource_example", "PrivacyPolicyTrackingToken_example", "ResidenceType_example", "SoctTrackingToken_example", decimal.Decimal(123), "UserToken_example") // CreateApplicationsRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

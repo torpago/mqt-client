@@ -6,19 +6,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account. | 
 **Buckets** | Pointer to [**[]DelinquencyBucketResponse**](DelinquencyBucketResponse.md) | One or more delinquency buckets for an account. Each delinquency bucket represents a billing cycle during which the account was delinquent. | [optional] 
-**CurrentDue** | **float32** | Amount that is due for the current billing cycle. | 
+**CurrentDue** | **decimal.Decimal** | Amount that is due for the current billing cycle. | 
 **DateAccountCurrent** | Pointer to **NullableTime** | Date and time when the account was last made current on the Marqeta platform, in UTC.  If the account was never delinquent, this field returns the date and time the account was created on the Marqeta platform, in UTC.  If &#x60;is_delinquent&#x60; is &#x60;true&#x60;, a null value is returned. | [optional] 
 **DateAccountDelinquent** | Pointer to **NullableTime** | Date and time when the account last fell delinquent on the Marqeta platform, in UTC.  If &#x60;is_delinquent&#x60; is &#x60;false&#x60;, a null value is returned. | [optional] 
 **IsDelinquent** | **bool** | A value of &#x60;true&#x60; indicates that the account is currently delinquent. | 
 **TotalDaysPastDue** | **int32** | Total number of days that the account is past due. | 
-**TotalDue** | **float32** | Total amount that is due for the current billing cycle; the sum of &#x60;total_past_due_amount&#x60; and &#x60;current_due_amount&#x60;. | 
-**TotalPastDue** | **float32** | Total amount that is past due. | 
+**TotalDue** | **decimal.Decimal** | Total amount that is due for the current billing cycle; the sum of &#x60;total_past_due_amount&#x60; and &#x60;current_due_amount&#x60;. | 
+**TotalPastDue** | **decimal.Decimal** | Total amount that is past due. | 
 
 ## Methods
 
 ### NewDelinquencyStateResponse
 
-`func NewDelinquencyStateResponse(accountToken string, currentDue float32, isDelinquent bool, totalDaysPastDue int32, totalDue float32, totalPastDue float32, ) *DelinquencyStateResponse`
+`func NewDelinquencyStateResponse(accountToken string, currentDue decimal.Decimal, isDelinquent bool, totalDaysPastDue int32, totalDue decimal.Decimal, totalPastDue decimal.Decimal, ) *DelinquencyStateResponse`
 
 NewDelinquencyStateResponse instantiates a new DelinquencyStateResponse object
 This constructor will assign default values to properties that have it defined,
@@ -80,20 +80,20 @@ HasBuckets returns a boolean if a field has been set.
 
 ### GetCurrentDue
 
-`func (o *DelinquencyStateResponse) GetCurrentDue() float32`
+`func (o *DelinquencyStateResponse) GetCurrentDue() decimal.Decimal`
 
 GetCurrentDue returns the CurrentDue field if non-nil, zero value otherwise.
 
 ### GetCurrentDueOk
 
-`func (o *DelinquencyStateResponse) GetCurrentDueOk() (*float32, bool)`
+`func (o *DelinquencyStateResponse) GetCurrentDueOk() (*decimal.Decimal, bool)`
 
 GetCurrentDueOk returns a tuple with the CurrentDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentDue
 
-`func (o *DelinquencyStateResponse) SetCurrentDue(v float32)`
+`func (o *DelinquencyStateResponse) SetCurrentDue(v decimal.Decimal)`
 
 SetCurrentDue sets CurrentDue field to given value.
 
@@ -210,40 +210,40 @@ SetTotalDaysPastDue sets TotalDaysPastDue field to given value.
 
 ### GetTotalDue
 
-`func (o *DelinquencyStateResponse) GetTotalDue() float32`
+`func (o *DelinquencyStateResponse) GetTotalDue() decimal.Decimal`
 
 GetTotalDue returns the TotalDue field if non-nil, zero value otherwise.
 
 ### GetTotalDueOk
 
-`func (o *DelinquencyStateResponse) GetTotalDueOk() (*float32, bool)`
+`func (o *DelinquencyStateResponse) GetTotalDueOk() (*decimal.Decimal, bool)`
 
 GetTotalDueOk returns a tuple with the TotalDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalDue
 
-`func (o *DelinquencyStateResponse) SetTotalDue(v float32)`
+`func (o *DelinquencyStateResponse) SetTotalDue(v decimal.Decimal)`
 
 SetTotalDue sets TotalDue field to given value.
 
 
 ### GetTotalPastDue
 
-`func (o *DelinquencyStateResponse) GetTotalPastDue() float32`
+`func (o *DelinquencyStateResponse) GetTotalPastDue() decimal.Decimal`
 
 GetTotalPastDue returns the TotalPastDue field if non-nil, zero value otherwise.
 
 ### GetTotalPastDueOk
 
-`func (o *DelinquencyStateResponse) GetTotalPastDueOk() (*float32, bool)`
+`func (o *DelinquencyStateResponse) GetTotalPastDueOk() (*decimal.Decimal, bool)`
 
 GetTotalPastDueOk returns a tuple with the TotalPastDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalPastDue
 
-`func (o *DelinquencyStateResponse) SetTotalPastDue(v float32)`
+`func (o *DelinquencyStateResponse) SetTotalPastDue(v decimal.Decimal)`
 
 SetTotalPastDue sets TotalPastDue field to given value.
 

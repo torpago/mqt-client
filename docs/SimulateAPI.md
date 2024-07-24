@@ -36,7 +36,7 @@ import (
 )
 
 func main() {
-	authRequestModel := *openapiclient.NewAuthRequestModel(float32(123), "CardToken_example", "Mid_example") // AuthRequestModel |  (optional)
+	authRequestModel := *openapiclient.NewAuthRequestModel(decimal.Decimal(123), "CardToken_example", "Mid_example") // AuthRequestModel |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -100,7 +100,7 @@ import (
 )
 
 func main() {
-	authorizationAdviceModel := *openapiclient.NewAuthorizationAdviceModel(float32(123), "OriginalTransactionToken_example") // AuthorizationAdviceModel |  (optional)
+	authorizationAdviceModel := *openapiclient.NewAuthorizationAdviceModel(decimal.Decimal(123), "OriginalTransactionToken_example") // AuthorizationAdviceModel |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -164,7 +164,7 @@ import (
 )
 
 func main() {
-	clearingModel := *openapiclient.NewClearingModel(float32(123), "OriginalTransactionToken_example") // ClearingModel |  (optional)
+	clearingModel := *openapiclient.NewClearingModel(decimal.Decimal(123), "OriginalTransactionToken_example") // ClearingModel |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -229,7 +229,7 @@ import (
 )
 
 func main() {
-	directDepositRequest := *openapiclient.NewDirectDepositRequest("AccountNumber_example", float32(123), time.Now(), "Type_example") // DirectDepositRequest | Direct deposit simulate request model
+	directDepositRequest := *openapiclient.NewDirectDepositRequest("AccountNumber_example", decimal.Decimal(123), time.Now(), "Type_example") // DirectDepositRequest | Direct deposit simulate request model
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -293,7 +293,7 @@ import (
 )
 
 func main() {
-	financialRequestModel := *openapiclient.NewFinancialRequestModel(float32(123), *openapiclient.NewCardAcceptorModel(), "CardToken_example", "Mid_example") // FinancialRequestModel | Financial request model
+	financialRequestModel := *openapiclient.NewFinancialRequestModel(decimal.Decimal(123), *openapiclient.NewCardAcceptorModel(), "CardToken_example", "Mid_example") // FinancialRequestModel | Financial request model
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -357,7 +357,7 @@ import (
 )
 
 func main() {
-	authorizationAdviceModel := *openapiclient.NewAuthorizationAdviceModel(float32(123), "OriginalTransactionToken_example") // AuthorizationAdviceModel | Financial advice request model
+	authorizationAdviceModel := *openapiclient.NewAuthorizationAdviceModel(decimal.Decimal(123), "OriginalTransactionToken_example") // AuthorizationAdviceModel | Financial advice request model
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -485,7 +485,7 @@ import (
 )
 
 func main() {
-	orignalcreditRequestModel := *openapiclient.NewOrignalcreditRequestModel(float32(123), "CardToken_example", "Mid_example", "Type_example") // OrignalcreditRequestModel | Orignal Credit request model
+	orignalcreditRequestModel := *openapiclient.NewOrignalcreditRequestModel(decimal.Decimal(123), "CardToken_example", "Mid_example", "Type_example") // OrignalcreditRequestModel | Orignal Credit request model
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -549,7 +549,7 @@ import (
 )
 
 func main() {
-	withdrawalRequestModel := *openapiclient.NewWithdrawalRequestModel(float32(123), "CardToken_example", "Mid_example") // WithdrawalRequestModel | ATM withdrawal request model
+	withdrawalRequestModel := *openapiclient.NewWithdrawalRequestModel(decimal.Decimal(123), "CardToken_example", "Mid_example") // WithdrawalRequestModel | ATM withdrawal request model
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -613,7 +613,7 @@ import (
 )
 
 func main() {
-	reversalModel := *openapiclient.NewReversalModel(float32(123), "OriginalTransactionToken_example") // ReversalModel |  (optional)
+	reversalModel := *openapiclient.NewReversalModel(decimal.Decimal(123), "OriginalTransactionToken_example") // ReversalModel |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

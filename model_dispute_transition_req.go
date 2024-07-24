@@ -23,7 +23,7 @@ var _ MappedNullable = &DisputeTransitionReq{}
 // DisputeTransitionReq Information about a transaction dispute update request.
 type DisputeTransitionReq struct {
 	// Updated amount of the dispute, based on the resolution.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Additional information on the dispute update (for example, a reason for the dispute update).
 	Notes *string `json:"notes,omitempty"`
 	Status DisputeStatus `json:"status"`
@@ -37,7 +37,7 @@ type _DisputeTransitionReq DisputeTransitionReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDisputeTransitionReq(amount float32, status DisputeStatus) *DisputeTransitionReq {
+func NewDisputeTransitionReq(amount decimal.Decimal, status DisputeStatus) *DisputeTransitionReq {
 	this := DisputeTransitionReq{}
 	this.Amount = amount
 	this.Status = status
@@ -53,9 +53,9 @@ func NewDisputeTransitionReqWithDefaults() *DisputeTransitionReq {
 }
 
 // GetAmount returns the Amount field value
-func (o *DisputeTransitionReq) GetAmount() float32 {
+func (o *DisputeTransitionReq) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *DisputeTransitionReq) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *DisputeTransitionReq) GetAmountOk() (*float32, bool) {
+func (o *DisputeTransitionReq) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *DisputeTransitionReq) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *DisputeTransitionReq) SetAmount(v float32) {
+func (o *DisputeTransitionReq) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

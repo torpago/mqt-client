@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the reward redemption. | 
+**Amount** | **decimal.Decimal** | Amount of the reward redemption. | 
 **Destination** | Pointer to [**DestinationType**](DestinationType.md) |  | [optional] 
 **Note** | Pointer to **string** | A note explaining why the reward is being redeemed. | [optional] 
 **ReceivingAccountToken** | Pointer to **string** | Unique identifier of the external account receiving the reward redemption. This token is equivalent to the &lt;&lt;/core-api/payment-sources, payment source&gt;&gt; token. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewCreateRedemptionsRequest
 
-`func NewCreateRedemptionsRequest(amount float32, type_ RedemptionType, ) *CreateRedemptionsRequest`
+`func NewCreateRedemptionsRequest(amount decimal.Decimal, type_ RedemptionType, ) *CreateRedemptionsRequest`
 
 NewCreateRedemptionsRequest instantiates a new CreateRedemptionsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *CreateRedemptionsRequest) GetAmount() float32`
+`func (o *CreateRedemptionsRequest) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *CreateRedemptionsRequest) GetAmountOk() (*float32, bool)`
+`func (o *CreateRedemptionsRequest) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *CreateRedemptionsRequest) SetAmount(v float32)`
+`func (o *CreateRedemptionsRequest) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

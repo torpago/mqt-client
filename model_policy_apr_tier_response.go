@@ -21,9 +21,9 @@ var _ MappedNullable = &PolicyAprTierResponse{}
 // PolicyAprTierResponse Response details for the APR for a risk tier.
 type PolicyAprTierResponse struct {
 	// Value of the APR.
-	Apr *float32 `json:"apr,omitempty"`
+	Apr *decimal.Decimal `json:"apr,omitempty"`
 	// Margin rate for the risk tier for a pricing strategy.
-	MarginRate *float32 `json:"margin_rate,omitempty"`
+	MarginRate *decimal.Decimal `json:"margin_rate,omitempty"`
 }
 
 // NewPolicyAprTierResponse instantiates a new PolicyAprTierResponse object
@@ -32,7 +32,7 @@ type PolicyAprTierResponse struct {
 // will change when the set of required properties is changed
 func NewPolicyAprTierResponse() *PolicyAprTierResponse {
 	this := PolicyAprTierResponse{}
-	var apr float32 = 0
+	var apr decimal.Decimal = 0
 	this.Apr = &apr
 	return &this
 }
@@ -42,15 +42,15 @@ func NewPolicyAprTierResponse() *PolicyAprTierResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewPolicyAprTierResponseWithDefaults() *PolicyAprTierResponse {
 	this := PolicyAprTierResponse{}
-	var apr float32 = 0
+	var apr decimal.Decimal = 0
 	this.Apr = &apr
 	return &this
 }
 
 // GetApr returns the Apr field value if set, zero value otherwise.
-func (o *PolicyAprTierResponse) GetApr() float32 {
+func (o *PolicyAprTierResponse) GetApr() decimal.Decimal {
 	if o == nil || IsNil(o.Apr) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Apr
@@ -58,7 +58,7 @@ func (o *PolicyAprTierResponse) GetApr() float32 {
 
 // GetAprOk returns a tuple with the Apr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyAprTierResponse) GetAprOk() (*float32, bool) {
+func (o *PolicyAprTierResponse) GetAprOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Apr) {
 		return nil, false
 	}
@@ -74,15 +74,15 @@ func (o *PolicyAprTierResponse) HasApr() bool {
 	return false
 }
 
-// SetApr gets a reference to the given float32 and assigns it to the Apr field.
-func (o *PolicyAprTierResponse) SetApr(v float32) {
+// SetApr gets a reference to the given decimal.Decimal and assigns it to the Apr field.
+func (o *PolicyAprTierResponse) SetApr(v decimal.Decimal) {
 	o.Apr = &v
 }
 
 // GetMarginRate returns the MarginRate field value if set, zero value otherwise.
-func (o *PolicyAprTierResponse) GetMarginRate() float32 {
+func (o *PolicyAprTierResponse) GetMarginRate() decimal.Decimal {
 	if o == nil || IsNil(o.MarginRate) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MarginRate
@@ -90,7 +90,7 @@ func (o *PolicyAprTierResponse) GetMarginRate() float32 {
 
 // GetMarginRateOk returns a tuple with the MarginRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyAprTierResponse) GetMarginRateOk() (*float32, bool) {
+func (o *PolicyAprTierResponse) GetMarginRateOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MarginRate) {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *PolicyAprTierResponse) HasMarginRate() bool {
 	return false
 }
 
-// SetMarginRate gets a reference to the given float32 and assigns it to the MarginRate field.
-func (o *PolicyAprTierResponse) SetMarginRate(v float32) {
+// SetMarginRate gets a reference to the given decimal.Decimal and assigns it to the MarginRate field.
+func (o *PolicyAprTierResponse) SetMarginRate(v decimal.Decimal) {
 	o.MarginRate = &v
 }
 

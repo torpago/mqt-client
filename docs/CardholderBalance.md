@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvailableBalance** | **float32** | Ledger balance minus any authorized transactions that have not yet cleared. Also known as the cardholder&#39;s purchasing power. When using JIT Funding, this balance is usually equal to $0.00. | 
+**AvailableBalance** | **decimal.Decimal** | Ledger balance minus any authorized transactions that have not yet cleared. Also known as the cardholder&#39;s purchasing power. When using JIT Funding, this balance is usually equal to $0.00. | 
 **Balances** | [**map[string]CardholderBalance**](CardholderBalance.md) | Contains GPA balance information, organized by currency code. | 
-**CachedBalance** | **float32** | Not currently in use. | 
-**CreditBalance** | **float32** | Not currently in use. | 
+**CachedBalance** | **decimal.Decimal** | Not currently in use. | 
+**CreditBalance** | **decimal.Decimal** | Not currently in use. | 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
-**ImpactedAmount** | Pointer to **float32** | Balance change based on the amount of the transaction. | [optional] 
+**ImpactedAmount** | Pointer to **decimal.Decimal** | Balance change based on the amount of the transaction. | [optional] 
 **LastUpdatedTime** | **time.Time** | Date and time when the resource was last updated, in UTC. | 
-**LedgerBalance** | **float32** | When using standard funding: The funds that are available to spend immediately, including funds from any authorized transactions that have not yet cleared. When using Just-in-Time (JIT) Funding: Authorized funds that are currently on hold, but not yet cleared. | 
-**PendingCredits** | **float32** | ACH loads that have been accepted, but for which the funding time has not yet elapsed. | 
+**LedgerBalance** | **decimal.Decimal** | When using standard funding: The funds that are available to spend immediately, including funds from any authorized transactions that have not yet cleared. When using Just-in-Time (JIT) Funding: Authorized funds that are currently on hold, but not yet cleared. | 
+**PendingCredits** | **decimal.Decimal** | ACH loads that have been accepted, but for which the funding time has not yet elapsed. | 
 
 ## Methods
 
 ### NewCardholderBalance
 
-`func NewCardholderBalance(availableBalance float32, balances map[string]CardholderBalance, cachedBalance float32, creditBalance float32, currencyCode string, lastUpdatedTime time.Time, ledgerBalance float32, pendingCredits float32, ) *CardholderBalance`
+`func NewCardholderBalance(availableBalance decimal.Decimal, balances map[string]CardholderBalance, cachedBalance decimal.Decimal, creditBalance decimal.Decimal, currencyCode string, lastUpdatedTime time.Time, ledgerBalance decimal.Decimal, pendingCredits decimal.Decimal, ) *CardholderBalance`
 
 NewCardholderBalance instantiates a new CardholderBalance object
 This constructor will assign default values to properties that have it defined,
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAvailableBalance
 
-`func (o *CardholderBalance) GetAvailableBalance() float32`
+`func (o *CardholderBalance) GetAvailableBalance() decimal.Decimal`
 
 GetAvailableBalance returns the AvailableBalance field if non-nil, zero value otherwise.
 
 ### GetAvailableBalanceOk
 
-`func (o *CardholderBalance) GetAvailableBalanceOk() (*float32, bool)`
+`func (o *CardholderBalance) GetAvailableBalanceOk() (*decimal.Decimal, bool)`
 
 GetAvailableBalanceOk returns a tuple with the AvailableBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableBalance
 
-`func (o *CardholderBalance) SetAvailableBalance(v float32)`
+`func (o *CardholderBalance) SetAvailableBalance(v decimal.Decimal)`
 
 SetAvailableBalance sets AvailableBalance field to given value.
 
@@ -75,40 +75,40 @@ SetBalances sets Balances field to given value.
 
 ### GetCachedBalance
 
-`func (o *CardholderBalance) GetCachedBalance() float32`
+`func (o *CardholderBalance) GetCachedBalance() decimal.Decimal`
 
 GetCachedBalance returns the CachedBalance field if non-nil, zero value otherwise.
 
 ### GetCachedBalanceOk
 
-`func (o *CardholderBalance) GetCachedBalanceOk() (*float32, bool)`
+`func (o *CardholderBalance) GetCachedBalanceOk() (*decimal.Decimal, bool)`
 
 GetCachedBalanceOk returns a tuple with the CachedBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCachedBalance
 
-`func (o *CardholderBalance) SetCachedBalance(v float32)`
+`func (o *CardholderBalance) SetCachedBalance(v decimal.Decimal)`
 
 SetCachedBalance sets CachedBalance field to given value.
 
 
 ### GetCreditBalance
 
-`func (o *CardholderBalance) GetCreditBalance() float32`
+`func (o *CardholderBalance) GetCreditBalance() decimal.Decimal`
 
 GetCreditBalance returns the CreditBalance field if non-nil, zero value otherwise.
 
 ### GetCreditBalanceOk
 
-`func (o *CardholderBalance) GetCreditBalanceOk() (*float32, bool)`
+`func (o *CardholderBalance) GetCreditBalanceOk() (*decimal.Decimal, bool)`
 
 GetCreditBalanceOk returns a tuple with the CreditBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreditBalance
 
-`func (o *CardholderBalance) SetCreditBalance(v float32)`
+`func (o *CardholderBalance) SetCreditBalance(v decimal.Decimal)`
 
 SetCreditBalance sets CreditBalance field to given value.
 
@@ -135,20 +135,20 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 ### GetImpactedAmount
 
-`func (o *CardholderBalance) GetImpactedAmount() float32`
+`func (o *CardholderBalance) GetImpactedAmount() decimal.Decimal`
 
 GetImpactedAmount returns the ImpactedAmount field if non-nil, zero value otherwise.
 
 ### GetImpactedAmountOk
 
-`func (o *CardholderBalance) GetImpactedAmountOk() (*float32, bool)`
+`func (o *CardholderBalance) GetImpactedAmountOk() (*decimal.Decimal, bool)`
 
 GetImpactedAmountOk returns a tuple with the ImpactedAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImpactedAmount
 
-`func (o *CardholderBalance) SetImpactedAmount(v float32)`
+`func (o *CardholderBalance) SetImpactedAmount(v decimal.Decimal)`
 
 SetImpactedAmount sets ImpactedAmount field to given value.
 
@@ -180,40 +180,40 @@ SetLastUpdatedTime sets LastUpdatedTime field to given value.
 
 ### GetLedgerBalance
 
-`func (o *CardholderBalance) GetLedgerBalance() float32`
+`func (o *CardholderBalance) GetLedgerBalance() decimal.Decimal`
 
 GetLedgerBalance returns the LedgerBalance field if non-nil, zero value otherwise.
 
 ### GetLedgerBalanceOk
 
-`func (o *CardholderBalance) GetLedgerBalanceOk() (*float32, bool)`
+`func (o *CardholderBalance) GetLedgerBalanceOk() (*decimal.Decimal, bool)`
 
 GetLedgerBalanceOk returns a tuple with the LedgerBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLedgerBalance
 
-`func (o *CardholderBalance) SetLedgerBalance(v float32)`
+`func (o *CardholderBalance) SetLedgerBalance(v decimal.Decimal)`
 
 SetLedgerBalance sets LedgerBalance field to given value.
 
 
 ### GetPendingCredits
 
-`func (o *CardholderBalance) GetPendingCredits() float32`
+`func (o *CardholderBalance) GetPendingCredits() decimal.Decimal`
 
 GetPendingCredits returns the PendingCredits field if non-nil, zero value otherwise.
 
 ### GetPendingCreditsOk
 
-`func (o *CardholderBalance) GetPendingCreditsOk() (*float32, bool)`
+`func (o *CardholderBalance) GetPendingCreditsOk() (*decimal.Decimal, bool)`
 
 GetPendingCreditsOk returns a tuple with the PendingCredits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPendingCredits
 
-`func (o *CardholderBalance) SetPendingCredits(v float32)`
+`func (o *CardholderBalance) SetPendingCredits(v decimal.Decimal)`
 
 SetPendingCredits sets PendingCredits field to given value.
 

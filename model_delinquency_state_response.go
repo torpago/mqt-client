@@ -28,7 +28,7 @@ type DelinquencyStateResponse struct {
 	// One or more delinquency buckets for an account. Each delinquency bucket represents a billing cycle during which the account was delinquent.
 	Buckets []DelinquencyBucketResponse `json:"buckets,omitempty"`
 	// Amount that is due for the current billing cycle.
-	CurrentDue float32 `json:"current_due"`
+	CurrentDue decimal.Decimal `json:"current_due"`
 	// Date and time when the account was last made current on the Marqeta platform, in UTC.  If the account was never delinquent, this field returns the date and time the account was created on the Marqeta platform, in UTC.  If `is_delinquent` is `true`, a null value is returned.
 	DateAccountCurrent NullableTime `json:"date_account_current,omitempty"`
 	// Date and time when the account last fell delinquent on the Marqeta platform, in UTC.  If `is_delinquent` is `false`, a null value is returned.
@@ -38,9 +38,9 @@ type DelinquencyStateResponse struct {
 	// Total number of days that the account is past due.
 	TotalDaysPastDue int32 `json:"total_days_past_due"`
 	// Total amount that is due for the current billing cycle; the sum of `total_past_due_amount` and `current_due_amount`.
-	TotalDue float32 `json:"total_due"`
+	TotalDue decimal.Decimal `json:"total_due"`
 	// Total amount that is past due.
-	TotalPastDue float32 `json:"total_past_due"`
+	TotalPastDue decimal.Decimal `json:"total_past_due"`
 }
 
 type _DelinquencyStateResponse DelinquencyStateResponse
@@ -49,7 +49,7 @@ type _DelinquencyStateResponse DelinquencyStateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelinquencyStateResponse(accountToken string, currentDue float32, isDelinquent bool, totalDaysPastDue int32, totalDue float32, totalPastDue float32) *DelinquencyStateResponse {
+func NewDelinquencyStateResponse(accountToken string, currentDue decimal.Decimal, isDelinquent bool, totalDaysPastDue int32, totalDue decimal.Decimal, totalPastDue decimal.Decimal) *DelinquencyStateResponse {
 	this := DelinquencyStateResponse{}
 	this.AccountToken = accountToken
 	this.CurrentDue = currentDue
@@ -125,9 +125,9 @@ func (o *DelinquencyStateResponse) SetBuckets(v []DelinquencyBucketResponse) {
 }
 
 // GetCurrentDue returns the CurrentDue field value
-func (o *DelinquencyStateResponse) GetCurrentDue() float32 {
+func (o *DelinquencyStateResponse) GetCurrentDue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -136,7 +136,7 @@ func (o *DelinquencyStateResponse) GetCurrentDue() float32 {
 
 // GetCurrentDueOk returns a tuple with the CurrentDue field value
 // and a boolean to check if the value has been set.
-func (o *DelinquencyStateResponse) GetCurrentDueOk() (*float32, bool) {
+func (o *DelinquencyStateResponse) GetCurrentDueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -144,7 +144,7 @@ func (o *DelinquencyStateResponse) GetCurrentDueOk() (*float32, bool) {
 }
 
 // SetCurrentDue sets field value
-func (o *DelinquencyStateResponse) SetCurrentDue(v float32) {
+func (o *DelinquencyStateResponse) SetCurrentDue(v decimal.Decimal) {
 	o.CurrentDue = v
 }
 
@@ -281,9 +281,9 @@ func (o *DelinquencyStateResponse) SetTotalDaysPastDue(v int32) {
 }
 
 // GetTotalDue returns the TotalDue field value
-func (o *DelinquencyStateResponse) GetTotalDue() float32 {
+func (o *DelinquencyStateResponse) GetTotalDue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -292,7 +292,7 @@ func (o *DelinquencyStateResponse) GetTotalDue() float32 {
 
 // GetTotalDueOk returns a tuple with the TotalDue field value
 // and a boolean to check if the value has been set.
-func (o *DelinquencyStateResponse) GetTotalDueOk() (*float32, bool) {
+func (o *DelinquencyStateResponse) GetTotalDueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -300,14 +300,14 @@ func (o *DelinquencyStateResponse) GetTotalDueOk() (*float32, bool) {
 }
 
 // SetTotalDue sets field value
-func (o *DelinquencyStateResponse) SetTotalDue(v float32) {
+func (o *DelinquencyStateResponse) SetTotalDue(v decimal.Decimal) {
 	o.TotalDue = v
 }
 
 // GetTotalPastDue returns the TotalPastDue field value
-func (o *DelinquencyStateResponse) GetTotalPastDue() float32 {
+func (o *DelinquencyStateResponse) GetTotalPastDue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -316,7 +316,7 @@ func (o *DelinquencyStateResponse) GetTotalPastDue() float32 {
 
 // GetTotalPastDueOk returns a tuple with the TotalPastDue field value
 // and a boolean to check if the value has been set.
-func (o *DelinquencyStateResponse) GetTotalPastDueOk() (*float32, bool) {
+func (o *DelinquencyStateResponse) GetTotalPastDueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -324,7 +324,7 @@ func (o *DelinquencyStateResponse) GetTotalPastDueOk() (*float32, bool) {
 }
 
 // SetTotalPastDue sets field value
-func (o *DelinquencyStateResponse) SetTotalPastDue(v float32) {
+func (o *DelinquencyStateResponse) SetTotalPastDue(v decimal.Decimal) {
 	o.TotalPastDue = v
 }
 

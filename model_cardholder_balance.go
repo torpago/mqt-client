@@ -24,23 +24,23 @@ var _ MappedNullable = &CardholderBalance{}
 // CardholderBalance Returns general purpose account (GPA) balances for a user or business.
 type CardholderBalance struct {
 	// Ledger balance minus any authorized transactions that have not yet cleared. Also known as the cardholder's purchasing power. When using JIT Funding, this balance is usually equal to $0.00.
-	AvailableBalance float32 `json:"available_balance"`
+	AvailableBalance decimal.Decimal `json:"available_balance"`
 	// Contains GPA balance information, organized by currency code.
 	Balances map[string]CardholderBalance `json:"balances"`
 	// Not currently in use.
-	CachedBalance float32 `json:"cached_balance"`
+	CachedBalance decimal.Decimal `json:"cached_balance"`
 	// Not currently in use.
-	CreditBalance float32 `json:"credit_balance"`
+	CreditBalance decimal.Decimal `json:"credit_balance"`
 	// Three-digit ISO 4217 currency code.
 	CurrencyCode string `json:"currency_code"`
 	// Balance change based on the amount of the transaction.
-	ImpactedAmount *float32 `json:"impacted_amount,omitempty"`
+	ImpactedAmount *decimal.Decimal `json:"impacted_amount,omitempty"`
 	// Date and time when the resource was last updated, in UTC.
 	LastUpdatedTime time.Time `json:"last_updated_time"`
 	// When using standard funding: The funds that are available to spend immediately, including funds from any authorized transactions that have not yet cleared. When using Just-in-Time (JIT) Funding: Authorized funds that are currently on hold, but not yet cleared.
-	LedgerBalance float32 `json:"ledger_balance"`
+	LedgerBalance decimal.Decimal `json:"ledger_balance"`
 	// ACH loads that have been accepted, but for which the funding time has not yet elapsed.
-	PendingCredits float32 `json:"pending_credits"`
+	PendingCredits decimal.Decimal `json:"pending_credits"`
 }
 
 type _CardholderBalance CardholderBalance
@@ -49,7 +49,7 @@ type _CardholderBalance CardholderBalance
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCardholderBalance(availableBalance float32, balances map[string]CardholderBalance, cachedBalance float32, creditBalance float32, currencyCode string, lastUpdatedTime time.Time, ledgerBalance float32, pendingCredits float32) *CardholderBalance {
+func NewCardholderBalance(availableBalance decimal.Decimal, balances map[string]CardholderBalance, cachedBalance decimal.Decimal, creditBalance decimal.Decimal, currencyCode string, lastUpdatedTime time.Time, ledgerBalance decimal.Decimal, pendingCredits decimal.Decimal) *CardholderBalance {
 	this := CardholderBalance{}
 	this.AvailableBalance = availableBalance
 	this.Balances = balances
@@ -71,9 +71,9 @@ func NewCardholderBalanceWithDefaults() *CardholderBalance {
 }
 
 // GetAvailableBalance returns the AvailableBalance field value
-func (o *CardholderBalance) GetAvailableBalance() float32 {
+func (o *CardholderBalance) GetAvailableBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -82,7 +82,7 @@ func (o *CardholderBalance) GetAvailableBalance() float32 {
 
 // GetAvailableBalanceOk returns a tuple with the AvailableBalance field value
 // and a boolean to check if the value has been set.
-func (o *CardholderBalance) GetAvailableBalanceOk() (*float32, bool) {
+func (o *CardholderBalance) GetAvailableBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -90,7 +90,7 @@ func (o *CardholderBalance) GetAvailableBalanceOk() (*float32, bool) {
 }
 
 // SetAvailableBalance sets field value
-func (o *CardholderBalance) SetAvailableBalance(v float32) {
+func (o *CardholderBalance) SetAvailableBalance(v decimal.Decimal) {
 	o.AvailableBalance = v
 }
 
@@ -119,9 +119,9 @@ func (o *CardholderBalance) SetBalances(v map[string]CardholderBalance) {
 }
 
 // GetCachedBalance returns the CachedBalance field value
-func (o *CardholderBalance) GetCachedBalance() float32 {
+func (o *CardholderBalance) GetCachedBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -130,7 +130,7 @@ func (o *CardholderBalance) GetCachedBalance() float32 {
 
 // GetCachedBalanceOk returns a tuple with the CachedBalance field value
 // and a boolean to check if the value has been set.
-func (o *CardholderBalance) GetCachedBalanceOk() (*float32, bool) {
+func (o *CardholderBalance) GetCachedBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -138,14 +138,14 @@ func (o *CardholderBalance) GetCachedBalanceOk() (*float32, bool) {
 }
 
 // SetCachedBalance sets field value
-func (o *CardholderBalance) SetCachedBalance(v float32) {
+func (o *CardholderBalance) SetCachedBalance(v decimal.Decimal) {
 	o.CachedBalance = v
 }
 
 // GetCreditBalance returns the CreditBalance field value
-func (o *CardholderBalance) GetCreditBalance() float32 {
+func (o *CardholderBalance) GetCreditBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -154,7 +154,7 @@ func (o *CardholderBalance) GetCreditBalance() float32 {
 
 // GetCreditBalanceOk returns a tuple with the CreditBalance field value
 // and a boolean to check if the value has been set.
-func (o *CardholderBalance) GetCreditBalanceOk() (*float32, bool) {
+func (o *CardholderBalance) GetCreditBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -162,7 +162,7 @@ func (o *CardholderBalance) GetCreditBalanceOk() (*float32, bool) {
 }
 
 // SetCreditBalance sets field value
-func (o *CardholderBalance) SetCreditBalance(v float32) {
+func (o *CardholderBalance) SetCreditBalance(v decimal.Decimal) {
 	o.CreditBalance = v
 }
 
@@ -191,9 +191,9 @@ func (o *CardholderBalance) SetCurrencyCode(v string) {
 }
 
 // GetImpactedAmount returns the ImpactedAmount field value if set, zero value otherwise.
-func (o *CardholderBalance) GetImpactedAmount() float32 {
+func (o *CardholderBalance) GetImpactedAmount() decimal.Decimal {
 	if o == nil || IsNil(o.ImpactedAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ImpactedAmount
@@ -201,7 +201,7 @@ func (o *CardholderBalance) GetImpactedAmount() float32 {
 
 // GetImpactedAmountOk returns a tuple with the ImpactedAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CardholderBalance) GetImpactedAmountOk() (*float32, bool) {
+func (o *CardholderBalance) GetImpactedAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ImpactedAmount) {
 		return nil, false
 	}
@@ -217,8 +217,8 @@ func (o *CardholderBalance) HasImpactedAmount() bool {
 	return false
 }
 
-// SetImpactedAmount gets a reference to the given float32 and assigns it to the ImpactedAmount field.
-func (o *CardholderBalance) SetImpactedAmount(v float32) {
+// SetImpactedAmount gets a reference to the given decimal.Decimal and assigns it to the ImpactedAmount field.
+func (o *CardholderBalance) SetImpactedAmount(v decimal.Decimal) {
 	o.ImpactedAmount = &v
 }
 
@@ -247,9 +247,9 @@ func (o *CardholderBalance) SetLastUpdatedTime(v time.Time) {
 }
 
 // GetLedgerBalance returns the LedgerBalance field value
-func (o *CardholderBalance) GetLedgerBalance() float32 {
+func (o *CardholderBalance) GetLedgerBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -258,7 +258,7 @@ func (o *CardholderBalance) GetLedgerBalance() float32 {
 
 // GetLedgerBalanceOk returns a tuple with the LedgerBalance field value
 // and a boolean to check if the value has been set.
-func (o *CardholderBalance) GetLedgerBalanceOk() (*float32, bool) {
+func (o *CardholderBalance) GetLedgerBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -266,14 +266,14 @@ func (o *CardholderBalance) GetLedgerBalanceOk() (*float32, bool) {
 }
 
 // SetLedgerBalance sets field value
-func (o *CardholderBalance) SetLedgerBalance(v float32) {
+func (o *CardholderBalance) SetLedgerBalance(v decimal.Decimal) {
 	o.LedgerBalance = v
 }
 
 // GetPendingCredits returns the PendingCredits field value
-func (o *CardholderBalance) GetPendingCredits() float32 {
+func (o *CardholderBalance) GetPendingCredits() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -282,7 +282,7 @@ func (o *CardholderBalance) GetPendingCredits() float32 {
 
 // GetPendingCreditsOk returns a tuple with the PendingCredits field value
 // and a boolean to check if the value has been set.
-func (o *CardholderBalance) GetPendingCreditsOk() (*float32, bool) {
+func (o *CardholderBalance) GetPendingCreditsOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -290,7 +290,7 @@ func (o *CardholderBalance) GetPendingCreditsOk() (*float32, bool) {
 }
 
 // SetPendingCredits sets field value
-func (o *CardholderBalance) SetPendingCredits(v float32) {
+func (o *CardholderBalance) SetPendingCredits(v decimal.Decimal) {
 	o.PendingCredits = v
 }
 

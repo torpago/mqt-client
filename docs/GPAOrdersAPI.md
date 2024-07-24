@@ -251,7 +251,7 @@ import (
 )
 
 func main() {
-	gpaRequest := *openapiclient.NewGpaRequest(float32(123), "CurrencyCode_example", "FundingSourceToken_example") // GpaRequest |  (optional)
+	gpaRequest := *openapiclient.NewGpaRequest(decimal.Decimal(123), "CurrencyCode_example", "FundingSourceToken_example") // GpaRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -317,7 +317,7 @@ import (
 )
 
 func main() {
-	unloadRequestModel := *openapiclient.NewUnloadRequestModel(float32(123), "OriginalOrderToken_example") // UnloadRequestModel |  (optional)
+	unloadRequestModel := *openapiclient.NewUnloadRequestModel(decimal.Decimal(123), "OriginalOrderToken_example") // UnloadRequestModel |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

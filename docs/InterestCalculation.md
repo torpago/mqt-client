@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **InterestApplication** | **[]string** | One or more balance types on which interest is applied. | [default to ["PRINCIPAL","FEES"]]
 **InterestOnGraceReactivation** | [**InterestOnGraceReactivationEnum**](InterestOnGraceReactivationEnum.md) |  | 
 **Method** | **string** | Method of interest calculation. | 
-**MinimumInterest** | **float32** | When interest is applied, this value determines the minimum amount of interest that can be charged. | 
+**MinimumInterest** | **decimal.Decimal** | When interest is applied, this value determines the minimum amount of interest that can be charged. | 
 
 ## Methods
 
 ### NewInterestCalculation
 
-`func NewInterestCalculation(applicationOfCredits ApplicationOfCredits, dayCount string, graceDaysApplication string, interestApplication []string, interestOnGraceReactivation InterestOnGraceReactivationEnum, method string, minimumInterest float32, ) *InterestCalculation`
+`func NewInterestCalculation(applicationOfCredits ApplicationOfCredits, dayCount string, graceDaysApplication string, interestApplication []string, interestOnGraceReactivation InterestOnGraceReactivationEnum, method string, minimumInterest decimal.Decimal, ) *InterestCalculation`
 
 NewInterestCalculation instantiates a new InterestCalculation object
 This constructor will assign default values to properties that have it defined,
@@ -179,20 +179,20 @@ SetMethod sets Method field to given value.
 
 ### GetMinimumInterest
 
-`func (o *InterestCalculation) GetMinimumInterest() float32`
+`func (o *InterestCalculation) GetMinimumInterest() decimal.Decimal`
 
 GetMinimumInterest returns the MinimumInterest field if non-nil, zero value otherwise.
 
 ### GetMinimumInterestOk
 
-`func (o *InterestCalculation) GetMinimumInterestOk() (*float32, bool)`
+`func (o *InterestCalculation) GetMinimumInterestOk() (*decimal.Decimal, bool)`
 
 GetMinimumInterestOk returns a tuple with the MinimumInterest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumInterest
 
-`func (o *InterestCalculation) SetMinimumInterest(v float32)`
+`func (o *InterestCalculation) SetMinimumInterest(v decimal.Decimal)`
 
 SetMinimumInterest sets MinimumInterest field to given value.
 

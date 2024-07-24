@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of program transfer. | 
+**Amount** | **decimal.Decimal** | Amount of program transfer. | 
 **BusinessToken** | Pointer to **string** | Unique identifier of the business. Pass either a &#x60;business_token&#x60; or a &#x60;user_token&#x60;, not both.  Send a &#x60;GET&#x60; request to &#x60;/businesses&#x60; to retrieve business tokens. | [optional] 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
 **Fees** | Pointer to [**[]FeeModel**](FeeModel.md) | Contains attributes that define characteristics of one or more fees. This array is returned in the response when it is included in the request. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewProgramTransfer
 
-`func NewProgramTransfer(amount float32, currencyCode string, typeToken string, ) *ProgramTransfer`
+`func NewProgramTransfer(amount decimal.Decimal, currencyCode string, typeToken string, ) *ProgramTransfer`
 
 NewProgramTransfer instantiates a new ProgramTransfer object
 This constructor will assign default values to properties that have it defined,
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *ProgramTransfer) GetAmount() float32`
+`func (o *ProgramTransfer) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *ProgramTransfer) GetAmountOk() (*float32, bool)`
+`func (o *ProgramTransfer) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *ProgramTransfer) SetAmount(v float32)`
+`func (o *ProgramTransfer) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

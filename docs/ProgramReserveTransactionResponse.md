@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | Amount of the program reserve account credit or debit. Sometimes referred to as a _program funding account_. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | Amount of the program reserve account credit or debit. Sometimes referred to as a _program funding account_. | [optional] 
 **CreatedTime** | **time.Time** | Date and time when the resource was created, in UTC. | 
 **CurrencyCode** | Pointer to **string** | Three-digit ISO 4217 currency code. | [optional] 
 **IsCollateral** | Pointer to **bool** |  | [optional] 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *ProgramReserveTransactionResponse) GetAmount() float32`
+`func (o *ProgramReserveTransactionResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *ProgramReserveTransactionResponse) GetAmountOk() (*float32, bool)`
+`func (o *ProgramReserveTransactionResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *ProgramReserveTransactionResponse) SetAmount(v float32)`
+`func (o *ProgramReserveTransactionResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

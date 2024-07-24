@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MarginRate** | **float32** | Number of percentage points added to the prime rate, used to calculate a variable APR value. | 
+**MarginRate** | **decimal.Decimal** | Number of percentage points added to the prime rate, used to calculate a variable APR value. | 
 
 ## Methods
 
 ### NewPolicyAprTierReq
 
-`func NewPolicyAprTierReq(marginRate float32, ) *PolicyAprTierReq`
+`func NewPolicyAprTierReq(marginRate decimal.Decimal, ) *PolicyAprTierReq`
 
 NewPolicyAprTierReq instantiates a new PolicyAprTierReq object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarginRate
 
-`func (o *PolicyAprTierReq) GetMarginRate() float32`
+`func (o *PolicyAprTierReq) GetMarginRate() decimal.Decimal`
 
 GetMarginRate returns the MarginRate field if non-nil, zero value otherwise.
 
 ### GetMarginRateOk
 
-`func (o *PolicyAprTierReq) GetMarginRateOk() (*float32, bool)`
+`func (o *PolicyAprTierReq) GetMarginRateOk() (*decimal.Decimal, bool)`
 
 GetMarginRateOk returns a tuple with the MarginRate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarginRate
 
-`func (o *PolicyAprTierReq) SetMarginRate(v float32)`
+`func (o *PolicyAprTierReq) SetMarginRate(v decimal.Decimal)`
 
 SetMarginRate sets MarginRate field to given value.
 

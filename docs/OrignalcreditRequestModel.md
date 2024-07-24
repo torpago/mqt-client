@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **CardAcceptor** | Pointer to [**CardAcceptorModel**](CardAcceptorModel.md) |  | [optional] 
 **CardToken** | **string** |  | 
 **Mid** | **string** |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewOrignalcreditRequestModel
 
-`func NewOrignalcreditRequestModel(amount float32, cardToken string, mid string, type_ string, ) *OrignalcreditRequestModel`
+`func NewOrignalcreditRequestModel(amount decimal.Decimal, cardToken string, mid string, type_ string, ) *OrignalcreditRequestModel`
 
 NewOrignalcreditRequestModel instantiates a new OrignalcreditRequestModel object
 This constructor will assign default values to properties that have it defined,
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *OrignalcreditRequestModel) GetAmount() float32`
+`func (o *OrignalcreditRequestModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *OrignalcreditRequestModel) GetAmountOk() (*float32, bool)`
+`func (o *OrignalcreditRequestModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *OrignalcreditRequestModel) SetAmount(v float32)`
+`func (o *OrignalcreditRequestModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **EndDate** | **time.Time** | The ending date (or date-time) of a date range from which to return accrued rewards, in UTC. Reward entries created on or before this date count toward the total reward balance. | 
 **RewardProgramToken** | **string** | Unique identifier of the reward program for which to retrieve the reward entries balance. | 
 **StartDate** | **time.Time** | The starting date (or date-time) of a date range from which to return accrued rewards, in UTC. Reward entries created on or after this date count toward the total reward balance. | 
-**TotalRewardBalance** | **float32** | The total balance of rewards accrued within a date range. | 
+**TotalRewardBalance** | **decimal.Decimal** | The total balance of rewards accrued within a date range. | 
 
 ## Methods
 
 ### NewRewardProgramsEntriesBalanceResponse
 
-`func NewRewardProgramsEntriesBalanceResponse(endDate time.Time, rewardProgramToken string, startDate time.Time, totalRewardBalance float32, ) *RewardProgramsEntriesBalanceResponse`
+`func NewRewardProgramsEntriesBalanceResponse(endDate time.Time, rewardProgramToken string, startDate time.Time, totalRewardBalance decimal.Decimal, ) *RewardProgramsEntriesBalanceResponse`
 
 NewRewardProgramsEntriesBalanceResponse instantiates a new RewardProgramsEntriesBalanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -116,20 +116,20 @@ SetStartDate sets StartDate field to given value.
 
 ### GetTotalRewardBalance
 
-`func (o *RewardProgramsEntriesBalanceResponse) GetTotalRewardBalance() float32`
+`func (o *RewardProgramsEntriesBalanceResponse) GetTotalRewardBalance() decimal.Decimal`
 
 GetTotalRewardBalance returns the TotalRewardBalance field if non-nil, zero value otherwise.
 
 ### GetTotalRewardBalanceOk
 
-`func (o *RewardProgramsEntriesBalanceResponse) GetTotalRewardBalanceOk() (*float32, bool)`
+`func (o *RewardProgramsEntriesBalanceResponse) GetTotalRewardBalanceOk() (*decimal.Decimal, bool)`
 
 GetTotalRewardBalanceOk returns a tuple with the TotalRewardBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalRewardBalance
 
-`func (o *RewardProgramsEntriesBalanceResponse) SetTotalRewardBalance(v float32)`
+`func (o *RewardProgramsEntriesBalanceResponse) SetTotalRewardBalance(v decimal.Decimal)`
 
 SetTotalRewardBalance sets TotalRewardBalance field to given value.
 

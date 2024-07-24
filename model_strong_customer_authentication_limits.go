@@ -25,23 +25,23 @@ type StrongCustomerAuthenticationLimits struct {
 	// If set to `true`, Marqeta validates the amount in the authorization transaction against the amount in the 3D Secure authentication attempt. If the authorization amount is greater than the 3D Secure authentication amount, Marqeta rejects the transaction. You can specify an allowable variance for the 3D Secure authentication amount in the `cavv_authentication_amount_incremental_percentage` field.
 	EnableCavvAuthenticationAmountValidation *bool `json:"enable_cavv_authentication_amount_validation,omitempty"`
 	// Specifies the cumulative limit of transactions the cardholder can perform before receiving an SCA challenge.  A value of `0` in this field means that the cumulative amount spent in contactless POS transactions performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
-	ScaContactlessCumulativeAmountLimit *float32 `json:"sca_contactless_cumulative_amount_limit,omitempty"`
+	ScaContactlessCumulativeAmountLimit *decimal.Decimal `json:"sca_contactless_cumulative_amount_limit,omitempty"`
 	// Specifies the maximum allowable amount for a single contactless point-of-sale (POS) transaction, above which the cardholder receives a strong customer authentication (SCA) challenge.  A value of `0` in this field means that the amount of any single contactless POS transaction performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
-	ScaContactlessTransactionLimit *float32 `json:"sca_contactless_transaction_limit,omitempty"`
+	ScaContactlessTransactionLimit *decimal.Decimal `json:"sca_contactless_transaction_limit,omitempty"`
 	// Specifies the number of contactless POS transactions the cardholder can perform before receiving an SCA challenge.  A value of `0` in this field means that the number of contactless POS transactions performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
 	ScaContactlessTransactionsCountLimit *int32 `json:"sca_contactless_transactions_count_limit,omitempty"`
 	// Specifies the currency type for contactless POS transactions.  This field is required if either the `sca_contactless_transaction_limit` field or the `sca_contactless_cumulative_amount_limit` field in this object contains a value, even if that value is `0`.
 	ScaContactlessTransactionsCurrency *string `json:"sca_contactless_transactions_currency,omitempty"`
 	// Specifies the cumulative limit of LVP e-commerce transactions the cardholder can perform before receiving an SCA challenge.  For example, if you set the value of this field to `100.00`, your cardholder can perform two transactions for `30.00` and two transactions for `20.00` before receiving an SCA challenge.  If you leave this field blank, the cumulative amount spent in LVP e-commerce transactions performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
-	ScaLvpCumulativeAmountLimit *float32 `json:"sca_lvp_cumulative_amount_limit,omitempty"`
+	ScaLvpCumulativeAmountLimit *decimal.Decimal `json:"sca_lvp_cumulative_amount_limit,omitempty"`
 	// Specifies the maximum allowable amount for a single low-value payment (LVP) e-commerce transaction, above which the cardholder receives a strong customer authentication (SCA) challenge.  If you leave this field blank, the amount of any single LVP e-commerce transaction performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
-	ScaLvpTransactionLimit *float32 `json:"sca_lvp_transaction_limit,omitempty"`
+	ScaLvpTransactionLimit *decimal.Decimal `json:"sca_lvp_transaction_limit,omitempty"`
 	// Specifies the number of LVP e-commerce transactions the cardholder can perform before receiving an SCA challenge.  If you leave this field blank, the total number of LVP e-commerce transactions performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
 	ScaLvpTransactionsCountLimit *int32 `json:"sca_lvp_transactions_count_limit,omitempty"`
 	// Specifies the currency type for LVP e-commerce transaction limits.  This field is required if any one of the `sca_lvp_transaction_limit`, `sca_lvp_cumulative_amount_limit`, or `sca_lvp_transactions_count_limit` fields in this object contains a value, even if that value is `0`.
 	ScaLvpTransactionsCurrency *string `json:"sca_lvp_transactions_currency,omitempty"`
 	// Specifies the maximum allowable amount for a single low-value payment (LVP) e-commerce transaction with transaction risk analysis (TRA) exemption sent by the merchant or acquirer. If the transaction amount exceeds the specified limit, then the transaction is either approved or it receives a strong customer authentication (SCA) challenge based on `sca_lvp_transaction_limit` and `sca_lvp_transactions_currency`.
-	ScaTraExemptionAmountLimit *float32 `json:"sca_tra_exemption_amount_limit,omitempty"`
+	ScaTraExemptionAmountLimit *decimal.Decimal `json:"sca_tra_exemption_amount_limit,omitempty"`
 }
 
 // NewStrongCustomerAuthenticationLimits instantiates a new StrongCustomerAuthenticationLimits object
@@ -126,9 +126,9 @@ func (o *StrongCustomerAuthenticationLimits) SetEnableCavvAuthenticationAmountVa
 }
 
 // GetScaContactlessCumulativeAmountLimit returns the ScaContactlessCumulativeAmountLimit field value if set, zero value otherwise.
-func (o *StrongCustomerAuthenticationLimits) GetScaContactlessCumulativeAmountLimit() float32 {
+func (o *StrongCustomerAuthenticationLimits) GetScaContactlessCumulativeAmountLimit() decimal.Decimal {
 	if o == nil || IsNil(o.ScaContactlessCumulativeAmountLimit) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ScaContactlessCumulativeAmountLimit
@@ -136,7 +136,7 @@ func (o *StrongCustomerAuthenticationLimits) GetScaContactlessCumulativeAmountLi
 
 // GetScaContactlessCumulativeAmountLimitOk returns a tuple with the ScaContactlessCumulativeAmountLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StrongCustomerAuthenticationLimits) GetScaContactlessCumulativeAmountLimitOk() (*float32, bool) {
+func (o *StrongCustomerAuthenticationLimits) GetScaContactlessCumulativeAmountLimitOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ScaContactlessCumulativeAmountLimit) {
 		return nil, false
 	}
@@ -152,15 +152,15 @@ func (o *StrongCustomerAuthenticationLimits) HasScaContactlessCumulativeAmountLi
 	return false
 }
 
-// SetScaContactlessCumulativeAmountLimit gets a reference to the given float32 and assigns it to the ScaContactlessCumulativeAmountLimit field.
-func (o *StrongCustomerAuthenticationLimits) SetScaContactlessCumulativeAmountLimit(v float32) {
+// SetScaContactlessCumulativeAmountLimit gets a reference to the given decimal.Decimal and assigns it to the ScaContactlessCumulativeAmountLimit field.
+func (o *StrongCustomerAuthenticationLimits) SetScaContactlessCumulativeAmountLimit(v decimal.Decimal) {
 	o.ScaContactlessCumulativeAmountLimit = &v
 }
 
 // GetScaContactlessTransactionLimit returns the ScaContactlessTransactionLimit field value if set, zero value otherwise.
-func (o *StrongCustomerAuthenticationLimits) GetScaContactlessTransactionLimit() float32 {
+func (o *StrongCustomerAuthenticationLimits) GetScaContactlessTransactionLimit() decimal.Decimal {
 	if o == nil || IsNil(o.ScaContactlessTransactionLimit) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ScaContactlessTransactionLimit
@@ -168,7 +168,7 @@ func (o *StrongCustomerAuthenticationLimits) GetScaContactlessTransactionLimit()
 
 // GetScaContactlessTransactionLimitOk returns a tuple with the ScaContactlessTransactionLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StrongCustomerAuthenticationLimits) GetScaContactlessTransactionLimitOk() (*float32, bool) {
+func (o *StrongCustomerAuthenticationLimits) GetScaContactlessTransactionLimitOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ScaContactlessTransactionLimit) {
 		return nil, false
 	}
@@ -184,8 +184,8 @@ func (o *StrongCustomerAuthenticationLimits) HasScaContactlessTransactionLimit()
 	return false
 }
 
-// SetScaContactlessTransactionLimit gets a reference to the given float32 and assigns it to the ScaContactlessTransactionLimit field.
-func (o *StrongCustomerAuthenticationLimits) SetScaContactlessTransactionLimit(v float32) {
+// SetScaContactlessTransactionLimit gets a reference to the given decimal.Decimal and assigns it to the ScaContactlessTransactionLimit field.
+func (o *StrongCustomerAuthenticationLimits) SetScaContactlessTransactionLimit(v decimal.Decimal) {
 	o.ScaContactlessTransactionLimit = &v
 }
 
@@ -254,9 +254,9 @@ func (o *StrongCustomerAuthenticationLimits) SetScaContactlessTransactionsCurren
 }
 
 // GetScaLvpCumulativeAmountLimit returns the ScaLvpCumulativeAmountLimit field value if set, zero value otherwise.
-func (o *StrongCustomerAuthenticationLimits) GetScaLvpCumulativeAmountLimit() float32 {
+func (o *StrongCustomerAuthenticationLimits) GetScaLvpCumulativeAmountLimit() decimal.Decimal {
 	if o == nil || IsNil(o.ScaLvpCumulativeAmountLimit) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ScaLvpCumulativeAmountLimit
@@ -264,7 +264,7 @@ func (o *StrongCustomerAuthenticationLimits) GetScaLvpCumulativeAmountLimit() fl
 
 // GetScaLvpCumulativeAmountLimitOk returns a tuple with the ScaLvpCumulativeAmountLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StrongCustomerAuthenticationLimits) GetScaLvpCumulativeAmountLimitOk() (*float32, bool) {
+func (o *StrongCustomerAuthenticationLimits) GetScaLvpCumulativeAmountLimitOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ScaLvpCumulativeAmountLimit) {
 		return nil, false
 	}
@@ -280,15 +280,15 @@ func (o *StrongCustomerAuthenticationLimits) HasScaLvpCumulativeAmountLimit() bo
 	return false
 }
 
-// SetScaLvpCumulativeAmountLimit gets a reference to the given float32 and assigns it to the ScaLvpCumulativeAmountLimit field.
-func (o *StrongCustomerAuthenticationLimits) SetScaLvpCumulativeAmountLimit(v float32) {
+// SetScaLvpCumulativeAmountLimit gets a reference to the given decimal.Decimal and assigns it to the ScaLvpCumulativeAmountLimit field.
+func (o *StrongCustomerAuthenticationLimits) SetScaLvpCumulativeAmountLimit(v decimal.Decimal) {
 	o.ScaLvpCumulativeAmountLimit = &v
 }
 
 // GetScaLvpTransactionLimit returns the ScaLvpTransactionLimit field value if set, zero value otherwise.
-func (o *StrongCustomerAuthenticationLimits) GetScaLvpTransactionLimit() float32 {
+func (o *StrongCustomerAuthenticationLimits) GetScaLvpTransactionLimit() decimal.Decimal {
 	if o == nil || IsNil(o.ScaLvpTransactionLimit) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ScaLvpTransactionLimit
@@ -296,7 +296,7 @@ func (o *StrongCustomerAuthenticationLimits) GetScaLvpTransactionLimit() float32
 
 // GetScaLvpTransactionLimitOk returns a tuple with the ScaLvpTransactionLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StrongCustomerAuthenticationLimits) GetScaLvpTransactionLimitOk() (*float32, bool) {
+func (o *StrongCustomerAuthenticationLimits) GetScaLvpTransactionLimitOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ScaLvpTransactionLimit) {
 		return nil, false
 	}
@@ -312,8 +312,8 @@ func (o *StrongCustomerAuthenticationLimits) HasScaLvpTransactionLimit() bool {
 	return false
 }
 
-// SetScaLvpTransactionLimit gets a reference to the given float32 and assigns it to the ScaLvpTransactionLimit field.
-func (o *StrongCustomerAuthenticationLimits) SetScaLvpTransactionLimit(v float32) {
+// SetScaLvpTransactionLimit gets a reference to the given decimal.Decimal and assigns it to the ScaLvpTransactionLimit field.
+func (o *StrongCustomerAuthenticationLimits) SetScaLvpTransactionLimit(v decimal.Decimal) {
 	o.ScaLvpTransactionLimit = &v
 }
 
@@ -382,9 +382,9 @@ func (o *StrongCustomerAuthenticationLimits) SetScaLvpTransactionsCurrency(v str
 }
 
 // GetScaTraExemptionAmountLimit returns the ScaTraExemptionAmountLimit field value if set, zero value otherwise.
-func (o *StrongCustomerAuthenticationLimits) GetScaTraExemptionAmountLimit() float32 {
+func (o *StrongCustomerAuthenticationLimits) GetScaTraExemptionAmountLimit() decimal.Decimal {
 	if o == nil || IsNil(o.ScaTraExemptionAmountLimit) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ScaTraExemptionAmountLimit
@@ -392,7 +392,7 @@ func (o *StrongCustomerAuthenticationLimits) GetScaTraExemptionAmountLimit() flo
 
 // GetScaTraExemptionAmountLimitOk returns a tuple with the ScaTraExemptionAmountLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StrongCustomerAuthenticationLimits) GetScaTraExemptionAmountLimitOk() (*float32, bool) {
+func (o *StrongCustomerAuthenticationLimits) GetScaTraExemptionAmountLimitOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ScaTraExemptionAmountLimit) {
 		return nil, false
 	}
@@ -408,8 +408,8 @@ func (o *StrongCustomerAuthenticationLimits) HasScaTraExemptionAmountLimit() boo
 	return false
 }
 
-// SetScaTraExemptionAmountLimit gets a reference to the given float32 and assigns it to the ScaTraExemptionAmountLimit field.
-func (o *StrongCustomerAuthenticationLimits) SetScaTraExemptionAmountLimit(v float32) {
+// SetScaTraExemptionAmountLimit gets a reference to the given decimal.Decimal and assigns it to the ScaTraExemptionAmountLimit field.
+func (o *StrongCustomerAuthenticationLimits) SetScaTraExemptionAmountLimit(v decimal.Decimal) {
 	o.ScaTraExemptionAmountLimit = &v
 }
 

@@ -24,7 +24,7 @@ var _ MappedNullable = &RedemptionsResponse{}
 // RedemptionsResponse Contains information on a reward redemption.
 type RedemptionsResponse struct {
 	// Amount to redeem.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Date and time when the reward redemption was created on the Marqeta platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	Destination *DestinationType `json:"destination,omitempty"`
@@ -54,7 +54,7 @@ type _RedemptionsResponse RedemptionsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRedemptionsResponse(amount float32, createdTime time.Time, note string, rewardProgramToken string, status RedemptionStatus, token string, type_ RedemptionType, updatedTime time.Time) *RedemptionsResponse {
+func NewRedemptionsResponse(amount decimal.Decimal, createdTime time.Time, note string, rewardProgramToken string, status RedemptionStatus, token string, type_ RedemptionType, updatedTime time.Time) *RedemptionsResponse {
 	this := RedemptionsResponse{}
 	this.Amount = amount
 	this.CreatedTime = createdTime
@@ -76,9 +76,9 @@ func NewRedemptionsResponseWithDefaults() *RedemptionsResponse {
 }
 
 // GetAmount returns the Amount field value
-func (o *RedemptionsResponse) GetAmount() float32 {
+func (o *RedemptionsResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -87,7 +87,7 @@ func (o *RedemptionsResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *RedemptionsResponse) GetAmountOk() (*float32, bool) {
+func (o *RedemptionsResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *RedemptionsResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *RedemptionsResponse) SetAmount(v float32) {
+func (o *RedemptionsResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

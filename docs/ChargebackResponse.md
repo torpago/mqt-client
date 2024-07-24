@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the chargeback. | 
+**Amount** | **decimal.Decimal** | Amount of the chargeback. | 
 **Channel** | **string** | Channel the chargeback came through. | 
 **CreatedTime** | **time.Time** | Date and time when the chargeback was created. Not returned for transactions when the associated chargeback is in the &#x60;INITIATED&#x60; state. | 
 **CreditUser** | **bool** | Whether to credit the user for the chargeback amount. | [default to false]
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewChargebackResponse
 
-`func NewChargebackResponse(amount float32, channel string, createdTime time.Time, creditUser bool, lastModifiedTime time.Time, network string, state string, token string, transactionToken string, ) *ChargebackResponse`
+`func NewChargebackResponse(amount decimal.Decimal, channel string, createdTime time.Time, creditUser bool, lastModifiedTime time.Time, network string, state string, token string, transactionToken string, ) *ChargebackResponse`
 
 NewChargebackResponse instantiates a new ChargebackResponse object
 This constructor will assign default values to properties that have it defined,
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *ChargebackResponse) GetAmount() float32`
+`func (o *ChargebackResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *ChargebackResponse) GetAmountOk() (*float32, bool)`
+`func (o *ChargebackResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *ChargebackResponse) SetAmount(v float32)`
+`func (o *ChargebackResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

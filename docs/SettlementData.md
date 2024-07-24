@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | The settled amount. | [optional] 
-**ConversionRate** | Pointer to **float32** | Returned when the transaction currency is different from the origination currency.  Conversion rate between the origination currency and the settlement currency. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | The settled amount. | [optional] 
+**ConversionRate** | Pointer to **decimal.Decimal** | Returned when the transaction currency is different from the origination currency.  Conversion rate between the origination currency and the settlement currency. | [optional] 
 **CurrencyCode** | Pointer to **string** | The ISO 4217 code of the currency used in the transaction. | [optional] 
 
 ## Methods
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *SettlementData) GetAmount() float32`
+`func (o *SettlementData) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *SettlementData) GetAmountOk() (*float32, bool)`
+`func (o *SettlementData) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *SettlementData) SetAmount(v float32)`
+`func (o *SettlementData) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 
@@ -54,20 +54,20 @@ HasAmount returns a boolean if a field has been set.
 
 ### GetConversionRate
 
-`func (o *SettlementData) GetConversionRate() float32`
+`func (o *SettlementData) GetConversionRate() decimal.Decimal`
 
 GetConversionRate returns the ConversionRate field if non-nil, zero value otherwise.
 
 ### GetConversionRateOk
 
-`func (o *SettlementData) GetConversionRateOk() (*float32, bool)`
+`func (o *SettlementData) GetConversionRateOk() (*decimal.Decimal, bool)`
 
 GetConversionRateOk returns a tuple with the ConversionRate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConversionRate
 
-`func (o *SettlementData) SetConversionRate(v float32)`
+`func (o *SettlementData) SetConversionRate(v decimal.Decimal)`
 
 SetConversionRate sets ConversionRate field to given value.
 

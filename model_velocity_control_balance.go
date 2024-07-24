@@ -25,7 +25,7 @@ type VelocityControlBalance struct {
 	// Indicates whether the velocity control is active.
 	Active *bool `json:"active,omitempty"`
 	// Maximum monetary sum that can be cleared within the time period defined by velocity period.
-	AmountLimit float32 `json:"amount_limit"`
+	AmountLimit decimal.Decimal `json:"amount_limit"`
 	Association *Association `json:"association,omitempty"`
 	// Three-character ISO 4217 currency code.
 	CurrencyCode string `json:"currency_code"`
@@ -48,7 +48,7 @@ type _VelocityControlBalance VelocityControlBalance
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVelocityControlBalance(amountLimit float32, currencyCode string) *VelocityControlBalance {
+func NewVelocityControlBalance(amountLimit decimal.Decimal, currencyCode string) *VelocityControlBalance {
 	this := VelocityControlBalance{}
 	var active bool = false
 	this.Active = &active
@@ -100,9 +100,9 @@ func (o *VelocityControlBalance) SetActive(v bool) {
 }
 
 // GetAmountLimit returns the AmountLimit field value
-func (o *VelocityControlBalance) GetAmountLimit() float32 {
+func (o *VelocityControlBalance) GetAmountLimit() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -111,7 +111,7 @@ func (o *VelocityControlBalance) GetAmountLimit() float32 {
 
 // GetAmountLimitOk returns a tuple with the AmountLimit field value
 // and a boolean to check if the value has been set.
-func (o *VelocityControlBalance) GetAmountLimitOk() (*float32, bool) {
+func (o *VelocityControlBalance) GetAmountLimitOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,7 +119,7 @@ func (o *VelocityControlBalance) GetAmountLimitOk() (*float32, bool) {
 }
 
 // SetAmountLimit sets field value
-func (o *VelocityControlBalance) SetAmountLimit(v float32) {
+func (o *VelocityControlBalance) SetAmountLimit(v decimal.Decimal) {
 	o.AmountLimit = v
 }
 

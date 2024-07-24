@@ -23,15 +23,15 @@ var _ MappedNullable = &MsaBalances{}
 
 // MsaBalances struct for MsaBalances
 type MsaBalances struct {
-	AvailableBalance float32 `json:"available_balance"`
+	AvailableBalance decimal.Decimal `json:"available_balance"`
 	Balances map[string]MsaBalances `json:"balances"`
-	CachedBalance float32 `json:"cached_balance"`
-	CreditBalance float32 `json:"credit_balance"`
+	CachedBalance decimal.Decimal `json:"cached_balance"`
+	CreditBalance decimal.Decimal `json:"credit_balance"`
 	CurrencyCode string `json:"currency_code"`
-	ImpactedAmount *float32 `json:"impacted_amount,omitempty"`
+	ImpactedAmount *decimal.Decimal `json:"impacted_amount,omitempty"`
 	LastUpdatedTime time.Time `json:"last_updated_time"`
-	LedgerBalance float32 `json:"ledger_balance"`
-	PendingCredits float32 `json:"pending_credits"`
+	LedgerBalance decimal.Decimal `json:"ledger_balance"`
+	PendingCredits decimal.Decimal `json:"pending_credits"`
 }
 
 type _MsaBalances MsaBalances
@@ -40,7 +40,7 @@ type _MsaBalances MsaBalances
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMsaBalances(availableBalance float32, balances map[string]MsaBalances, cachedBalance float32, creditBalance float32, currencyCode string, lastUpdatedTime time.Time, ledgerBalance float32, pendingCredits float32) *MsaBalances {
+func NewMsaBalances(availableBalance decimal.Decimal, balances map[string]MsaBalances, cachedBalance decimal.Decimal, creditBalance decimal.Decimal, currencyCode string, lastUpdatedTime time.Time, ledgerBalance decimal.Decimal, pendingCredits decimal.Decimal) *MsaBalances {
 	this := MsaBalances{}
 	this.AvailableBalance = availableBalance
 	this.Balances = balances
@@ -62,9 +62,9 @@ func NewMsaBalancesWithDefaults() *MsaBalances {
 }
 
 // GetAvailableBalance returns the AvailableBalance field value
-func (o *MsaBalances) GetAvailableBalance() float32 {
+func (o *MsaBalances) GetAvailableBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -73,7 +73,7 @@ func (o *MsaBalances) GetAvailableBalance() float32 {
 
 // GetAvailableBalanceOk returns a tuple with the AvailableBalance field value
 // and a boolean to check if the value has been set.
-func (o *MsaBalances) GetAvailableBalanceOk() (*float32, bool) {
+func (o *MsaBalances) GetAvailableBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -81,7 +81,7 @@ func (o *MsaBalances) GetAvailableBalanceOk() (*float32, bool) {
 }
 
 // SetAvailableBalance sets field value
-func (o *MsaBalances) SetAvailableBalance(v float32) {
+func (o *MsaBalances) SetAvailableBalance(v decimal.Decimal) {
 	o.AvailableBalance = v
 }
 
@@ -110,9 +110,9 @@ func (o *MsaBalances) SetBalances(v map[string]MsaBalances) {
 }
 
 // GetCachedBalance returns the CachedBalance field value
-func (o *MsaBalances) GetCachedBalance() float32 {
+func (o *MsaBalances) GetCachedBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -121,7 +121,7 @@ func (o *MsaBalances) GetCachedBalance() float32 {
 
 // GetCachedBalanceOk returns a tuple with the CachedBalance field value
 // and a boolean to check if the value has been set.
-func (o *MsaBalances) GetCachedBalanceOk() (*float32, bool) {
+func (o *MsaBalances) GetCachedBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -129,14 +129,14 @@ func (o *MsaBalances) GetCachedBalanceOk() (*float32, bool) {
 }
 
 // SetCachedBalance sets field value
-func (o *MsaBalances) SetCachedBalance(v float32) {
+func (o *MsaBalances) SetCachedBalance(v decimal.Decimal) {
 	o.CachedBalance = v
 }
 
 // GetCreditBalance returns the CreditBalance field value
-func (o *MsaBalances) GetCreditBalance() float32 {
+func (o *MsaBalances) GetCreditBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -145,7 +145,7 @@ func (o *MsaBalances) GetCreditBalance() float32 {
 
 // GetCreditBalanceOk returns a tuple with the CreditBalance field value
 // and a boolean to check if the value has been set.
-func (o *MsaBalances) GetCreditBalanceOk() (*float32, bool) {
+func (o *MsaBalances) GetCreditBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -153,7 +153,7 @@ func (o *MsaBalances) GetCreditBalanceOk() (*float32, bool) {
 }
 
 // SetCreditBalance sets field value
-func (o *MsaBalances) SetCreditBalance(v float32) {
+func (o *MsaBalances) SetCreditBalance(v decimal.Decimal) {
 	o.CreditBalance = v
 }
 
@@ -182,9 +182,9 @@ func (o *MsaBalances) SetCurrencyCode(v string) {
 }
 
 // GetImpactedAmount returns the ImpactedAmount field value if set, zero value otherwise.
-func (o *MsaBalances) GetImpactedAmount() float32 {
+func (o *MsaBalances) GetImpactedAmount() decimal.Decimal {
 	if o == nil || IsNil(o.ImpactedAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.ImpactedAmount
@@ -192,7 +192,7 @@ func (o *MsaBalances) GetImpactedAmount() float32 {
 
 // GetImpactedAmountOk returns a tuple with the ImpactedAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MsaBalances) GetImpactedAmountOk() (*float32, bool) {
+func (o *MsaBalances) GetImpactedAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.ImpactedAmount) {
 		return nil, false
 	}
@@ -208,8 +208,8 @@ func (o *MsaBalances) HasImpactedAmount() bool {
 	return false
 }
 
-// SetImpactedAmount gets a reference to the given float32 and assigns it to the ImpactedAmount field.
-func (o *MsaBalances) SetImpactedAmount(v float32) {
+// SetImpactedAmount gets a reference to the given decimal.Decimal and assigns it to the ImpactedAmount field.
+func (o *MsaBalances) SetImpactedAmount(v decimal.Decimal) {
 	o.ImpactedAmount = &v
 }
 
@@ -238,9 +238,9 @@ func (o *MsaBalances) SetLastUpdatedTime(v time.Time) {
 }
 
 // GetLedgerBalance returns the LedgerBalance field value
-func (o *MsaBalances) GetLedgerBalance() float32 {
+func (o *MsaBalances) GetLedgerBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -249,7 +249,7 @@ func (o *MsaBalances) GetLedgerBalance() float32 {
 
 // GetLedgerBalanceOk returns a tuple with the LedgerBalance field value
 // and a boolean to check if the value has been set.
-func (o *MsaBalances) GetLedgerBalanceOk() (*float32, bool) {
+func (o *MsaBalances) GetLedgerBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -257,14 +257,14 @@ func (o *MsaBalances) GetLedgerBalanceOk() (*float32, bool) {
 }
 
 // SetLedgerBalance sets field value
-func (o *MsaBalances) SetLedgerBalance(v float32) {
+func (o *MsaBalances) SetLedgerBalance(v decimal.Decimal) {
 	o.LedgerBalance = v
 }
 
 // GetPendingCredits returns the PendingCredits field value
-func (o *MsaBalances) GetPendingCredits() float32 {
+func (o *MsaBalances) GetPendingCredits() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -273,7 +273,7 @@ func (o *MsaBalances) GetPendingCredits() float32 {
 
 // GetPendingCreditsOk returns a tuple with the PendingCredits field value
 // and a boolean to check if the value has been set.
-func (o *MsaBalances) GetPendingCreditsOk() (*float32, bool) {
+func (o *MsaBalances) GetPendingCreditsOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -281,7 +281,7 @@ func (o *MsaBalances) GetPendingCreditsOk() (*float32, bool) {
 }
 
 // SetPendingCredits sets field value
-func (o *MsaBalances) SetPendingCredits(v float32) {
+func (o *MsaBalances) SetPendingCredits(v decimal.Decimal) {
 	o.PendingCredits = v
 }
 

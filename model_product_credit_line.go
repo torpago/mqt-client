@@ -23,9 +23,9 @@ var _ MappedNullable = &ProductCreditLine{}
 // ProductCreditLine Contains information on the credit line range.
 type ProductCreditLine struct {
 	// Maximum credit limit.
-	Max float32 `json:"max"`
+	Max decimal.Decimal `json:"max"`
 	// Minimum credit limit.
-	Min float32 `json:"min"`
+	Min decimal.Decimal `json:"min"`
 }
 
 type _ProductCreditLine ProductCreditLine
@@ -34,7 +34,7 @@ type _ProductCreditLine ProductCreditLine
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductCreditLine(max float32, min float32) *ProductCreditLine {
+func NewProductCreditLine(max decimal.Decimal, min decimal.Decimal) *ProductCreditLine {
 	this := ProductCreditLine{}
 	this.Max = max
 	this.Min = min
@@ -50,9 +50,9 @@ func NewProductCreditLineWithDefaults() *ProductCreditLine {
 }
 
 // GetMax returns the Max field value
-func (o *ProductCreditLine) GetMax() float32 {
+func (o *ProductCreditLine) GetMax() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -61,7 +61,7 @@ func (o *ProductCreditLine) GetMax() float32 {
 
 // GetMaxOk returns a tuple with the Max field value
 // and a boolean to check if the value has been set.
-func (o *ProductCreditLine) GetMaxOk() (*float32, bool) {
+func (o *ProductCreditLine) GetMaxOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,14 +69,14 @@ func (o *ProductCreditLine) GetMaxOk() (*float32, bool) {
 }
 
 // SetMax sets field value
-func (o *ProductCreditLine) SetMax(v float32) {
+func (o *ProductCreditLine) SetMax(v decimal.Decimal) {
 	o.Max = v
 }
 
 // GetMin returns the Min field value
-func (o *ProductCreditLine) GetMin() float32 {
+func (o *ProductCreditLine) GetMin() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -85,7 +85,7 @@ func (o *ProductCreditLine) GetMin() float32 {
 
 // GetMinOk returns a tuple with the Min field value
 // and a boolean to check if the value has been set.
-func (o *ProductCreditLine) GetMinOk() (*float32, bool) {
+func (o *ProductCreditLine) GetMinOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *ProductCreditLine) GetMinOk() (*float32, bool) {
 }
 
 // SetMin sets field value
-func (o *ProductCreditLine) SetMin(v float32) {
+func (o *ProductCreditLine) SetMin(v decimal.Decimal) {
 	o.Min = v
 }
 

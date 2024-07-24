@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Indicates whether the velocity control is active. | [optional] 
-**AmountLimit** | **float32** | Maximum monetary sum that can be cleared within the time period defined by the &#x60;velocity_window&#x60; field. | 
+**AmountLimit** | **decimal.Decimal** | Maximum monetary sum that can be cleared within the time period defined by the &#x60;velocity_window&#x60; field. | 
 **ApprovalsOnly** | Pointer to **bool** | If set to &#x60;true&#x60;, only approved transactions are subject to control. | [optional] 
 **Association** | Pointer to [**SpendControlAssociation**](SpendControlAssociation.md) |  | [optional] 
 **Available** | [**Available**](Available.md) |  | 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewVelocityControlBalanceResponse
 
-`func NewVelocityControlBalanceResponse(amountLimit float32, available Available, currencyCode string, velocityWindow string, ) *VelocityControlBalanceResponse`
+`func NewVelocityControlBalanceResponse(amountLimit decimal.Decimal, available Available, currencyCode string, velocityWindow string, ) *VelocityControlBalanceResponse`
 
 NewVelocityControlBalanceResponse instantiates a new VelocityControlBalanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -68,20 +68,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetAmountLimit
 
-`func (o *VelocityControlBalanceResponse) GetAmountLimit() float32`
+`func (o *VelocityControlBalanceResponse) GetAmountLimit() decimal.Decimal`
 
 GetAmountLimit returns the AmountLimit field if non-nil, zero value otherwise.
 
 ### GetAmountLimitOk
 
-`func (o *VelocityControlBalanceResponse) GetAmountLimitOk() (*float32, bool)`
+`func (o *VelocityControlBalanceResponse) GetAmountLimitOk() (*decimal.Decimal, bool)`
 
 GetAmountLimitOk returns a tuple with the AmountLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmountLimit
 
-`func (o *VelocityControlBalanceResponse) SetAmountLimit(v float32)`
+`func (o *VelocityControlBalanceResponse) SetAmountLimit(v decimal.Decimal)`
 
 SetAmountLimit sets AmountLimit field to given value.
 

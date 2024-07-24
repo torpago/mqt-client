@@ -24,7 +24,7 @@ var _ MappedNullable = &PaymentCreateReq{}
 // PaymentCreateReq Created when a user pays a portion or all of their statement balance. This is for immediate payments only; Once set to `ACTIVE`, cannot be edited or deleted.
 type PaymentCreateReq struct {
 	// Amount of the payment.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
 	// Description of the payment.
 	Description string `json:"description"`
@@ -46,7 +46,7 @@ type _PaymentCreateReq PaymentCreateReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentCreateReq(amount float32, currencyCode CurrencyCode, description string, method string) *PaymentCreateReq {
+func NewPaymentCreateReq(amount decimal.Decimal, currencyCode CurrencyCode, description string, method string) *PaymentCreateReq {
 	this := PaymentCreateReq{}
 	this.Amount = amount
 	this.CurrencyCode = currencyCode
@@ -66,9 +66,9 @@ func NewPaymentCreateReqWithDefaults() *PaymentCreateReq {
 }
 
 // GetAmount returns the Amount field value
-func (o *PaymentCreateReq) GetAmount() float32 {
+func (o *PaymentCreateReq) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -77,7 +77,7 @@ func (o *PaymentCreateReq) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *PaymentCreateReq) GetAmountOk() (*float32, bool) {
+func (o *PaymentCreateReq) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -85,7 +85,7 @@ func (o *PaymentCreateReq) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *PaymentCreateReq) SetAmount(v float32) {
+func (o *PaymentCreateReq) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

@@ -22,11 +22,11 @@ var _ MappedNullable = &AuthRequestModel{}
 
 // AuthRequestModel struct for AuthRequestModel
 type AuthRequestModel struct {
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CardAcceptor *CardAcceptorModel `json:"card_acceptor,omitempty"`
 	CardOptions *CardOptions `json:"card_options,omitempty"`
 	CardToken string `json:"card_token"`
-	CashBackAmount *float32 `json:"cash_back_amount,omitempty"`
+	CashBackAmount *decimal.Decimal `json:"cash_back_amount,omitempty"`
 	IsPreAuth *bool `json:"is_pre_auth,omitempty"`
 	Mid string `json:"mid"`
 	NetworkFees []NetworkFeeModel `json:"network_fees,omitempty"`
@@ -42,7 +42,7 @@ type _AuthRequestModel AuthRequestModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthRequestModel(amount float32, cardToken string, mid string) *AuthRequestModel {
+func NewAuthRequestModel(amount decimal.Decimal, cardToken string, mid string) *AuthRequestModel {
 	this := AuthRequestModel{}
 	this.Amount = amount
 	this.CardToken = cardToken
@@ -63,9 +63,9 @@ func NewAuthRequestModelWithDefaults() *AuthRequestModel {
 }
 
 // GetAmount returns the Amount field value
-func (o *AuthRequestModel) GetAmount() float32 {
+func (o *AuthRequestModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -74,7 +74,7 @@ func (o *AuthRequestModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *AuthRequestModel) GetAmountOk() (*float32, bool) {
+func (o *AuthRequestModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -82,7 +82,7 @@ func (o *AuthRequestModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *AuthRequestModel) SetAmount(v float32) {
+func (o *AuthRequestModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 
@@ -175,9 +175,9 @@ func (o *AuthRequestModel) SetCardToken(v string) {
 }
 
 // GetCashBackAmount returns the CashBackAmount field value if set, zero value otherwise.
-func (o *AuthRequestModel) GetCashBackAmount() float32 {
+func (o *AuthRequestModel) GetCashBackAmount() decimal.Decimal {
 	if o == nil || IsNil(o.CashBackAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.CashBackAmount
@@ -185,7 +185,7 @@ func (o *AuthRequestModel) GetCashBackAmount() float32 {
 
 // GetCashBackAmountOk returns a tuple with the CashBackAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AuthRequestModel) GetCashBackAmountOk() (*float32, bool) {
+func (o *AuthRequestModel) GetCashBackAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.CashBackAmount) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *AuthRequestModel) HasCashBackAmount() bool {
 	return false
 }
 
-// SetCashBackAmount gets a reference to the given float32 and assigns it to the CashBackAmount field.
-func (o *AuthRequestModel) SetCashBackAmount(v float32) {
+// SetCashBackAmount gets a reference to the given decimal.Decimal and assigns it to the CashBackAmount field.
+func (o *AuthRequestModel) SetCashBackAmount(v decimal.Decimal) {
 	o.CashBackAmount = &v
 }
 

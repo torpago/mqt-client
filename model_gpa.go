@@ -23,9 +23,9 @@ var _ MappedNullable = &Gpa{}
 // Gpa Defines the type of order.
 type Gpa struct {
 	// Available balance on the card after the reload has completed.  This value must be greater than or equal to the value of `trigger_amount`. Note that this is not the same as the amount added to the card, which will vary from reload to reload.
-	ReloadAmount float32 `json:"reload_amount"`
+	ReloadAmount decimal.Decimal `json:"reload_amount"`
 	// Threshold that determines when the reload happens.  The reload is triggered when the card balance falls below this amount.
-	TriggerAmount float32 `json:"trigger_amount"`
+	TriggerAmount decimal.Decimal `json:"trigger_amount"`
 }
 
 type _Gpa Gpa
@@ -34,7 +34,7 @@ type _Gpa Gpa
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGpa(reloadAmount float32, triggerAmount float32) *Gpa {
+func NewGpa(reloadAmount decimal.Decimal, triggerAmount decimal.Decimal) *Gpa {
 	this := Gpa{}
 	this.ReloadAmount = reloadAmount
 	this.TriggerAmount = triggerAmount
@@ -50,9 +50,9 @@ func NewGpaWithDefaults() *Gpa {
 }
 
 // GetReloadAmount returns the ReloadAmount field value
-func (o *Gpa) GetReloadAmount() float32 {
+func (o *Gpa) GetReloadAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -61,7 +61,7 @@ func (o *Gpa) GetReloadAmount() float32 {
 
 // GetReloadAmountOk returns a tuple with the ReloadAmount field value
 // and a boolean to check if the value has been set.
-func (o *Gpa) GetReloadAmountOk() (*float32, bool) {
+func (o *Gpa) GetReloadAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,14 +69,14 @@ func (o *Gpa) GetReloadAmountOk() (*float32, bool) {
 }
 
 // SetReloadAmount sets field value
-func (o *Gpa) SetReloadAmount(v float32) {
+func (o *Gpa) SetReloadAmount(v decimal.Decimal) {
 	o.ReloadAmount = v
 }
 
 // GetTriggerAmount returns the TriggerAmount field value
-func (o *Gpa) GetTriggerAmount() float32 {
+func (o *Gpa) GetTriggerAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -85,7 +85,7 @@ func (o *Gpa) GetTriggerAmount() float32 {
 
 // GetTriggerAmountOk returns a tuple with the TriggerAmount field value
 // and a boolean to check if the value has been set.
-func (o *Gpa) GetTriggerAmountOk() (*float32, bool) {
+func (o *Gpa) GetTriggerAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *Gpa) GetTriggerAmountOk() (*float32, bool) {
 }
 
 // SetTriggerAmount sets field value
-func (o *Gpa) SetTriggerAmount(v float32) {
+func (o *Gpa) SetTriggerAmount(v decimal.Decimal) {
 	o.TriggerAmount = v
 }
 

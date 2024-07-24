@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount to redeem. | 
+**Amount** | **decimal.Decimal** | Amount to redeem. | 
 **CreatedTime** | **time.Time** | Date and time when the reward redemption was created on the Marqeta platform, in UTC. | 
 **Destination** | Pointer to [**DestinationType**](DestinationType.md) |  | [optional] 
 **ExternalSettlementDateTime** | Pointer to **time.Time** | Date and time when the reward redemption was settled on your external platform.  This field is returned if you handled the reward redemption outside of Marqeta&#39;s credit platform. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewRedemptionsResponse
 
-`func NewRedemptionsResponse(amount float32, createdTime time.Time, note string, rewardProgramToken string, status RedemptionStatus, token string, type_ RedemptionType, updatedTime time.Time, ) *RedemptionsResponse`
+`func NewRedemptionsResponse(amount decimal.Decimal, createdTime time.Time, note string, rewardProgramToken string, status RedemptionStatus, token string, type_ RedemptionType, updatedTime time.Time, ) *RedemptionsResponse`
 
 NewRedemptionsResponse instantiates a new RedemptionsResponse object
 This constructor will assign default values to properties that have it defined,
@@ -39,20 +39,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *RedemptionsResponse) GetAmount() float32`
+`func (o *RedemptionsResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *RedemptionsResponse) GetAmountOk() (*float32, bool)`
+`func (o *RedemptionsResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *RedemptionsResponse) SetAmount(v float32)`
+`func (o *RedemptionsResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

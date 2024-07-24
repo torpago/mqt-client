@@ -259,7 +259,7 @@ import (
 )
 
 func main() {
-	velocityControlRequest := *openapiclient.NewVelocityControlRequest(float32(123), "CurrencyCode_example", "VelocityWindow_example") // VelocityControlRequest | Velocity control object
+	velocityControlRequest := *openapiclient.NewVelocityControlRequest(decimal.Decimal(123), "CurrencyCode_example", "VelocityWindow_example") // VelocityControlRequest | Velocity control object
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

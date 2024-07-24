@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account on which the dispute was updated. | 
-**Amount** | **float32** | Amount of the updated dispute, based on the resolution. | 
+**Amount** | **decimal.Decimal** | Amount of the updated dispute, based on the resolution. | 
 **CreatedTime** | **time.Time** | Date and time when the dispute update was created on Marqeta&#39;s credit platform, in UTC. | 
 **Notes** | Pointer to **string** | Additional information on the dispute update (for example, a reason for the dispute update). | [optional] 
 **Status** | [**DisputeStatus**](DisputeStatus.md) |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewDisputeTransitionResponse
 
-`func NewDisputeTransitionResponse(accountToken string, amount float32, createdTime time.Time, status DisputeStatus, token string, ) *DisputeTransitionResponse`
+`func NewDisputeTransitionResponse(accountToken string, amount decimal.Decimal, createdTime time.Time, status DisputeStatus, token string, ) *DisputeTransitionResponse`
 
 NewDisputeTransitionResponse instantiates a new DisputeTransitionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -52,20 +52,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAmount
 
-`func (o *DisputeTransitionResponse) GetAmount() float32`
+`func (o *DisputeTransitionResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *DisputeTransitionResponse) GetAmountOk() (*float32, bool)`
+`func (o *DisputeTransitionResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *DisputeTransitionResponse) SetAmount(v float32)`
+`func (o *DisputeTransitionResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

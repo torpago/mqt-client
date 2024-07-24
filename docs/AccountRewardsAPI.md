@@ -30,7 +30,7 @@ import (
 
 func main() {
 	accountToken := "accountToken_example" // string | Unique identifier of the credit account for which you want to create a reward.  Send a `GET` request to `/credit/accounts` to retrieve existing credit account tokens.
-	rewardCreateReq := *openapiclient.NewRewardCreateReq(float32(123), openapiclient.CurrencyCode("USD"), "Description_example") // RewardCreateReq | 
+	rewardCreateReq := *openapiclient.NewRewardCreateReq(decimal.Decimal(123), openapiclient.CurrencyCode("USD"), "Description_example") // RewardCreateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

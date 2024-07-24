@@ -404,7 +404,7 @@ import (
 )
 
 func main() {
-	policyAprCreateReq := *openapiclient.NewPolicyAprCreateReq("Name_example", *openapiclient.NewPolicyAprPurchaseReq([]openapiclient.PolicyAprTierReq{*openapiclient.NewPolicyAprTierReq(float32(123))})) // PolicyAprCreateReq | 
+	policyAprCreateReq := *openapiclient.NewPolicyAprCreateReq("Name_example", *openapiclient.NewPolicyAprPurchaseReq([]openapiclient.PolicyAprTierReq{*openapiclient.NewPolicyAprTierReq(decimal.Decimal(123))})) // PolicyAprCreateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -602,7 +602,7 @@ import (
 )
 
 func main() {
-	policyProductCreateReq := *openapiclient.NewPolicyProductCreateReq([]openapiclient.PolicyProductCardProductReq{*openapiclient.NewPolicyProductCardProductReq(openapiclient.PolicyProductCardProductLevel("PREMIUM"), "Token_example")}, openapiclient.ProductClassification("CONSUMER"), *openapiclient.NewProductCreditLine(float32(123), float32(123)), openapiclient.CurrencyCode("USD"), *openapiclient.NewInterestCalculation(*openapiclient.NewApplicationOfCredits(openapiclient.CycleType("BEGINNING_REVOLVING"), int32(123)), "DayCount_example", "GraceDaysApplication_example", []string{"InterestApplication_example"}, openapiclient.InterestOnGraceReactivationEnum("ACCRUE_FULL_CYCLE"), "Method_example", float32(123)), "Name_example", *openapiclient.NewPolicyProductPaymentConfiguration([]openapiclient.PaymentAllocationOrderEnum{openapiclient.PaymentAllocationOrderEnum("INTEREST")}, int32(123), *openapiclient.NewPolicyProductMinPaymentCalculation(false, false)), openapiclient.ProductSubType("CREDIT_CARD"), openapiclient.ProductType("REVOLVING"), []openapiclient.BalanceType{openapiclient.BalanceType("PURCHASE")}) // PolicyProductCreateReq | 
+	policyProductCreateReq := *openapiclient.NewPolicyProductCreateReq([]openapiclient.PolicyProductCardProductReq{*openapiclient.NewPolicyProductCardProductReq(openapiclient.PolicyProductCardProductLevel("PREMIUM"), "Token_example")}, openapiclient.ProductClassification("CONSUMER"), *openapiclient.NewProductCreditLine(decimal.Decimal(123), decimal.Decimal(123)), openapiclient.CurrencyCode("USD"), *openapiclient.NewInterestCalculation(*openapiclient.NewApplicationOfCredits(openapiclient.CycleType("BEGINNING_REVOLVING"), int32(123)), "DayCount_example", "GraceDaysApplication_example", []string{"InterestApplication_example"}, openapiclient.InterestOnGraceReactivationEnum("ACCRUE_FULL_CYCLE"), "Method_example", decimal.Decimal(123)), "Name_example", *openapiclient.NewPolicyProductPaymentConfiguration([]openapiclient.PaymentAllocationOrderEnum{openapiclient.PaymentAllocationOrderEnum("INTEREST")}, int32(123), *openapiclient.NewPolicyProductMinPaymentCalculation(false, false)), openapiclient.ProductSubType("CREDIT_CARD"), openapiclient.ProductType("REVOLVING"), []openapiclient.BalanceType{openapiclient.BalanceType("PURCHASE")}) // PolicyProductCreateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -668,7 +668,7 @@ import (
 )
 
 func main() {
-	policyRewardReq := *openapiclient.NewPolicyRewardReq("Name_example", []openapiclient.PolicyRewardRule{*openapiclient.NewPolicyRewardRule(*openapiclient.NewPolicyRewardRuleFilters(*openapiclient.NewAmountFilter()), *openapiclient.NewPolicyRewardRuleOutcome(float32(123)), openapiclient.PolicyRewardRuleType("CASHBACK"))}) // PolicyRewardReq | 
+	policyRewardReq := *openapiclient.NewPolicyRewardReq("Name_example", []openapiclient.PolicyRewardRule{*openapiclient.NewPolicyRewardRule(*openapiclient.NewPolicyRewardRuleFilters(*openapiclient.NewAmountFilter()), *openapiclient.NewPolicyRewardRuleOutcome(decimal.Decimal(123)), openapiclient.PolicyRewardRuleType("CASHBACK"))}) // PolicyRewardReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1727,7 +1727,7 @@ import (
 
 func main() {
 	token := "token_example" // string | Unique identifier of the credit product policy to retrieve.  Send a `GET` request to `/policies/products` to retrieve existing credit product policy tokens.
-	policyProductUpdateReq := *openapiclient.NewPolicyProductUpdateReq([]openapiclient.PolicyProductCardProductReq{*openapiclient.NewPolicyProductCardProductReq(openapiclient.PolicyProductCardProductLevel("PREMIUM"), "Token_example")}, openapiclient.ProductClassification("CONSUMER"), *openapiclient.NewProductCreditLine(float32(123), float32(123)), openapiclient.CurrencyCode("USD"), *openapiclient.NewInterestCalculation(*openapiclient.NewApplicationOfCredits(openapiclient.CycleType("BEGINNING_REVOLVING"), int32(123)), "DayCount_example", "GraceDaysApplication_example", []string{"InterestApplication_example"}, openapiclient.InterestOnGraceReactivationEnum("ACCRUE_FULL_CYCLE"), "Method_example", float32(123)), "Name_example", *openapiclient.NewPolicyProductPaymentConfiguration([]openapiclient.PaymentAllocationOrderEnum{openapiclient.PaymentAllocationOrderEnum("INTEREST")}, int32(123), *openapiclient.NewPolicyProductMinPaymentCalculation(false, false)), openapiclient.ProductSubType("CREDIT_CARD"), openapiclient.ProductType("REVOLVING"), []openapiclient.BalanceType{openapiclient.BalanceType("PURCHASE")}) // PolicyProductUpdateReq | 
+	policyProductUpdateReq := *openapiclient.NewPolicyProductUpdateReq([]openapiclient.PolicyProductCardProductReq{*openapiclient.NewPolicyProductCardProductReq(openapiclient.PolicyProductCardProductLevel("PREMIUM"), "Token_example")}, openapiclient.ProductClassification("CONSUMER"), *openapiclient.NewProductCreditLine(decimal.Decimal(123), decimal.Decimal(123)), openapiclient.CurrencyCode("USD"), *openapiclient.NewInterestCalculation(*openapiclient.NewApplicationOfCredits(openapiclient.CycleType("BEGINNING_REVOLVING"), int32(123)), "DayCount_example", "GraceDaysApplication_example", []string{"InterestApplication_example"}, openapiclient.InterestOnGraceReactivationEnum("ACCRUE_FULL_CYCLE"), "Method_example", decimal.Decimal(123)), "Name_example", *openapiclient.NewPolicyProductPaymentConfiguration([]openapiclient.PaymentAllocationOrderEnum{openapiclient.PaymentAllocationOrderEnum("INTEREST")}, int32(123), *openapiclient.NewPolicyProductMinPaymentCalculation(false, false)), openapiclient.ProductSubType("CREDIT_CARD"), openapiclient.ProductType("REVOLVING"), []openapiclient.BalanceType{openapiclient.BalanceType("PURCHASE")}) // PolicyProductUpdateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1799,7 +1799,7 @@ import (
 
 func main() {
 	token := "token_example" // string | Unique identifier of the reward policy to update.  Send a `GET` request to `/policies/rewards` to retrieve existing reward policy tokens.
-	policyRewardReq := *openapiclient.NewPolicyRewardReq("Name_example", []openapiclient.PolicyRewardRule{*openapiclient.NewPolicyRewardRule(*openapiclient.NewPolicyRewardRuleFilters(*openapiclient.NewAmountFilter()), *openapiclient.NewPolicyRewardRuleOutcome(float32(123)), openapiclient.PolicyRewardRuleType("CASHBACK"))}) // PolicyRewardReq | 
+	policyRewardReq := *openapiclient.NewPolicyRewardReq("Name_example", []openapiclient.PolicyRewardRule{*openapiclient.NewPolicyRewardRule(*openapiclient.NewPolicyRewardRuleFilters(*openapiclient.NewAmountFilter()), *openapiclient.NewPolicyRewardRuleOutcome(decimal.Decimal(123)), openapiclient.PolicyRewardRuleType("CASHBACK"))}) // PolicyRewardReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

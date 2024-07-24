@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | **bool** | Specifies whether the fee is active. | [readonly] 
-**Amount** | **float32** | Amount of the fee. | 
+**Amount** | **decimal.Decimal** | Amount of the fee. | 
 **Category** | Pointer to **string** | Specifies if the fee is a standalone fee or a real-time fee. | [optional] [readonly] 
 **CreatedTime** | **time.Time** | Date and time when the &#x60;fees&#x60; object was created, in UTC. | [readonly] 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | [readonly] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewFeeResponse
 
-`func NewFeeResponse(active bool, amount float32, createdTime time.Time, currencyCode string, lastModifiedTime time.Time, name string, token string, ) *FeeResponse`
+`func NewFeeResponse(active bool, amount decimal.Decimal, createdTime time.Time, currencyCode string, lastModifiedTime time.Time, name string, token string, ) *FeeResponse`
 
 NewFeeResponse instantiates a new FeeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -57,20 +57,20 @@ SetActive sets Active field to given value.
 
 ### GetAmount
 
-`func (o *FeeResponse) GetAmount() float32`
+`func (o *FeeResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *FeeResponse) GetAmountOk() (*float32, bool)`
+`func (o *FeeResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *FeeResponse) SetAmount(v float32)`
+`func (o *FeeResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

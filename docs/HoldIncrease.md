@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | Controls whether the &#x60;value&#x60; field represents a fixed amount or a percentage of the authorization amount. | [default to "AMOUNT"]
-**Value** | **float32** | Specifies the amount of the automatic increase to the authorization amount.  The &#x60;type&#x60; field controls whether this amount is a fixed amount or a percentage. | 
+**Value** | **decimal.Decimal** | Specifies the amount of the automatic increase to the authorization amount.  The &#x60;type&#x60; field controls whether this amount is a fixed amount or a percentage. | 
 
 ## Methods
 
 ### NewHoldIncrease
 
-`func NewHoldIncrease(type_ string, value float32, ) *HoldIncrease`
+`func NewHoldIncrease(type_ string, value decimal.Decimal, ) *HoldIncrease`
 
 NewHoldIncrease instantiates a new HoldIncrease object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetType sets Type field to given value.
 
 ### GetValue
 
-`func (o *HoldIncrease) GetValue() float32`
+`func (o *HoldIncrease) GetValue() decimal.Decimal`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *HoldIncrease) GetValueOk() (*float32, bool)`
+`func (o *HoldIncrease) GetValueOk() (*decimal.Decimal, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *HoldIncrease) SetValue(v float32)`
+`func (o *HoldIncrease) SetValue(v decimal.Decimal)`
 
 SetValue sets Value field to given value.
 

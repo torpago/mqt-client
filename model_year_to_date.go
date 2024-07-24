@@ -32,9 +32,9 @@ type YearToDate struct {
 	// Unique identifier of the year-to-date total.
 	Token *string `json:"token,omitempty"`
 	// Total fees charged year-to-date.
-	TotalFees float32 `json:"total_fees"`
+	TotalFees decimal.Decimal `json:"total_fees"`
 	// Total interest charged year-to-date.
-	TotalInterest float32 `json:"total_interest"`
+	TotalInterest decimal.Decimal `json:"total_interest"`
 }
 
 type _YearToDate YearToDate
@@ -43,7 +43,7 @@ type _YearToDate YearToDate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewYearToDate(accountToken string, statementToken string, totalFees float32, totalInterest float32) *YearToDate {
+func NewYearToDate(accountToken string, statementToken string, totalFees decimal.Decimal, totalInterest decimal.Decimal) *YearToDate {
 	this := YearToDate{}
 	this.AccountToken = accountToken
 	this.StatementToken = statementToken
@@ -173,9 +173,9 @@ func (o *YearToDate) SetToken(v string) {
 }
 
 // GetTotalFees returns the TotalFees field value
-func (o *YearToDate) GetTotalFees() float32 {
+func (o *YearToDate) GetTotalFees() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -184,7 +184,7 @@ func (o *YearToDate) GetTotalFees() float32 {
 
 // GetTotalFeesOk returns a tuple with the TotalFees field value
 // and a boolean to check if the value has been set.
-func (o *YearToDate) GetTotalFeesOk() (*float32, bool) {
+func (o *YearToDate) GetTotalFeesOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -192,14 +192,14 @@ func (o *YearToDate) GetTotalFeesOk() (*float32, bool) {
 }
 
 // SetTotalFees sets field value
-func (o *YearToDate) SetTotalFees(v float32) {
+func (o *YearToDate) SetTotalFees(v decimal.Decimal) {
 	o.TotalFees = v
 }
 
 // GetTotalInterest returns the TotalInterest field value
-func (o *YearToDate) GetTotalInterest() float32 {
+func (o *YearToDate) GetTotalInterest() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -208,7 +208,7 @@ func (o *YearToDate) GetTotalInterest() float32 {
 
 // GetTotalInterestOk returns a tuple with the TotalInterest field value
 // and a boolean to check if the value has been set.
-func (o *YearToDate) GetTotalInterestOk() (*float32, bool) {
+func (o *YearToDate) GetTotalInterestOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -216,7 +216,7 @@ func (o *YearToDate) GetTotalInterestOk() (*float32, bool) {
 }
 
 // SetTotalInterest sets field value
-func (o *YearToDate) SetTotalInterest(v float32) {
+func (o *YearToDate) SetTotalInterest(v decimal.Decimal) {
 	o.TotalInterest = v
 }
 

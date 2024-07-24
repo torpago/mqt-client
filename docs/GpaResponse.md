@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount funded. | 
+**Amount** | **decimal.Decimal** | Amount funded. | 
 **BusinessToken** | Pointer to **string** | Unique identifier of the business.  This field is returned if it exists in the resource. | [optional] 
 **CreatedTime** | **time.Time** | Date and time when the GPA order was created, in UTC. | 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewGpaResponse
 
-`func NewGpaResponse(amount float32, createdTime time.Time, currencyCode string, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string, ) *GpaResponse`
+`func NewGpaResponse(amount decimal.Decimal, createdTime time.Time, currencyCode string, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string, ) *GpaResponse`
 
 NewGpaResponse instantiates a new GpaResponse object
 This constructor will assign default values to properties that have it defined,
@@ -45,20 +45,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *GpaResponse) GetAmount() float32`
+`func (o *GpaResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *GpaResponse) GetAmountOk() (*float32, bool)`
+`func (o *GpaResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *GpaResponse) SetAmount(v float32)`
+`func (o *GpaResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

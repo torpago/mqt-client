@@ -24,7 +24,7 @@ var _ MappedNullable = &GpaReturns{}
 // GpaReturns Contains information about a GPA unload order.
 type GpaReturns struct {
 	// Amount of funds returned to the funding source.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Date and time when the GPA unload order was created, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	Funding Funding `json:"funding"`
@@ -56,7 +56,7 @@ type _GpaReturns GpaReturns
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGpaReturns(amount float32, createdTime time.Time, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string) *GpaReturns {
+func NewGpaReturns(amount decimal.Decimal, createdTime time.Time, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string) *GpaReturns {
 	this := GpaReturns{}
 	this.Amount = amount
 	this.CreatedTime = createdTime
@@ -79,9 +79,9 @@ func NewGpaReturnsWithDefaults() *GpaReturns {
 }
 
 // GetAmount returns the Amount field value
-func (o *GpaReturns) GetAmount() float32 {
+func (o *GpaReturns) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -90,7 +90,7 @@ func (o *GpaReturns) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *GpaReturns) GetAmountOk() (*float32, bool) {
+func (o *GpaReturns) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *GpaReturns) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *GpaReturns) SetAmount(v float32) {
+func (o *GpaReturns) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

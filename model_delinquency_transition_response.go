@@ -26,11 +26,11 @@ type DelinquencyTransitionResponse struct {
 	// Unique identifier of the credit account.
 	AccountToken string `json:"account_token"`
 	// Number of buckets for the account after the triggering event occurred.
-	BucketCount *float32 `json:"bucket_count,omitempty"`
+	BucketCount *decimal.Decimal `json:"bucket_count,omitempty"`
 	// Date and time when the delinquency state transition was created on Marqeta's credit platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	// Current amount that is due after the triggering event occurred.  Equivalent to `current_due` for the account's most recent delinquency bucket. To retrieve delinquency buckets for an account, send a `GET` request to `/credit/accounts/{account_token}/delinquencystate`.
-	CurrentDue *float32 `json:"current_due,omitempty"`
+	CurrentDue *decimal.Decimal `json:"current_due,omitempty"`
 	// Date and time when the triggering event impacted the account, in UTC.
 	ImpactTime time.Time `json:"impact_time"`
 	// A value of `true` indicates that the system invalidated and rolled back the delinquency transition.  This is a temporary field that allows Marqeta to handle occasional cases of out-of-order processing. This can occur when two delinquency state transition webhooks are sent near-simultaneously.  For example, if a credit and a payment that bring an account current are made around the same time, two delinquency state transitions are sent very close together. In these cases, one of the transitions is rolled back and invalidated. For the transition that is rolled back, `is_rolled_back` is `true` and the transition should be ignored.  This field is temporary and to be deprecated when out-of-order processing is addressed in a future release.
@@ -42,9 +42,9 @@ type DelinquencyTransitionResponse struct {
 	// Unique identifier of the delinquency state transition.
 	Token string `json:"token"`
 	// Total amount that is due after the triggering event occurred; the sum of `total_past_due` and `current_due`.  Equivalent to `total_due` for the account's most recent delinquency bucket. To retrieve delinquency buckets for an account, send a `GET` request to `/credit/accounts/{account_token}/delinquencystate`.
-	TotalDue *float32 `json:"total_due,omitempty"`
+	TotalDue *decimal.Decimal `json:"total_due,omitempty"`
 	// Total amount that is past due after the triggering event occurred.  Equivalent to `past_due_carried_forward` for the account's most recent delinquency bucket. To retrieve delinquency buckets for an account, send a `GET` request to `/credit/accounts/{account_token}/delinquencystate`.
-	TotalPastDue *float32 `json:"total_past_due,omitempty"`
+	TotalPastDue *decimal.Decimal `json:"total_past_due,omitempty"`
 	TransitionTriggerReason DelinquencyTransitionTriggerReason `json:"transition_trigger_reason"`
 	// Date and time when the triggering event caused the account's delinquency state to transition, in UTC.  For <</core-api/credit-account-journal-entries, journal entries>>, equivalent to `request_time`. For <</core-api/credit-account-statements#listStatementJournalEntries, statement journal entries>>, equivalent to `impact_time`,
 	TransitionTriggerTime time.Time `json:"transition_trigger_time"`
@@ -105,9 +105,9 @@ func (o *DelinquencyTransitionResponse) SetAccountToken(v string) {
 }
 
 // GetBucketCount returns the BucketCount field value if set, zero value otherwise.
-func (o *DelinquencyTransitionResponse) GetBucketCount() float32 {
+func (o *DelinquencyTransitionResponse) GetBucketCount() decimal.Decimal {
 	if o == nil || IsNil(o.BucketCount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.BucketCount
@@ -115,7 +115,7 @@ func (o *DelinquencyTransitionResponse) GetBucketCount() float32 {
 
 // GetBucketCountOk returns a tuple with the BucketCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DelinquencyTransitionResponse) GetBucketCountOk() (*float32, bool) {
+func (o *DelinquencyTransitionResponse) GetBucketCountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.BucketCount) {
 		return nil, false
 	}
@@ -131,8 +131,8 @@ func (o *DelinquencyTransitionResponse) HasBucketCount() bool {
 	return false
 }
 
-// SetBucketCount gets a reference to the given float32 and assigns it to the BucketCount field.
-func (o *DelinquencyTransitionResponse) SetBucketCount(v float32) {
+// SetBucketCount gets a reference to the given decimal.Decimal and assigns it to the BucketCount field.
+func (o *DelinquencyTransitionResponse) SetBucketCount(v decimal.Decimal) {
 	o.BucketCount = &v
 }
 
@@ -161,9 +161,9 @@ func (o *DelinquencyTransitionResponse) SetCreatedTime(v time.Time) {
 }
 
 // GetCurrentDue returns the CurrentDue field value if set, zero value otherwise.
-func (o *DelinquencyTransitionResponse) GetCurrentDue() float32 {
+func (o *DelinquencyTransitionResponse) GetCurrentDue() decimal.Decimal {
 	if o == nil || IsNil(o.CurrentDue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.CurrentDue
@@ -171,7 +171,7 @@ func (o *DelinquencyTransitionResponse) GetCurrentDue() float32 {
 
 // GetCurrentDueOk returns a tuple with the CurrentDue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DelinquencyTransitionResponse) GetCurrentDueOk() (*float32, bool) {
+func (o *DelinquencyTransitionResponse) GetCurrentDueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.CurrentDue) {
 		return nil, false
 	}
@@ -187,8 +187,8 @@ func (o *DelinquencyTransitionResponse) HasCurrentDue() bool {
 	return false
 }
 
-// SetCurrentDue gets a reference to the given float32 and assigns it to the CurrentDue field.
-func (o *DelinquencyTransitionResponse) SetCurrentDue(v float32) {
+// SetCurrentDue gets a reference to the given decimal.Decimal and assigns it to the CurrentDue field.
+func (o *DelinquencyTransitionResponse) SetCurrentDue(v decimal.Decimal) {
 	o.CurrentDue = &v
 }
 
@@ -345,9 +345,9 @@ func (o *DelinquencyTransitionResponse) SetToken(v string) {
 }
 
 // GetTotalDue returns the TotalDue field value if set, zero value otherwise.
-func (o *DelinquencyTransitionResponse) GetTotalDue() float32 {
+func (o *DelinquencyTransitionResponse) GetTotalDue() decimal.Decimal {
 	if o == nil || IsNil(o.TotalDue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.TotalDue
@@ -355,7 +355,7 @@ func (o *DelinquencyTransitionResponse) GetTotalDue() float32 {
 
 // GetTotalDueOk returns a tuple with the TotalDue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DelinquencyTransitionResponse) GetTotalDueOk() (*float32, bool) {
+func (o *DelinquencyTransitionResponse) GetTotalDueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.TotalDue) {
 		return nil, false
 	}
@@ -371,15 +371,15 @@ func (o *DelinquencyTransitionResponse) HasTotalDue() bool {
 	return false
 }
 
-// SetTotalDue gets a reference to the given float32 and assigns it to the TotalDue field.
-func (o *DelinquencyTransitionResponse) SetTotalDue(v float32) {
+// SetTotalDue gets a reference to the given decimal.Decimal and assigns it to the TotalDue field.
+func (o *DelinquencyTransitionResponse) SetTotalDue(v decimal.Decimal) {
 	o.TotalDue = &v
 }
 
 // GetTotalPastDue returns the TotalPastDue field value if set, zero value otherwise.
-func (o *DelinquencyTransitionResponse) GetTotalPastDue() float32 {
+func (o *DelinquencyTransitionResponse) GetTotalPastDue() decimal.Decimal {
 	if o == nil || IsNil(o.TotalPastDue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.TotalPastDue
@@ -387,7 +387,7 @@ func (o *DelinquencyTransitionResponse) GetTotalPastDue() float32 {
 
 // GetTotalPastDueOk returns a tuple with the TotalPastDue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DelinquencyTransitionResponse) GetTotalPastDueOk() (*float32, bool) {
+func (o *DelinquencyTransitionResponse) GetTotalPastDueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.TotalPastDue) {
 		return nil, false
 	}
@@ -403,8 +403,8 @@ func (o *DelinquencyTransitionResponse) HasTotalPastDue() bool {
 	return false
 }
 
-// SetTotalPastDue gets a reference to the given float32 and assigns it to the TotalPastDue field.
-func (o *DelinquencyTransitionResponse) SetTotalPastDue(v float32) {
+// SetTotalPastDue gets a reference to the given decimal.Decimal and assigns it to the TotalPastDue field.
+func (o *DelinquencyTransitionResponse) SetTotalPastDue(v decimal.Decimal) {
 	o.TotalPastDue = &v
 }
 

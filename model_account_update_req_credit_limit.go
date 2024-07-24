@@ -23,7 +23,7 @@ var _ MappedNullable = &AccountUpdateReqCreditLimit{}
 // AccountUpdateReqCreditLimit Contains information on the credit limit.
 type AccountUpdateReqCreditLimit struct {
 	// Maximum balance the credit account can carry.
-	Value float32 `json:"value"`
+	Value decimal.Decimal `json:"value"`
 }
 
 type _AccountUpdateReqCreditLimit AccountUpdateReqCreditLimit
@@ -32,7 +32,7 @@ type _AccountUpdateReqCreditLimit AccountUpdateReqCreditLimit
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountUpdateReqCreditLimit(value float32) *AccountUpdateReqCreditLimit {
+func NewAccountUpdateReqCreditLimit(value decimal.Decimal) *AccountUpdateReqCreditLimit {
 	this := AccountUpdateReqCreditLimit{}
 	this.Value = value
 	return &this
@@ -47,9 +47,9 @@ func NewAccountUpdateReqCreditLimitWithDefaults() *AccountUpdateReqCreditLimit {
 }
 
 // GetValue returns the Value field value
-func (o *AccountUpdateReqCreditLimit) GetValue() float32 {
+func (o *AccountUpdateReqCreditLimit) GetValue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -58,7 +58,7 @@ func (o *AccountUpdateReqCreditLimit) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *AccountUpdateReqCreditLimit) GetValueOk() (*float32, bool) {
+func (o *AccountUpdateReqCreditLimit) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *AccountUpdateReqCreditLimit) GetValueOk() (*float32, bool) {
 }
 
 // SetValue sets field value
-func (o *AccountUpdateReqCreditLimit) SetValue(v float32) {
+func (o *AccountUpdateReqCreditLimit) SetValue(v decimal.Decimal) {
 	o.Value = v
 }
 

@@ -26,9 +26,9 @@ type RewardResponse struct {
 	// Unique identifier of the account on which the reward exists.
 	AccountToken *string `json:"account_token,omitempty"`
 	// Amount of the reward.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Total amount to which a percentage reward method is applied (for example, if a 3% reward is applied to 100, then `100` is the `applied_to_amount` value).  This field is not applicable for a flat fee method.  Returned for auto-cash back reward types only.
-	AppliedToAmount *float32 `json:"applied_to_amount,omitempty"`
+	AppliedToAmount *decimal.Decimal `json:"applied_to_amount,omitempty"`
 	// Date and time when the reward was created on Marqeta's credit platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
@@ -43,7 +43,7 @@ type RewardResponse struct {
 	// Date and time when the reward was last updated on Marqeta's credit platform, in UTC.
 	UpdatedTime time.Time `json:"updated_time"`
 	// Value of the percentage or flat amount.  Returned for auto-cash back reward types only.
-	Value *float32 `json:"value,omitempty"`
+	Value *decimal.Decimal `json:"value,omitempty"`
 }
 
 type _RewardResponse RewardResponse
@@ -52,7 +52,7 @@ type _RewardResponse RewardResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRewardResponse(amount float32, createdTime time.Time, currencyCode CurrencyCode, description string, token string, type_ RewardType, updatedTime time.Time) *RewardResponse {
+func NewRewardResponse(amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, description string, token string, type_ RewardType, updatedTime time.Time) *RewardResponse {
 	this := RewardResponse{}
 	this.Amount = amount
 	this.CreatedTime = createdTime
@@ -107,9 +107,9 @@ func (o *RewardResponse) SetAccountToken(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *RewardResponse) GetAmount() float32 {
+func (o *RewardResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -118,7 +118,7 @@ func (o *RewardResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *RewardResponse) GetAmountOk() (*float32, bool) {
+func (o *RewardResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -126,14 +126,14 @@ func (o *RewardResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *RewardResponse) SetAmount(v float32) {
+func (o *RewardResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 
 // GetAppliedToAmount returns the AppliedToAmount field value if set, zero value otherwise.
-func (o *RewardResponse) GetAppliedToAmount() float32 {
+func (o *RewardResponse) GetAppliedToAmount() decimal.Decimal {
 	if o == nil || IsNil(o.AppliedToAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AppliedToAmount
@@ -141,7 +141,7 @@ func (o *RewardResponse) GetAppliedToAmount() float32 {
 
 // GetAppliedToAmountOk returns a tuple with the AppliedToAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RewardResponse) GetAppliedToAmountOk() (*float32, bool) {
+func (o *RewardResponse) GetAppliedToAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AppliedToAmount) {
 		return nil, false
 	}
@@ -157,8 +157,8 @@ func (o *RewardResponse) HasAppliedToAmount() bool {
 	return false
 }
 
-// SetAppliedToAmount gets a reference to the given float32 and assigns it to the AppliedToAmount field.
-func (o *RewardResponse) SetAppliedToAmount(v float32) {
+// SetAppliedToAmount gets a reference to the given decimal.Decimal and assigns it to the AppliedToAmount field.
+func (o *RewardResponse) SetAppliedToAmount(v decimal.Decimal) {
 	o.AppliedToAmount = &v
 }
 
@@ -371,9 +371,9 @@ func (o *RewardResponse) SetUpdatedTime(v time.Time) {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *RewardResponse) GetValue() float32 {
+func (o *RewardResponse) GetValue() decimal.Decimal {
 	if o == nil || IsNil(o.Value) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Value
@@ -381,7 +381,7 @@ func (o *RewardResponse) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RewardResponse) GetValueOk() (*float32, bool) {
+func (o *RewardResponse) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -397,8 +397,8 @@ func (o *RewardResponse) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given float32 and assigns it to the Value field.
-func (o *RewardResponse) SetValue(v float32) {
+// SetValue gets a reference to the given decimal.Decimal and assigns it to the Value field.
+func (o *RewardResponse) SetValue(v decimal.Decimal) {
 	o.Value = &v
 }
 

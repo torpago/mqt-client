@@ -151,7 +151,7 @@ type LedgerEntriesAPIListAccountLedgerEntriesRequest struct {
 	statuses *[]string
 	description *string
 	groups *[]string
-	amount *float32
+	amount *decimal.Decimal
 	expand *[]string
 	sortBy *string
 }
@@ -199,7 +199,7 @@ func (r LedgerEntriesAPIListAccountLedgerEntriesRequest) Groups(groups []string)
 }
 
 // Number of ledger entries to return.
-func (r LedgerEntriesAPIListAccountLedgerEntriesRequest) Amount(amount float32) LedgerEntriesAPIListAccountLedgerEntriesRequest {
+func (r LedgerEntriesAPIListAccountLedgerEntriesRequest) Amount(amount decimal.Decimal) LedgerEntriesAPIListAccountLedgerEntriesRequest {
 	r.amount = &amount
 	return r
 }

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IncludeFeesCharged** | Pointer to **[]string** | One or more fee types to include when calculating the minimum payment. | [optional] 
 **IncludeInterestCharged** | **bool** | Whether to include the amount of interest charged when calculating the minimum payment. | 
-**PercentageOfBalance** | **float32** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | 
+**PercentageOfBalance** | **decimal.Decimal** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | 
 
 ## Methods
 
 ### NewPolicyProductMinPaymentPercentage
 
-`func NewPolicyProductMinPaymentPercentage(includeInterestCharged bool, percentageOfBalance float32, ) *PolicyProductMinPaymentPercentage`
+`func NewPolicyProductMinPaymentPercentage(includeInterestCharged bool, percentageOfBalance decimal.Decimal, ) *PolicyProductMinPaymentPercentage`
 
 NewPolicyProductMinPaymentPercentage instantiates a new PolicyProductMinPaymentPercentage object
 This constructor will assign default values to properties that have it defined,
@@ -74,20 +74,20 @@ SetIncludeInterestCharged sets IncludeInterestCharged field to given value.
 
 ### GetPercentageOfBalance
 
-`func (o *PolicyProductMinPaymentPercentage) GetPercentageOfBalance() float32`
+`func (o *PolicyProductMinPaymentPercentage) GetPercentageOfBalance() decimal.Decimal`
 
 GetPercentageOfBalance returns the PercentageOfBalance field if non-nil, zero value otherwise.
 
 ### GetPercentageOfBalanceOk
 
-`func (o *PolicyProductMinPaymentPercentage) GetPercentageOfBalanceOk() (*float32, bool)`
+`func (o *PolicyProductMinPaymentPercentage) GetPercentageOfBalanceOk() (*decimal.Decimal, bool)`
 
 GetPercentageOfBalanceOk returns a tuple with the PercentageOfBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPercentageOfBalance
 
-`func (o *PolicyProductMinPaymentPercentage) SetPercentageOfBalance(v float32)`
+`func (o *PolicyProductMinPaymentPercentage) SetPercentageOfBalance(v decimal.Decimal)`
 
 SetPercentageOfBalance sets PercentageOfBalance field to given value.
 

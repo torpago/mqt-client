@@ -25,7 +25,7 @@ type HoldIncrease struct {
 	// Controls whether the `value` field represents a fixed amount or a percentage of the authorization amount.
 	Type string `json:"type"`
 	// Specifies the amount of the automatic increase to the authorization amount.  The `type` field controls whether this amount is a fixed amount or a percentage.
-	Value float32 `json:"value"`
+	Value decimal.Decimal `json:"value"`
 }
 
 type _HoldIncrease HoldIncrease
@@ -34,7 +34,7 @@ type _HoldIncrease HoldIncrease
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHoldIncrease(type_ string, value float32) *HoldIncrease {
+func NewHoldIncrease(type_ string, value decimal.Decimal) *HoldIncrease {
 	this := HoldIncrease{}
 	this.Type = type_
 	this.Value = value
@@ -76,9 +76,9 @@ func (o *HoldIncrease) SetType(v string) {
 }
 
 // GetValue returns the Value field value
-func (o *HoldIncrease) GetValue() float32 {
+func (o *HoldIncrease) GetValue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -87,7 +87,7 @@ func (o *HoldIncrease) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *HoldIncrease) GetValueOk() (*float32, bool) {
+func (o *HoldIncrease) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *HoldIncrease) GetValueOk() (*float32, bool) {
 }
 
 // SetValue sets field value
-func (o *HoldIncrease) SetValue(v float32) {
+func (o *HoldIncrease) SetValue(v decimal.Decimal) {
 	o.Value = v
 }
 

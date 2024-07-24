@@ -23,8 +23,8 @@ var _ MappedNullable = &Msa{}
 // Msa struct for Msa
 type Msa struct {
 	CampaignToken string `json:"campaign_token"`
-	ReloadAmount float32 `json:"reload_amount"`
-	TriggerAmount float32 `json:"trigger_amount"`
+	ReloadAmount decimal.Decimal `json:"reload_amount"`
+	TriggerAmount decimal.Decimal `json:"trigger_amount"`
 }
 
 type _Msa Msa
@@ -33,7 +33,7 @@ type _Msa Msa
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMsa(campaignToken string, reloadAmount float32, triggerAmount float32) *Msa {
+func NewMsa(campaignToken string, reloadAmount decimal.Decimal, triggerAmount decimal.Decimal) *Msa {
 	this := Msa{}
 	this.CampaignToken = campaignToken
 	this.ReloadAmount = reloadAmount
@@ -74,9 +74,9 @@ func (o *Msa) SetCampaignToken(v string) {
 }
 
 // GetReloadAmount returns the ReloadAmount field value
-func (o *Msa) GetReloadAmount() float32 {
+func (o *Msa) GetReloadAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -85,7 +85,7 @@ func (o *Msa) GetReloadAmount() float32 {
 
 // GetReloadAmountOk returns a tuple with the ReloadAmount field value
 // and a boolean to check if the value has been set.
-func (o *Msa) GetReloadAmountOk() (*float32, bool) {
+func (o *Msa) GetReloadAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,14 +93,14 @@ func (o *Msa) GetReloadAmountOk() (*float32, bool) {
 }
 
 // SetReloadAmount sets field value
-func (o *Msa) SetReloadAmount(v float32) {
+func (o *Msa) SetReloadAmount(v decimal.Decimal) {
 	o.ReloadAmount = v
 }
 
 // GetTriggerAmount returns the TriggerAmount field value
-func (o *Msa) GetTriggerAmount() float32 {
+func (o *Msa) GetTriggerAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -109,7 +109,7 @@ func (o *Msa) GetTriggerAmount() float32 {
 
 // GetTriggerAmountOk returns a tuple with the TriggerAmount field value
 // and a boolean to check if the value has been set.
-func (o *Msa) GetTriggerAmountOk() (*float32, bool) {
+func (o *Msa) GetTriggerAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -117,7 +117,7 @@ func (o *Msa) GetTriggerAmountOk() (*float32, bool) {
 }
 
 // SetTriggerAmount sets field value
-func (o *Msa) SetTriggerAmount(v float32) {
+func (o *Msa) SetTriggerAmount(v decimal.Decimal) {
 	o.TriggerAmount = v
 }
 

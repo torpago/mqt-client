@@ -24,7 +24,7 @@ var _ MappedNullable = &ProgramFundingResponse{}
 // ProgramFundingResponse Returns details of a program funding entry.
 type ProgramFundingResponse struct {
 	// Amount of the funding.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Timestamp when the funding entry was created.
 	CreatedTime time.Time `json:"created_time"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
@@ -46,7 +46,7 @@ type _ProgramFundingResponse ProgramFundingResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProgramFundingResponse(amount float32, createdTime time.Time, currencyCode CurrencyCode, memo string, postTime time.Time, shortCode string, token string, updatedTime time.Time) *ProgramFundingResponse {
+func NewProgramFundingResponse(amount decimal.Decimal, createdTime time.Time, currencyCode CurrencyCode, memo string, postTime time.Time, shortCode string, token string, updatedTime time.Time) *ProgramFundingResponse {
 	this := ProgramFundingResponse{}
 	this.Amount = amount
 	this.CreatedTime = createdTime
@@ -70,9 +70,9 @@ func NewProgramFundingResponseWithDefaults() *ProgramFundingResponse {
 }
 
 // GetAmount returns the Amount field value
-func (o *ProgramFundingResponse) GetAmount() float32 {
+func (o *ProgramFundingResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -81,7 +81,7 @@ func (o *ProgramFundingResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *ProgramFundingResponse) GetAmountOk() (*float32, bool) {
+func (o *ProgramFundingResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -89,7 +89,7 @@ func (o *ProgramFundingResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *ProgramFundingResponse) SetAmount(v float32) {
+func (o *ProgramFundingResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

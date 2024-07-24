@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of funds to return to the funding source. | 
+**Amount** | **decimal.Decimal** | Amount of funds to return to the funding source. | 
 **FundingSourceAddressToken** | Pointer to **string** | Unique identifier of the funding source to use for this GPA unload order.  Send a &#x60;GET&#x60; request to &#x60;/fundingsources/addresses/user/{token}&#x60; to retrieve addresses for a specific user. | [optional] 
 **Memo** | Pointer to **string** | Additional descriptive text about the GPA unload. | [optional] 
 **OriginalOrderToken** | **string** | Unique identifier of the original GPA order. | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewUnloadRequestModel
 
-`func NewUnloadRequestModel(amount float32, originalOrderToken string, ) *UnloadRequestModel`
+`func NewUnloadRequestModel(amount decimal.Decimal, originalOrderToken string, ) *UnloadRequestModel`
 
 NewUnloadRequestModel instantiates a new UnloadRequestModel object
 This constructor will assign default values to properties that have it defined,
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *UnloadRequestModel) GetAmount() float32`
+`func (o *UnloadRequestModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *UnloadRequestModel) GetAmountOk() (*float32, bool)`
+`func (o *UnloadRequestModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *UnloadRequestModel) SetAmount(v float32)`
+`func (o *UnloadRequestModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

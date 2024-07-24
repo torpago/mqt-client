@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Indicates whether the velocity control is active. | [optional] [default to false]
-**AmountLimit** | **float32** | Maximum monetary sum that can be cleared within the time period defined by velocity period. | 
+**AmountLimit** | **decimal.Decimal** | Maximum monetary sum that can be cleared within the time period defined by velocity period. | 
 **Association** | Pointer to [**Association**](Association.md) |  | [optional] 
 **CurrencyCode** | **string** | Three-character ISO 4217 currency code. | 
 **MerchantScope** | Pointer to [**MerchantScope**](MerchantScope.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewVelocityControlBalance
 
-`func NewVelocityControlBalance(amountLimit float32, currencyCode string, ) *VelocityControlBalance`
+`func NewVelocityControlBalance(amountLimit decimal.Decimal, currencyCode string, ) *VelocityControlBalance`
 
 NewVelocityControlBalance instantiates a new VelocityControlBalance object
 This constructor will assign default values to properties that have it defined,
@@ -62,20 +62,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetAmountLimit
 
-`func (o *VelocityControlBalance) GetAmountLimit() float32`
+`func (o *VelocityControlBalance) GetAmountLimit() decimal.Decimal`
 
 GetAmountLimit returns the AmountLimit field if non-nil, zero value otherwise.
 
 ### GetAmountLimitOk
 
-`func (o *VelocityControlBalance) GetAmountLimitOk() (*float32, bool)`
+`func (o *VelocityControlBalance) GetAmountLimitOk() (*decimal.Decimal, bool)`
 
 GetAmountLimitOk returns a tuple with the AmountLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmountLimit
 
-`func (o *VelocityControlBalance) SetAmountLimit(v float32)`
+`func (o *VelocityControlBalance) SetAmountLimit(v decimal.Decimal)`
 
 SetAmountLimit sets AmountLimit field to given value.
 

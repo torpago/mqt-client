@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **DecisionDate** | Pointer to **time.Time** | Date and time when the decision on the application was rendered, in UTC. | [optional] 
 **DenialReasons** | Pointer to **[]string** | An array of reasons that explain why the application was declined. | [optional] 
 **ExpireDate** | Pointer to **string** | Date when the decision model expires. | [optional] 
-**Margin** | Pointer to **float32** | Number of percentage points added to the prime rate, used to calculate the purchase APR. | [optional] 
-**PrimeRate** | Pointer to **float32** | The current prime rate set by the Fed. | [optional] 
-**PurchaseApr** | Pointer to **float32** | The purchase APR approved for the user. | [optional] 
+**Margin** | Pointer to **decimal.Decimal** | Number of percentage points added to the prime rate, used to calculate the purchase APR. | [optional] 
+**PrimeRate** | Pointer to **decimal.Decimal** | The current prime rate set by the Fed. | [optional] 
+**PurchaseApr** | Pointer to **decimal.Decimal** | The purchase APR approved for the user. | [optional] 
 **ReceivedBestRate** | Pointer to **bool** | A value of &#x60;true&#x60; indicates that the user received the credit product&#39;s best APR.  If &#x60;false&#x60;, you must display to the user the following: &#x60;score_factors&#x60;, &#x60;credit_score&#x60;, &#x60;credit_score_date&#x60;, &#x60;credit_bureau&#x60;, &#x60;score_range&#x60;. | [optional] 
 **ScoreFactors** | Pointer to **[]string** | Factors that the bureau used to determine the user&#39;s credit score. | [optional] 
 **ScoreRange** | Pointer to **string** | The range in which the user&#39;s credit score falls. | [optional] 
@@ -298,20 +298,20 @@ HasExpireDate returns a boolean if a field has been set.
 
 ### GetMargin
 
-`func (o *DecisionsResponse) GetMargin() float32`
+`func (o *DecisionsResponse) GetMargin() decimal.Decimal`
 
 GetMargin returns the Margin field if non-nil, zero value otherwise.
 
 ### GetMarginOk
 
-`func (o *DecisionsResponse) GetMarginOk() (*float32, bool)`
+`func (o *DecisionsResponse) GetMarginOk() (*decimal.Decimal, bool)`
 
 GetMarginOk returns a tuple with the Margin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMargin
 
-`func (o *DecisionsResponse) SetMargin(v float32)`
+`func (o *DecisionsResponse) SetMargin(v decimal.Decimal)`
 
 SetMargin sets Margin field to given value.
 
@@ -323,20 +323,20 @@ HasMargin returns a boolean if a field has been set.
 
 ### GetPrimeRate
 
-`func (o *DecisionsResponse) GetPrimeRate() float32`
+`func (o *DecisionsResponse) GetPrimeRate() decimal.Decimal`
 
 GetPrimeRate returns the PrimeRate field if non-nil, zero value otherwise.
 
 ### GetPrimeRateOk
 
-`func (o *DecisionsResponse) GetPrimeRateOk() (*float32, bool)`
+`func (o *DecisionsResponse) GetPrimeRateOk() (*decimal.Decimal, bool)`
 
 GetPrimeRateOk returns a tuple with the PrimeRate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimeRate
 
-`func (o *DecisionsResponse) SetPrimeRate(v float32)`
+`func (o *DecisionsResponse) SetPrimeRate(v decimal.Decimal)`
 
 SetPrimeRate sets PrimeRate field to given value.
 
@@ -348,20 +348,20 @@ HasPrimeRate returns a boolean if a field has been set.
 
 ### GetPurchaseApr
 
-`func (o *DecisionsResponse) GetPurchaseApr() float32`
+`func (o *DecisionsResponse) GetPurchaseApr() decimal.Decimal`
 
 GetPurchaseApr returns the PurchaseApr field if non-nil, zero value otherwise.
 
 ### GetPurchaseAprOk
 
-`func (o *DecisionsResponse) GetPurchaseAprOk() (*float32, bool)`
+`func (o *DecisionsResponse) GetPurchaseAprOk() (*decimal.Decimal, bool)`
 
 GetPurchaseAprOk returns a tuple with the PurchaseApr field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPurchaseApr
 
-`func (o *DecisionsResponse) SetPurchaseApr(v float32)`
+`func (o *DecisionsResponse) SetPurchaseApr(v decimal.Decimal)`
 
 SetPurchaseApr sets PurchaseApr field to given value.
 

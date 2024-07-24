@@ -26,7 +26,7 @@ type AccountResponse struct {
 	// Date and time when the credit account was activated on Marqeta's credit platform, in UTC.
 	ActivationTime *time.Time `json:"activation_time,omitempty"`
 	// Amount of credit available for use on the credit account.
-	AvailableCredit float32 `json:"available_credit"`
+	AvailableCredit decimal.Decimal `json:"available_credit"`
 	// Unique identifier of the associated bundle product.
 	BundleToken *string `json:"bundle_token,omitempty"`
 	// Unique identifier of the parent business program.  Either a `user_token` or `business_token` is returned, not both.
@@ -35,12 +35,12 @@ type AccountResponse struct {
 	// Date and time when the credit account was created on Marqeta's credit platform, in UTC.
 	CreatedTime time.Time `json:"created_time"`
 	// Maximum balance the credit account can carry.
-	CreditLimit float32 `json:"credit_limit"`
+	CreditLimit decimal.Decimal `json:"credit_limit"`
 	// Unique identifier of the associated credit product.
 	CreditProductToken *string `json:"credit_product_token,omitempty"`
 	CurrencyCode CurrencyCode `json:"currency_code"`
 	// Current purchase balance on the credit account.
-	CurrentBalance float32 `json:"current_balance"`
+	CurrentBalance decimal.Decimal `json:"current_balance"`
 	// Description for the credit account.
 	Description *string `json:"description,omitempty"`
 	// Unique identifier you provide of the associated external credit offer.
@@ -51,9 +51,9 @@ type AccountResponse struct {
 	// Name of the credit account.
 	Name *string `json:"name,omitempty"`
 	// Amount remaining on the latest statement's minimum payment, after it's adjusted for payments, returned payments, and applicable credits that occurred after the latest statement's closing date.
-	RemainingMinPaymentDue float32 `json:"remaining_min_payment_due"`
+	RemainingMinPaymentDue decimal.Decimal `json:"remaining_min_payment_due"`
 	// Amount remaining on the latest statement's balance, after it's adjusted for payments, returned payments, and applicable credits that occurred after the latest statement's closing date.
-	RemainingStatementBalance float32 `json:"remaining_statement_balance"`
+	RemainingStatementBalance decimal.Decimal `json:"remaining_statement_balance"`
 	Status AccountStatusEnum `json:"status"`
 	// Substatuses of the credit account.
 	Substatuses []string `json:"substatuses,omitempty"`
@@ -76,7 +76,7 @@ type _AccountResponse AccountResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountResponse(availableCredit float32, config AccountConfigResponse, createdTime time.Time, creditLimit float32, currencyCode CurrencyCode, currentBalance float32, remainingMinPaymentDue float32, remainingStatementBalance float32, status AccountStatusEnum, token string, updatedTime time.Time, usages []AccountUsageResponse) *AccountResponse {
+func NewAccountResponse(availableCredit decimal.Decimal, config AccountConfigResponse, createdTime time.Time, creditLimit decimal.Decimal, currencyCode CurrencyCode, currentBalance decimal.Decimal, remainingMinPaymentDue decimal.Decimal, remainingStatementBalance decimal.Decimal, status AccountStatusEnum, token string, updatedTime time.Time, usages []AccountUsageResponse) *AccountResponse {
 	this := AccountResponse{}
 	this.AvailableCredit = availableCredit
 	this.Config = config
@@ -136,9 +136,9 @@ func (o *AccountResponse) SetActivationTime(v time.Time) {
 }
 
 // GetAvailableCredit returns the AvailableCredit field value
-func (o *AccountResponse) GetAvailableCredit() float32 {
+func (o *AccountResponse) GetAvailableCredit() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -147,7 +147,7 @@ func (o *AccountResponse) GetAvailableCredit() float32 {
 
 // GetAvailableCreditOk returns a tuple with the AvailableCredit field value
 // and a boolean to check if the value has been set.
-func (o *AccountResponse) GetAvailableCreditOk() (*float32, bool) {
+func (o *AccountResponse) GetAvailableCreditOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -155,7 +155,7 @@ func (o *AccountResponse) GetAvailableCreditOk() (*float32, bool) {
 }
 
 // SetAvailableCredit sets field value
-func (o *AccountResponse) SetAvailableCredit(v float32) {
+func (o *AccountResponse) SetAvailableCredit(v decimal.Decimal) {
 	o.AvailableCredit = v
 }
 
@@ -272,9 +272,9 @@ func (o *AccountResponse) SetCreatedTime(v time.Time) {
 }
 
 // GetCreditLimit returns the CreditLimit field value
-func (o *AccountResponse) GetCreditLimit() float32 {
+func (o *AccountResponse) GetCreditLimit() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -283,7 +283,7 @@ func (o *AccountResponse) GetCreditLimit() float32 {
 
 // GetCreditLimitOk returns a tuple with the CreditLimit field value
 // and a boolean to check if the value has been set.
-func (o *AccountResponse) GetCreditLimitOk() (*float32, bool) {
+func (o *AccountResponse) GetCreditLimitOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -291,7 +291,7 @@ func (o *AccountResponse) GetCreditLimitOk() (*float32, bool) {
 }
 
 // SetCreditLimit sets field value
-func (o *AccountResponse) SetCreditLimit(v float32) {
+func (o *AccountResponse) SetCreditLimit(v decimal.Decimal) {
 	o.CreditLimit = v
 }
 
@@ -352,9 +352,9 @@ func (o *AccountResponse) SetCurrencyCode(v CurrencyCode) {
 }
 
 // GetCurrentBalance returns the CurrentBalance field value
-func (o *AccountResponse) GetCurrentBalance() float32 {
+func (o *AccountResponse) GetCurrentBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -363,7 +363,7 @@ func (o *AccountResponse) GetCurrentBalance() float32 {
 
 // GetCurrentBalanceOk returns a tuple with the CurrentBalance field value
 // and a boolean to check if the value has been set.
-func (o *AccountResponse) GetCurrentBalanceOk() (*float32, bool) {
+func (o *AccountResponse) GetCurrentBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -371,7 +371,7 @@ func (o *AccountResponse) GetCurrentBalanceOk() (*float32, bool) {
 }
 
 // SetCurrentBalance sets field value
-func (o *AccountResponse) SetCurrentBalance(v float32) {
+func (o *AccountResponse) SetCurrentBalance(v decimal.Decimal) {
 	o.CurrentBalance = v
 }
 
@@ -536,9 +536,9 @@ func (o *AccountResponse) SetName(v string) {
 }
 
 // GetRemainingMinPaymentDue returns the RemainingMinPaymentDue field value
-func (o *AccountResponse) GetRemainingMinPaymentDue() float32 {
+func (o *AccountResponse) GetRemainingMinPaymentDue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -547,7 +547,7 @@ func (o *AccountResponse) GetRemainingMinPaymentDue() float32 {
 
 // GetRemainingMinPaymentDueOk returns a tuple with the RemainingMinPaymentDue field value
 // and a boolean to check if the value has been set.
-func (o *AccountResponse) GetRemainingMinPaymentDueOk() (*float32, bool) {
+func (o *AccountResponse) GetRemainingMinPaymentDueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -555,14 +555,14 @@ func (o *AccountResponse) GetRemainingMinPaymentDueOk() (*float32, bool) {
 }
 
 // SetRemainingMinPaymentDue sets field value
-func (o *AccountResponse) SetRemainingMinPaymentDue(v float32) {
+func (o *AccountResponse) SetRemainingMinPaymentDue(v decimal.Decimal) {
 	o.RemainingMinPaymentDue = v
 }
 
 // GetRemainingStatementBalance returns the RemainingStatementBalance field value
-func (o *AccountResponse) GetRemainingStatementBalance() float32 {
+func (o *AccountResponse) GetRemainingStatementBalance() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -571,7 +571,7 @@ func (o *AccountResponse) GetRemainingStatementBalance() float32 {
 
 // GetRemainingStatementBalanceOk returns a tuple with the RemainingStatementBalance field value
 // and a boolean to check if the value has been set.
-func (o *AccountResponse) GetRemainingStatementBalanceOk() (*float32, bool) {
+func (o *AccountResponse) GetRemainingStatementBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -579,7 +579,7 @@ func (o *AccountResponse) GetRemainingStatementBalanceOk() (*float32, bool) {
 }
 
 // SetRemainingStatementBalance sets field value
-func (o *AccountResponse) SetRemainingStatementBalance(v float32) {
+func (o *AccountResponse) SetRemainingStatementBalance(v decimal.Decimal) {
 	o.RemainingStatementBalance = v
 }
 

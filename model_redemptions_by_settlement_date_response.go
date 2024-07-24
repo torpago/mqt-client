@@ -25,7 +25,7 @@ var _ MappedNullable = &RedemptionsBySettlementDateResponse{}
 type RedemptionsBySettlementDateResponse struct {
 	// token of account the redemption is for.
 	AccountToken string `json:"account_token"`
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// yyyy-MM-ddThh:mm:ssZ
 	CompletionTime *time.Time `json:"completion_time,omitempty"`
 	// yyyy-MM-ddThh:mm:ssZ
@@ -49,7 +49,7 @@ type _RedemptionsBySettlementDateResponse RedemptionsBySettlementDateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRedemptionsBySettlementDateResponse(accountToken string, amount float32, createdTime time.Time, destination DestinationType, note string, redemptionToken string, rewardProgramToken string, status RedemptionStatus, type_ RedemptionType, updatedTime time.Time) *RedemptionsBySettlementDateResponse {
+func NewRedemptionsBySettlementDateResponse(accountToken string, amount decimal.Decimal, createdTime time.Time, destination DestinationType, note string, redemptionToken string, rewardProgramToken string, status RedemptionStatus, type_ RedemptionType, updatedTime time.Time) *RedemptionsBySettlementDateResponse {
 	this := RedemptionsBySettlementDateResponse{}
 	this.AccountToken = accountToken
 	this.Amount = amount
@@ -97,9 +97,9 @@ func (o *RedemptionsBySettlementDateResponse) SetAccountToken(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *RedemptionsBySettlementDateResponse) GetAmount() float32 {
+func (o *RedemptionsBySettlementDateResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -108,7 +108,7 @@ func (o *RedemptionsBySettlementDateResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *RedemptionsBySettlementDateResponse) GetAmountOk() (*float32, bool) {
+func (o *RedemptionsBySettlementDateResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -116,7 +116,7 @@ func (o *RedemptionsBySettlementDateResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *RedemptionsBySettlementDateResponse) SetAmount(v float32) {
+func (o *RedemptionsBySettlementDateResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

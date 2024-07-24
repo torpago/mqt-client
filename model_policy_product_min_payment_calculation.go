@@ -27,7 +27,7 @@ type PolicyProductMinPaymentCalculation struct {
 	// Whether to include the past due amount when calculating the minimum payment.
 	IncludePastDueAmount bool `json:"include_past_due_amount"`
 	// Minimum payment, expressed as a flat amount, due on the payment due day.
-	MinPaymentFlatAmount *float32 `json:"min_payment_flat_amount,omitempty"`
+	MinPaymentFlatAmount *decimal.Decimal `json:"min_payment_flat_amount,omitempty"`
 	MinPaymentPercentage *PolicyProductMinPaymentPercentage `json:"min_payment_percentage,omitempty"`
 }
 
@@ -101,9 +101,9 @@ func (o *PolicyProductMinPaymentCalculation) SetIncludePastDueAmount(v bool) {
 }
 
 // GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field value if set, zero value otherwise.
-func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmount() float32 {
+func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmount() decimal.Decimal {
 	if o == nil || IsNil(o.MinPaymentFlatAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MinPaymentFlatAmount
@@ -111,7 +111,7 @@ func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmount() float32 {
 
 // GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmountOk() (*float32, bool) {
+func (o *PolicyProductMinPaymentCalculation) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MinPaymentFlatAmount) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *PolicyProductMinPaymentCalculation) HasMinPaymentFlatAmount() bool {
 	return false
 }
 
-// SetMinPaymentFlatAmount gets a reference to the given float32 and assigns it to the MinPaymentFlatAmount field.
-func (o *PolicyProductMinPaymentCalculation) SetMinPaymentFlatAmount(v float32) {
+// SetMinPaymentFlatAmount gets a reference to the given decimal.Decimal and assigns it to the MinPaymentFlatAmount field.
+func (o *PolicyProductMinPaymentCalculation) SetMinPaymentFlatAmount(v decimal.Decimal) {
 	o.MinPaymentFlatAmount = &v
 }
 

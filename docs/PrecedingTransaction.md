@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** | Amount of the preceding transaction. | [optional] 
+**Amount** | Pointer to **decimal.Decimal** | Amount of the preceding transaction. | [optional] 
 **Token** | Pointer to **string** | Unique identifier of the preceding transaction. | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *PrecedingTransaction) GetAmount() float32`
+`func (o *PrecedingTransaction) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PrecedingTransaction) GetAmountOk() (*float32, bool)`
+`func (o *PrecedingTransaction) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PrecedingTransaction) SetAmount(v float32)`
+`func (o *PrecedingTransaction) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

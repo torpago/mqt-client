@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountToken** | **string** | Unique identifier of the credit account associated with the credit card used to make the ledger entry. | 
-**Amount** | **float32** | Amount of the ledger entry. | 
+**Amount** | **decimal.Decimal** | Amount of the ledger entry. | 
 **CardToken** | **string** | Unique identifier of the credit card used to make the ledger entry. | 
 **CreatedTime** | **time.Time** | Date and time when the ledger entry was created on Marqeta&#39;s credit platform, in UTC. | 
 **CurrencyCode** | [**CurrencyCode**](CurrencyCode.md) |  | [default to CURRENCYCODE_USD]
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewLedgerEntry
 
-`func NewLedgerEntry(accountToken string, amount float32, cardToken string, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, memo string, requestTime time.Time, status string, token string, type_ string, ) *LedgerEntry`
+`func NewLedgerEntry(accountToken string, amount decimal.Decimal, cardToken string, createdTime time.Time, currencyCode CurrencyCode, detailToken string, group string, id string, impactTime time.Time, memo string, requestTime time.Time, status string, token string, type_ string, ) *LedgerEntry`
 
 NewLedgerEntry instantiates a new LedgerEntry object
 This constructor will assign default values to properties that have it defined,
@@ -65,20 +65,20 @@ SetAccountToken sets AccountToken field to given value.
 
 ### GetAmount
 
-`func (o *LedgerEntry) GetAmount() float32`
+`func (o *LedgerEntry) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *LedgerEntry) GetAmountOk() (*float32, bool)`
+`func (o *LedgerEntry) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *LedgerEntry) SetAmount(v float32)`
+`func (o *LedgerEntry) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

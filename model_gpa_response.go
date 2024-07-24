@@ -24,7 +24,7 @@ var _ MappedNullable = &GpaResponse{}
 // GpaResponse Contains information about a GPA order, including fees, funding sources, and addresses. See <</core-api/gpa-orders, GPA Orders>> for more information.
 type GpaResponse struct {
 	// Amount funded.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Unique identifier of the business.  This field is returned if it exists in the resource.
 	BusinessToken *string `json:"business_token,omitempty"`
 	// Date and time when the GPA order was created, in UTC.
@@ -66,7 +66,7 @@ type _GpaResponse GpaResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGpaResponse(amount float32, createdTime time.Time, currencyCode string, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string) *GpaResponse {
+func NewGpaResponse(amount decimal.Decimal, createdTime time.Time, currencyCode string, funding Funding, fundingSourceToken string, lastModifiedTime time.Time, response Response, state string, token string, transactionToken string) *GpaResponse {
 	this := GpaResponse{}
 	this.Amount = amount
 	this.CreatedTime = createdTime
@@ -90,9 +90,9 @@ func NewGpaResponseWithDefaults() *GpaResponse {
 }
 
 // GetAmount returns the Amount field value
-func (o *GpaResponse) GetAmount() float32 {
+func (o *GpaResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -101,7 +101,7 @@ func (o *GpaResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *GpaResponse) GetAmountOk() (*float32, bool) {
+func (o *GpaResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -109,7 +109,7 @@ func (o *GpaResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *GpaResponse) SetAmount(v float32) {
+func (o *GpaResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

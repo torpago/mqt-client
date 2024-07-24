@@ -30,7 +30,7 @@ type CreateRewardProgramsEntriesRequest struct {
 	// Unique identifier of the reward entry.
 	Token *string `json:"token,omitempty"`
 	// Value of the reward granted to the account.
-	Value float32 `json:"value"`
+	Value decimal.Decimal `json:"value"`
 }
 
 type _CreateRewardProgramsEntriesRequest CreateRewardProgramsEntriesRequest
@@ -39,7 +39,7 @@ type _CreateRewardProgramsEntriesRequest CreateRewardProgramsEntriesRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateRewardProgramsEntriesRequest(note string, value float32) *CreateRewardProgramsEntriesRequest {
+func NewCreateRewardProgramsEntriesRequest(note string, value decimal.Decimal) *CreateRewardProgramsEntriesRequest {
 	this := CreateRewardProgramsEntriesRequest{}
 	this.Note = note
 	this.Value = value
@@ -143,9 +143,9 @@ func (o *CreateRewardProgramsEntriesRequest) SetToken(v string) {
 }
 
 // GetValue returns the Value field value
-func (o *CreateRewardProgramsEntriesRequest) GetValue() float32 {
+func (o *CreateRewardProgramsEntriesRequest) GetValue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -154,7 +154,7 @@ func (o *CreateRewardProgramsEntriesRequest) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *CreateRewardProgramsEntriesRequest) GetValueOk() (*float32, bool) {
+func (o *CreateRewardProgramsEntriesRequest) GetValueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -162,7 +162,7 @@ func (o *CreateRewardProgramsEntriesRequest) GetValueOk() (*float32, bool) {
 }
 
 // SetValue sets field value
-func (o *CreateRewardProgramsEntriesRequest) SetValue(v float32) {
+func (o *CreateRewardProgramsEntriesRequest) SetValue(v decimal.Decimal) {
 	o.Value = v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **float32** |  | [optional] 
+**Amount** | Pointer to **decimal.Decimal** |  | [optional] 
 **BankTransferToken** | **string** | Unique identifier of the ACH transfer being transitioned. | 
 **BatchNumber** | Pointer to **string** | Field required in older versions of the API, but no longer used. | [optional] 
 **Channel** | **string** | Mechanism by which the transaction was initiated. | 
@@ -42,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *BankTransferTransitionResponseModel) GetAmount() float32`
+`func (o *BankTransferTransitionResponseModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *BankTransferTransitionResponseModel) GetAmountOk() (*float32, bool)`
+`func (o *BankTransferTransitionResponseModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *BankTransferTransitionResponseModel) SetAmount(v float32)`
+`func (o *BankTransferTransitionResponseModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

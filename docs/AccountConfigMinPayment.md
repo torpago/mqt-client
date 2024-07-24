@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Whether the minimum payment override is currently active. | [optional] 
-**MinPaymentFlatAmount** | Pointer to **float32** | Flat amount of the minimum payment override. | [optional] 
-**MinPaymentPercentage** | Pointer to **float32** | Percentage of the total statement balance used to calculate the minimum payment override amount. | [optional] 
+**MinPaymentFlatAmount** | Pointer to **decimal.Decimal** | Flat amount of the minimum payment override. | [optional] 
+**MinPaymentPercentage** | Pointer to **decimal.Decimal** | Percentage of the total statement balance used to calculate the minimum payment override amount. | [optional] 
 **OverrideEndTime** | Pointer to **time.Time** | Date and time when the minimum payment override ends, in UTC. | [optional] 
 **OverrideStartTime** | Pointer to **time.Time** | Date and time when the minimum payment override starts, in UTC. | [optional] 
 
@@ -56,20 +56,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetMinPaymentFlatAmount
 
-`func (o *AccountConfigMinPayment) GetMinPaymentFlatAmount() float32`
+`func (o *AccountConfigMinPayment) GetMinPaymentFlatAmount() decimal.Decimal`
 
 GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field if non-nil, zero value otherwise.
 
 ### GetMinPaymentFlatAmountOk
 
-`func (o *AccountConfigMinPayment) GetMinPaymentFlatAmountOk() (*float32, bool)`
+`func (o *AccountConfigMinPayment) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool)`
 
 GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPaymentFlatAmount
 
-`func (o *AccountConfigMinPayment) SetMinPaymentFlatAmount(v float32)`
+`func (o *AccountConfigMinPayment) SetMinPaymentFlatAmount(v decimal.Decimal)`
 
 SetMinPaymentFlatAmount sets MinPaymentFlatAmount field to given value.
 
@@ -81,20 +81,20 @@ HasMinPaymentFlatAmount returns a boolean if a field has been set.
 
 ### GetMinPaymentPercentage
 
-`func (o *AccountConfigMinPayment) GetMinPaymentPercentage() float32`
+`func (o *AccountConfigMinPayment) GetMinPaymentPercentage() decimal.Decimal`
 
 GetMinPaymentPercentage returns the MinPaymentPercentage field if non-nil, zero value otherwise.
 
 ### GetMinPaymentPercentageOk
 
-`func (o *AccountConfigMinPayment) GetMinPaymentPercentageOk() (*float32, bool)`
+`func (o *AccountConfigMinPayment) GetMinPaymentPercentageOk() (*decimal.Decimal, bool)`
 
 GetMinPaymentPercentageOk returns a tuple with the MinPaymentPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPaymentPercentage
 
-`func (o *AccountConfigMinPayment) SetMinPaymentPercentage(v float32)`
+`func (o *AccountConfigMinPayment) SetMinPaymentPercentage(v decimal.Decimal)`
 
 SetMinPaymentPercentage sets MinPaymentPercentage field to given value.
 

@@ -26,15 +26,15 @@ type DelinquencyBucketResponse struct {
 	// Delinquency bucket number in the returned array. Delinquency buckets are returned from most recent to least; the most recent delinquency bucket is `1`.
 	BucketNumber int32 `json:"bucket_number"`
 	// Current amount that is due for this delinquency bucket.
-	CurrentDue float32 `json:"current_due"`
+	CurrentDue decimal.Decimal `json:"current_due"`
 	// Total number of days that the payment is past due for this delinquency bucket.
 	DaysPastDue int32 `json:"days_past_due"`
 	// Amount that is past due and carried forward from previous delinquency buckets.
-	PastDueCarriedForward float32 `json:"past_due_carried_forward"`
+	PastDueCarriedForward decimal.Decimal `json:"past_due_carried_forward"`
 	// Date that the payment was due for this delinquency bucket.
 	PaymentDueDate time.Time `json:"payment_due_date"`
 	// Total amount that is due for this delinquency bucket; the sum of `past_due_carried_forward` and `current_due`.
-	TotalDue float32 `json:"total_due"`
+	TotalDue decimal.Decimal `json:"total_due"`
 }
 
 type _DelinquencyBucketResponse DelinquencyBucketResponse
@@ -43,7 +43,7 @@ type _DelinquencyBucketResponse DelinquencyBucketResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelinquencyBucketResponse(bucketNumber int32, currentDue float32, daysPastDue int32, pastDueCarriedForward float32, paymentDueDate time.Time, totalDue float32) *DelinquencyBucketResponse {
+func NewDelinquencyBucketResponse(bucketNumber int32, currentDue decimal.Decimal, daysPastDue int32, pastDueCarriedForward decimal.Decimal, paymentDueDate time.Time, totalDue decimal.Decimal) *DelinquencyBucketResponse {
 	this := DelinquencyBucketResponse{}
 	this.BucketNumber = bucketNumber
 	this.CurrentDue = currentDue
@@ -87,9 +87,9 @@ func (o *DelinquencyBucketResponse) SetBucketNumber(v int32) {
 }
 
 // GetCurrentDue returns the CurrentDue field value
-func (o *DelinquencyBucketResponse) GetCurrentDue() float32 {
+func (o *DelinquencyBucketResponse) GetCurrentDue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -98,7 +98,7 @@ func (o *DelinquencyBucketResponse) GetCurrentDue() float32 {
 
 // GetCurrentDueOk returns a tuple with the CurrentDue field value
 // and a boolean to check if the value has been set.
-func (o *DelinquencyBucketResponse) GetCurrentDueOk() (*float32, bool) {
+func (o *DelinquencyBucketResponse) GetCurrentDueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -106,7 +106,7 @@ func (o *DelinquencyBucketResponse) GetCurrentDueOk() (*float32, bool) {
 }
 
 // SetCurrentDue sets field value
-func (o *DelinquencyBucketResponse) SetCurrentDue(v float32) {
+func (o *DelinquencyBucketResponse) SetCurrentDue(v decimal.Decimal) {
 	o.CurrentDue = v
 }
 
@@ -135,9 +135,9 @@ func (o *DelinquencyBucketResponse) SetDaysPastDue(v int32) {
 }
 
 // GetPastDueCarriedForward returns the PastDueCarriedForward field value
-func (o *DelinquencyBucketResponse) GetPastDueCarriedForward() float32 {
+func (o *DelinquencyBucketResponse) GetPastDueCarriedForward() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -146,7 +146,7 @@ func (o *DelinquencyBucketResponse) GetPastDueCarriedForward() float32 {
 
 // GetPastDueCarriedForwardOk returns a tuple with the PastDueCarriedForward field value
 // and a boolean to check if the value has been set.
-func (o *DelinquencyBucketResponse) GetPastDueCarriedForwardOk() (*float32, bool) {
+func (o *DelinquencyBucketResponse) GetPastDueCarriedForwardOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -154,7 +154,7 @@ func (o *DelinquencyBucketResponse) GetPastDueCarriedForwardOk() (*float32, bool
 }
 
 // SetPastDueCarriedForward sets field value
-func (o *DelinquencyBucketResponse) SetPastDueCarriedForward(v float32) {
+func (o *DelinquencyBucketResponse) SetPastDueCarriedForward(v decimal.Decimal) {
 	o.PastDueCarriedForward = v
 }
 
@@ -183,9 +183,9 @@ func (o *DelinquencyBucketResponse) SetPaymentDueDate(v time.Time) {
 }
 
 // GetTotalDue returns the TotalDue field value
-func (o *DelinquencyBucketResponse) GetTotalDue() float32 {
+func (o *DelinquencyBucketResponse) GetTotalDue() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -194,7 +194,7 @@ func (o *DelinquencyBucketResponse) GetTotalDue() float32 {
 
 // GetTotalDueOk returns a tuple with the TotalDue field value
 // and a boolean to check if the value has been set.
-func (o *DelinquencyBucketResponse) GetTotalDueOk() (*float32, bool) {
+func (o *DelinquencyBucketResponse) GetTotalDueOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -202,7 +202,7 @@ func (o *DelinquencyBucketResponse) GetTotalDueOk() (*float32, bool) {
 }
 
 // SetTotalDue sets field value
-func (o *DelinquencyBucketResponse) SetTotalDue(v float32) {
+func (o *DelinquencyBucketResponse) SetTotalDue(v decimal.Decimal) {
 	o.TotalDue = v
 }
 

@@ -24,9 +24,9 @@ type AccountConfigMinPayment struct {
 	// Whether the minimum payment override is currently active.
 	Active *bool `json:"active,omitempty"`
 	// Flat amount of the minimum payment override.
-	MinPaymentFlatAmount *float32 `json:"min_payment_flat_amount,omitempty"`
+	MinPaymentFlatAmount *decimal.Decimal `json:"min_payment_flat_amount,omitempty"`
 	// Percentage of the total statement balance used to calculate the minimum payment override amount.
-	MinPaymentPercentage *float32 `json:"min_payment_percentage,omitempty"`
+	MinPaymentPercentage *decimal.Decimal `json:"min_payment_percentage,omitempty"`
 	// Date and time when the minimum payment override ends, in UTC.
 	OverrideEndTime *time.Time `json:"override_end_time,omitempty"`
 	// Date and time when the minimum payment override starts, in UTC.
@@ -83,9 +83,9 @@ func (o *AccountConfigMinPayment) SetActive(v bool) {
 }
 
 // GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field value if set, zero value otherwise.
-func (o *AccountConfigMinPayment) GetMinPaymentFlatAmount() float32 {
+func (o *AccountConfigMinPayment) GetMinPaymentFlatAmount() decimal.Decimal {
 	if o == nil || IsNil(o.MinPaymentFlatAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MinPaymentFlatAmount
@@ -93,7 +93,7 @@ func (o *AccountConfigMinPayment) GetMinPaymentFlatAmount() float32 {
 
 // GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountConfigMinPayment) GetMinPaymentFlatAmountOk() (*float32, bool) {
+func (o *AccountConfigMinPayment) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MinPaymentFlatAmount) {
 		return nil, false
 	}
@@ -109,15 +109,15 @@ func (o *AccountConfigMinPayment) HasMinPaymentFlatAmount() bool {
 	return false
 }
 
-// SetMinPaymentFlatAmount gets a reference to the given float32 and assigns it to the MinPaymentFlatAmount field.
-func (o *AccountConfigMinPayment) SetMinPaymentFlatAmount(v float32) {
+// SetMinPaymentFlatAmount gets a reference to the given decimal.Decimal and assigns it to the MinPaymentFlatAmount field.
+func (o *AccountConfigMinPayment) SetMinPaymentFlatAmount(v decimal.Decimal) {
 	o.MinPaymentFlatAmount = &v
 }
 
 // GetMinPaymentPercentage returns the MinPaymentPercentage field value if set, zero value otherwise.
-func (o *AccountConfigMinPayment) GetMinPaymentPercentage() float32 {
+func (o *AccountConfigMinPayment) GetMinPaymentPercentage() decimal.Decimal {
 	if o == nil || IsNil(o.MinPaymentPercentage) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MinPaymentPercentage
@@ -125,7 +125,7 @@ func (o *AccountConfigMinPayment) GetMinPaymentPercentage() float32 {
 
 // GetMinPaymentPercentageOk returns a tuple with the MinPaymentPercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountConfigMinPayment) GetMinPaymentPercentageOk() (*float32, bool) {
+func (o *AccountConfigMinPayment) GetMinPaymentPercentageOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MinPaymentPercentage) {
 		return nil, false
 	}
@@ -141,8 +141,8 @@ func (o *AccountConfigMinPayment) HasMinPaymentPercentage() bool {
 	return false
 }
 
-// SetMinPaymentPercentage gets a reference to the given float32 and assigns it to the MinPaymentPercentage field.
-func (o *AccountConfigMinPayment) SetMinPaymentPercentage(v float32) {
+// SetMinPaymentPercentage gets a reference to the given decimal.Decimal and assigns it to the MinPaymentPercentage field.
+func (o *AccountConfigMinPayment) SetMinPaymentPercentage(v decimal.Decimal) {
 	o.MinPaymentPercentage = &v
 }
 

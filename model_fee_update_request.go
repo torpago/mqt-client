@@ -23,7 +23,7 @@ type FeeUpdateRequest struct {
 	// Indicates whether the fee is active.
 	Active *bool `json:"active,omitempty"`
 	// Amount of the fee.
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	Category *string `json:"category,omitempty"`
 	// Three-digit ISO 4217 currency code.
 	CurrencyCode *string `json:"currency_code,omitempty"`
@@ -89,9 +89,9 @@ func (o *FeeUpdateRequest) SetActive(v bool) {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *FeeUpdateRequest) GetAmount() float32 {
+func (o *FeeUpdateRequest) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -99,7 +99,7 @@ func (o *FeeUpdateRequest) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FeeUpdateRequest) GetAmountOk() (*float32, bool) {
+func (o *FeeUpdateRequest) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -115,8 +115,8 @@ func (o *FeeUpdateRequest) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *FeeUpdateRequest) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *FeeUpdateRequest) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 

@@ -25,7 +25,7 @@ type ProductMinPaymentCalculation struct {
 	// Whether to include the past due amount when calculating the minimum payment.
 	IncludePastDueAmount bool `json:"include_past_due_amount"`
 	// Minimum payment, expressed as a flat amount, due on the payment due day.
-	MinPaymentFlatAmount float32 `json:"min_payment_flat_amount"`
+	MinPaymentFlatAmount decimal.Decimal `json:"min_payment_flat_amount"`
 	MinPaymentPercentage ProductMinPaymentPercentage `json:"min_payment_percentage"`
 }
 
@@ -35,7 +35,7 @@ type _ProductMinPaymentCalculation ProductMinPaymentCalculation
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductMinPaymentCalculation(includePastDueAmount bool, minPaymentFlatAmount float32, minPaymentPercentage ProductMinPaymentPercentage) *ProductMinPaymentCalculation {
+func NewProductMinPaymentCalculation(includePastDueAmount bool, minPaymentFlatAmount decimal.Decimal, minPaymentPercentage ProductMinPaymentPercentage) *ProductMinPaymentCalculation {
 	this := ProductMinPaymentCalculation{}
 	this.IncludePastDueAmount = includePastDueAmount
 	this.MinPaymentFlatAmount = minPaymentFlatAmount
@@ -76,9 +76,9 @@ func (o *ProductMinPaymentCalculation) SetIncludePastDueAmount(v bool) {
 }
 
 // GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field value
-func (o *ProductMinPaymentCalculation) GetMinPaymentFlatAmount() float32 {
+func (o *ProductMinPaymentCalculation) GetMinPaymentFlatAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -87,7 +87,7 @@ func (o *ProductMinPaymentCalculation) GetMinPaymentFlatAmount() float32 {
 
 // GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field value
 // and a boolean to check if the value has been set.
-func (o *ProductMinPaymentCalculation) GetMinPaymentFlatAmountOk() (*float32, bool) {
+func (o *ProductMinPaymentCalculation) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *ProductMinPaymentCalculation) GetMinPaymentFlatAmountOk() (*float32, bo
 }
 
 // SetMinPaymentFlatAmount sets field value
-func (o *ProductMinPaymentCalculation) SetMinPaymentFlatAmount(v float32) {
+func (o *ProductMinPaymentCalculation) SetMinPaymentFlatAmount(v decimal.Decimal) {
 	o.MinPaymentFlatAmount = v
 }
 

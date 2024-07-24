@@ -23,7 +23,7 @@ var _ MappedNullable = &CreateRedemptionsRequest{}
 // CreateRedemptionsRequest struct for CreateRedemptionsRequest
 type CreateRedemptionsRequest struct {
 	// Amount of the reward redemption.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	Destination *DestinationType `json:"destination,omitempty"`
 	// A note explaining why the reward is being redeemed.
 	Note *string `json:"note,omitempty"`
@@ -40,7 +40,7 @@ type _CreateRedemptionsRequest CreateRedemptionsRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateRedemptionsRequest(amount float32, type_ RedemptionType) *CreateRedemptionsRequest {
+func NewCreateRedemptionsRequest(amount decimal.Decimal, type_ RedemptionType) *CreateRedemptionsRequest {
 	this := CreateRedemptionsRequest{}
 	this.Amount = amount
 	this.Type = type_
@@ -56,9 +56,9 @@ func NewCreateRedemptionsRequestWithDefaults() *CreateRedemptionsRequest {
 }
 
 // GetAmount returns the Amount field value
-func (o *CreateRedemptionsRequest) GetAmount() float32 {
+func (o *CreateRedemptionsRequest) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -67,7 +67,7 @@ func (o *CreateRedemptionsRequest) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *CreateRedemptionsRequest) GetAmountOk() (*float32, bool) {
+func (o *CreateRedemptionsRequest) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -75,7 +75,7 @@ func (o *CreateRedemptionsRequest) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *CreateRedemptionsRequest) SetAmount(v float32) {
+func (o *CreateRedemptionsRequest) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

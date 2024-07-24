@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CampaignToken** | **string** |  | 
-**ReloadAmount** | **float32** |  | 
-**TriggerAmount** | **float32** |  | 
+**ReloadAmount** | **decimal.Decimal** |  | 
+**TriggerAmount** | **decimal.Decimal** |  | 
 
 ## Methods
 
 ### NewMsa
 
-`func NewMsa(campaignToken string, reloadAmount float32, triggerAmount float32, ) *Msa`
+`func NewMsa(campaignToken string, reloadAmount decimal.Decimal, triggerAmount decimal.Decimal, ) *Msa`
 
 NewMsa instantiates a new Msa object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetCampaignToken sets CampaignToken field to given value.
 
 ### GetReloadAmount
 
-`func (o *Msa) GetReloadAmount() float32`
+`func (o *Msa) GetReloadAmount() decimal.Decimal`
 
 GetReloadAmount returns the ReloadAmount field if non-nil, zero value otherwise.
 
 ### GetReloadAmountOk
 
-`func (o *Msa) GetReloadAmountOk() (*float32, bool)`
+`func (o *Msa) GetReloadAmountOk() (*decimal.Decimal, bool)`
 
 GetReloadAmountOk returns a tuple with the ReloadAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReloadAmount
 
-`func (o *Msa) SetReloadAmount(v float32)`
+`func (o *Msa) SetReloadAmount(v decimal.Decimal)`
 
 SetReloadAmount sets ReloadAmount field to given value.
 
 
 ### GetTriggerAmount
 
-`func (o *Msa) GetTriggerAmount() float32`
+`func (o *Msa) GetTriggerAmount() decimal.Decimal`
 
 GetTriggerAmount returns the TriggerAmount field if non-nil, zero value otherwise.
 
 ### GetTriggerAmountOk
 
-`func (o *Msa) GetTriggerAmountOk() (*float32, bool)`
+`func (o *Msa) GetTriggerAmountOk() (*decimal.Decimal, bool)`
 
 GetTriggerAmountOk returns a tuple with the TriggerAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTriggerAmount
 
-`func (o *Msa) SetTriggerAmount(v float32)`
+`func (o *Msa) SetTriggerAmount(v decimal.Decimal)`
 
 SetTriggerAmount sets TriggerAmount field to given value.
 

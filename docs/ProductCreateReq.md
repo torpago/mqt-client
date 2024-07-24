@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description of the credit product. | [optional] 
 **InterestCalculation** | [**InterestCalculation**](InterestCalculation.md) |  | 
 **MinPaymentCalculation** | Pointer to [**ProductMinPaymentCalculation**](ProductMinPaymentCalculation.md) |  | [optional] 
-**MinPaymentFlatAmount** | **float32** | Minimum payment, expressed as a flat amount, due on the payment due day. | 
-**MinPaymentPercentage** | **float32** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | 
+**MinPaymentFlatAmount** | **decimal.Decimal** | Minimum payment, expressed as a flat amount, due on the payment due day. | 
+**MinPaymentPercentage** | **decimal.Decimal** | Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day. | 
 **Name** | **string** | Name of the credit product. | 
 **PaymentAllocationOrder** | [**[]PaymentAllocationOrderEnum**](PaymentAllocationOrderEnum.md) | Ordered list of balance types to which payments are allocated, from first to last. | [default to ["INTEREST","FEES","PRINCIPAL"]]
 **ProductSubType** | [**ProductSubType**](ProductSubType.md) |  | [default to PRODUCTSUBTYPE_CREDIT_CARD]
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewProductCreateReq
 
-`func NewProductCreateReq(cardProductTokens []string, classification ProductClassification, config ProductConfig, creditLine ProductCreditLine, currencyCode CurrencyCode, interestCalculation InterestCalculation, minPaymentFlatAmount float32, minPaymentPercentage float32, name string, paymentAllocationOrder []PaymentAllocationOrderEnum, productSubType ProductSubType, productType ProductType, usage []BalanceType, ) *ProductCreateReq`
+`func NewProductCreateReq(cardProductTokens []string, classification ProductClassification, config ProductConfig, creditLine ProductCreditLine, currencyCode CurrencyCode, interestCalculation InterestCalculation, minPaymentFlatAmount decimal.Decimal, minPaymentPercentage decimal.Decimal, name string, paymentAllocationOrder []PaymentAllocationOrderEnum, productSubType ProductSubType, productType ProductType, usage []BalanceType, ) *ProductCreateReq`
 
 NewProductCreateReq instantiates a new ProductCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -213,40 +213,40 @@ HasMinPaymentCalculation returns a boolean if a field has been set.
 
 ### GetMinPaymentFlatAmount
 
-`func (o *ProductCreateReq) GetMinPaymentFlatAmount() float32`
+`func (o *ProductCreateReq) GetMinPaymentFlatAmount() decimal.Decimal`
 
 GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field if non-nil, zero value otherwise.
 
 ### GetMinPaymentFlatAmountOk
 
-`func (o *ProductCreateReq) GetMinPaymentFlatAmountOk() (*float32, bool)`
+`func (o *ProductCreateReq) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool)`
 
 GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPaymentFlatAmount
 
-`func (o *ProductCreateReq) SetMinPaymentFlatAmount(v float32)`
+`func (o *ProductCreateReq) SetMinPaymentFlatAmount(v decimal.Decimal)`
 
 SetMinPaymentFlatAmount sets MinPaymentFlatAmount field to given value.
 
 
 ### GetMinPaymentPercentage
 
-`func (o *ProductCreateReq) GetMinPaymentPercentage() float32`
+`func (o *ProductCreateReq) GetMinPaymentPercentage() decimal.Decimal`
 
 GetMinPaymentPercentage returns the MinPaymentPercentage field if non-nil, zero value otherwise.
 
 ### GetMinPaymentPercentageOk
 
-`func (o *ProductCreateReq) GetMinPaymentPercentageOk() (*float32, bool)`
+`func (o *ProductCreateReq) GetMinPaymentPercentageOk() (*decimal.Decimal, bool)`
 
 GetMinPaymentPercentageOk returns a tuple with the MinPaymentPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPaymentPercentage
 
-`func (o *ProductCreateReq) SetMinPaymentPercentage(v float32)`
+`func (o *ProductCreateReq) SetMinPaymentPercentage(v decimal.Decimal)`
 
 SetMinPaymentPercentage sets MinPaymentPercentage field to given value.
 

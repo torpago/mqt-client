@@ -24,7 +24,7 @@ var _ MappedNullable = &DirectDepositRequest{}
 // DirectDepositRequest struct for DirectDepositRequest
 type DirectDepositRequest struct {
 	AccountNumber string `json:"account_number"`
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CompanyDiscretionaryData *string `json:"company_discretionary_data,omitempty"`
 	CompanyEntryDescription *string `json:"company_entry_description,omitempty"`
 	CompanyIdentification *string `json:"company_identification,omitempty"`
@@ -44,7 +44,7 @@ type _DirectDepositRequest DirectDepositRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDirectDepositRequest(accountNumber string, amount float32, settlementDate time.Time, type_ string) *DirectDepositRequest {
+func NewDirectDepositRequest(accountNumber string, amount decimal.Decimal, settlementDate time.Time, type_ string) *DirectDepositRequest {
 	this := DirectDepositRequest{}
 	this.AccountNumber = accountNumber
 	this.Amount = amount
@@ -90,9 +90,9 @@ func (o *DirectDepositRequest) SetAccountNumber(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *DirectDepositRequest) GetAmount() float32 {
+func (o *DirectDepositRequest) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -101,7 +101,7 @@ func (o *DirectDepositRequest) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *DirectDepositRequest) GetAmountOk() (*float32, bool) {
+func (o *DirectDepositRequest) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -109,7 +109,7 @@ func (o *DirectDepositRequest) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *DirectDepositRequest) SetAmount(v float32) {
+func (o *DirectDepositRequest) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

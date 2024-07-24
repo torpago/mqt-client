@@ -21,17 +21,17 @@ var _ MappedNullable = &ProgramReserveAccountBalance{}
 // ProgramReserveAccountBalance struct for ProgramReserveAccountBalance
 type ProgramReserveAccountBalance struct {
 	// Ledger balance, minus any authorized transactions that have not yet cleared. When using JIT Funding, this balance is usually equal to $0.00.
-	AvailableBalance *float32 `json:"available_balance,omitempty"`
+	AvailableBalance *decimal.Decimal `json:"available_balance,omitempty"`
 	// Contains program reserve account balance information, organized by currency code. Sometimes referred to as a _program funding account_.
 	Balances *map[string]ProgramReserveAccountBalance `json:"balances,omitempty"`
 	// Not currently in use.
-	CreditBalance *float32 `json:"credit_balance,omitempty"`
+	CreditBalance *decimal.Decimal `json:"credit_balance,omitempty"`
 	// Three-digit ISO 4217 currency code.
 	CurrencyCode *string `json:"currency_code,omitempty"`
 	// When using standard funding: The funds that are available to spend immediately, including funds from any authorized transactions that have not yet cleared. When using Just-in-Time (JIT) Funding: Authorized funds that are currently on hold, but not yet cleared.
-	LedgerBalance *float32 `json:"ledger_balance,omitempty"`
+	LedgerBalance *decimal.Decimal `json:"ledger_balance,omitempty"`
 	// ACH loads that have been accepted, but for which the funding time has not yet elapsed.
-	PendingCredits *float32 `json:"pending_credits,omitempty"`
+	PendingCredits *decimal.Decimal `json:"pending_credits,omitempty"`
 }
 
 // NewProgramReserveAccountBalance instantiates a new ProgramReserveAccountBalance object
@@ -52,9 +52,9 @@ func NewProgramReserveAccountBalanceWithDefaults() *ProgramReserveAccountBalance
 }
 
 // GetAvailableBalance returns the AvailableBalance field value if set, zero value otherwise.
-func (o *ProgramReserveAccountBalance) GetAvailableBalance() float32 {
+func (o *ProgramReserveAccountBalance) GetAvailableBalance() decimal.Decimal {
 	if o == nil || IsNil(o.AvailableBalance) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AvailableBalance
@@ -62,7 +62,7 @@ func (o *ProgramReserveAccountBalance) GetAvailableBalance() float32 {
 
 // GetAvailableBalanceOk returns a tuple with the AvailableBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProgramReserveAccountBalance) GetAvailableBalanceOk() (*float32, bool) {
+func (o *ProgramReserveAccountBalance) GetAvailableBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AvailableBalance) {
 		return nil, false
 	}
@@ -78,8 +78,8 @@ func (o *ProgramReserveAccountBalance) HasAvailableBalance() bool {
 	return false
 }
 
-// SetAvailableBalance gets a reference to the given float32 and assigns it to the AvailableBalance field.
-func (o *ProgramReserveAccountBalance) SetAvailableBalance(v float32) {
+// SetAvailableBalance gets a reference to the given decimal.Decimal and assigns it to the AvailableBalance field.
+func (o *ProgramReserveAccountBalance) SetAvailableBalance(v decimal.Decimal) {
 	o.AvailableBalance = &v
 }
 
@@ -116,9 +116,9 @@ func (o *ProgramReserveAccountBalance) SetBalances(v map[string]ProgramReserveAc
 }
 
 // GetCreditBalance returns the CreditBalance field value if set, zero value otherwise.
-func (o *ProgramReserveAccountBalance) GetCreditBalance() float32 {
+func (o *ProgramReserveAccountBalance) GetCreditBalance() decimal.Decimal {
 	if o == nil || IsNil(o.CreditBalance) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.CreditBalance
@@ -126,7 +126,7 @@ func (o *ProgramReserveAccountBalance) GetCreditBalance() float32 {
 
 // GetCreditBalanceOk returns a tuple with the CreditBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProgramReserveAccountBalance) GetCreditBalanceOk() (*float32, bool) {
+func (o *ProgramReserveAccountBalance) GetCreditBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.CreditBalance) {
 		return nil, false
 	}
@@ -142,8 +142,8 @@ func (o *ProgramReserveAccountBalance) HasCreditBalance() bool {
 	return false
 }
 
-// SetCreditBalance gets a reference to the given float32 and assigns it to the CreditBalance field.
-func (o *ProgramReserveAccountBalance) SetCreditBalance(v float32) {
+// SetCreditBalance gets a reference to the given decimal.Decimal and assigns it to the CreditBalance field.
+func (o *ProgramReserveAccountBalance) SetCreditBalance(v decimal.Decimal) {
 	o.CreditBalance = &v
 }
 
@@ -180,9 +180,9 @@ func (o *ProgramReserveAccountBalance) SetCurrencyCode(v string) {
 }
 
 // GetLedgerBalance returns the LedgerBalance field value if set, zero value otherwise.
-func (o *ProgramReserveAccountBalance) GetLedgerBalance() float32 {
+func (o *ProgramReserveAccountBalance) GetLedgerBalance() decimal.Decimal {
 	if o == nil || IsNil(o.LedgerBalance) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.LedgerBalance
@@ -190,7 +190,7 @@ func (o *ProgramReserveAccountBalance) GetLedgerBalance() float32 {
 
 // GetLedgerBalanceOk returns a tuple with the LedgerBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProgramReserveAccountBalance) GetLedgerBalanceOk() (*float32, bool) {
+func (o *ProgramReserveAccountBalance) GetLedgerBalanceOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.LedgerBalance) {
 		return nil, false
 	}
@@ -206,15 +206,15 @@ func (o *ProgramReserveAccountBalance) HasLedgerBalance() bool {
 	return false
 }
 
-// SetLedgerBalance gets a reference to the given float32 and assigns it to the LedgerBalance field.
-func (o *ProgramReserveAccountBalance) SetLedgerBalance(v float32) {
+// SetLedgerBalance gets a reference to the given decimal.Decimal and assigns it to the LedgerBalance field.
+func (o *ProgramReserveAccountBalance) SetLedgerBalance(v decimal.Decimal) {
 	o.LedgerBalance = &v
 }
 
 // GetPendingCredits returns the PendingCredits field value if set, zero value otherwise.
-func (o *ProgramReserveAccountBalance) GetPendingCredits() float32 {
+func (o *ProgramReserveAccountBalance) GetPendingCredits() decimal.Decimal {
 	if o == nil || IsNil(o.PendingCredits) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.PendingCredits
@@ -222,7 +222,7 @@ func (o *ProgramReserveAccountBalance) GetPendingCredits() float32 {
 
 // GetPendingCreditsOk returns a tuple with the PendingCredits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProgramReserveAccountBalance) GetPendingCreditsOk() (*float32, bool) {
+func (o *ProgramReserveAccountBalance) GetPendingCreditsOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.PendingCredits) {
 		return nil, false
 	}
@@ -238,8 +238,8 @@ func (o *ProgramReserveAccountBalance) HasPendingCredits() bool {
 	return false
 }
 
-// SetPendingCredits gets a reference to the given float32 and assigns it to the PendingCredits field.
-func (o *ProgramReserveAccountBalance) SetPendingCredits(v float32) {
+// SetPendingCredits gets a reference to the given decimal.Decimal and assigns it to the PendingCredits field.
+func (o *ProgramReserveAccountBalance) SetPendingCredits(v decimal.Decimal) {
 	o.PendingCredits = &v
 }
 

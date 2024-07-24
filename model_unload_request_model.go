@@ -23,7 +23,7 @@ var _ MappedNullable = &UnloadRequestModel{}
 // UnloadRequestModel struct for UnloadRequestModel
 type UnloadRequestModel struct {
 	// Amount of funds to return to the funding source.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Unique identifier of the funding source to use for this GPA unload order.  Send a `GET` request to `/fundingsources/addresses/user/{token}` to retrieve addresses for a specific user.
 	FundingSourceAddressToken *string `json:"funding_source_address_token,omitempty"`
 	// Additional descriptive text about the GPA unload.
@@ -42,7 +42,7 @@ type _UnloadRequestModel UnloadRequestModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnloadRequestModel(amount float32, originalOrderToken string) *UnloadRequestModel {
+func NewUnloadRequestModel(amount decimal.Decimal, originalOrderToken string) *UnloadRequestModel {
 	this := UnloadRequestModel{}
 	this.Amount = amount
 	this.OriginalOrderToken = originalOrderToken
@@ -58,9 +58,9 @@ func NewUnloadRequestModelWithDefaults() *UnloadRequestModel {
 }
 
 // GetAmount returns the Amount field value
-func (o *UnloadRequestModel) GetAmount() float32 {
+func (o *UnloadRequestModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -69,7 +69,7 @@ func (o *UnloadRequestModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *UnloadRequestModel) GetAmountOk() (*float32, bool) {
+func (o *UnloadRequestModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -77,7 +77,7 @@ func (o *UnloadRequestModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *UnloadRequestModel) SetAmount(v float32) {
+func (o *UnloadRequestModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

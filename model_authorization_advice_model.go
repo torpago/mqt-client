@@ -22,7 +22,7 @@ var _ MappedNullable = &AuthorizationAdviceModel{}
 
 // AuthorizationAdviceModel struct for AuthorizationAdviceModel
 type AuthorizationAdviceModel struct {
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	NetworkFees []NetworkFeeModel `json:"network_fees,omitempty"`
 	OriginalTransactionToken string `json:"original_transaction_token"`
 	TransactionOptions *TransactionOptions `json:"transaction_options,omitempty"`
@@ -35,7 +35,7 @@ type _AuthorizationAdviceModel AuthorizationAdviceModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationAdviceModel(amount float32, originalTransactionToken string) *AuthorizationAdviceModel {
+func NewAuthorizationAdviceModel(amount decimal.Decimal, originalTransactionToken string) *AuthorizationAdviceModel {
 	this := AuthorizationAdviceModel{}
 	this.Amount = amount
 	this.OriginalTransactionToken = originalTransactionToken
@@ -51,9 +51,9 @@ func NewAuthorizationAdviceModelWithDefaults() *AuthorizationAdviceModel {
 }
 
 // GetAmount returns the Amount field value
-func (o *AuthorizationAdviceModel) GetAmount() float32 {
+func (o *AuthorizationAdviceModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -62,7 +62,7 @@ func (o *AuthorizationAdviceModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *AuthorizationAdviceModel) GetAmountOk() (*float32, bool) {
+func (o *AuthorizationAdviceModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -70,7 +70,7 @@ func (o *AuthorizationAdviceModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *AuthorizationAdviceModel) SetAmount(v float32) {
+func (o *AuthorizationAdviceModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

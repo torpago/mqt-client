@@ -21,7 +21,7 @@ var _ MappedNullable = &PrecedingTransaction{}
 // PrecedingTransaction Returned for `authorization.clearing` transaction types following a financial advice.  Contains information about the preceding transaction.
 type PrecedingTransaction struct {
 	// Amount of the preceding transaction.
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	// Unique identifier of the preceding transaction.
 	Token *string `json:"token,omitempty"`
 }
@@ -44,9 +44,9 @@ func NewPrecedingTransactionWithDefaults() *PrecedingTransaction {
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *PrecedingTransaction) GetAmount() float32 {
+func (o *PrecedingTransaction) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -54,7 +54,7 @@ func (o *PrecedingTransaction) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrecedingTransaction) GetAmountOk() (*float32, bool) {
+func (o *PrecedingTransaction) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *PrecedingTransaction) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *PrecedingTransaction) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *PrecedingTransaction) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 

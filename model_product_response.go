@@ -34,9 +34,9 @@ type ProductResponse struct {
 	InterestCalculation *InterestCalculation `json:"interest_calculation,omitempty"`
 	MinPaymentCalculation *ProductMinPaymentCalculation `json:"min_payment_calculation,omitempty"`
 	// Minimum payment, expressed as a flat amount, due on the payment due day.
-	MinPaymentFlatAmount *float32 `json:"min_payment_flat_amount,omitempty"`
+	MinPaymentFlatAmount *decimal.Decimal `json:"min_payment_flat_amount,omitempty"`
 	// Minimum payment, expressed as a percentage of the total statement balance, due on the payment due day.
-	MinPaymentPercentage *float32 `json:"min_payment_percentage,omitempty"`
+	MinPaymentPercentage *decimal.Decimal `json:"min_payment_percentage,omitempty"`
 	// Name of the credit product.
 	Name *string `json:"name,omitempty"`
 	// Unique identifier of the parent credit product.
@@ -376,9 +376,9 @@ func (o *ProductResponse) SetMinPaymentCalculation(v ProductMinPaymentCalculatio
 }
 
 // GetMinPaymentFlatAmount returns the MinPaymentFlatAmount field value if set, zero value otherwise.
-func (o *ProductResponse) GetMinPaymentFlatAmount() float32 {
+func (o *ProductResponse) GetMinPaymentFlatAmount() decimal.Decimal {
 	if o == nil || IsNil(o.MinPaymentFlatAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MinPaymentFlatAmount
@@ -386,7 +386,7 @@ func (o *ProductResponse) GetMinPaymentFlatAmount() float32 {
 
 // GetMinPaymentFlatAmountOk returns a tuple with the MinPaymentFlatAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductResponse) GetMinPaymentFlatAmountOk() (*float32, bool) {
+func (o *ProductResponse) GetMinPaymentFlatAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MinPaymentFlatAmount) {
 		return nil, false
 	}
@@ -402,15 +402,15 @@ func (o *ProductResponse) HasMinPaymentFlatAmount() bool {
 	return false
 }
 
-// SetMinPaymentFlatAmount gets a reference to the given float32 and assigns it to the MinPaymentFlatAmount field.
-func (o *ProductResponse) SetMinPaymentFlatAmount(v float32) {
+// SetMinPaymentFlatAmount gets a reference to the given decimal.Decimal and assigns it to the MinPaymentFlatAmount field.
+func (o *ProductResponse) SetMinPaymentFlatAmount(v decimal.Decimal) {
 	o.MinPaymentFlatAmount = &v
 }
 
 // GetMinPaymentPercentage returns the MinPaymentPercentage field value if set, zero value otherwise.
-func (o *ProductResponse) GetMinPaymentPercentage() float32 {
+func (o *ProductResponse) GetMinPaymentPercentage() decimal.Decimal {
 	if o == nil || IsNil(o.MinPaymentPercentage) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MinPaymentPercentage
@@ -418,7 +418,7 @@ func (o *ProductResponse) GetMinPaymentPercentage() float32 {
 
 // GetMinPaymentPercentageOk returns a tuple with the MinPaymentPercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductResponse) GetMinPaymentPercentageOk() (*float32, bool) {
+func (o *ProductResponse) GetMinPaymentPercentageOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MinPaymentPercentage) {
 		return nil, false
 	}
@@ -434,8 +434,8 @@ func (o *ProductResponse) HasMinPaymentPercentage() bool {
 	return false
 }
 
-// SetMinPaymentPercentage gets a reference to the given float32 and assigns it to the MinPaymentPercentage field.
-func (o *ProductResponse) SetMinPaymentPercentage(v float32) {
+// SetMinPaymentPercentage gets a reference to the given decimal.Decimal and assigns it to the MinPaymentPercentage field.
+func (o *ProductResponse) SetMinPaymentPercentage(v decimal.Decimal) {
 	o.MinPaymentPercentage = &v
 }
 

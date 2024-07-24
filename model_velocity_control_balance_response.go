@@ -25,7 +25,7 @@ type VelocityControlBalanceResponse struct {
 	// Indicates whether the velocity control is active.
 	Active *bool `json:"active,omitempty"`
 	// Maximum monetary sum that can be cleared within the time period defined by the `velocity_window` field.
-	AmountLimit float32 `json:"amount_limit"`
+	AmountLimit decimal.Decimal `json:"amount_limit"`
 	// If set to `true`, only approved transactions are subject to control.
 	ApprovalsOnly *bool `json:"approvals_only,omitempty"`
 	Association *SpendControlAssociation `json:"association,omitempty"`
@@ -60,7 +60,7 @@ type _VelocityControlBalanceResponse VelocityControlBalanceResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVelocityControlBalanceResponse(amountLimit float32, available Available, currencyCode string, velocityWindow string) *VelocityControlBalanceResponse {
+func NewVelocityControlBalanceResponse(amountLimit decimal.Decimal, available Available, currencyCode string, velocityWindow string) *VelocityControlBalanceResponse {
 	this := VelocityControlBalanceResponse{}
 	this.AmountLimit = amountLimit
 	this.Available = available
@@ -110,9 +110,9 @@ func (o *VelocityControlBalanceResponse) SetActive(v bool) {
 }
 
 // GetAmountLimit returns the AmountLimit field value
-func (o *VelocityControlBalanceResponse) GetAmountLimit() float32 {
+func (o *VelocityControlBalanceResponse) GetAmountLimit() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -121,7 +121,7 @@ func (o *VelocityControlBalanceResponse) GetAmountLimit() float32 {
 
 // GetAmountLimitOk returns a tuple with the AmountLimit field value
 // and a boolean to check if the value has been set.
-func (o *VelocityControlBalanceResponse) GetAmountLimitOk() (*float32, bool) {
+func (o *VelocityControlBalanceResponse) GetAmountLimitOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -129,7 +129,7 @@ func (o *VelocityControlBalanceResponse) GetAmountLimitOk() (*float32, bool) {
 }
 
 // SetAmountLimit sets field value
-func (o *VelocityControlBalanceResponse) SetAmountLimit(v float32) {
+func (o *VelocityControlBalanceResponse) SetAmountLimit(v decimal.Decimal) {
 	o.AmountLimit = v
 }
 

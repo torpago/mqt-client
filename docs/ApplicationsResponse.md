@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **EDisclosureAcceptedAt** | **time.Time** | Date and time when Marqeta accepted the e-Disclosure, in UTC.  Returned if the user accepted their approved application. | 
 **ErrorDetails** | Pointer to [**ErrorDetailsResponse**](ErrorDetailsResponse.md) |  | [optional] 
 **MetaData** | Pointer to **map[string]interface{}** | Customer-defined additional information about the application. | [optional] 
-**MonthlyMortgageOrRent** | Pointer to **float32** | Monthly amount of the mortgage or rent that the user currently pays. | [optional] 
+**MonthlyMortgageOrRent** | Pointer to **decimal.Decimal** | Monthly amount of the mortgage or rent that the user currently pays. | [optional] 
 **OfferId** | Pointer to **string** | Unique identifier of the offer for a pre-screened applicant. | [optional] 
 **PrequalifiedOfferPreTermsAcceptedAt** | Pointer to **time.Time** | Date and time when Marqeta accepted the Pre-qualified Offer Pre-terms, in UTC.  Returned if the user accepted their approved application. | [optional] 
 **PrimaryIncomeSource** | Pointer to **string** | Whether the primary income source comes from the user being employed, unemployed, self-employment, or another situation. | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **State** | [**ApplicationResourceState**](ApplicationResourceState.md) |  | 
 **TermScheduleInformationAcceptedAt** | Pointer to **time.Time** | Date and time when Marqeta accepted the Terms Schedule, in UTC.  Returned if the user accepted their approved application. | [optional] 
 **Token** | **string** | Unique identifier of the application. | 
-**TotalAnnualIncome** | Pointer to **float32** | The total amount of the user&#39;s annual income. | [optional] 
+**TotalAnnualIncome** | Pointer to **decimal.Decimal** | The total amount of the user&#39;s annual income. | [optional] 
 **Type** | [**ApplicationType**](ApplicationType.md) |  | 
 **UpdatedDate** | **time.Time** | Date and time when the application was last updated on the Marqeta platform, in UTC. | 
 **UserToken** | **string** | Unique identifier of the applicant, the user applying for a credit account. | 
@@ -391,20 +391,20 @@ HasMetaData returns a boolean if a field has been set.
 
 ### GetMonthlyMortgageOrRent
 
-`func (o *ApplicationsResponse) GetMonthlyMortgageOrRent() float32`
+`func (o *ApplicationsResponse) GetMonthlyMortgageOrRent() decimal.Decimal`
 
 GetMonthlyMortgageOrRent returns the MonthlyMortgageOrRent field if non-nil, zero value otherwise.
 
 ### GetMonthlyMortgageOrRentOk
 
-`func (o *ApplicationsResponse) GetMonthlyMortgageOrRentOk() (*float32, bool)`
+`func (o *ApplicationsResponse) GetMonthlyMortgageOrRentOk() (*decimal.Decimal, bool)`
 
 GetMonthlyMortgageOrRentOk returns a tuple with the MonthlyMortgageOrRent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonthlyMortgageOrRent
 
-`func (o *ApplicationsResponse) SetMonthlyMortgageOrRent(v float32)`
+`func (o *ApplicationsResponse) SetMonthlyMortgageOrRent(v decimal.Decimal)`
 
 SetMonthlyMortgageOrRent sets MonthlyMortgageOrRent field to given value.
 
@@ -666,20 +666,20 @@ SetToken sets Token field to given value.
 
 ### GetTotalAnnualIncome
 
-`func (o *ApplicationsResponse) GetTotalAnnualIncome() float32`
+`func (o *ApplicationsResponse) GetTotalAnnualIncome() decimal.Decimal`
 
 GetTotalAnnualIncome returns the TotalAnnualIncome field if non-nil, zero value otherwise.
 
 ### GetTotalAnnualIncomeOk
 
-`func (o *ApplicationsResponse) GetTotalAnnualIncomeOk() (*float32, bool)`
+`func (o *ApplicationsResponse) GetTotalAnnualIncomeOk() (*decimal.Decimal, bool)`
 
 GetTotalAnnualIncomeOk returns a tuple with the TotalAnnualIncome field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalAnnualIncome
 
-`func (o *ApplicationsResponse) SetTotalAnnualIncome(v float32)`
+`func (o *ApplicationsResponse) SetTotalAnnualIncome(v decimal.Decimal)`
 
 SetTotalAnnualIncome sets TotalAnnualIncome field to given value.
 

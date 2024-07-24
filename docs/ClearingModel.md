@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **CardAcceptor** | Pointer to [**CardAcceptorModel**](CardAcceptorModel.md) |  | [optional] 
 **ForcePost** | Pointer to **bool** |  | [optional] [default to false]
 **IsRefund** | Pointer to **bool** |  | [optional] [default to false]
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewClearingModel
 
-`func NewClearingModel(amount float32, originalTransactionToken string, ) *ClearingModel`
+`func NewClearingModel(amount decimal.Decimal, originalTransactionToken string, ) *ClearingModel`
 
 NewClearingModel instantiates a new ClearingModel object
 This constructor will assign default values to properties that have it defined,
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *ClearingModel) GetAmount() float32`
+`func (o *ClearingModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *ClearingModel) GetAmountOk() (*float32, bool)`
+`func (o *ClearingModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *ClearingModel) SetAmount(v float32)`
+`func (o *ClearingModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

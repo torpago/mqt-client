@@ -25,7 +25,7 @@ type VelocityControlUpdateRequest struct {
 	// Indicates whether the velocity control is active.
 	Active *bool `json:"active,omitempty"`
 	// Maximum monetary sum that can be cleared within the time period defined by the `velocity_window` field.
-	AmountLimit *float32 `json:"amount_limit,omitempty"`
+	AmountLimit *decimal.Decimal `json:"amount_limit,omitempty"`
 	// If set to `true`, only approved transactions are subject to control.
 	ApprovalsOnly *bool `json:"approvals_only,omitempty"`
 	Association *SpendControlAssociation `json:"association,omitempty"`
@@ -106,9 +106,9 @@ func (o *VelocityControlUpdateRequest) SetActive(v bool) {
 }
 
 // GetAmountLimit returns the AmountLimit field value if set, zero value otherwise.
-func (o *VelocityControlUpdateRequest) GetAmountLimit() float32 {
+func (o *VelocityControlUpdateRequest) GetAmountLimit() decimal.Decimal {
 	if o == nil || IsNil(o.AmountLimit) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AmountLimit
@@ -116,7 +116,7 @@ func (o *VelocityControlUpdateRequest) GetAmountLimit() float32 {
 
 // GetAmountLimitOk returns a tuple with the AmountLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VelocityControlUpdateRequest) GetAmountLimitOk() (*float32, bool) {
+func (o *VelocityControlUpdateRequest) GetAmountLimitOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AmountLimit) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *VelocityControlUpdateRequest) HasAmountLimit() bool {
 	return false
 }
 
-// SetAmountLimit gets a reference to the given float32 and assigns it to the AmountLimit field.
-func (o *VelocityControlUpdateRequest) SetAmountLimit(v float32) {
+// SetAmountLimit gets a reference to the given decimal.Decimal and assigns it to the AmountLimit field.
+func (o *VelocityControlUpdateRequest) SetAmountLimit(v decimal.Decimal) {
 	o.AmountLimit = &v
 }
 

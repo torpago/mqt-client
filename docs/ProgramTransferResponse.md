@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of program transfer. | 
+**Amount** | **decimal.Decimal** | Amount of program transfer. | 
 **BusinessToken** | Pointer to **string** | Unique identifier of the business account holder. Returned if &#x60;user_token&#x60; is not specified. | [optional] 
 **CreatedTime** | Pointer to **time.Time** | Date and time when the program transfer object was created, in UTC. | [optional] 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewProgramTransferResponse
 
-`func NewProgramTransferResponse(amount float32, currencyCode string, transactionToken string, typeToken string, ) *ProgramTransferResponse`
+`func NewProgramTransferResponse(amount decimal.Decimal, currencyCode string, transactionToken string, typeToken string, ) *ProgramTransferResponse`
 
 NewProgramTransferResponse instantiates a new ProgramTransferResponse object
 This constructor will assign default values to properties that have it defined,
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *ProgramTransferResponse) GetAmount() float32`
+`func (o *ProgramTransferResponse) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *ProgramTransferResponse) GetAmountOk() (*float32, bool)`
+`func (o *ProgramTransferResponse) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *ProgramTransferResponse) SetAmount(v float32)`
+`func (o *ProgramTransferResponse) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -26,7 +26,7 @@ type FeeResponse struct {
 	// Specifies whether the fee is active.
 	Active bool `json:"active"`
 	// Amount of the fee.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Specifies if the fee is a standalone fee or a real-time fee.
 	Category *string `json:"category,omitempty"`
 	// Date and time when the `fees` object was created, in UTC.
@@ -52,7 +52,7 @@ type _FeeResponse FeeResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFeeResponse(active bool, amount float32, createdTime time.Time, currencyCode string, lastModifiedTime time.Time, name string, token string) *FeeResponse {
+func NewFeeResponse(active bool, amount decimal.Decimal, createdTime time.Time, currencyCode string, lastModifiedTime time.Time, name string, token string) *FeeResponse {
 	this := FeeResponse{}
 	this.Active = active
 	this.Amount = amount
@@ -97,9 +97,9 @@ func (o *FeeResponse) SetActive(v bool) {
 }
 
 // GetAmount returns the Amount field value
-func (o *FeeResponse) GetAmount() float32 {
+func (o *FeeResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -108,7 +108,7 @@ func (o *FeeResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *FeeResponse) GetAmountOk() (*float32, bool) {
+func (o *FeeResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -116,7 +116,7 @@ func (o *FeeResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *FeeResponse) SetAmount(v float32) {
+func (o *FeeResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

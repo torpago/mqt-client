@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** | Amount of the fee. | 
+**Amount** | **decimal.Decimal** | Amount of the fee. | 
 **CreatedTime** | **time.Time** | Date and time when the &#x60;fees&#x60; object was created, in UTC. | 
 **CurrencyCode** | **string** | Three-digit ISO 4217 currency code. | 
 **LastModifiedTime** | **time.Time** | Date and time when the &#x60;fees&#x60; object was last modified, in UTC. | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewFee
 
-`func NewFee(amount float32, createdTime time.Time, currencyCode string, lastModifiedTime time.Time, name string, token string, ) *Fee`
+`func NewFee(amount decimal.Decimal, createdTime time.Time, currencyCode string, lastModifiedTime time.Time, name string, token string, ) *Fee`
 
 NewFee instantiates a new Fee object
 This constructor will assign default values to properties that have it defined,
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *Fee) GetAmount() float32`
+`func (o *Fee) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *Fee) GetAmountOk() (*float32, bool)`
+`func (o *Fee) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *Fee) SetAmount(v float32)`
+`func (o *Fee) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **CreatedTime** | Pointer to **time.Time** | Date and time when the year-to-date total was created on Marqeta&#39;s credit platform, in UTC. | [optional] 
 **StatementToken** | **string** | Unique identifier of the statement summary from which to retrieve year-to-date totals. | 
 **Token** | Pointer to **string** | Unique identifier of the year-to-date total. | [optional] 
-**TotalFees** | **float32** | Total fees charged year-to-date. | 
-**TotalInterest** | **float32** | Total interest charged year-to-date. | 
+**TotalFees** | **decimal.Decimal** | Total fees charged year-to-date. | 
+**TotalInterest** | **decimal.Decimal** | Total interest charged year-to-date. | 
 
 ## Methods
 
 ### NewYearToDate
 
-`func NewYearToDate(accountToken string, statementToken string, totalFees float32, totalInterest float32, ) *YearToDate`
+`func NewYearToDate(accountToken string, statementToken string, totalFees decimal.Decimal, totalInterest decimal.Decimal, ) *YearToDate`
 
 NewYearToDate instantiates a new YearToDate object
 This constructor will assign default values to properties that have it defined,
@@ -122,40 +122,40 @@ HasToken returns a boolean if a field has been set.
 
 ### GetTotalFees
 
-`func (o *YearToDate) GetTotalFees() float32`
+`func (o *YearToDate) GetTotalFees() decimal.Decimal`
 
 GetTotalFees returns the TotalFees field if non-nil, zero value otherwise.
 
 ### GetTotalFeesOk
 
-`func (o *YearToDate) GetTotalFeesOk() (*float32, bool)`
+`func (o *YearToDate) GetTotalFeesOk() (*decimal.Decimal, bool)`
 
 GetTotalFeesOk returns a tuple with the TotalFees field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalFees
 
-`func (o *YearToDate) SetTotalFees(v float32)`
+`func (o *YearToDate) SetTotalFees(v decimal.Decimal)`
 
 SetTotalFees sets TotalFees field to given value.
 
 
 ### GetTotalInterest
 
-`func (o *YearToDate) GetTotalInterest() float32`
+`func (o *YearToDate) GetTotalInterest() decimal.Decimal`
 
 GetTotalInterest returns the TotalInterest field if non-nil, zero value otherwise.
 
 ### GetTotalInterestOk
 
-`func (o *YearToDate) GetTotalInterestOk() (*float32, bool)`
+`func (o *YearToDate) GetTotalInterestOk() (*decimal.Decimal, bool)`
 
 GetTotalInterestOk returns a tuple with the TotalInterest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalInterest
 
-`func (o *YearToDate) SetTotalInterest(v float32)`
+`func (o *YearToDate) SetTotalInterest(v decimal.Decimal)`
 
 SetTotalInterest sets TotalInterest field to given value.
 

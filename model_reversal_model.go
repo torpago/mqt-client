@@ -22,7 +22,7 @@ var _ MappedNullable = &ReversalModel{}
 
 // ReversalModel struct for ReversalModel
 type ReversalModel struct {
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	FindOriginalWindowDays *int32 `json:"find_original_window_days,omitempty"`
 	IsAdvice *bool `json:"is_advice,omitempty"`
 	NetworkFees []NetworkFeeModel `json:"network_fees,omitempty"`
@@ -36,7 +36,7 @@ type _ReversalModel ReversalModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReversalModel(amount float32, originalTransactionToken string) *ReversalModel {
+func NewReversalModel(amount decimal.Decimal, originalTransactionToken string) *ReversalModel {
 	this := ReversalModel{}
 	this.Amount = amount
 	var isAdvice bool = false
@@ -56,9 +56,9 @@ func NewReversalModelWithDefaults() *ReversalModel {
 }
 
 // GetAmount returns the Amount field value
-func (o *ReversalModel) GetAmount() float32 {
+func (o *ReversalModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -67,7 +67,7 @@ func (o *ReversalModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *ReversalModel) GetAmountOk() (*float32, bool) {
+func (o *ReversalModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -75,7 +75,7 @@ func (o *ReversalModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *ReversalModel) SetAmount(v float32) {
+func (o *ReversalModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

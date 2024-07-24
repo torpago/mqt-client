@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EndDate** | **time.Time** | The ending date (or date-time) of a date range from which to return the redemption balance, in UTC. | 
-**RedemptionTotalAmount** | **float32** | Total amount of rewards redeemed within a specified date range. | 
+**RedemptionTotalAmount** | **decimal.Decimal** | Total amount of rewards redeemed within a specified date range. | 
 **RewardProgramToken** | **string** | Unique identifier of the reward program for which to return the redemption balance. | 
 **StartDate** | **time.Time** | The starting date (or date-time) of a date range from which to return the redemption balance, in UTC. | 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewRedemptionsBalanceResponse
 
-`func NewRedemptionsBalanceResponse(endDate time.Time, redemptionTotalAmount float32, rewardProgramToken string, startDate time.Time, ) *RedemptionsBalanceResponse`
+`func NewRedemptionsBalanceResponse(endDate time.Time, redemptionTotalAmount decimal.Decimal, rewardProgramToken string, startDate time.Time, ) *RedemptionsBalanceResponse`
 
 NewRedemptionsBalanceResponse instantiates a new RedemptionsBalanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -50,20 +50,20 @@ SetEndDate sets EndDate field to given value.
 
 ### GetRedemptionTotalAmount
 
-`func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmount() float32`
+`func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmount() decimal.Decimal`
 
 GetRedemptionTotalAmount returns the RedemptionTotalAmount field if non-nil, zero value otherwise.
 
 ### GetRedemptionTotalAmountOk
 
-`func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmountOk() (*float32, bool)`
+`func (o *RedemptionsBalanceResponse) GetRedemptionTotalAmountOk() (*decimal.Decimal, bool)`
 
 GetRedemptionTotalAmountOk returns a tuple with the RedemptionTotalAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRedemptionTotalAmount
 
-`func (o *RedemptionsBalanceResponse) SetRedemptionTotalAmount(v float32)`
+`func (o *RedemptionsBalanceResponse) SetRedemptionTotalAmount(v decimal.Decimal)`
 
 SetRedemptionTotalAmount sets RedemptionTotalAmount field to given value.
 

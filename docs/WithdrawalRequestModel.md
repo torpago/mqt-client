@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountType** | Pointer to **string** |  | [optional] 
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **CardAcceptor** | Pointer to [**CardAcceptorModel**](CardAcceptorModel.md) |  | [optional] 
 **CardToken** | **string** |  | 
 **Mid** | **string** |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWithdrawalRequestModel
 
-`func NewWithdrawalRequestModel(amount float32, cardToken string, mid string, ) *WithdrawalRequestModel`
+`func NewWithdrawalRequestModel(amount decimal.Decimal, cardToken string, mid string, ) *WithdrawalRequestModel`
 
 NewWithdrawalRequestModel instantiates a new WithdrawalRequestModel object
 This constructor will assign default values to properties that have it defined,
@@ -58,20 +58,20 @@ HasAccountType returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *WithdrawalRequestModel) GetAmount() float32`
+`func (o *WithdrawalRequestModel) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *WithdrawalRequestModel) GetAmountOk() (*float32, bool)`
+`func (o *WithdrawalRequestModel) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *WithdrawalRequestModel) SetAmount(v float32)`
+`func (o *WithdrawalRequestModel) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

@@ -174,7 +174,7 @@ import (
 )
 
 func main() {
-	feeRequest := *openapiclient.NewFeeRequest(float32(123), "CurrencyCode_example", "Name_example") // FeeRequest |  (optional)
+	feeRequest := *openapiclient.NewFeeRequest(decimal.Decimal(123), "CurrencyCode_example", "Name_example") // FeeRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

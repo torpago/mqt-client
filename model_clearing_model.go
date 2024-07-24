@@ -22,7 +22,7 @@ var _ MappedNullable = &ClearingModel{}
 
 // ClearingModel struct for ClearingModel
 type ClearingModel struct {
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	CardAcceptor *CardAcceptorModel `json:"card_acceptor,omitempty"`
 	ForcePost *bool `json:"force_post,omitempty"`
 	IsRefund *bool `json:"is_refund,omitempty"`
@@ -38,7 +38,7 @@ type _ClearingModel ClearingModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClearingModel(amount float32, originalTransactionToken string) *ClearingModel {
+func NewClearingModel(amount decimal.Decimal, originalTransactionToken string) *ClearingModel {
 	this := ClearingModel{}
 	this.Amount = amount
 	var forcePost bool = false
@@ -62,9 +62,9 @@ func NewClearingModelWithDefaults() *ClearingModel {
 }
 
 // GetAmount returns the Amount field value
-func (o *ClearingModel) GetAmount() float32 {
+func (o *ClearingModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -73,7 +73,7 @@ func (o *ClearingModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *ClearingModel) GetAmountOk() (*float32, bool) {
+func (o *ClearingModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -81,7 +81,7 @@ func (o *ClearingModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *ClearingModel) SetAmount(v float32) {
+func (o *ClearingModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

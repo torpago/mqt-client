@@ -33,7 +33,7 @@ import (
 
 func main() {
 	accountToken := "accountToken_example" // string | Unique identifier of the credit account for which to create a dispute.  Send a `GET` request to `/credit/accounts` to retrieve existing credit account tokens.
-	disputeCreateReq := *openapiclient.NewDisputeCreateReq(float32(123), openapiclient.DisputeCategory("FRAUD"), "LedgerEntryToken_example") // DisputeCreateReq | 
+	disputeCreateReq := *openapiclient.NewDisputeCreateReq(decimal.Decimal(123), openapiclient.DisputeCategory("FRAUD"), "LedgerEntryToken_example") // DisputeCreateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -255,7 +255,7 @@ import (
 func main() {
 	accountToken := "accountToken_example" // string | Unique identifier of the credit account from which to update a dispute.  Send a `GET` request to `/credit/accounts` to retrieve existing credit account tokens.
 	disputeToken := "disputeToken_example" // string | Unique identifier of the dispute to update.  Send a `GET` request to `/credit/accounts/{account_token}/disputes` to retrieve existing credit account tokens.
-	disputeTransitionReq := *openapiclient.NewDisputeTransitionReq(float32(123), openapiclient.DisputeStatus("ACTIVE")) // DisputeTransitionReq | 
+	disputeTransitionReq := *openapiclient.NewDisputeTransitionReq(decimal.Decimal(123), openapiclient.DisputeStatus("ACTIVE")) // DisputeTransitionReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

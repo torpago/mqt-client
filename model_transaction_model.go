@@ -27,7 +27,7 @@ type TransactionModel struct {
 	AccountNameVerification *AccountNameVerificationModel `json:"account_name_verification,omitempty"`
 	Acquirer *Acquirer `json:"acquirer,omitempty"`
 	// Indicates the amount of the acquirer fee. Account holders are sometimes charged an acquirer fee for card use at ATMs, fuel dispensers, and so on.
-	AcquirerFeeAmount *float32 `json:"acquirer_fee_amount,omitempty"`
+	AcquirerFeeAmount *decimal.Decimal `json:"acquirer_fee_amount,omitempty"`
 	AcquirerReferenceData *string `json:"acquirer_reference_data,omitempty"`
 	// Acquirer-assigned unique identifier of the transaction. Useful for settlement and reconciliation.
 	AcquirerReferenceId *string `json:"acquirer_reference_id,omitempty"`
@@ -37,9 +37,9 @@ type TransactionModel struct {
 	AdviceReasonCode *string `json:"advice_reason_code,omitempty"`
 	AdviceReasonDetails *string `json:"advice_reason_details,omitempty"`
 	// Amount of the transaction.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Amount of original authorization to be released. This field appears in final clearing transactions where the clearing amount is lower than the authorization amount.
-	AmountToBeReleased *float32 `json:"amount_to_be_released,omitempty"`
+	AmountToBeReleased *decimal.Decimal `json:"amount_to_be_released,omitempty"`
 	// Unique identifier assigned to an authorization, printed on the receipt at point of sale.
 	ApprovalCode *string `json:"approval_code,omitempty"`
 	AtcInformation *AtcInformation `json:"atc_information,omitempty"`
@@ -61,7 +61,7 @@ type TransactionModel struct {
 	CardToken *string `json:"card_token,omitempty"`
 	CardholderAuthenticationData *CardholderAuthenticationData `json:"cardholder_authentication_data,omitempty"`
 	// Amount of cash back requested by the cardholder during the transaction. Included in the total transaction amount.
-	CashBackAmount *float32 `json:"cash_back_amount,omitempty"`
+	CashBackAmount *decimal.Decimal `json:"cash_back_amount,omitempty"`
 	Chargeback *ChargebackResponse `json:"chargeback,omitempty"`
 	// A sequence number that identifies a specific clearing message among multiple clearing messages for an authorization.
 	ClearingRecordSequenceNumber *string `json:"clearing_record_sequence_number,omitempty"`
@@ -101,7 +101,7 @@ type TransactionModel struct {
 	// The international service assessment indicator indicates if an ISA fee is applicable to the transaction.
 	IsaIndicator *string `json:"isaIndicator,omitempty"`
 	// The amount of interchange charged by the card issuer.
-	IssuerInterchangeAmount *float32 `json:"issuer_interchange_amount,omitempty"`
+	IssuerInterchangeAmount *decimal.Decimal `json:"issuer_interchange_amount,omitempty"`
 	// Unique identifier of the Marqeta platform server that received the transaction from the card network.
 	IssuerPaymentNode *string `json:"issuer_payment_node,omitempty"`
 	// Date and time when the Marqeta platform received the transaction from the card network, in UTC.
@@ -134,7 +134,7 @@ type TransactionModel struct {
 	ProgramTransfer *ProgramTransferResponse `json:"program_transfer,omitempty"`
 	RealTimeFeeGroup *RealTimeFeeGroup `json:"real_time_fee_group,omitempty"`
 	// Merchant-requested amount, including any fees.
-	RequestAmount *float32 `json:"request_amount,omitempty"`
+	RequestAmount *decimal.Decimal `json:"request_amount,omitempty"`
 	Response *Response `json:"response,omitempty"`
 	// Date and time when funds were moved for a transaction, in UTC. For example, in the case of a refund, when funds were credited to the cardholder.
 	SettlementDate *time.Time `json:"settlement_date,omitempty"`
@@ -171,7 +171,7 @@ type _TransactionModel TransactionModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionModel(actingUserToken string, amount float32, state string, token string, type_ string) *TransactionModel {
+func NewTransactionModel(actingUserToken string, amount decimal.Decimal, state string, token string, type_ string) *TransactionModel {
 	this := TransactionModel{}
 	this.ActingUserToken = actingUserToken
 	this.Amount = amount
@@ -290,9 +290,9 @@ func (o *TransactionModel) SetAcquirer(v Acquirer) {
 }
 
 // GetAcquirerFeeAmount returns the AcquirerFeeAmount field value if set, zero value otherwise.
-func (o *TransactionModel) GetAcquirerFeeAmount() float32 {
+func (o *TransactionModel) GetAcquirerFeeAmount() decimal.Decimal {
 	if o == nil || IsNil(o.AcquirerFeeAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AcquirerFeeAmount
@@ -300,7 +300,7 @@ func (o *TransactionModel) GetAcquirerFeeAmount() float32 {
 
 // GetAcquirerFeeAmountOk returns a tuple with the AcquirerFeeAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransactionModel) GetAcquirerFeeAmountOk() (*float32, bool) {
+func (o *TransactionModel) GetAcquirerFeeAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AcquirerFeeAmount) {
 		return nil, false
 	}
@@ -316,8 +316,8 @@ func (o *TransactionModel) HasAcquirerFeeAmount() bool {
 	return false
 }
 
-// SetAcquirerFeeAmount gets a reference to the given float32 and assigns it to the AcquirerFeeAmount field.
-func (o *TransactionModel) SetAcquirerFeeAmount(v float32) {
+// SetAcquirerFeeAmount gets a reference to the given decimal.Decimal and assigns it to the AcquirerFeeAmount field.
+func (o *TransactionModel) SetAcquirerFeeAmount(v decimal.Decimal) {
 	o.AcquirerFeeAmount = &v
 }
 
@@ -506,9 +506,9 @@ func (o *TransactionModel) SetAdviceReasonDetails(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *TransactionModel) GetAmount() float32 {
+func (o *TransactionModel) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -517,7 +517,7 @@ func (o *TransactionModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *TransactionModel) GetAmountOk() (*float32, bool) {
+func (o *TransactionModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -525,14 +525,14 @@ func (o *TransactionModel) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *TransactionModel) SetAmount(v float32) {
+func (o *TransactionModel) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 
 // GetAmountToBeReleased returns the AmountToBeReleased field value if set, zero value otherwise.
-func (o *TransactionModel) GetAmountToBeReleased() float32 {
+func (o *TransactionModel) GetAmountToBeReleased() decimal.Decimal {
 	if o == nil || IsNil(o.AmountToBeReleased) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.AmountToBeReleased
@@ -540,7 +540,7 @@ func (o *TransactionModel) GetAmountToBeReleased() float32 {
 
 // GetAmountToBeReleasedOk returns a tuple with the AmountToBeReleased field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransactionModel) GetAmountToBeReleasedOk() (*float32, bool) {
+func (o *TransactionModel) GetAmountToBeReleasedOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.AmountToBeReleased) {
 		return nil, false
 	}
@@ -556,8 +556,8 @@ func (o *TransactionModel) HasAmountToBeReleased() bool {
 	return false
 }
 
-// SetAmountToBeReleased gets a reference to the given float32 and assigns it to the AmountToBeReleased field.
-func (o *TransactionModel) SetAmountToBeReleased(v float32) {
+// SetAmountToBeReleased gets a reference to the given decimal.Decimal and assigns it to the AmountToBeReleased field.
+func (o *TransactionModel) SetAmountToBeReleased(v decimal.Decimal) {
 	o.AmountToBeReleased = &v
 }
 
@@ -1042,9 +1042,9 @@ func (o *TransactionModel) SetCardholderAuthenticationData(v CardholderAuthentic
 }
 
 // GetCashBackAmount returns the CashBackAmount field value if set, zero value otherwise.
-func (o *TransactionModel) GetCashBackAmount() float32 {
+func (o *TransactionModel) GetCashBackAmount() decimal.Decimal {
 	if o == nil || IsNil(o.CashBackAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.CashBackAmount
@@ -1052,7 +1052,7 @@ func (o *TransactionModel) GetCashBackAmount() float32 {
 
 // GetCashBackAmountOk returns a tuple with the CashBackAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransactionModel) GetCashBackAmountOk() (*float32, bool) {
+func (o *TransactionModel) GetCashBackAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.CashBackAmount) {
 		return nil, false
 	}
@@ -1068,8 +1068,8 @@ func (o *TransactionModel) HasCashBackAmount() bool {
 	return false
 }
 
-// SetCashBackAmount gets a reference to the given float32 and assigns it to the CashBackAmount field.
-func (o *TransactionModel) SetCashBackAmount(v float32) {
+// SetCashBackAmount gets a reference to the given decimal.Decimal and assigns it to the CashBackAmount field.
+func (o *TransactionModel) SetCashBackAmount(v decimal.Decimal) {
 	o.CashBackAmount = &v
 }
 
@@ -1906,9 +1906,9 @@ func (o *TransactionModel) SetIsaIndicator(v string) {
 }
 
 // GetIssuerInterchangeAmount returns the IssuerInterchangeAmount field value if set, zero value otherwise.
-func (o *TransactionModel) GetIssuerInterchangeAmount() float32 {
+func (o *TransactionModel) GetIssuerInterchangeAmount() decimal.Decimal {
 	if o == nil || IsNil(o.IssuerInterchangeAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.IssuerInterchangeAmount
@@ -1916,7 +1916,7 @@ func (o *TransactionModel) GetIssuerInterchangeAmount() float32 {
 
 // GetIssuerInterchangeAmountOk returns a tuple with the IssuerInterchangeAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransactionModel) GetIssuerInterchangeAmountOk() (*float32, bool) {
+func (o *TransactionModel) GetIssuerInterchangeAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.IssuerInterchangeAmount) {
 		return nil, false
 	}
@@ -1932,8 +1932,8 @@ func (o *TransactionModel) HasIssuerInterchangeAmount() bool {
 	return false
 }
 
-// SetIssuerInterchangeAmount gets a reference to the given float32 and assigns it to the IssuerInterchangeAmount field.
-func (o *TransactionModel) SetIssuerInterchangeAmount(v float32) {
+// SetIssuerInterchangeAmount gets a reference to the given decimal.Decimal and assigns it to the IssuerInterchangeAmount field.
+func (o *TransactionModel) SetIssuerInterchangeAmount(v decimal.Decimal) {
 	o.IssuerInterchangeAmount = &v
 }
 
@@ -2610,9 +2610,9 @@ func (o *TransactionModel) SetRealTimeFeeGroup(v RealTimeFeeGroup) {
 }
 
 // GetRequestAmount returns the RequestAmount field value if set, zero value otherwise.
-func (o *TransactionModel) GetRequestAmount() float32 {
+func (o *TransactionModel) GetRequestAmount() decimal.Decimal {
 	if o == nil || IsNil(o.RequestAmount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.RequestAmount
@@ -2620,7 +2620,7 @@ func (o *TransactionModel) GetRequestAmount() float32 {
 
 // GetRequestAmountOk returns a tuple with the RequestAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransactionModel) GetRequestAmountOk() (*float32, bool) {
+func (o *TransactionModel) GetRequestAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.RequestAmount) {
 		return nil, false
 	}
@@ -2636,8 +2636,8 @@ func (o *TransactionModel) HasRequestAmount() bool {
 	return false
 }
 
-// SetRequestAmount gets a reference to the given float32 and assigns it to the RequestAmount field.
-func (o *TransactionModel) SetRequestAmount(v float32) {
+// SetRequestAmount gets a reference to the given decimal.Decimal and assigns it to the RequestAmount field.
+func (o *TransactionModel) SetRequestAmount(v decimal.Decimal) {
 	o.RequestAmount = &v
 }
 

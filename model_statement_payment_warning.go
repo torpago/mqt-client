@@ -23,15 +23,15 @@ type StatementPaymentWarning struct {
 	// Statement disclosure in the case of negative or no amortization, or no lifetime repayment for the minimum payment warning type.  * `NEGATIVE_OR_NO_AMORTIZATION` - Occurs when the interest amount is higher than the minimum payment; results in the outstanding balance remaining in perpetuity. * `NO_LIFETIME_REPAYMENT` - Occurs when the interest amount is just below the minimum payment; results in the outstanding balance taking longer than a lifetime to pay off.
 	Disclosure *string `json:"disclosure,omitempty"`
 	// For the minimum payment warning type, this value represents the total amount of interest to pay off the statement balance if only making the minimum payment each month.  For the 3 Year warning type, this value represents the total amount of interest if paying off the statement balance in three years.
-	InterestPaid *float32 `json:"interest_paid,omitempty"`
+	InterestPaid *decimal.Decimal `json:"interest_paid,omitempty"`
 	// For the minimum payment warning type, this value is 0.  For the 3 Year warning type, this value represents the fixed monthly payment amount required to pay off the statement balance in three years.
-	MonthlyPayment *float32 `json:"monthly_payment,omitempty"`
+	MonthlyPayment *decimal.Decimal `json:"monthly_payment,omitempty"`
 	// For the minimum payment warning type, this value represents the number of periods required to pay off the statement balance.  For the 3 Year warning type, this value is 36 (months).
 	PayOffPeriod *int32 `json:"pay_off_period,omitempty"`
 	// Time unit of the pay off period.
 	PeriodType *string `json:"period_type,omitempty"`
 	// For the minimum payment warning type, this value represents the total amount of principal and interest to pay off the statement balance if only making the minimum payment each month.  For the 3 Year warning type, this value represents the total amount of principal and interest if paying off the statement balance in three years.
-	TotalPaid *float32 `json:"total_paid,omitempty"`
+	TotalPaid *decimal.Decimal `json:"total_paid,omitempty"`
 	// Type of statement warning.  * `MIN_PAYMENT` - Displays the total estimated payment amount and how long it would take to pay off the statement balance if only making minimum payments. * `3_YEAR` - Displays the monthly payment amount and total estimated payment amount if paying off the statement balance in three years.
 	Type *string `json:"type,omitempty"`
 }
@@ -86,9 +86,9 @@ func (o *StatementPaymentWarning) SetDisclosure(v string) {
 }
 
 // GetInterestPaid returns the InterestPaid field value if set, zero value otherwise.
-func (o *StatementPaymentWarning) GetInterestPaid() float32 {
+func (o *StatementPaymentWarning) GetInterestPaid() decimal.Decimal {
 	if o == nil || IsNil(o.InterestPaid) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.InterestPaid
@@ -96,7 +96,7 @@ func (o *StatementPaymentWarning) GetInterestPaid() float32 {
 
 // GetInterestPaidOk returns a tuple with the InterestPaid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementPaymentWarning) GetInterestPaidOk() (*float32, bool) {
+func (o *StatementPaymentWarning) GetInterestPaidOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.InterestPaid) {
 		return nil, false
 	}
@@ -112,15 +112,15 @@ func (o *StatementPaymentWarning) HasInterestPaid() bool {
 	return false
 }
 
-// SetInterestPaid gets a reference to the given float32 and assigns it to the InterestPaid field.
-func (o *StatementPaymentWarning) SetInterestPaid(v float32) {
+// SetInterestPaid gets a reference to the given decimal.Decimal and assigns it to the InterestPaid field.
+func (o *StatementPaymentWarning) SetInterestPaid(v decimal.Decimal) {
 	o.InterestPaid = &v
 }
 
 // GetMonthlyPayment returns the MonthlyPayment field value if set, zero value otherwise.
-func (o *StatementPaymentWarning) GetMonthlyPayment() float32 {
+func (o *StatementPaymentWarning) GetMonthlyPayment() decimal.Decimal {
 	if o == nil || IsNil(o.MonthlyPayment) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.MonthlyPayment
@@ -128,7 +128,7 @@ func (o *StatementPaymentWarning) GetMonthlyPayment() float32 {
 
 // GetMonthlyPaymentOk returns a tuple with the MonthlyPayment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementPaymentWarning) GetMonthlyPaymentOk() (*float32, bool) {
+func (o *StatementPaymentWarning) GetMonthlyPaymentOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.MonthlyPayment) {
 		return nil, false
 	}
@@ -144,8 +144,8 @@ func (o *StatementPaymentWarning) HasMonthlyPayment() bool {
 	return false
 }
 
-// SetMonthlyPayment gets a reference to the given float32 and assigns it to the MonthlyPayment field.
-func (o *StatementPaymentWarning) SetMonthlyPayment(v float32) {
+// SetMonthlyPayment gets a reference to the given decimal.Decimal and assigns it to the MonthlyPayment field.
+func (o *StatementPaymentWarning) SetMonthlyPayment(v decimal.Decimal) {
 	o.MonthlyPayment = &v
 }
 
@@ -214,9 +214,9 @@ func (o *StatementPaymentWarning) SetPeriodType(v string) {
 }
 
 // GetTotalPaid returns the TotalPaid field value if set, zero value otherwise.
-func (o *StatementPaymentWarning) GetTotalPaid() float32 {
+func (o *StatementPaymentWarning) GetTotalPaid() decimal.Decimal {
 	if o == nil || IsNil(o.TotalPaid) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.TotalPaid
@@ -224,7 +224,7 @@ func (o *StatementPaymentWarning) GetTotalPaid() float32 {
 
 // GetTotalPaidOk returns a tuple with the TotalPaid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatementPaymentWarning) GetTotalPaidOk() (*float32, bool) {
+func (o *StatementPaymentWarning) GetTotalPaidOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.TotalPaid) {
 		return nil, false
 	}
@@ -240,8 +240,8 @@ func (o *StatementPaymentWarning) HasTotalPaid() bool {
 	return false
 }
 
-// SetTotalPaid gets a reference to the given float32 and assigns it to the TotalPaid field.
-func (o *StatementPaymentWarning) SetTotalPaid(v float32) {
+// SetTotalPaid gets a reference to the given decimal.Decimal and assigns it to the TotalPaid field.
+func (o *StatementPaymentWarning) SetTotalPaid(v decimal.Decimal) {
 	o.TotalPaid = &v
 }
 

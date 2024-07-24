@@ -23,9 +23,9 @@ type AchVerificationModel struct {
 	// Indicates whether the ACH funding source is active.
 	Active *bool `json:"active,omitempty"`
 	// Verification amount.
-	VerifyAmount1 *float32 `json:"verify_amount1,omitempty"`
+	VerifyAmount1 *decimal.Decimal `json:"verify_amount1,omitempty"`
 	// Verification amount.
-	VerifyAmount2 *float32 `json:"verify_amount2,omitempty"`
+	VerifyAmount2 *decimal.Decimal `json:"verify_amount2,omitempty"`
 }
 
 // NewAchVerificationModel instantiates a new AchVerificationModel object
@@ -82,9 +82,9 @@ func (o *AchVerificationModel) SetActive(v bool) {
 }
 
 // GetVerifyAmount1 returns the VerifyAmount1 field value if set, zero value otherwise.
-func (o *AchVerificationModel) GetVerifyAmount1() float32 {
+func (o *AchVerificationModel) GetVerifyAmount1() decimal.Decimal {
 	if o == nil || IsNil(o.VerifyAmount1) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.VerifyAmount1
@@ -92,7 +92,7 @@ func (o *AchVerificationModel) GetVerifyAmount1() float32 {
 
 // GetVerifyAmount1Ok returns a tuple with the VerifyAmount1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AchVerificationModel) GetVerifyAmount1Ok() (*float32, bool) {
+func (o *AchVerificationModel) GetVerifyAmount1Ok() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.VerifyAmount1) {
 		return nil, false
 	}
@@ -108,15 +108,15 @@ func (o *AchVerificationModel) HasVerifyAmount1() bool {
 	return false
 }
 
-// SetVerifyAmount1 gets a reference to the given float32 and assigns it to the VerifyAmount1 field.
-func (o *AchVerificationModel) SetVerifyAmount1(v float32) {
+// SetVerifyAmount1 gets a reference to the given decimal.Decimal and assigns it to the VerifyAmount1 field.
+func (o *AchVerificationModel) SetVerifyAmount1(v decimal.Decimal) {
 	o.VerifyAmount1 = &v
 }
 
 // GetVerifyAmount2 returns the VerifyAmount2 field value if set, zero value otherwise.
-func (o *AchVerificationModel) GetVerifyAmount2() float32 {
+func (o *AchVerificationModel) GetVerifyAmount2() decimal.Decimal {
 	if o == nil || IsNil(o.VerifyAmount2) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.VerifyAmount2
@@ -124,7 +124,7 @@ func (o *AchVerificationModel) GetVerifyAmount2() float32 {
 
 // GetVerifyAmount2Ok returns a tuple with the VerifyAmount2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AchVerificationModel) GetVerifyAmount2Ok() (*float32, bool) {
+func (o *AchVerificationModel) GetVerifyAmount2Ok() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.VerifyAmount2) {
 		return nil, false
 	}
@@ -140,8 +140,8 @@ func (o *AchVerificationModel) HasVerifyAmount2() bool {
 	return false
 }
 
-// SetVerifyAmount2 gets a reference to the given float32 and assigns it to the VerifyAmount2 field.
-func (o *AchVerificationModel) SetVerifyAmount2(v float32) {
+// SetVerifyAmount2 gets a reference to the given decimal.Decimal and assigns it to the VerifyAmount2 field.
+func (o *AchVerificationModel) SetVerifyAmount2(v decimal.Decimal) {
 	o.VerifyAmount2 = &v
 }
 

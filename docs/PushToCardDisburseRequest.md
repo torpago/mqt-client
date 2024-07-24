@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **float32** |  | 
+**Amount** | **decimal.Decimal** |  | 
 **CurrencyCode** | **string** |  | 
 **Memo** | Pointer to **string** |  | [optional] 
 **PaymentInstrumentToken** | **string** |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewPushToCardDisburseRequest
 
-`func NewPushToCardDisburseRequest(amount float32, currencyCode string, paymentInstrumentToken string, ) *PushToCardDisburseRequest`
+`func NewPushToCardDisburseRequest(amount decimal.Decimal, currencyCode string, paymentInstrumentToken string, ) *PushToCardDisburseRequest`
 
 NewPushToCardDisburseRequest instantiates a new PushToCardDisburseRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmount
 
-`func (o *PushToCardDisburseRequest) GetAmount() float32`
+`func (o *PushToCardDisburseRequest) GetAmount() decimal.Decimal`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *PushToCardDisburseRequest) GetAmountOk() (*float32, bool)`
+`func (o *PushToCardDisburseRequest) GetAmountOk() (*decimal.Decimal, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *PushToCardDisburseRequest) SetAmount(v float32)`
+`func (o *PushToCardDisburseRequest) SetAmount(v decimal.Decimal)`
 
 SetAmount sets Amount field to given value.
 

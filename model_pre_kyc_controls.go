@@ -21,7 +21,7 @@ var _ MappedNullable = &PreKycControls{}
 // PreKycControls Contains configuration fields for a number of controls.  *NOTE:* These controls are in effect only if `kyc_required` is `ALWAYS` or `CONDITIONAL` and the account holder has not yet passed KYC.
 type PreKycControls struct {
 	// Specifies the maximum ledger balance allowed for members of the account holder group.
-	BalanceMax *float32 `json:"balance_max,omitempty"`
+	BalanceMax *decimal.Decimal `json:"balance_max,omitempty"`
 	// If set to `false`, this control prohibits an account holder's cards from being used at an ATM.  *NOTE:* If a card product's `config.poi.atm` field is set to `false`, associated cards are prohibited from being used at an ATM regardless of this control's setting.
 	CashAccessEnabled *bool `json:"cash_access_enabled,omitempty"`
 	// If set to `true`, funds can only be loaded from a program funding source.  This restriction applies to GPA orders, peer transfers, and direct deposits, but does not apply to operator adjustments.
@@ -66,9 +66,9 @@ func NewPreKycControlsWithDefaults() *PreKycControls {
 }
 
 // GetBalanceMax returns the BalanceMax field value if set, zero value otherwise.
-func (o *PreKycControls) GetBalanceMax() float32 {
+func (o *PreKycControls) GetBalanceMax() decimal.Decimal {
 	if o == nil || IsNil(o.BalanceMax) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.BalanceMax
@@ -76,7 +76,7 @@ func (o *PreKycControls) GetBalanceMax() float32 {
 
 // GetBalanceMaxOk returns a tuple with the BalanceMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PreKycControls) GetBalanceMaxOk() (*float32, bool) {
+func (o *PreKycControls) GetBalanceMaxOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.BalanceMax) {
 		return nil, false
 	}
@@ -92,8 +92,8 @@ func (o *PreKycControls) HasBalanceMax() bool {
 	return false
 }
 
-// SetBalanceMax gets a reference to the given float32 and assigns it to the BalanceMax field.
-func (o *PreKycControls) SetBalanceMax(v float32) {
+// SetBalanceMax gets a reference to the given decimal.Decimal and assigns it to the BalanceMax field.
+func (o *PreKycControls) SetBalanceMax(v decimal.Decimal) {
 	o.BalanceMax = &v
 }
 

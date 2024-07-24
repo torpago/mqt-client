@@ -182,7 +182,7 @@ import (
 
 func main() {
 	token := "token_example" // string | Unique identifier of the reward program.
-	createRedemptionsRequest := *openapiclient.NewCreateRedemptionsRequest(float32(123), openapiclient.RedemptionType("EXTERNAL")) // CreateRedemptionsRequest | 
+	createRedemptionsRequest := *openapiclient.NewCreateRedemptionsRequest(decimal.Decimal(123), openapiclient.RedemptionType("EXTERNAL")) // CreateRedemptionsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

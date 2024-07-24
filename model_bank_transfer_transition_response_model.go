@@ -23,7 +23,7 @@ var _ MappedNullable = &BankTransferTransitionResponseModel{}
 
 // BankTransferTransitionResponseModel struct for BankTransferTransitionResponseModel
 type BankTransferTransitionResponseModel struct {
-	Amount *float32 `json:"amount,omitempty"`
+	Amount *decimal.Decimal `json:"amount,omitempty"`
 	// Unique identifier of the ACH transfer being transitioned.
 	BankTransferToken string `json:"bank_transfer_token"`
 	// Field required in older versions of the API, but no longer used.
@@ -77,9 +77,9 @@ func NewBankTransferTransitionResponseModelWithDefaults() *BankTransferTransitio
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *BankTransferTransitionResponseModel) GetAmount() float32 {
+func (o *BankTransferTransitionResponseModel) GetAmount() decimal.Decimal {
 	if o == nil || IsNil(o.Amount) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.Amount
@@ -87,7 +87,7 @@ func (o *BankTransferTransitionResponseModel) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BankTransferTransitionResponseModel) GetAmountOk() (*float32, bool) {
+func (o *BankTransferTransitionResponseModel) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *BankTransferTransitionResponseModel) HasAmount() bool {
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *BankTransferTransitionResponseModel) SetAmount(v float32) {
+// SetAmount gets a reference to the given decimal.Decimal and assigns it to the Amount field.
+func (o *BankTransferTransitionResponseModel) SetAmount(v decimal.Decimal) {
 	o.Amount = &v
 }
 

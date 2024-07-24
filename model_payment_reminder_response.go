@@ -32,7 +32,7 @@ type PaymentReminderResponse struct {
 	// Payment due date, based on the credit account settings.
 	PaymentDueDate *time.Time `json:"payment_due_date,omitempty"`
 	// Amount remaining on the latest statement's minimum payment, after it's adjusted for payments, returned payments, and applicable credits that occurred after the latest statement's closing date.
-	RemainingMinimumPaymentDue *float32 `json:"remaining_minimum_payment_due,omitempty"`
+	RemainingMinimumPaymentDue *decimal.Decimal `json:"remaining_minimum_payment_due,omitempty"`
 	// Token of the associated statement summary
 	StatementSummaryToken *string `json:"statement_summary_token,omitempty"`
 	// Token of the payment reminder
@@ -217,9 +217,9 @@ func (o *PaymentReminderResponse) SetPaymentDueDate(v time.Time) {
 }
 
 // GetRemainingMinimumPaymentDue returns the RemainingMinimumPaymentDue field value if set, zero value otherwise.
-func (o *PaymentReminderResponse) GetRemainingMinimumPaymentDue() float32 {
+func (o *PaymentReminderResponse) GetRemainingMinimumPaymentDue() decimal.Decimal {
 	if o == nil || IsNil(o.RemainingMinimumPaymentDue) {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 	return *o.RemainingMinimumPaymentDue
@@ -227,7 +227,7 @@ func (o *PaymentReminderResponse) GetRemainingMinimumPaymentDue() float32 {
 
 // GetRemainingMinimumPaymentDueOk returns a tuple with the RemainingMinimumPaymentDue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentReminderResponse) GetRemainingMinimumPaymentDueOk() (*float32, bool) {
+func (o *PaymentReminderResponse) GetRemainingMinimumPaymentDueOk() (*decimal.Decimal, bool) {
 	if o == nil || IsNil(o.RemainingMinimumPaymentDue) {
 		return nil, false
 	}
@@ -243,8 +243,8 @@ func (o *PaymentReminderResponse) HasRemainingMinimumPaymentDue() bool {
 	return false
 }
 
-// SetRemainingMinimumPaymentDue gets a reference to the given float32 and assigns it to the RemainingMinimumPaymentDue field.
-func (o *PaymentReminderResponse) SetRemainingMinimumPaymentDue(v float32) {
+// SetRemainingMinimumPaymentDue gets a reference to the given decimal.Decimal and assigns it to the RemainingMinimumPaymentDue field.
+func (o *PaymentReminderResponse) SetRemainingMinimumPaymentDue(v decimal.Decimal) {
 	o.RemainingMinimumPaymentDue = &v
 }
 

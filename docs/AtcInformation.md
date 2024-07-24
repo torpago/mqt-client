@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AtcDiscrepancyIndicator** | Pointer to **string** |  | [optional] 
-**AtcDiscrepancyValue** | Pointer to **float32** |  | [optional] 
-**AtcValue** | Pointer to **float32** |  | [optional] 
+**AtcDiscrepancyValue** | Pointer to **decimal.Decimal** |  | [optional] 
+**AtcValue** | Pointer to **decimal.Decimal** |  | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ HasAtcDiscrepancyIndicator returns a boolean if a field has been set.
 
 ### GetAtcDiscrepancyValue
 
-`func (o *AtcInformation) GetAtcDiscrepancyValue() float32`
+`func (o *AtcInformation) GetAtcDiscrepancyValue() decimal.Decimal`
 
 GetAtcDiscrepancyValue returns the AtcDiscrepancyValue field if non-nil, zero value otherwise.
 
 ### GetAtcDiscrepancyValueOk
 
-`func (o *AtcInformation) GetAtcDiscrepancyValueOk() (*float32, bool)`
+`func (o *AtcInformation) GetAtcDiscrepancyValueOk() (*decimal.Decimal, bool)`
 
 GetAtcDiscrepancyValueOk returns a tuple with the AtcDiscrepancyValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAtcDiscrepancyValue
 
-`func (o *AtcInformation) SetAtcDiscrepancyValue(v float32)`
+`func (o *AtcInformation) SetAtcDiscrepancyValue(v decimal.Decimal)`
 
 SetAtcDiscrepancyValue sets AtcDiscrepancyValue field to given value.
 
@@ -79,20 +79,20 @@ HasAtcDiscrepancyValue returns a boolean if a field has been set.
 
 ### GetAtcValue
 
-`func (o *AtcInformation) GetAtcValue() float32`
+`func (o *AtcInformation) GetAtcValue() decimal.Decimal`
 
 GetAtcValue returns the AtcValue field if non-nil, zero value otherwise.
 
 ### GetAtcValueOk
 
-`func (o *AtcInformation) GetAtcValueOk() (*float32, bool)`
+`func (o *AtcInformation) GetAtcValueOk() (*decimal.Decimal, bool)`
 
 GetAtcValueOk returns a tuple with the AtcValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAtcValue
 
-`func (o *AtcInformation) SetAtcValue(v float32)`
+`func (o *AtcInformation) SetAtcValue(v decimal.Decimal)`
 
 SetAtcValue sets AtcValue field to given value.
 

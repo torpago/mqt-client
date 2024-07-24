@@ -26,7 +26,7 @@ type AccountCreditBalanceRefundResponse struct {
 	// Unique identifier of the credit account that needs the credit balance refund.
 	AccountToken string `json:"account_token"`
 	// Amount of the credit balance refund.  The maximum refund amount is the amount that brings the account balance to $0. For example, $4000 is the maximum refund amount for a -$4000 account balance.
-	Amount float32 `json:"amount"`
+	Amount decimal.Decimal `json:"amount"`
 	// Date and time when the credit balance refund was created.
 	CreatedTime time.Time `json:"created_time"`
 	// Description for the credit credit balance refund.
@@ -45,7 +45,7 @@ type _AccountCreditBalanceRefundResponse AccountCreditBalanceRefundResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountCreditBalanceRefundResponse(accountToken string, amount float32, createdTime time.Time, description string, method RefundMethod, status PaymentStatus, token string, updatedTime time.Time) *AccountCreditBalanceRefundResponse {
+func NewAccountCreditBalanceRefundResponse(accountToken string, amount decimal.Decimal, createdTime time.Time, description string, method RefundMethod, status PaymentStatus, token string, updatedTime time.Time) *AccountCreditBalanceRefundResponse {
 	this := AccountCreditBalanceRefundResponse{}
 	this.AccountToken = accountToken
 	this.Amount = amount
@@ -91,9 +91,9 @@ func (o *AccountCreditBalanceRefundResponse) SetAccountToken(v string) {
 }
 
 // GetAmount returns the Amount field value
-func (o *AccountCreditBalanceRefundResponse) GetAmount() float32 {
+func (o *AccountCreditBalanceRefundResponse) GetAmount() decimal.Decimal {
 	if o == nil {
-		var ret float32
+		var ret decimal.Decimal
 		return ret
 	}
 
@@ -102,7 +102,7 @@ func (o *AccountCreditBalanceRefundResponse) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
-func (o *AccountCreditBalanceRefundResponse) GetAmountOk() (*float32, bool) {
+func (o *AccountCreditBalanceRefundResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -110,7 +110,7 @@ func (o *AccountCreditBalanceRefundResponse) GetAmountOk() (*float32, bool) {
 }
 
 // SetAmount sets field value
-func (o *AccountCreditBalanceRefundResponse) SetAmount(v float32) {
+func (o *AccountCreditBalanceRefundResponse) SetAmount(v decimal.Decimal) {
 	o.Amount = v
 }
 

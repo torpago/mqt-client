@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **CreatedTime** | **time.Time** | yyyy-MM-ddTHH:mm:ssZ | 
 **KeyedAuthCvvEnforced** | Pointer to **bool** |  | [optional] [default to false]
 **LastModifiedTime** | **time.Time** | yyyy-MM-ddTHH:mm:ssZ | 
-**Latitude** | Pointer to **float32** |  | [optional] 
-**Longitude** | Pointer to **float32** |  | [optional] 
+**Latitude** | Pointer to **decimal.Decimal** |  | [optional] 
+**Longitude** | Pointer to **decimal.Decimal** |  | [optional] 
 **MerchantToken** | **string** |  | 
 **Mid** | **string** |  | 
 **Name** | **string** |  | 
@@ -280,20 +280,20 @@ SetLastModifiedTime sets LastModifiedTime field to given value.
 
 ### GetLatitude
 
-`func (o *StoreResponseModel) GetLatitude() float32`
+`func (o *StoreResponseModel) GetLatitude() decimal.Decimal`
 
 GetLatitude returns the Latitude field if non-nil, zero value otherwise.
 
 ### GetLatitudeOk
 
-`func (o *StoreResponseModel) GetLatitudeOk() (*float32, bool)`
+`func (o *StoreResponseModel) GetLatitudeOk() (*decimal.Decimal, bool)`
 
 GetLatitudeOk returns a tuple with the Latitude field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLatitude
 
-`func (o *StoreResponseModel) SetLatitude(v float32)`
+`func (o *StoreResponseModel) SetLatitude(v decimal.Decimal)`
 
 SetLatitude sets Latitude field to given value.
 
@@ -305,20 +305,20 @@ HasLatitude returns a boolean if a field has been set.
 
 ### GetLongitude
 
-`func (o *StoreResponseModel) GetLongitude() float32`
+`func (o *StoreResponseModel) GetLongitude() decimal.Decimal`
 
 GetLongitude returns the Longitude field if non-nil, zero value otherwise.
 
 ### GetLongitudeOk
 
-`func (o *StoreResponseModel) GetLongitudeOk() (*float32, bool)`
+`func (o *StoreResponseModel) GetLongitudeOk() (*decimal.Decimal, bool)`
 
 GetLongitudeOk returns a tuple with the Longitude field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLongitude
 
-`func (o *StoreResponseModel) SetLongitude(v float32)`
+`func (o *StoreResponseModel) SetLongitude(v decimal.Decimal)`
 
 SetLongitude sets Longitude field to given value.
 

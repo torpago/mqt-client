@@ -328,7 +328,7 @@ import (
 )
 
 func main() {
-	bankTransferRequestModel := *openapiclient.NewBankTransferRequestModel(float32(123), "FundingSourceToken_example", "Type_example") // BankTransferRequestModel | Create bank transfer request model
+	bankTransferRequestModel := *openapiclient.NewBankTransferRequestModel(decimal.Decimal(123), "FundingSourceToken_example", "Type_example") // BankTransferRequestModel | Create bank transfer request model
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
