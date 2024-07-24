@@ -19,6 +19,7 @@ import (
 	"net/url"
 	"strings"
 	"reflect"
+	"github.com/shopspring/decimal"
 )
 
 
