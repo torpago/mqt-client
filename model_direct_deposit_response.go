@@ -14,6 +14,7 @@ package openapi
 import (
 	"encoding/json"
 	"time"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the DirectDepositResponse type satisfies the MappedNullable interface at compile time
