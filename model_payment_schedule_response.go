@@ -16,6 +16,7 @@ import (
 	"time"
 	"bytes"
 	"fmt"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the PaymentScheduleResponse type satisfies the MappedNullable interface at compile time
@@ -26,7 +27,7 @@ type PaymentScheduleResponse struct {
 	// Unique identifier of the credit account on which the payment schedule is made.
 	AccountToken string `json:"account_token"`
 	// Amount of the payment.  Returned if the `amount_category` is `FIXED`.
-	Amount NullableDecimal.Decimal `json:"amount,omitempty"`
+	Amount decimal.NullDecimal `json:"amount,omitempty"`
 	AmountCategory PaymentScheduleAmountCategory `json:"amount_category"`
 	// Date and time when the payment schedule was created on Marqeta's credit platform, in UTC.
 	CreatedTime *time.Time `json:"created_time,omitempty"`
@@ -101,11 +102,11 @@ func (o *PaymentScheduleResponse) SetAccountToken(v string) {
 
 // GetAmount returns the Amount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentScheduleResponse) GetAmount() decimal.Decimal {
-	if o == nil || IsNil(o.Amount.Get()) {
+	if o == nil || IsNil(o.Amount.Decimal) {
 		var ret decimal.Decimal
 		return ret
 	}
-	return *o.Amount.Get()
+	return o.Amount.Decimal
 }
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
@@ -115,12 +116,12 @@ func (o *PaymentScheduleResponse) GetAmountOk() (*decimal.Decimal, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Amount.Get(), o.Amount.IsSet()
+	return &o.Amount.Decimal, o.Amount.Valid
 }
 
 // HasAmount returns a boolean if a field has been set.
 func (o *PaymentScheduleResponse) HasAmount() bool {
-	if o != nil && o.Amount.IsSet() {
+	if o != nil && o.Amount.Valid {
 		return true
 	}
 
@@ -129,16 +130,21 @@ func (o *PaymentScheduleResponse) HasAmount() bool {
 
 // SetAmount gets a reference to the given NullableDecimal.Decimal and assigns it to the Amount field.
 func (o *PaymentScheduleResponse) SetAmount(v decimal.Decimal) {
-	o.Amount.Set(&v)
+	o.Amount = decimal.NullDecimal{
+		Decimal: v,
+		Valid:   true,
+	}
 }
 // SetAmountNil sets the value for Amount to be an explicit nil
 func (o *PaymentScheduleResponse) SetAmountNil() {
-	o.Amount.Set(nil)
+	o.Amount = decimal.NullDecimal{
+		Valid: false,
+	}
 }
 
 // UnsetAmount ensures that no value is present for Amount, not even an explicit nil
 func (o *PaymentScheduleResponse) UnsetAmount() {
-	o.Amount.Unset()
+	o.Amount = decimal.NullDecimal{}
 }
 
 // GetAmountCategory returns the AmountCategory field value
@@ -456,8 +462,8 @@ func (o PaymentScheduleResponse) MarshalJSON() ([]byte, error) {
 func (o PaymentScheduleResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["account_token"] = o.AccountToken
-	if o.Amount.IsSet() {
-		toSerialize["amount"] = o.Amount.Get()
+	if o.Amount.Valid {
+		toSerialize["amount"] = o.Amount.Decimal
 	}
 	toSerialize["amount_category"] = o.AmountCategory
 	if !IsNil(o.CreatedTime) {
