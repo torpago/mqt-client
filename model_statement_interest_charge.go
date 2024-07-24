@@ -13,6 +13,7 @@ package openapi
 
 import (
 	"encoding/json"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the StatementInterestCharge type satisfies the MappedNullable interface at compile time
