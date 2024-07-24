@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_AddressesAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_AddressesAPIService(t *testing.T) {
 
 	t.Run("Test AddressesAPIService GetFundingsourcesAddressesBusinessBusinesstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var businessToken string
 
@@ -38,7 +39,7 @@ func Test_openapi_AddressesAPIService(t *testing.T) {
 
 	t.Run("Test AddressesAPIService GetFundingsourcesAddressesFundingsourceaddresstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceAddressToken string
 
@@ -52,7 +53,7 @@ func Test_openapi_AddressesAPIService(t *testing.T) {
 
 	t.Run("Test AddressesAPIService GetFundingsourcesAddressesUserUsertoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userToken string
 
@@ -66,7 +67,7 @@ func Test_openapi_AddressesAPIService(t *testing.T) {
 
 	t.Run("Test AddressesAPIService PostFundingsourcesAddresses", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AddressesAPI.PostFundingsourcesAddresses(context.Background()).Execute()
 
@@ -78,7 +79,7 @@ func Test_openapi_AddressesAPIService(t *testing.T) {
 
 	t.Run("Test AddressesAPIService PutFundingsourcesAddressesFundingsourceaddresstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceAddressToken string
 

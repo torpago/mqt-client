@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_AccountDocumentsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_AccountDocumentsAPIService(t *testing.T) {
 
 	t.Run("Test AccountDocumentsAPIService GetAccountDocuments", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 
@@ -38,7 +39,7 @@ func Test_openapi_AccountDocumentsAPIService(t *testing.T) {
 
 	t.Run("Test AccountDocumentsAPIService GetDocumentByAccountAndType", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var documentType AccountAndDocumentAssetType
@@ -53,7 +54,7 @@ func Test_openapi_AccountDocumentsAPIService(t *testing.T) {
 
 	t.Run("Test AccountDocumentsAPIService GetDocumentHistoryByAccountAndType", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var documentType AccountAndDocumentAssetType

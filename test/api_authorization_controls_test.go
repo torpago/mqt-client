@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService GetAuthcontrols", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AuthorizationControlsAPI.GetAuthcontrols(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService GetAuthcontrolsExemptmids", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AuthorizationControlsAPI.GetAuthcontrolsExemptmids(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService GetAuthcontrolsExemptmidsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -62,7 +63,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService GetAuthcontrolsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -76,7 +77,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService PostAuthcontrols", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AuthorizationControlsAPI.PostAuthcontrols(context.Background()).Execute()
 
@@ -88,7 +89,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService PostAuthcontrolsExemptmids", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AuthorizationControlsAPI.PostAuthcontrolsExemptmids(context.Background()).Execute()
 
@@ -100,7 +101,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService PutAuthcontrolsExemptmidsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -113,7 +114,7 @@ func Test_openapi_AuthorizationControlsAPIService(t *testing.T) {
 
 	t.Run("Test AuthorizationControlsAPIService PutAuthcontrolsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

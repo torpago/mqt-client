@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_UsersAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService GetUsers", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.UsersAPI.GetUsers(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService GetUsersAuthClientaccesstokenToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -50,7 +51,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService GetUsersParenttokenChildren", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var parentToken string
 
@@ -64,7 +65,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService GetUsersToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -78,7 +79,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService GetUsersTokenSsn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -92,7 +93,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsers", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.UsersAPI.PostUsers(context.Background()).Execute()
 
@@ -104,7 +105,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthChangepassword", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.UsersAPI.PostUsersAuthChangepassword(context.Background()).Execute()
 
@@ -115,7 +116,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthClientaccesstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.UsersAPI.PostUsersAuthClientaccesstoken(context.Background()).Execute()
 
@@ -127,7 +128,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthLogin", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.UsersAPI.PostUsersAuthLogin(context.Background()).Execute()
 
@@ -139,7 +140,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthLogout", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.UsersAPI.PostUsersAuthLogout(context.Background()).Execute()
 
@@ -150,7 +151,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthOnetime", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.UsersAPI.PostUsersAuthOnetime(context.Background()).Execute()
 
@@ -162,7 +163,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthResetpassword", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.UsersAPI.PostUsersAuthResetpassword(context.Background()).Execute()
 
@@ -173,7 +174,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthResetpasswordToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -186,7 +187,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthVerifyemail", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.UsersAPI.PostUsersAuthVerifyemail(context.Background()).Execute()
 
@@ -197,7 +198,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersAuthVerifyemailToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -210,7 +211,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PostUsersLookup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.UsersAPI.PostUsersLookup(context.Background()).Execute()
 
@@ -222,7 +223,7 @@ func Test_openapi_UsersAPIService(t *testing.T) {
 
 	t.Run("Test UsersAPIService PutUsersToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

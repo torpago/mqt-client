@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_PeerTransfersAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_PeerTransfersAPIService(t *testing.T) {
 
 	t.Run("Test PeerTransfersAPIService GetPeertransfersToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -38,7 +39,7 @@ func Test_openapi_PeerTransfersAPIService(t *testing.T) {
 
 	t.Run("Test PeerTransfersAPIService GetPeertransfersUserUserorbusinesstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userOrBusinessToken string
 
@@ -52,7 +53,7 @@ func Test_openapi_PeerTransfersAPIService(t *testing.T) {
 
 	t.Run("Test PeerTransfersAPIService GetPeertransfersUserUserorbusinesstokenRecipient", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userOrBusinessToken string
 
@@ -66,7 +67,7 @@ func Test_openapi_PeerTransfersAPIService(t *testing.T) {
 
 	t.Run("Test PeerTransfersAPIService GetPeertransfersUserUserorbusinesstokenSender", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userOrBusinessToken string
 
@@ -80,7 +81,7 @@ func Test_openapi_PeerTransfersAPIService(t *testing.T) {
 
 	t.Run("Test PeerTransfersAPIService PostPeertransfers", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PeerTransfersAPI.PostPeertransfers(context.Background()).Execute()
 

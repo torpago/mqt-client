@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_LedgerEntriesAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_LedgerEntriesAPIService(t *testing.T) {
 
 	t.Run("Test LedgerEntriesAPIService GetAccountLedgerEntry", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var ledgerEntryToken string
@@ -39,7 +40,7 @@ func Test_openapi_LedgerEntriesAPIService(t *testing.T) {
 
 	t.Run("Test LedgerEntriesAPIService ListAccountLedgerEntries", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 
@@ -53,7 +54,7 @@ func Test_openapi_LedgerEntriesAPIService(t *testing.T) {
 
 	t.Run("Test LedgerEntriesAPIService ResendWebhookEvent", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var eventType string
 		var resourceToken string

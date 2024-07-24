@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService CreateAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DirectDepositAccountsAPI.CreateAccount(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService CreateTransition", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DirectDepositAccountsAPI.CreateTransition(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService GetCDDInfo", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -62,7 +63,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService GetDirectDepositAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -76,7 +77,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService GetDirectDepositAccountTransition", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -90,7 +91,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService GetTransitionList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userToken string
 
@@ -104,7 +105,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService GetUserDirectDepositAccounts", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -118,7 +119,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService GetUserForDirectDepositAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountNumber string
 
@@ -132,7 +133,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService Update", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -146,7 +147,7 @@ func Test_openapi_DirectDepositAccountsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositAccountsAPIService UpdateCDDInfo", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 		var cddtoken string

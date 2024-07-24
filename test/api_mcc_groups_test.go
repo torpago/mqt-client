@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_MCCGroupsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_MCCGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MCCGroupsAPIService GetMccgroups", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MCCGroupsAPI.GetMccgroups(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_MCCGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MCCGroupsAPIService GetMccgroupsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -50,7 +51,7 @@ func Test_openapi_MCCGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MCCGroupsAPIService PostMccgroups", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MCCGroupsAPI.PostMccgroups(context.Background()).Execute()
 
@@ -62,7 +63,7 @@ func Test_openapi_MCCGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MCCGroupsAPIService PutMccgroupsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

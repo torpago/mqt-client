@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_WebhooksAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_WebhooksAPIService(t *testing.T) {
 
 	t.Run("Test WebhooksAPIService GetWebhooks", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WebhooksAPI.GetWebhooks(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_WebhooksAPIService(t *testing.T) {
 
 	t.Run("Test WebhooksAPIService GetWebhooksToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -50,7 +51,7 @@ func Test_openapi_WebhooksAPIService(t *testing.T) {
 
 	t.Run("Test WebhooksAPIService PostWebhooks", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.WebhooksAPI.PostWebhooks(context.Background()).Execute()
 
@@ -62,7 +63,7 @@ func Test_openapi_WebhooksAPIService(t *testing.T) {
 
 	t.Run("Test WebhooksAPIService PostWebhooksTokenEventtypeEventtoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 		var eventType string
@@ -77,7 +78,7 @@ func Test_openapi_WebhooksAPIService(t *testing.T) {
 
 	t.Run("Test WebhooksAPIService PostWebhooksTokenPing", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -91,7 +92,7 @@ func Test_openapi_WebhooksAPIService(t *testing.T) {
 
 	t.Run("Test WebhooksAPIService PutWebhooksCustomHeadersToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -105,7 +106,7 @@ func Test_openapi_WebhooksAPIService(t *testing.T) {
 
 	t.Run("Test WebhooksAPIService PutWebhooksToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

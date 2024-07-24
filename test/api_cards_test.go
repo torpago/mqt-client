@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_CardsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService GetCards", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CardsAPI.GetCards(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService GetCardsBarcodeBarcode", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var barcode string
 
@@ -50,7 +51,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService GetCardsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -64,7 +65,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService GetCardsTokenShowpan", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -78,7 +79,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService GetCardsUserToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -92,7 +93,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService PostCards", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CardsAPI.PostCards(context.Background()).Execute()
 
@@ -104,7 +105,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService PostCardsGetbypan", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CardsAPI.PostCardsGetbypan(context.Background()).Execute()
 
@@ -116,7 +117,7 @@ func Test_openapi_CardsAPIService(t *testing.T) {
 
 	t.Run("Test CardsAPIService PutCardsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

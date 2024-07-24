@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_PaymentSourcesAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_PaymentSourcesAPIService(t *testing.T) {
 
 	t.Run("Test PaymentSourcesAPIService CreatePaymentSource", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PaymentSourcesAPI.CreatePaymentSource(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_PaymentSourcesAPIService(t *testing.T) {
 
 	t.Run("Test PaymentSourcesAPIService ListPaymentSources", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PaymentSourcesAPI.ListPaymentSources(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_openapi_PaymentSourcesAPIService(t *testing.T) {
 
 	t.Run("Test PaymentSourcesAPIService RetrievePaymentSource", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -62,7 +63,7 @@ func Test_openapi_PaymentSourcesAPIService(t *testing.T) {
 
 	t.Run("Test PaymentSourcesAPIService UpdatePaymentSource", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

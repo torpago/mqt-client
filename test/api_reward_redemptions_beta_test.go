@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_RewardRedemptionsBetaAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_RewardRedemptionsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardRedemptionsBetaAPIService GetRedemption", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 		var redemptionToken string
@@ -39,7 +40,7 @@ func Test_openapi_RewardRedemptionsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardRedemptionsBetaAPIService PostRedemptionTransition", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 		var redemptionToken string
@@ -54,7 +55,7 @@ func Test_openapi_RewardRedemptionsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardRedemptionsBetaAPIService PostRewardProgramRedemption", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -68,7 +69,7 @@ func Test_openapi_RewardRedemptionsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardRedemptionsBetaAPIService RetrieveRedemptions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -82,7 +83,7 @@ func Test_openapi_RewardRedemptionsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardRedemptionsBetaAPIService RetrieveRedemptionsBalance", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

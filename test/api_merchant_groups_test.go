@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_MerchantGroupsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_MerchantGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MerchantGroupsAPIService GetMerchantGroup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -38,7 +39,7 @@ func Test_openapi_MerchantGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MerchantGroupsAPIService GetMerchantGroups", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MerchantGroupsAPI.GetMerchantGroups(context.Background()).Execute()
 
@@ -50,7 +51,7 @@ func Test_openapi_MerchantGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MerchantGroupsAPIService PostMerchantGroup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MerchantGroupsAPI.PostMerchantGroup(context.Background()).Execute()
 
@@ -62,7 +63,7 @@ func Test_openapi_MerchantGroupsAPIService(t *testing.T) {
 
 	t.Run("Test MerchantGroupsAPIService PutMerchantGroupsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

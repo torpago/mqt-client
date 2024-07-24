@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_ProgramGatewayFundingSourcesAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_ProgramGatewayFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test ProgramGatewayFundingSourcesAPIService GetFundingsourcesProgramgatewayToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -38,7 +39,7 @@ func Test_openapi_ProgramGatewayFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test ProgramGatewayFundingSourcesAPIService PostFundingsourcesProgramgateway", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProgramGatewayFundingSourcesAPI.PostFundingsourcesProgramgateway(context.Background()).Execute()
 
@@ -50,7 +51,7 @@ func Test_openapi_ProgramGatewayFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test ProgramGatewayFundingSourcesAPIService PutFundingsourcesProgramgatewayCustomHeaderToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -64,7 +65,7 @@ func Test_openapi_ProgramGatewayFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test ProgramGatewayFundingSourcesAPIService PutFundingsourcesProgramgatewayToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

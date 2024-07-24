@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_DirectDepositsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_DirectDepositsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositsAPIService GetDirectdeposits", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DirectDepositsAPI.GetDirectdeposits(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_DirectDepositsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositsAPIService GetDirectdepositsAccountsUserorbusinesstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userOrBusinessToken string
 
@@ -50,7 +51,7 @@ func Test_openapi_DirectDepositsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositsAPIService GetDirectdepositsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -64,7 +65,7 @@ func Test_openapi_DirectDepositsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositsAPIService GetDirectdepositsTransitions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DirectDepositsAPI.GetDirectdepositsTransitions(context.Background()).Execute()
 
@@ -76,7 +77,7 @@ func Test_openapi_DirectDepositsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositsAPIService GetDirectdepositsTransitionsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -90,7 +91,7 @@ func Test_openapi_DirectDepositsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositsAPIService PostDirectdepositsTransitions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DirectDepositsAPI.PostDirectdepositsTransitions(context.Background()).Execute()
 
@@ -102,7 +103,7 @@ func Test_openapi_DirectDepositsAPIService(t *testing.T) {
 
 	t.Run("Test DirectDepositsAPIService PutDirectdepositsAccountsUserorbusinesstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userOrBusinessToken string
 

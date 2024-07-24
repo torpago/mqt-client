@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService GenerateApplePayWPPJWT", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DigitalWalletsManagementAPI.GenerateApplePayWPPJWT(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService GetDigitalwallettokens", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DigitalWalletsManagementAPI.GetDigitalwallettokens(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService GetDigitalwallettokensCardCardtoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var cardToken string
 
@@ -62,7 +63,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService GetDigitalwallettokensToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -76,7 +77,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService GetDigitalwallettokensTokenShowtokenpan", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -90,7 +91,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService GetDigitalwallettokentransitionsDigitalwallettokenToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -104,7 +105,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService GetDigitalwallettokentransitionsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -118,7 +119,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService PostDigitalwalletprovisionrequestsAndroidpay", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DigitalWalletsManagementAPI.PostDigitalwalletprovisionrequestsAndroidpay(context.Background()).Execute()
 
@@ -130,7 +131,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService PostDigitalwalletprovisionrequestsApplepay", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DigitalWalletsManagementAPI.PostDigitalwalletprovisionrequestsApplepay(context.Background()).Execute()
 
@@ -142,7 +143,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService PostDigitalwalletprovisionrequestsSamsungpay", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DigitalWalletsManagementAPI.PostDigitalwalletprovisionrequestsSamsungpay(context.Background()).Execute()
 
@@ -154,7 +155,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService PostDigitalwalletprovisionrequestsXPay", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DigitalWalletsManagementAPI.PostDigitalwalletprovisionrequestsXPay(context.Background()).Execute()
 
@@ -166,7 +167,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService PostDigitalwallettokentransitions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DigitalWalletsManagementAPI.PostDigitalwallettokentransitions(context.Background()).Execute()
 
@@ -178,7 +179,7 @@ func Test_openapi_DigitalWalletsManagementAPIService(t *testing.T) {
 
 	t.Run("Test DigitalWalletsManagementAPIService SendOPCDataToGooglePay", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.DigitalWalletsManagementAPI.SendOPCDataToGooglePay(context.Background()).Execute()
 

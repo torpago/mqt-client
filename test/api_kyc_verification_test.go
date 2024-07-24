@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_KYCVerificationAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_KYCVerificationAPIService(t *testing.T) {
 
 	t.Run("Test KYCVerificationAPIService GetKycBusinessBusinesstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var businessToken string
 
@@ -38,7 +39,7 @@ func Test_openapi_KYCVerificationAPIService(t *testing.T) {
 
 	t.Run("Test KYCVerificationAPIService GetKycToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -52,7 +53,7 @@ func Test_openapi_KYCVerificationAPIService(t *testing.T) {
 
 	t.Run("Test KYCVerificationAPIService GetKycUserUsertoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userToken string
 
@@ -66,7 +67,7 @@ func Test_openapi_KYCVerificationAPIService(t *testing.T) {
 
 	t.Run("Test KYCVerificationAPIService PostKyc", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.KYCVerificationAPI.PostKyc(context.Background()).Execute()
 

@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService GetRewardEntriesByJournalEntryTokens", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -38,7 +39,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService PostRewardProgramEntry", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -52,7 +53,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardProgram", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -66,7 +67,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardProgramBalance", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -80,7 +81,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardProgramEntries", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -94,7 +95,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardProgramEntriesBalance", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -108,7 +109,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardProgramEntry", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 		var entryToken string
@@ -123,7 +124,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardPrograms", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.RewardProgramsBetaAPI.RetrieveRewardPrograms(context.Background()).Execute()
 
@@ -135,7 +136,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardProgramsRulesConfig", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -149,7 +150,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService RetrieveRewardProgramsRulesConfigApplied", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -163,7 +164,7 @@ func Test_openapi_RewardProgramsBetaAPIService(t *testing.T) {
 
 	t.Run("Test RewardProgramsBetaAPIService UpdateRewardProgram", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

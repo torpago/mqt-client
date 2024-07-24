@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService GetFundingsourcesAchFundingsourcetoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceToken string
 
@@ -38,7 +39,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService GetFundingsourcesAchFundingsourcetokenVerificationamounts", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceToken string
 
@@ -52,7 +53,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService GetFundingsourcesBusinessBusinesstoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var businessToken string
 
@@ -66,7 +67,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService GetFundingsourcesPaymentcardFundingsourcetoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceToken string
 
@@ -80,7 +81,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService GetFundingsourcesUserUsertoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var userToken string
 
@@ -94,7 +95,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService PostFundingsourcesAch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AccountHolderFundingSourcesAPI.PostFundingsourcesAch(context.Background()).Execute()
 
@@ -106,7 +107,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService PostFundingsourcesAchPartner", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AccountHolderFundingSourcesAPI.PostFundingsourcesAchPartner(context.Background()).Execute()
 
@@ -118,7 +119,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService PostFundingsourcesPaymentcard", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AccountHolderFundingSourcesAPI.PostFundingsourcesPaymentcard(context.Background()).Execute()
 
@@ -130,7 +131,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService PutFundingsourcesAchFundingsourcetoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceToken string
 
@@ -144,7 +145,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService PutFundingsourcesFundingsourcetoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceToken string
 
@@ -158,7 +159,7 @@ func Test_openapi_AccountHolderFundingSourcesAPIService(t *testing.T) {
 
 	t.Run("Test AccountHolderFundingSourcesAPIService PutFundingsourcesFundingsourcetokenDefault", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var fundingSourceToken string
 

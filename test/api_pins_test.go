@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_PINsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_PINsAPIService(t *testing.T) {
 
 	t.Run("Test PINsAPIService PostPinsControltoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PINsAPI.PostPinsControltoken(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_PINsAPIService(t *testing.T) {
 
 	t.Run("Test PINsAPIService PutPins", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.PINsAPI.PutPins(context.Background()).Execute()
 
@@ -47,7 +48,7 @@ func Test_openapi_PINsAPIService(t *testing.T) {
 
 	t.Run("Test PINsAPIService RevealPins", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.PINsAPI.RevealPins(context.Background()).Execute()
 

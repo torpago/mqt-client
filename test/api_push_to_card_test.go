@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_PushToCardAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_PushToCardAPIService(t *testing.T) {
 
 	t.Run("Test PushToCardAPIService GetPushtocardsDisburse", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PushToCardAPI.GetPushtocardsDisburse(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_PushToCardAPIService(t *testing.T) {
 
 	t.Run("Test PushToCardAPIService GetPushtocardsDisburseToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -50,7 +51,7 @@ func Test_openapi_PushToCardAPIService(t *testing.T) {
 
 	t.Run("Test PushToCardAPIService GetPushtocardsPaymentcard", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PushToCardAPI.GetPushtocardsPaymentcard(context.Background()).Execute()
 
@@ -62,7 +63,7 @@ func Test_openapi_PushToCardAPIService(t *testing.T) {
 
 	t.Run("Test PushToCardAPIService GetPushtocardsPaymentcardToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -76,7 +77,7 @@ func Test_openapi_PushToCardAPIService(t *testing.T) {
 
 	t.Run("Test PushToCardAPIService PostPushtocardsDisburse", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PushToCardAPI.PostPushtocardsDisburse(context.Background()).Execute()
 
@@ -88,7 +89,7 @@ func Test_openapi_PushToCardAPIService(t *testing.T) {
 
 	t.Run("Test PushToCardAPIService PostPushtocardsPaymentcard", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PushToCardAPI.PostPushtocardsPaymentcard(context.Background()).Execute()
 

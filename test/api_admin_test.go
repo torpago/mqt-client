@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_AdminAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_AdminAPIService(t *testing.T) {
 
 	t.Run("Test AdminAPIService ReplayFailedStatements", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AdminAPI.ReplayFailedStatements(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_AdminAPIService(t *testing.T) {
 
 	t.Run("Test AdminAPIService ReplayFailedStatementsByShortCode", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var shortCode string
 
@@ -50,7 +51,7 @@ func Test_openapi_AdminAPIService(t *testing.T) {
 
 	t.Run("Test AdminAPIService ReplaySingleFailedStatement", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var shortCode string
 		var accountToken string
@@ -65,7 +66,7 @@ func Test_openapi_AdminAPIService(t *testing.T) {
 
 	t.Run("Test AdminAPIService RetryAchPayment", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var shortCode string
 
@@ -79,7 +80,7 @@ func Test_openapi_AdminAPIService(t *testing.T) {
 
 	t.Run("Test AdminAPIService ScheduleStatements", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.AdminAPI.ScheduleStatements(context.Background()).Execute()
 

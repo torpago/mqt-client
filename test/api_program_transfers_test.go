@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
 
 	t.Run("Test ProgramTransfersAPIService GetProgramtransfers", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProgramTransfersAPI.GetProgramtransfers(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
 
 	t.Run("Test ProgramTransfersAPIService GetProgramtransfersToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -50,7 +51,7 @@ func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
 
 	t.Run("Test ProgramTransfersAPIService GetProgramtransfersTypes", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProgramTransfersAPI.GetProgramtransfersTypes(context.Background()).Execute()
 
@@ -62,7 +63,7 @@ func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
 
 	t.Run("Test ProgramTransfersAPIService GetProgramtransfersTypesTypetoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var typeToken string
 
@@ -76,7 +77,7 @@ func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
 
 	t.Run("Test ProgramTransfersAPIService PostProgramtransfers", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProgramTransfersAPI.PostProgramtransfers(context.Background()).Execute()
 
@@ -88,7 +89,7 @@ func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
 
 	t.Run("Test ProgramTransfersAPIService PostProgramtransfersTypes", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProgramTransfersAPI.PostProgramtransfersTypes(context.Background()).Execute()
 
@@ -100,7 +101,7 @@ func Test_openapi_ProgramTransfersAPIService(t *testing.T) {
 
 	t.Run("Test ProgramTransfersAPIService PutProgramtransfersTypesTypetoken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var typeToken string
 

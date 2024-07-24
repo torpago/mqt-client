@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_ApplicationsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_ApplicationsAPIService(t *testing.T) {
 
 	t.Run("Test ApplicationsAPIService CreditApplicationsPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ApplicationsAPI.CreditApplicationsPost(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_ApplicationsAPIService(t *testing.T) {
 
 	t.Run("Test ApplicationsAPIService GetFileByType", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var type_ FileType
 
@@ -50,7 +51,7 @@ func Test_openapi_ApplicationsAPIService(t *testing.T) {
 
 	t.Run("Test ApplicationsAPIService PageApplicationTransitions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -64,7 +65,7 @@ func Test_openapi_ApplicationsAPIService(t *testing.T) {
 
 	t.Run("Test ApplicationsAPIService RetrieveApplication", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -78,7 +79,7 @@ func Test_openapi_ApplicationsAPIService(t *testing.T) {
 
 	t.Run("Test ApplicationsAPIService RetrieveFiles", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ApplicationsAPI.RetrieveFiles(context.Background()).Execute()
 
@@ -90,7 +91,7 @@ func Test_openapi_ApplicationsAPIService(t *testing.T) {
 
 	t.Run("Test ApplicationsAPIService TransitionApplication", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

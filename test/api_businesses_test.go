@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_BusinessesAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_BusinessesAPIService(t *testing.T) {
 
 	t.Run("Test BusinessesAPIService GetBusinesses", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.BusinessesAPI.GetBusinesses(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_BusinessesAPIService(t *testing.T) {
 
 	t.Run("Test BusinessesAPIService GetBusinessesParenttokenChildren", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var parentToken string
 
@@ -50,7 +51,7 @@ func Test_openapi_BusinessesAPIService(t *testing.T) {
 
 	t.Run("Test BusinessesAPIService GetBusinessesToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -64,7 +65,7 @@ func Test_openapi_BusinessesAPIService(t *testing.T) {
 
 	t.Run("Test BusinessesAPIService GetBusinessesTokenSsn", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -78,7 +79,7 @@ func Test_openapi_BusinessesAPIService(t *testing.T) {
 
 	t.Run("Test BusinessesAPIService PostBusinesses", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.BusinessesAPI.PostBusinesses(context.Background()).Execute()
 
@@ -90,7 +91,7 @@ func Test_openapi_BusinessesAPIService(t *testing.T) {
 
 	t.Run("Test BusinessesAPIService PostBusinessesLookup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.BusinessesAPI.PostBusinessesLookup(context.Background()).Execute()
 
@@ -102,7 +103,7 @@ func Test_openapi_BusinessesAPIService(t *testing.T) {
 
 	t.Run("Test BusinessesAPIService PutBusinessesToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

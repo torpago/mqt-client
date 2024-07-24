@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_StatementsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService GetPaymentReminder", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -40,7 +41,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService GetPaymentRemindersByStatementSummary", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -55,7 +56,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService GetStatementFilesByAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 
@@ -69,7 +70,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService GetStatementSummariesByAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 
@@ -83,7 +84,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService ListStatementJournalEntries", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -98,7 +99,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService ListStatementLedgerEntries", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -113,7 +114,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService ResendWebhookEvent", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var eventType string
 		var resourceToken string
@@ -128,7 +129,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService RetrieveStatementFiles", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -143,7 +144,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService RetrieveStatementInterestCharges", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -158,7 +159,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService RetrieveStatementPaymentInfo", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -173,7 +174,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService RetrieveStatementReward", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -188,7 +189,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService RetrieveStatementSummary", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string
@@ -203,7 +204,7 @@ func Test_openapi_StatementsAPIService(t *testing.T) {
 
 	t.Run("Test StatementsAPIService RetrieveYearToDateForStatementSummary", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 		var statementSummaryToken string

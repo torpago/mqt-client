@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_CreditAccountsAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_CreditAccountsAPIService(t *testing.T) {
 
 	t.Run("Test CreditAccountsAPIService CreateCreditAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CreditAccountsAPI.CreateCreditAccount(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_CreditAccountsAPIService(t *testing.T) {
 
 	t.Run("Test CreditAccountsAPIService ListAccounts", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CreditAccountsAPI.ListAccounts(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_openapi_CreditAccountsAPIService(t *testing.T) {
 
 	t.Run("Test CreditAccountsAPIService RetrieveAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 
@@ -62,7 +63,7 @@ func Test_openapi_CreditAccountsAPIService(t *testing.T) {
 
 	t.Run("Test CreditAccountsAPIService UpdateAccount", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountToken string
 

@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_CardGroupAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_CardGroupAPIService(t *testing.T) {
 
 	t.Run("Test CardGroupAPIService CreateCardGroup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CardGroupAPI.CreateCardGroup(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_CardGroupAPIService(t *testing.T) {
 
 	t.Run("Test CardGroupAPIService ListCardGroups", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CardGroupAPI.ListCardGroups(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_openapi_CardGroupAPIService(t *testing.T) {
 
 	t.Run("Test CardGroupAPIService RetrieveCardGroup", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 

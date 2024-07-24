@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/torpago/mqt-client"
 )
 
 func Test_openapi_CommandoModeAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_CommandoModeAPIService(t *testing.T) {
 
 	t.Run("Test CommandoModeAPIService GetCommandomodes", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CommandoModeAPI.GetCommandomodes(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_CommandoModeAPIService(t *testing.T) {
 
 	t.Run("Test CommandoModeAPIService GetCommandomodesCommandomodetokenTransitions", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var commandomodeToken string
 
@@ -50,7 +51,7 @@ func Test_openapi_CommandoModeAPIService(t *testing.T) {
 
 	t.Run("Test CommandoModeAPIService GetCommandomodesToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
@@ -64,7 +65,7 @@ func Test_openapi_CommandoModeAPIService(t *testing.T) {
 
 	t.Run("Test CommandoModeAPIService GetCommandomodesTransitionsToken", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var token string
 
