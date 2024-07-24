@@ -15,6 +15,7 @@ import (
 	"encoding/json"
 	"bytes"
 	"fmt"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the Funding type satisfies the MappedNullable interface at compile time
