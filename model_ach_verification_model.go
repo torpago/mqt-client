@@ -13,6 +13,7 @@ package openapi
 
 import (
 	"encoding/json"
+	"github.com/shopspring/decimal"
 )
 
 // checks if the AchVerificationModel type satisfies the MappedNullable interface at compile time
