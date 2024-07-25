@@ -25,6 +25,8 @@ type StrongCustomerAuthenticationLimits struct {
 	CavvAuthenticationAmountIncrementalPercentage *string `json:"cavv_authentication_amount_incremental_percentage,omitempty"`
 	// If set to `true`, Marqeta validates the amount in the authorization transaction against the amount in the 3D Secure authentication attempt. If the authorization amount is greater than the 3D Secure authentication amount, Marqeta rejects the transaction. You can specify an allowable variance for the 3D Secure authentication amount in the `cavv_authentication_amount_incremental_percentage` field.
 	EnableCavvAuthenticationAmountValidation *bool `json:"enable_cavv_authentication_amount_validation,omitempty"`
+	// Eric: FIX unmarshal error
+	EnableBiometricBypassScaContactless *bool `json:"enable_biometric_bypass_sca_contactless,omitempty"`
 	// Specifies the cumulative limit of transactions the cardholder can perform before receiving an SCA challenge.  A value of `0` in this field means that the cumulative amount spent in contactless POS transactions performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
 	ScaContactlessCumulativeAmountLimit *decimal.Decimal `json:"sca_contactless_cumulative_amount_limit,omitempty"`
 	// Specifies the maximum allowable amount for a single contactless point-of-sale (POS) transaction, above which the cardholder receives a strong customer authentication (SCA) challenge.  A value of `0` in this field means that the amount of any single contactless POS transaction performed by the cardholder does not impact the decision of whether or not an SCA challenge is served.
@@ -60,6 +62,38 @@ func NewStrongCustomerAuthenticationLimits() *StrongCustomerAuthenticationLimits
 func NewStrongCustomerAuthenticationLimitsWithDefaults() *StrongCustomerAuthenticationLimits {
 	this := StrongCustomerAuthenticationLimits{}
 	return &this
+}
+// Eric: FIX ummarshal error
+// GetEnableBiometricBypassScaContactless returns the EnableBiometricBypassScaContactless field value if set, zero value otherwise.
+func (o *StrongCustomerAuthenticationLimits) GetEnableBiometricBypassScaContactless() bool {
+    if o == nil || IsNil(o.EnableBiometricBypassScaContactless) {
+        var ret bool
+        return ret
+    }
+    return *o.EnableBiometricBypassScaContactless
+}
+
+// GetEnableBiometricBypassScaContactlessOk returns a tuple with the EnableBiometricBypassScaContactless field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StrongCustomerAuthenticationLimits) GetEnableBiometricBypassScaContactlessOk() (*bool, bool) {
+    if o == nil || IsNil(o.EnableBiometricBypassScaContactless) {
+        return nil, false
+    }
+    return o.EnableBiometricBypassScaContactless, true
+}
+
+// HasEnableBiometricBypassScaContactless returns a boolean if a field has been set.
+func (o *StrongCustomerAuthenticationLimits) HasEnableBiometricBypassScaContactless() bool {
+    if o != nil && !IsNil(o.EnableBiometricBypassScaContactless) {
+        return true
+    }
+
+    return false
+}
+
+// SetEnableBiometricBypassScaContactless gets a reference to the given bool and assigns it to the EnableBiometricBypassScaContactless field.
+func (o *StrongCustomerAuthenticationLimits) SetEnableBiometricBypassScaContactless(v bool) {
+    o.EnableBiometricBypassScaContactless = &v
 }
 
 // GetCavvAuthenticationAmountIncrementalPercentage returns the CavvAuthenticationAmountIncrementalPercentage field value if set, zero value otherwise.
