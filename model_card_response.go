@@ -882,11 +882,15 @@ func (o CardResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ActivationActions) {
 		toSerialize["activation_actions"] = o.ActivationActions
 	}
-	toSerialize["barcode"] = o.Barcode
+	if !IsNil(o.Barcode) {
+		toSerialize["barcode"] = o.Barcode
+	}
 	if !IsNil(o.BulkIssuanceToken) {
 		toSerialize["bulk_issuance_token"] = o.BulkIssuanceToken
 	}
-	toSerialize["card_product_token"] = o.CardProductToken
+	if !IsNil(o.CardProductToken) {
+		toSerialize["card_product_token"] = o.CardProductToken
+	}
 	if !IsNil(o.ChipCvvNumber) {
 		toSerialize["chip_cvv_number"] = o.ChipCvvNumber
 	}
@@ -896,42 +900,64 @@ func (o CardResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContactlessExemptionTotalAmount) {
 		toSerialize["contactless_exemption_total_amount"] = o.ContactlessExemptionTotalAmount
 	}
-	toSerialize["created_time"] = o.CreatedTime
+	if !IsNil(o.CreatedTime) {
+		toSerialize["created_time"] = o.CreatedTime
+	}
 	if !IsNil(o.CvvNumber) {
 		toSerialize["cvv_number"] = o.CvvNumber
 	}
 	if !IsNil(o.Expedite) {
 		toSerialize["expedite"] = o.Expedite
 	}
-	toSerialize["expiration"] = o.Expiration
-	toSerialize["expiration_time"] = o.ExpirationTime
+	if !IsNil(o.Expiration) {
+		toSerialize["expiration"] = o.Expiration
+	}
+	if !IsNil(o.ExpirationTime) {
+		toSerialize["expiration_time"] = o.ExpirationTime
+	}
 	if !IsNil(o.Fulfillment) {
 		toSerialize["fulfillment"] = o.Fulfillment
 	}
-	toSerialize["fulfillment_status"] = o.FulfillmentStatus
+	if !IsNil(o.FulfillmentStatus) {
+		toSerialize["fulfillment_status"] = o.FulfillmentStatus
+	}
 	if !IsNil(o.InstrumentType) {
 		toSerialize["instrument_type"] = o.InstrumentType
 	}
 	toSerialize["last_four"] = o.LastFour
-	toSerialize["last_modified_time"] = o.LastModifiedTime
+
+	if !IsNil(o.LastModifiedTime) {
+		toSerialize["last_modified_time"] = o.LastModifiedTime
+	}
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.NewPanFromCardToken) {
 		toSerialize["new_pan_from_card_token"] = o.NewPanFromCardToken
 	}
-	toSerialize["pan"] = o.Pan
-	toSerialize["pin_is_set"] = o.PinIsSet
+	if !IsNil(o.Pan) {
+		toSerialize["pan"] = o.Pan
+	}
+	if !IsNil(o.PinIsSet) {
+		toSerialize["pin_is_set"] = o.PinIsSet
+	}
 	if !IsNil(o.ReissuePanFromCardToken) {
 		toSerialize["reissue_pan_from_card_token"] = o.ReissuePanFromCardToken
 	}
-	toSerialize["state"] = o.State
-	toSerialize["state_reason"] = o.StateReason
-	toSerialize["token"] = o.Token
+	if !IsNil(o.State) {
+		toSerialize["state"] = o.State
+	if !IsNil(o.StateReason) {
+		toSerialize["state_reason"] = o.StateReason
+	}
+	if !IsNil(o.Token) {
+		toSerialize["token"] = o.Token
+	}
 	if !IsNil(o.TranslatePinFromCardToken) {
 		toSerialize["translate_pin_from_card_token"] = o.TranslatePinFromCardToken
 	}
-	toSerialize["user_token"] = o.UserToken
+	if !IsNil(o.UserToken) {
+		toSerialize["user_token"] = o.UserToken
+	}
 	return toSerialize, nil
 }
 
@@ -940,20 +966,7 @@ func (o *CardResponse) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"barcode",
-		"card_product_token",
-		"created_time",
-		"expiration",
-		"expiration_time",
-		"fulfillment_status",
 		"last_four",
-		"last_modified_time",
-		"pan",
-		"pin_is_set",
-		"state",
-		"state_reason",
-		"token",
-		"user_token",
 	}
 
 	allProperties := make(map[string]interface{})
