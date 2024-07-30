@@ -26,11 +26,11 @@ var _ MappedNullable = &CardResponse{}
 type CardResponse struct {
 	ActivationActions *ActivationActions `json:"activation_actions,omitempty"`
 	// Barcode printed on the card, expressed as numerals.
-	Barcode string `json:"barcode"`
+	Barcode *string `json:"barcode,omitempty"`
 	// Unique identifier of the bulk card order.
 	BulkIssuanceToken *string `json:"bulk_issuance_token,omitempty"`
 	// Unique identifier of the card product.
-	CardProductToken string `json:"card_product_token"`
+	CardProductToken *string `json:"card_product_token,omitempty"`
 	// Three-digit card verification value (ICVV) stored on the chip of the card.
 	ChipCvvNumber *string `json:"chip_cvv_number,omitempty"`
 	// Running count of the contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the number of contactless transactions that can be performed without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see <</core-api/card-products, Card Products>>.
@@ -38,44 +38,44 @@ type CardResponse struct {
 	// Running total of the money spent in contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the total amount that can be spent in contactless transactions without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see <</core-api/card-products, Card Products>>.
 	ContactlessExemptionTotalAmount *decimal.Decimal `json:"contactless_exemption_total_amount,omitempty"`
 	// Date and time when the resource was created, in UTC.
-	CreatedTime time.Time `json:"created_time"`
+	CreatedTime *time.Time `json:"created_time,omitempty"`
 	// Three-digit card verification value (CVV2 or CVC2) printed on the card.
 	CvvNumber *string `json:"cvv_number,omitempty"`
 	// A value of `true` indicates that you requested expedited processing of the card from your card fulfillment provider.
 	Expedite *bool `json:"expedite,omitempty"`
 	// Expiration date in `MMyy` format.
-	Expiration string `json:"expiration"`
+	Expiration *string `json:"expiration,omitempty"`
 	// Expiration date and time, in UTC.
-	ExpirationTime time.Time `json:"expiration_time"`
+	ExpirationTime *time.Time `json:"expiration_time"`
 	Fulfillment *CardFulfillmentResponse `json:"fulfillment,omitempty"`
 	// Card fulfillment status:  * *ISSUED:* Initial state of all newly created/issued cards. * *ORDERED:* Card ordered through the card fulfillment provider. * *REORDERED:* Card reordered through the card fulfillment provider. * *REJECTED:* Card rejected by the card fulfillment provider. * *SHIPPED:* Card shipped by the card fulfillment provider. * *DELIVERED:* Card delivered by the card fulfillment provider. * *DIGITALLY_PRESENTED:* Card digitally presented using the `/cards/{token}/showpan` endpoint; does not affect the delivery of physical cards.
-	FulfillmentStatus string `json:"fulfillment_status"`
+	FulfillmentStatus *string `json:"fulfillment_status,omitempty"`
 	// Instrument type of the card:  * *PHYSICAL_MSR:* A physical card with a magnetic stripe. This is the default physical card type. * *PHYSICAL_ICC:* A physical card with an integrated circuit, or \"chip.\" * *PHYSICAL_CONTACTLESS:* A physical card that uses radio frequency identification (RFID) or near-field communication (NFC) to enable payment over a secure radio interface. * *PHYSICAL_COMBO:* A physical card with a chip that also supports contactless payments. * *VIRTUAL_PAN:* A virtual card with a primary account number (PAN).
 	InstrumentType *string `json:"instrument_type,omitempty"`
 	// Last four digits of the card primary account number (PAN).
 	LastFour string `json:"last_four"`
 	// Date and time when the resource was last modified, in UTC.
-	LastModifiedTime time.Time `json:"last_modified_time"`
+	LastModifiedTime *time.Time `json:"last_modified_time,omitempty"`
 	// Associates customer-provided metadata with the card.
 	Metadata *map[string]string `json:"metadata,omitempty"`
 	// Reissues the specified card (known as the \"source\" card) with a new primary account number (PAN).
 	NewPanFromCardToken *string `json:"new_pan_from_card_token,omitempty"`
 	// Primary account number (PAN) of the card.
-	Pan string `json:"pan"`
+	Pan *string `json:"pan,omitempty"`
 	// Specifies if the personal identification number (PIN) has been set for the card.
-	PinIsSet bool `json:"pin_is_set"`
+	PinIsSet *bool `json:"pin_is_set,omitempty"`
 	// Reissues the specified card (known as the \"source\" card).
 	ReissuePanFromCardToken *string `json:"reissue_pan_from_card_token,omitempty"`
 	// Indicates the state of the card.
-	State string `json:"state"`
+	State *string `json:"state,omitempty"`
 	// Descriptive reason for why the card is in its current state. For example, \"Card activated by cardholder\".
-	StateReason string `json:"state_reason"`
+	StateReason *string `json:"state_reason,omitempty"`
 	// Unique identifier of the card.
-	Token string `json:"token"`
+	Token *string `json:"token,omitempty"`
 	// Copies the personal identification number (PIN) from the specified source card to the newly created card.
 	TranslatePinFromCardToken *string `json:"translate_pin_from_card_token,omitempty"`
 	// Unique identifier of the cardholder.
-	UserToken string `json:"user_token"`
+	UserToken *string `json:"user_token,omitempty"`
 }
 
 type _CardResponse CardResponse
@@ -86,22 +86,22 @@ type _CardResponse CardResponse
 // will change when the set of required properties is changed
 func NewCardResponse(barcode string, cardProductToken string, createdTime time.Time, expiration string, expirationTime time.Time, fulfillmentStatus string, lastFour string, lastModifiedTime time.Time, pan string, pinIsSet bool, state string, stateReason string, token string, userToken string) *CardResponse {
 	this := CardResponse{}
-	this.Barcode = barcode
-	this.CardProductToken = cardProductToken
-	this.CreatedTime = createdTime
+	this.Barcode = &barcode
+	this.CardProductToken = &cardProductToken
+	this.CreatedTime = &createdTime
 	var expedite bool = false
 	this.Expedite = &expedite
-	this.Expiration = expiration
-	this.ExpirationTime = expirationTime
-	this.FulfillmentStatus = fulfillmentStatus
+	this.Expiration = &expiration
+	this.ExpirationTime = &expirationTime
+	this.FulfillmentStatus = &fulfillmentStatus
 	this.LastFour = lastFour
-	this.LastModifiedTime = lastModifiedTime
-	this.Pan = pan
-	this.PinIsSet = pinIsSet
-	this.State = state
-	this.StateReason = stateReason
-	this.Token = token
-	this.UserToken = userToken
+	this.LastModifiedTime = &lastModifiedTime
+	this.Pan = &pan
+	this.PinIsSet = &pinIsSet
+	this.State = &state
+	this.StateReason = &stateReason
+	this.Token = &token
+	this.UserToken = &userToken
 	return &this
 }
 
