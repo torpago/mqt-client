@@ -113,7 +113,7 @@ func NewCardResponseWithDefaults() *CardResponse {
 	var expedite bool = false
 	this.Expedite = &expedite
 	var pinIsSet bool = false
-	this.PinIsSet = pinIsSet
+	this.PinIsSet = &pinIsSet
 	return &this
 }
 
@@ -156,7 +156,7 @@ func (o *CardResponse) GetBarcode() string {
 		return ret
 	}
 
-	return o.Barcode
+	return *o.Barcode
 }
 
 // GetBarcodeOk returns a tuple with the Barcode field value
@@ -165,12 +165,12 @@ func (o *CardResponse) GetBarcodeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Barcode, true
+	return o.Barcode, true
 }
 
 // SetBarcode sets field value
 func (o *CardResponse) SetBarcode(v string) {
-	o.Barcode = v
+	o.Barcode = &v
 }
 
 // GetBulkIssuanceToken returns the BulkIssuanceToken field value if set, zero value otherwise.
@@ -207,26 +207,26 @@ func (o *CardResponse) SetBulkIssuanceToken(v string) {
 
 // GetCardProductToken returns the CardProductToken field value
 func (o *CardResponse) GetCardProductToken() string {
-	if o == nil {
+	if o == nil || IsNil(o.CardProductToken) {
 		var ret string
 		return ret
 	}
 
-	return o.CardProductToken
+	return *o.CardProductToken
 }
 
 // GetCardProductTokenOk returns a tuple with the CardProductToken field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetCardProductTokenOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CardProductToken) {
 		return nil, false
 	}
-	return &o.CardProductToken, true
+	return o.CardProductToken, true
 }
 
 // SetCardProductToken sets field value
 func (o *CardResponse) SetCardProductToken(v string) {
-	o.CardProductToken = v
+	o.CardProductToken = &v
 }
 
 // GetChipCvvNumber returns the ChipCvvNumber field value if set, zero value otherwise.
@@ -327,26 +327,26 @@ func (o *CardResponse) SetContactlessExemptionTotalAmount(v decimal.Decimal) {
 
 // GetCreatedTime returns the CreatedTime field value
 func (o *CardResponse) GetCreatedTime() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedTime) {
 		var ret time.Time
 		return ret
 	}
 
-	return o.CreatedTime
+	return *o.CreatedTime
 }
 
 // GetCreatedTimeOk returns a tuple with the CreatedTime field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetCreatedTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedTime) {
 		return nil, false
 	}
-	return &o.CreatedTime, true
+	return o.CreatedTime, true
 }
 
 // SetCreatedTime sets field value
 func (o *CardResponse) SetCreatedTime(v time.Time) {
-	o.CreatedTime = v
+	o.CreatedTime = &v
 }
 
 // GetCvvNumber returns the CvvNumber field value if set, zero value otherwise.
@@ -415,50 +415,50 @@ func (o *CardResponse) SetExpedite(v bool) {
 
 // GetExpiration returns the Expiration field value
 func (o *CardResponse) GetExpiration() string {
-	if o == nil {
+	if o == nil || IsNil(o.Expiration) {
 		var ret string
 		return ret
 	}
 
-	return o.Expiration
+	return *o.Expiration
 }
 
 // GetExpirationOk returns a tuple with the Expiration field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetExpirationOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Expiration) {
 		return nil, false
 	}
-	return &o.Expiration, true
+	return o.Expiration, true
 }
 
 // SetExpiration sets field value
 func (o *CardResponse) SetExpiration(v string) {
-	o.Expiration = v
+	o.Expiration = &v
 }
 
 // GetExpirationTime returns the ExpirationTime field value
 func (o *CardResponse) GetExpirationTime() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.ExpirationTime) {
 		var ret time.Time
 		return ret
 	}
 
-	return o.ExpirationTime
+	return *o.ExpirationTime
 }
 
 // GetExpirationTimeOk returns a tuple with the ExpirationTime field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetExpirationTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExpirationTime) {
 		return nil, false
 	}
-	return &o.ExpirationTime, true
+	return o.ExpirationTime, true
 }
 
 // SetExpirationTime sets field value
 func (o *CardResponse) SetExpirationTime(v time.Time) {
-	o.ExpirationTime = v
+	o.ExpirationTime = &v
 }
 
 // GetFulfillment returns the Fulfillment field value if set, zero value otherwise.
@@ -495,26 +495,26 @@ func (o *CardResponse) SetFulfillment(v CardFulfillmentResponse) {
 
 // GetFulfillmentStatus returns the FulfillmentStatus field value
 func (o *CardResponse) GetFulfillmentStatus() string {
-	if o == nil {
+	if o == nil || IsNil(o.FulfillmentStatus) {
 		var ret string
 		return ret
 	}
 
-	return o.FulfillmentStatus
+	return *o.FulfillmentStatus
 }
 
 // GetFulfillmentStatusOk returns a tuple with the FulfillmentStatus field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetFulfillmentStatusOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FulfillmentStatus) {
 		return nil, false
 	}
-	return &o.FulfillmentStatus, true
+	return o.FulfillmentStatus, true
 }
 
 // SetFulfillmentStatus sets field value
 func (o *CardResponse) SetFulfillmentStatus(v string) {
-	o.FulfillmentStatus = v
+	o.FulfillmentStatus = &v
 }
 
 // GetInstrumentType returns the InstrumentType field value if set, zero value otherwise.
@@ -575,26 +575,26 @@ func (o *CardResponse) SetLastFour(v string) {
 
 // GetLastModifiedTime returns the LastModifiedTime field value
 func (o *CardResponse) GetLastModifiedTime() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.LastModifiedTime) {
 		var ret time.Time
 		return ret
 	}
 
-	return o.LastModifiedTime
+	return *o.LastModifiedTime
 }
 
 // GetLastModifiedTimeOk returns a tuple with the LastModifiedTime field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetLastModifiedTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.LastModifiedTime) {
 		return nil, false
 	}
-	return &o.LastModifiedTime, true
+	return o.LastModifiedTime, true
 }
 
 // SetLastModifiedTime sets field value
 func (o *CardResponse) SetLastModifiedTime(v time.Time) {
-	o.LastModifiedTime = v
+	o.LastModifiedTime = &v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
@@ -663,50 +663,50 @@ func (o *CardResponse) SetNewPanFromCardToken(v string) {
 
 // GetPan returns the Pan field value
 func (o *CardResponse) GetPan() string {
-	if o == nil {
+	if o == nil || IsNil(o.Pan) {
 		var ret string
 		return ret
 	}
 
-	return o.Pan
+	return *o.Pan
 }
 
 // GetPanOk returns a tuple with the Pan field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetPanOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Pan) {
 		return nil, false
 	}
-	return &o.Pan, true
+	return o.Pan, true
 }
 
 // SetPan sets field value
 func (o *CardResponse) SetPan(v string) {
-	o.Pan = v
+	o.Pan = &v
 }
 
 // GetPinIsSet returns the PinIsSet field value
 func (o *CardResponse) GetPinIsSet() bool {
-	if o == nil {
+	if o == nil || IsNil(o.PinIsSet) {
 		var ret bool
 		return ret
 	}
 
-	return o.PinIsSet
+	return *o.PinIsSet
 }
 
 // GetPinIsSetOk returns a tuple with the PinIsSet field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetPinIsSetOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PinIsSet) {
 		return nil, false
 	}
-	return &o.PinIsSet, true
+	return o.PinIsSet, true
 }
 
 // SetPinIsSet sets field value
 func (o *CardResponse) SetPinIsSet(v bool) {
-	o.PinIsSet = v
+	o.PinIsSet = &v
 }
 
 // GetReissuePanFromCardToken returns the ReissuePanFromCardToken field value if set, zero value otherwise.
@@ -743,74 +743,74 @@ func (o *CardResponse) SetReissuePanFromCardToken(v string) {
 
 // GetState returns the State field value
 func (o *CardResponse) GetState() string {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
 	}
 
-	return o.State
+	return *o.State
 }
 
 // GetStateOk returns a tuple with the State field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetStateOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
-	return &o.State, true
+	return o.State, true
 }
 
 // SetState sets field value
 func (o *CardResponse) SetState(v string) {
-	o.State = v
+	o.State = &v
 }
 
 // GetStateReason returns the StateReason field value
 func (o *CardResponse) GetStateReason() string {
-	if o == nil {
+	if o == nil || IsNil(o.StateReason) {
 		var ret string
 		return ret
 	}
 
-	return o.StateReason
+	return *o.StateReason
 }
 
 // GetStateReasonOk returns a tuple with the StateReason field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetStateReasonOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.StateReason) {
 		return nil, false
 	}
-	return &o.StateReason, true
+	return o.StateReason, true
 }
 
 // SetStateReason sets field value
 func (o *CardResponse) SetStateReason(v string) {
-	o.StateReason = v
+	o.StateReason = &v
 }
 
 // GetToken returns the Token field value
 func (o *CardResponse) GetToken() string {
-	if o == nil {
+	if o == nil || IsNil(o.Token) {
 		var ret string
 		return ret
 	}
 
-	return o.Token
+	return *o.Token
 }
 
 // GetTokenOk returns a tuple with the Token field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetTokenOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
-	return &o.Token, true
+	return o.Token, true
 }
 
 // SetToken sets field value
 func (o *CardResponse) SetToken(v string) {
-	o.Token = v
+	o.Token = &v
 }
 
 // GetTranslatePinFromCardToken returns the TranslatePinFromCardToken field value if set, zero value otherwise.
@@ -847,26 +847,26 @@ func (o *CardResponse) SetTranslatePinFromCardToken(v string) {
 
 // GetUserToken returns the UserToken field value
 func (o *CardResponse) GetUserToken() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserToken) {
 		var ret string
 		return ret
 	}
 
-	return o.UserToken
+	return *o.UserToken
 }
 
 // GetUserTokenOk returns a tuple with the UserToken field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetUserTokenOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserToken) {
 		return nil, false
 	}
-	return &o.UserToken, true
+	return o.UserToken, true
 }
 
 // SetUserToken sets field value
 func (o *CardResponse) SetUserToken(v string) {
-	o.UserToken = v
+	o.UserToken = &v
 }
 
 func (o CardResponse) MarshalJSON() ([]byte, error) {
