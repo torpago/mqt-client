@@ -946,6 +946,7 @@ func (o CardResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.State) {
 		toSerialize["state"] = o.State
+	}
 	if !IsNil(o.StateReason) {
 		toSerialize["state_reason"] = o.StateReason
 	}
