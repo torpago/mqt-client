@@ -26,7 +26,7 @@ type MccGroupModel struct {
 	Active *bool `json:"active,omitempty"`
 	Config *Config `json:"config,omitempty"`
 	// The set of merchant category codes that you want to include in this group. For each element, valid characters are 0-9, and the length must be 4 digits. You can also specify a range like \"9876-9880\". An MCC can belong to more than one group.
-	Mccs []map[string]interface{} `json:"mccs"`
+	Mccs []string `json:"mccs"`
 	// The name of the group.
 	Name string `json:"name"`
 	// The unique identifier of the group.  If you do not include a token, the system will generate one automatically. This token is necessary for use in other API calls, so we recommend that rather than let the system generate one, you use a simple string that is easy to remember. This value cannot be updated.
@@ -39,7 +39,7 @@ type _MccGroupModel MccGroupModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMccGroupModel(mccs []map[string]interface{}, name string) *MccGroupModel {
+func NewMccGroupModel(mccs []string, name string) *MccGroupModel {
 	this := MccGroupModel{}
 	var active bool = false
 	this.Active = &active
@@ -123,9 +123,9 @@ func (o *MccGroupModel) SetConfig(v Config) {
 }
 
 // GetMccs returns the Mccs field value
-func (o *MccGroupModel) GetMccs() []map[string]interface{} {
+func (o *MccGroupModel) GetMccs() []string {
 	if o == nil {
-		var ret []map[string]interface{}
+		var ret []string
 		return ret
 	}
 
@@ -134,7 +134,7 @@ func (o *MccGroupModel) GetMccs() []map[string]interface{} {
 
 // GetMccsOk returns a tuple with the Mccs field value
 // and a boolean to check if the value has been set.
-func (o *MccGroupModel) GetMccsOk() ([]map[string]interface{}, bool) {
+func (o *MccGroupModel) GetMccsOk() ([]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -142,7 +142,7 @@ func (o *MccGroupModel) GetMccsOk() ([]map[string]interface{}, bool) {
 }
 
 // SetMccs sets field value
-func (o *MccGroupModel) SetMccs(v []map[string]interface{}) {
+func (o *MccGroupModel) SetMccs(v []string) {
 	o.Mccs = v
 }
 
