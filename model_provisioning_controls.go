@@ -22,6 +22,8 @@ var _ MappedNullable = &ProvisioningControls{}
 type ProvisioningControls struct {
 	DwtUseCardStatusDuringAuth *bool `json:"dwt_use_card_status_during_auth,omitempty"`
 	DwtVerifyAtcDuringAuth *bool `json:"dwt_verify_atc_during_auth,omitempty"`
+	DwtTarAvsDeclineOnAddressNumberMismatch *bool `json:"dwt_tar_avs_decline_on_address_number_mismatch,omitempty"` 
+	DwtTarAvsDeclineOnPostalAddressMismatch *bool `json:"dwt_tar_avs_decline_on_postal_code_mismatch,omitempty"` 
 	EnableDiscretionaryDataDuringTar *bool `json:"enable_discretionary_data_during_tar,omitempty"`
 	// A value of `true` requires identity verification set-up for all digital wallets at the card product level.
 	ForceYellowPathForCardProduct *bool `json:"force_yellow_path_for_card_product,omitempty"`
@@ -46,6 +48,70 @@ func NewProvisioningControls() *ProvisioningControls {
 func NewProvisioningControlsWithDefaults() *ProvisioningControls {
 	this := ProvisioningControls{}
 	return &this
+}
+
+// GetDwtTarAvsDeclineOnAddressNumberMismatch returns the DwtTarAvsDeclineOnAddressNumberMismatch field value if set, zero value otherwise.
+func (o *ProvisioningControls) GetDwtTarAvsDeclineOnAddressNumberMismatch() bool {
+	if o == nil || IsNil(o.DwtTarAvsDeclineOnAddressNumberMismatch) {
+		var ret bool
+		return ret
+	}
+	return *o.DwtTarAvsDeclineOnAddressNumberMismatch
+}
+
+// GetDwtTarAvsDeclineOnAddressNumberMismatchOk returns a tuple with the DwtTarAvsDeclineOnAddressNumberMismatch field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProvisioningControls) GetDwtTarAvsDeclineOnAddressNumberMismatchOk() (*bool, bool) {
+	if o == nil || IsNil(o.DwtTarAvsDeclineOnAddressNumberMismatch) {
+		return nil, false
+	}
+	return o.DwtTarAvsDeclineOnAddressNumberMismatch, true
+}
+
+// HasDwtTarAvsDeclineOnAddressNumberMismatch returns a boolean if a field has been set.
+func (o *ProvisioningControls) HasDwtTarAvsDeclineOnAddressNumberMismatch() bool {
+	if o != nil && !IsNil(o.DwtTarAvsDeclineOnAddressNumberMismatch) {
+		return true
+	}
+
+	return false
+}
+
+// SetDwtTarAvsDeclineOnAddressNumberMismatch gets a reference to the given bool and assigns it to the DwtTarAvsDeclineOnAddressNumberMismatch field.
+func (o *ProvisioningControls) SetDwtTarAvsDeclineOnAddressNumberMismatch(v bool) {
+	o.DwtTarAvsDeclineOnAddressNumberMismatch = &v
+}
+
+// GetDwtTarAvsDeclineOnPostalAddressMismatch returns the DwtTarAvsDeclineOnPostalAddressMismatch field value if set, zero value otherwise.
+func (o *ProvisioningControls) GetDwtTarAvsDeclineOnPostalAddressMismatch() bool {
+	if o == nil || IsNil(o.DwtTarAvsDeclineOnPostalAddressMismatch) {
+		var ret bool
+		return ret
+	}
+	return *o.DwtTarAvsDeclineOnPostalAddressMismatch
+}
+
+// GetDwtTarAvsDeclineOnPostalAddressMismatchOk returns a tuple with the DwtTarAvsDeclineOnPostalAddressMismatch field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProvisioningControls) GetDwtTarAvsDeclineOnPostalAddressMismatchOk() (*bool, bool) {
+	if o == nil || IsNil(o.DwtTarAvsDeclineOnPostalAddressMismatch) {
+		return nil, false
+	}
+	return o.DwtTarAvsDeclineOnPostalAddressMismatch, true
+}
+
+// HasDwtTarAvsDeclineOnPostalAddressMismatch returns a boolean if a field has been set.
+func (o *ProvisioningControls) HasDwtTarAvsDeclineOnPostalAddressMismatch() bool {
+	if o != nil && !IsNil(o.DwtTarAvsDeclineOnPostalAddressMismatch) {
+		return true
+	}
+
+	return false
+}
+
+// SetDwtTarAvsDeclineOnPostalAddressMismatch gets a reference to the given bool and assigns it to the DwtTarAvsDeclineOnPostalAddressMismatch field.
+func (o *ProvisioningControls) SetDwtTarAvsDeclineOnPostalAddressMismatch(v bool) {
+	o.DwtTarAvsDeclineOnPostalAddressMismatch = &v
 }
 
 // GetDwtUseCardStatusDuringAuth returns the DwtUseCardStatusDuringAuth field value if set, zero value otherwise.
