@@ -674,12 +674,12 @@ func (o *GpaResponse) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"amount",
-		"created_time",
+		//"created_time",
 		"currency_code",
 		"funding",
 		"funding_source_token",
-		"last_modified_time",
-		"response",
+		//"last_modified_time",
+		//"response",
 		"state",
 		"token",
 		"transaction_token",

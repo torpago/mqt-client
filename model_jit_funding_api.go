@@ -581,7 +581,7 @@ func (o *JitFundingApi) UnmarshalJSON(data []byte) (err error) {
 		"amount",
 		"method",
 		"token",
-		"user_token",
+		//"user_token",
 	}
 
 	allProperties := make(map[string]interface{})
