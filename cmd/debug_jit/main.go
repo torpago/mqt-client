@@ -94,6 +94,7 @@ func main() {
 			  "is_default_account": false,
 			  "last_modified_time": "2020-02-20T22:06:58Z",
 			  "token": "**********93de",
+			  "name": "aaaaaaaaaaaa",
 			  "type": "programgateway"
 			}
 		  },
