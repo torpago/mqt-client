@@ -324,14 +324,14 @@ func (o *CardholderBalance) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"available_balance",
-		"balances",
-		"cached_balance",
-		"credit_balance",
-		"currency_code",
-		"last_updated_time",
-		"ledger_balance",
-		"pending_credits",
+		// "available_balance",
+		// "balances",
+		// "cached_balance",
+		// "credit_balance",
+		// "currency_code",
+		// "last_updated_time",
+		// "ledger_balance",
+		// "pending_credits",
 	}
 
 	allProperties := make(map[string]interface{})
