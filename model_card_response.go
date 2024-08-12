@@ -26,11 +26,11 @@ var _ MappedNullable = &CardResponse{}
 type CardResponse struct {
 	ActivationActions *ActivationActions `json:"activation_actions,omitempty"`
 	// Barcode printed on the card, expressed as numerals.
-	Barcode string `json:"barcode"`
+	Barcode *string `json:"barcode,omitempty"`
 	// Unique identifier of the bulk card order.
 	BulkIssuanceToken *string `json:"bulk_issuance_token,omitempty"`
 	// Unique identifier of the card product.
-	CardProductToken string `json:"card_product_token"`
+	CardProductToken *string `json:"card_product_token,omitempty"`
 	// Three-digit card verification value (ICVV) stored on the chip of the card.
 	ChipCvvNumber *string `json:"chip_cvv_number,omitempty"`
 	// Running count of the contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the number of contactless transactions that can be performed without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see <</core-api/card-products, Card Products>>.
@@ -38,44 +38,44 @@ type CardResponse struct {
 	// Running total of the money spent in contactless transactions successfully completed since the last strong customer authentication (SCA) challenge was issued. You can limit the total amount that can be spent in contactless transactions without issuing an SCA challenge at the card product level.  For more information about strong customer authentication, see <</core-api/card-products, Card Products>>.
 	ContactlessExemptionTotalAmount *decimal.Decimal `json:"contactless_exemption_total_amount,omitempty"`
 	// Date and time when the resource was created, in UTC.
-	CreatedTime time.Time `json:"created_time"`
+	CreatedTime *time.Time `json:"created_time,omitempty"`
 	// Three-digit card verification value (CVV2 or CVC2) printed on the card.
 	CvvNumber *string `json:"cvv_number,omitempty"`
 	// A value of `true` indicates that you requested expedited processing of the card from your card fulfillment provider.
 	Expedite *bool `json:"expedite,omitempty"`
 	// Expiration date in `MMyy` format.
-	Expiration string `json:"expiration"`
+	Expiration *string `json:"expiration,omitempty"`
 	// Expiration date and time, in UTC.
-	ExpirationTime time.Time `json:"expiration_time"`
+	ExpirationTime *time.Time `json:"expiration_time"`
 	Fulfillment *CardFulfillmentResponse `json:"fulfillment,omitempty"`
 	// Card fulfillment status:  * *ISSUED:* Initial state of all newly created/issued cards. * *ORDERED:* Card ordered through the card fulfillment provider. * *REORDERED:* Card reordered through the card fulfillment provider. * *REJECTED:* Card rejected by the card fulfillment provider. * *SHIPPED:* Card shipped by the card fulfillment provider. * *DELIVERED:* Card delivered by the card fulfillment provider. * *DIGITALLY_PRESENTED:* Card digitally presented using the `/cards/{token}/showpan` endpoint; does not affect the delivery of physical cards.
-	FulfillmentStatus string `json:"fulfillment_status"`
+	FulfillmentStatus *string `json:"fulfillment_status,omitempty"`
 	// Instrument type of the card:  * *PHYSICAL_MSR:* A physical card with a magnetic stripe. This is the default physical card type. * *PHYSICAL_ICC:* A physical card with an integrated circuit, or \"chip.\" * *PHYSICAL_CONTACTLESS:* A physical card that uses radio frequency identification (RFID) or near-field communication (NFC) to enable payment over a secure radio interface. * *PHYSICAL_COMBO:* A physical card with a chip that also supports contactless payments. * *VIRTUAL_PAN:* A virtual card with a primary account number (PAN).
 	InstrumentType *string `json:"instrument_type,omitempty"`
 	// Last four digits of the card primary account number (PAN).
 	LastFour string `json:"last_four"`
 	// Date and time when the resource was last modified, in UTC.
-	LastModifiedTime time.Time `json:"last_modified_time"`
+	LastModifiedTime *time.Time `json:"last_modified_time,omitempty"`
 	// Associates customer-provided metadata with the card.
 	Metadata *map[string]string `json:"metadata,omitempty"`
 	// Reissues the specified card (known as the \"source\" card) with a new primary account number (PAN).
 	NewPanFromCardToken *string `json:"new_pan_from_card_token,omitempty"`
 	// Primary account number (PAN) of the card.
-	Pan string `json:"pan"`
+	Pan *string `json:"pan,omitempty"`
 	// Specifies if the personal identification number (PIN) has been set for the card.
-	PinIsSet bool `json:"pin_is_set"`
+	PinIsSet *bool `json:"pin_is_set,omitempty"`
 	// Reissues the specified card (known as the \"source\" card).
 	ReissuePanFromCardToken *string `json:"reissue_pan_from_card_token,omitempty"`
 	// Indicates the state of the card.
-	State string `json:"state"`
+	State *string `json:"state,omitempty"`
 	// Descriptive reason for why the card is in its current state. For example, \"Card activated by cardholder\".
-	StateReason string `json:"state_reason"`
+	StateReason *string `json:"state_reason,omitempty"`
 	// Unique identifier of the card.
-	Token string `json:"token"`
+	Token *string `json:"token,omitempty"`
 	// Copies the personal identification number (PIN) from the specified source card to the newly created card.
 	TranslatePinFromCardToken *string `json:"translate_pin_from_card_token,omitempty"`
 	// Unique identifier of the cardholder.
-	UserToken string `json:"user_token"`
+	UserToken *string `json:"user_token,omitempty"`
 }
 
 type _CardResponse CardResponse
@@ -86,22 +86,22 @@ type _CardResponse CardResponse
 // will change when the set of required properties is changed
 func NewCardResponse(barcode string, cardProductToken string, createdTime time.Time, expiration string, expirationTime time.Time, fulfillmentStatus string, lastFour string, lastModifiedTime time.Time, pan string, pinIsSet bool, state string, stateReason string, token string, userToken string) *CardResponse {
 	this := CardResponse{}
-	this.Barcode = barcode
-	this.CardProductToken = cardProductToken
-	this.CreatedTime = createdTime
+	this.Barcode = &barcode
+	this.CardProductToken = &cardProductToken
+	this.CreatedTime = &createdTime
 	var expedite bool = false
 	this.Expedite = &expedite
-	this.Expiration = expiration
-	this.ExpirationTime = expirationTime
-	this.FulfillmentStatus = fulfillmentStatus
+	this.Expiration = &expiration
+	this.ExpirationTime = &expirationTime
+	this.FulfillmentStatus = &fulfillmentStatus
 	this.LastFour = lastFour
-	this.LastModifiedTime = lastModifiedTime
-	this.Pan = pan
-	this.PinIsSet = pinIsSet
-	this.State = state
-	this.StateReason = stateReason
-	this.Token = token
-	this.UserToken = userToken
+	this.LastModifiedTime = &lastModifiedTime
+	this.Pan = &pan
+	this.PinIsSet = &pinIsSet
+	this.State = &state
+	this.StateReason = &stateReason
+	this.Token = &token
+	this.UserToken = &userToken
 	return &this
 }
 
@@ -113,7 +113,7 @@ func NewCardResponseWithDefaults() *CardResponse {
 	var expedite bool = false
 	this.Expedite = &expedite
 	var pinIsSet bool = false
-	this.PinIsSet = pinIsSet
+	this.PinIsSet = &pinIsSet
 	return &this
 }
 
@@ -156,7 +156,7 @@ func (o *CardResponse) GetBarcode() string {
 		return ret
 	}
 
-	return o.Barcode
+	return *o.Barcode
 }
 
 // GetBarcodeOk returns a tuple with the Barcode field value
@@ -165,12 +165,12 @@ func (o *CardResponse) GetBarcodeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Barcode, true
+	return o.Barcode, true
 }
 
 // SetBarcode sets field value
 func (o *CardResponse) SetBarcode(v string) {
-	o.Barcode = v
+	o.Barcode = &v
 }
 
 // GetBulkIssuanceToken returns the BulkIssuanceToken field value if set, zero value otherwise.
@@ -207,26 +207,26 @@ func (o *CardResponse) SetBulkIssuanceToken(v string) {
 
 // GetCardProductToken returns the CardProductToken field value
 func (o *CardResponse) GetCardProductToken() string {
-	if o == nil {
+	if o == nil || IsNil(o.CardProductToken) {
 		var ret string
 		return ret
 	}
 
-	return o.CardProductToken
+	return *o.CardProductToken
 }
 
 // GetCardProductTokenOk returns a tuple with the CardProductToken field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetCardProductTokenOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CardProductToken) {
 		return nil, false
 	}
-	return &o.CardProductToken, true
+	return o.CardProductToken, true
 }
 
 // SetCardProductToken sets field value
 func (o *CardResponse) SetCardProductToken(v string) {
-	o.CardProductToken = v
+	o.CardProductToken = &v
 }
 
 // GetChipCvvNumber returns the ChipCvvNumber field value if set, zero value otherwise.
@@ -327,26 +327,26 @@ func (o *CardResponse) SetContactlessExemptionTotalAmount(v decimal.Decimal) {
 
 // GetCreatedTime returns the CreatedTime field value
 func (o *CardResponse) GetCreatedTime() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedTime) {
 		var ret time.Time
 		return ret
 	}
 
-	return o.CreatedTime
+	return *o.CreatedTime
 }
 
 // GetCreatedTimeOk returns a tuple with the CreatedTime field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetCreatedTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedTime) {
 		return nil, false
 	}
-	return &o.CreatedTime, true
+	return o.CreatedTime, true
 }
 
 // SetCreatedTime sets field value
 func (o *CardResponse) SetCreatedTime(v time.Time) {
-	o.CreatedTime = v
+	o.CreatedTime = &v
 }
 
 // GetCvvNumber returns the CvvNumber field value if set, zero value otherwise.
@@ -415,50 +415,50 @@ func (o *CardResponse) SetExpedite(v bool) {
 
 // GetExpiration returns the Expiration field value
 func (o *CardResponse) GetExpiration() string {
-	if o == nil {
+	if o == nil || IsNil(o.Expiration) {
 		var ret string
 		return ret
 	}
 
-	return o.Expiration
+	return *o.Expiration
 }
 
 // GetExpirationOk returns a tuple with the Expiration field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetExpirationOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Expiration) {
 		return nil, false
 	}
-	return &o.Expiration, true
+	return o.Expiration, true
 }
 
 // SetExpiration sets field value
 func (o *CardResponse) SetExpiration(v string) {
-	o.Expiration = v
+	o.Expiration = &v
 }
 
 // GetExpirationTime returns the ExpirationTime field value
 func (o *CardResponse) GetExpirationTime() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.ExpirationTime) {
 		var ret time.Time
 		return ret
 	}
 
-	return o.ExpirationTime
+	return *o.ExpirationTime
 }
 
 // GetExpirationTimeOk returns a tuple with the ExpirationTime field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetExpirationTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExpirationTime) {
 		return nil, false
 	}
-	return &o.ExpirationTime, true
+	return o.ExpirationTime, true
 }
 
 // SetExpirationTime sets field value
 func (o *CardResponse) SetExpirationTime(v time.Time) {
-	o.ExpirationTime = v
+	o.ExpirationTime = &v
 }
 
 // GetFulfillment returns the Fulfillment field value if set, zero value otherwise.
@@ -495,26 +495,26 @@ func (o *CardResponse) SetFulfillment(v CardFulfillmentResponse) {
 
 // GetFulfillmentStatus returns the FulfillmentStatus field value
 func (o *CardResponse) GetFulfillmentStatus() string {
-	if o == nil {
+	if o == nil || IsNil(o.FulfillmentStatus) {
 		var ret string
 		return ret
 	}
 
-	return o.FulfillmentStatus
+	return *o.FulfillmentStatus
 }
 
 // GetFulfillmentStatusOk returns a tuple with the FulfillmentStatus field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetFulfillmentStatusOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FulfillmentStatus) {
 		return nil, false
 	}
-	return &o.FulfillmentStatus, true
+	return o.FulfillmentStatus, true
 }
 
 // SetFulfillmentStatus sets field value
 func (o *CardResponse) SetFulfillmentStatus(v string) {
-	o.FulfillmentStatus = v
+	o.FulfillmentStatus = &v
 }
 
 // GetInstrumentType returns the InstrumentType field value if set, zero value otherwise.
@@ -575,26 +575,26 @@ func (o *CardResponse) SetLastFour(v string) {
 
 // GetLastModifiedTime returns the LastModifiedTime field value
 func (o *CardResponse) GetLastModifiedTime() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.LastModifiedTime) {
 		var ret time.Time
 		return ret
 	}
 
-	return o.LastModifiedTime
+	return *o.LastModifiedTime
 }
 
 // GetLastModifiedTimeOk returns a tuple with the LastModifiedTime field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetLastModifiedTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.LastModifiedTime) {
 		return nil, false
 	}
-	return &o.LastModifiedTime, true
+	return o.LastModifiedTime, true
 }
 
 // SetLastModifiedTime sets field value
 func (o *CardResponse) SetLastModifiedTime(v time.Time) {
-	o.LastModifiedTime = v
+	o.LastModifiedTime = &v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
@@ -663,50 +663,50 @@ func (o *CardResponse) SetNewPanFromCardToken(v string) {
 
 // GetPan returns the Pan field value
 func (o *CardResponse) GetPan() string {
-	if o == nil {
+	if o == nil || IsNil(o.Pan) {
 		var ret string
 		return ret
 	}
 
-	return o.Pan
+	return *o.Pan
 }
 
 // GetPanOk returns a tuple with the Pan field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetPanOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Pan) {
 		return nil, false
 	}
-	return &o.Pan, true
+	return o.Pan, true
 }
 
 // SetPan sets field value
 func (o *CardResponse) SetPan(v string) {
-	o.Pan = v
+	o.Pan = &v
 }
 
 // GetPinIsSet returns the PinIsSet field value
 func (o *CardResponse) GetPinIsSet() bool {
-	if o == nil {
+	if o == nil || IsNil(o.PinIsSet) {
 		var ret bool
 		return ret
 	}
 
-	return o.PinIsSet
+	return *o.PinIsSet
 }
 
 // GetPinIsSetOk returns a tuple with the PinIsSet field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetPinIsSetOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PinIsSet) {
 		return nil, false
 	}
-	return &o.PinIsSet, true
+	return o.PinIsSet, true
 }
 
 // SetPinIsSet sets field value
 func (o *CardResponse) SetPinIsSet(v bool) {
-	o.PinIsSet = v
+	o.PinIsSet = &v
 }
 
 // GetReissuePanFromCardToken returns the ReissuePanFromCardToken field value if set, zero value otherwise.
@@ -743,74 +743,74 @@ func (o *CardResponse) SetReissuePanFromCardToken(v string) {
 
 // GetState returns the State field value
 func (o *CardResponse) GetState() string {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
 	}
 
-	return o.State
+	return *o.State
 }
 
 // GetStateOk returns a tuple with the State field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetStateOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
-	return &o.State, true
+	return o.State, true
 }
 
 // SetState sets field value
 func (o *CardResponse) SetState(v string) {
-	o.State = v
+	o.State = &v
 }
 
 // GetStateReason returns the StateReason field value
 func (o *CardResponse) GetStateReason() string {
-	if o == nil {
+	if o == nil || IsNil(o.StateReason) {
 		var ret string
 		return ret
 	}
 
-	return o.StateReason
+	return *o.StateReason
 }
 
 // GetStateReasonOk returns a tuple with the StateReason field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetStateReasonOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.StateReason) {
 		return nil, false
 	}
-	return &o.StateReason, true
+	return o.StateReason, true
 }
 
 // SetStateReason sets field value
 func (o *CardResponse) SetStateReason(v string) {
-	o.StateReason = v
+	o.StateReason = &v
 }
 
 // GetToken returns the Token field value
 func (o *CardResponse) GetToken() string {
-	if o == nil {
+	if o == nil || IsNil(o.Token) {
 		var ret string
 		return ret
 	}
 
-	return o.Token
+	return *o.Token
 }
 
 // GetTokenOk returns a tuple with the Token field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetTokenOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
-	return &o.Token, true
+	return o.Token, true
 }
 
 // SetToken sets field value
 func (o *CardResponse) SetToken(v string) {
-	o.Token = v
+	o.Token = &v
 }
 
 // GetTranslatePinFromCardToken returns the TranslatePinFromCardToken field value if set, zero value otherwise.
@@ -847,26 +847,26 @@ func (o *CardResponse) SetTranslatePinFromCardToken(v string) {
 
 // GetUserToken returns the UserToken field value
 func (o *CardResponse) GetUserToken() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserToken) {
 		var ret string
 		return ret
 	}
 
-	return o.UserToken
+	return *o.UserToken
 }
 
 // GetUserTokenOk returns a tuple with the UserToken field value
 // and a boolean to check if the value has been set.
 func (o *CardResponse) GetUserTokenOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserToken) {
 		return nil, false
 	}
-	return &o.UserToken, true
+	return o.UserToken, true
 }
 
 // SetUserToken sets field value
 func (o *CardResponse) SetUserToken(v string) {
-	o.UserToken = v
+	o.UserToken = &v
 }
 
 func (o CardResponse) MarshalJSON() ([]byte, error) {
@@ -882,11 +882,15 @@ func (o CardResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ActivationActions) {
 		toSerialize["activation_actions"] = o.ActivationActions
 	}
-	toSerialize["barcode"] = o.Barcode
+	if !IsNil(o.Barcode) {
+		toSerialize["barcode"] = o.Barcode
+	}
 	if !IsNil(o.BulkIssuanceToken) {
 		toSerialize["bulk_issuance_token"] = o.BulkIssuanceToken
 	}
-	toSerialize["card_product_token"] = o.CardProductToken
+	if !IsNil(o.CardProductToken) {
+		toSerialize["card_product_token"] = o.CardProductToken
+	}
 	if !IsNil(o.ChipCvvNumber) {
 		toSerialize["chip_cvv_number"] = o.ChipCvvNumber
 	}
@@ -896,42 +900,65 @@ func (o CardResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContactlessExemptionTotalAmount) {
 		toSerialize["contactless_exemption_total_amount"] = o.ContactlessExemptionTotalAmount
 	}
-	toSerialize["created_time"] = o.CreatedTime
+	if !IsNil(o.CreatedTime) {
+		toSerialize["created_time"] = o.CreatedTime
+	}
 	if !IsNil(o.CvvNumber) {
 		toSerialize["cvv_number"] = o.CvvNumber
 	}
 	if !IsNil(o.Expedite) {
 		toSerialize["expedite"] = o.Expedite
 	}
-	toSerialize["expiration"] = o.Expiration
-	toSerialize["expiration_time"] = o.ExpirationTime
+	if !IsNil(o.Expiration) {
+		toSerialize["expiration"] = o.Expiration
+	}
+	if !IsNil(o.ExpirationTime) {
+		toSerialize["expiration_time"] = o.ExpirationTime
+	}
 	if !IsNil(o.Fulfillment) {
 		toSerialize["fulfillment"] = o.Fulfillment
 	}
-	toSerialize["fulfillment_status"] = o.FulfillmentStatus
+	if !IsNil(o.FulfillmentStatus) {
+		toSerialize["fulfillment_status"] = o.FulfillmentStatus
+	}
 	if !IsNil(o.InstrumentType) {
 		toSerialize["instrument_type"] = o.InstrumentType
 	}
 	toSerialize["last_four"] = o.LastFour
-	toSerialize["last_modified_time"] = o.LastModifiedTime
+
+	if !IsNil(o.LastModifiedTime) {
+		toSerialize["last_modified_time"] = o.LastModifiedTime
+	}
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.NewPanFromCardToken) {
 		toSerialize["new_pan_from_card_token"] = o.NewPanFromCardToken
 	}
-	toSerialize["pan"] = o.Pan
-	toSerialize["pin_is_set"] = o.PinIsSet
+	if !IsNil(o.Pan) {
+		toSerialize["pan"] = o.Pan
+	}
+	if !IsNil(o.PinIsSet) {
+		toSerialize["pin_is_set"] = o.PinIsSet
+	}
 	if !IsNil(o.ReissuePanFromCardToken) {
 		toSerialize["reissue_pan_from_card_token"] = o.ReissuePanFromCardToken
 	}
-	toSerialize["state"] = o.State
-	toSerialize["state_reason"] = o.StateReason
-	toSerialize["token"] = o.Token
+	if !IsNil(o.State) {
+		toSerialize["state"] = o.State
+	}
+	if !IsNil(o.StateReason) {
+		toSerialize["state_reason"] = o.StateReason
+	}
+	if !IsNil(o.Token) {
+		toSerialize["token"] = o.Token
+	}
 	if !IsNil(o.TranslatePinFromCardToken) {
 		toSerialize["translate_pin_from_card_token"] = o.TranslatePinFromCardToken
 	}
-	toSerialize["user_token"] = o.UserToken
+	if !IsNil(o.UserToken) {
+		toSerialize["user_token"] = o.UserToken
+	}
 	return toSerialize, nil
 }
 
@@ -940,20 +967,7 @@ func (o *CardResponse) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"barcode",
-		"card_product_token",
-		"created_time",
-		"expiration",
-		"expiration_time",
-		"fulfillment_status",
 		"last_four",
-		"last_modified_time",
-		"pan",
-		"pin_is_set",
-		"state",
-		"state_reason",
-		"token",
-		"user_token",
 	}
 
 	allProperties := make(map[string]interface{})
