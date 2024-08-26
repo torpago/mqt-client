@@ -176,6 +176,8 @@ type APIClient struct {
 
 	SimulateAPI *SimulateAPIService
 
+	Simulations20BetaCardTransactionsAPI *Simulations20BetaCardTransactionsApiService
+
 	StatementsAPI *StatementsAPIService
 
 	SubstatusAPI *SubstatusAPIService
@@ -272,6 +274,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.RewardProgramsBetaAPI = (*RewardProgramsBetaAPIService)(&c.common)
 	c.RewardRedemptionsBetaAPI = (*RewardRedemptionsBetaAPIService)(&c.common)
 	c.SimulateAPI = (*SimulateAPIService)(&c.common)
+	c.Simulations20BetaCardTransactionsAPI = (*Simulations20BetaCardTransactionsApiService)(&c.common)
 	c.StatementsAPI = (*StatementsAPIService)(&c.common)
 	c.SubstatusAPI = (*SubstatusAPIService)(&c.common)
 	c.TransactionsAPI = (*TransactionsAPIService)(&c.common)
