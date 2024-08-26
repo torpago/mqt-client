@@ -3417,7 +3417,7 @@ func (o *TransactionModel) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"acting_user_token",
+		//"acting_user_token",
 		"amount",
 		"state",
 		"token",
@@ -3441,7 +3441,7 @@ func (o *TransactionModel) UnmarshalJSON(data []byte) (err error) {
 	varTransactionModel := _TransactionModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	//decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varTransactionModel)
 
 	if err != nil {
