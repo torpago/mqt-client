@@ -13,63 +13,204 @@ package openapi
 
 import (
 	"encoding/json"
+	"github.com/shopspring/decimal"
 )
 
-// checks if the CurrencyConversion type satisfies the MappedNullable interface at compile time
+// checks if the Network type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CurrencyConversion{}
 
-// CurrencyConversion Contains information about currency conversion.
+// CurrencyConversion Contains information from the card network about currency conversion, including the original currency of the transaction, the amount of the transaction in the original currency, and the conversion rate.
 type CurrencyConversion struct {
-	Network *Network `json:"network,omitempty"`
+	// Conversion rate between the origination currency and the settlement currency.  Returned when the transaction currency is different from the origination currency.
+	ConversionRate *decimal.Decimal `json:"conversion_rate,omitempty"`
+	// Indicates whether currency conversion was performed dynamically at the point of sale.
+	DynamicCurrencyConversion *bool `json:"dynamic_currency_conversion,omitempty"`
+	// Amount of the transaction in the currency in which it originated.
+	OriginalAmount *decimal.Decimal `json:"original_amount,omitempty"`
+	// Currency type of the origination currency.
+	OriginalCurrencyCode *string `json:"original_currency_code,omitempty"`
+	SettlementData *SettlementData `json:"settlement_data,omitempty"`
 }
 
-// NewCurrencyConversion instantiates a new CurrencyConversion object
+// NewNetwork instantiates a new Network object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
 func NewCurrencyConversion() *CurrencyConversion {
 	this := CurrencyConversion{}
+	var dynamicCurrencyConversion bool = false
+	this.DynamicCurrencyConversion = &dynamicCurrencyConversion
 	return &this
 }
 
-// NewCurrencyConversionWithDefaults instantiates a new CurrencyConversion object
+// NewNetworkWithDefaults instantiates a new Network object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCurrencyConversionWithDefaults() *CurrencyConversion {
 	this := CurrencyConversion{}
+	var dynamicCurrencyConversion bool = false
+	this.DynamicCurrencyConversion = &dynamicCurrencyConversion
 	return &this
 }
 
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *CurrencyConversion) GetNetwork() Network {
-	if o == nil || IsNil(o.Network) {
-		var ret Network
+// GetConversionRate returns the ConversionRate field value if set, zero value otherwise.
+func (o *CurrencyConversion) GetConversionRate() decimal.Decimal {
+	if o == nil || IsNil(o.ConversionRate) {
+		var ret decimal.Decimal
 		return ret
 	}
-	return *o.Network
+	return *o.ConversionRate
 }
 
-// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
+// GetConversionRateOk returns a tuple with the ConversionRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CurrencyConversion) GetNetworkOk() (*Network, bool) {
-	if o == nil || IsNil(o.Network) {
+func (o *CurrencyConversion) GetConversionRateOk() (*decimal.Decimal, bool) {
+	if o == nil || IsNil(o.ConversionRate) {
 		return nil, false
 	}
-	return o.Network, true
+	return o.ConversionRate, true
 }
 
-// HasNetwork returns a boolean if a field has been set.
-func (o *CurrencyConversion) HasNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
+// HasConversionRate returns a boolean if a field has been set.
+func (o *CurrencyConversion) HasConversionRate() bool {
+	if o != nil && !IsNil(o.ConversionRate) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetwork gets a reference to the given Network and assigns it to the Network field.
-func (o *CurrencyConversion) SetNetwork(v Network) {
-	o.Network = &v
+// SetConversionRate gets a reference to the given decimal.Decimal and assigns it to the ConversionRate field.
+func (o *CurrencyConversion) SetConversionRate(v decimal.Decimal) {
+	o.ConversionRate = &v
+}
+
+// GetDynamicCurrencyConversion returns the DynamicCurrencyConversion field value if set, zero value otherwise.
+func (o *CurrencyConversion) GetDynamicCurrencyConversion() bool {
+	if o == nil || IsNil(o.DynamicCurrencyConversion) {
+		var ret bool
+		return ret
+	}
+	return *o.DynamicCurrencyConversion
+}
+
+// GetDynamicCurrencyConversionOk returns a tuple with the DynamicCurrencyConversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CurrencyConversion) GetDynamicCurrencyConversionOk() (*bool, bool) {
+	if o == nil || IsNil(o.DynamicCurrencyConversion) {
+		return nil, false
+	}
+	return o.DynamicCurrencyConversion, true
+}
+
+// HasDynamicCurrencyConversion returns a boolean if a field has been set.
+func (o *CurrencyConversion) HasDynamicCurrencyConversion() bool {
+	if o != nil && !IsNil(o.DynamicCurrencyConversion) {
+		return true
+	}
+
+	return false
+}
+
+// SetDynamicCurrencyConversion gets a reference to the given bool and assigns it to the DynamicCurrencyConversion field.
+func (o *CurrencyConversion) SetDynamicCurrencyConversion(v bool) {
+	o.DynamicCurrencyConversion = &v
+}
+
+// GetOriginalAmount returns the OriginalAmount field value if set, zero value otherwise.
+func (o *CurrencyConversion) GetOriginalAmount() decimal.Decimal {
+	if o == nil || IsNil(o.OriginalAmount) {
+		var ret decimal.Decimal
+		return ret
+	}
+	return *o.OriginalAmount
+}
+
+// GetOriginalAmountOk returns a tuple with the OriginalAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CurrencyConversion) GetOriginalAmountOk() (*decimal.Decimal, bool) {
+	if o == nil || IsNil(o.OriginalAmount) {
+		return nil, false
+	}
+	return o.OriginalAmount, true
+}
+
+// HasOriginalAmount returns a boolean if a field has been set.
+func (o *CurrencyConversion) HasOriginalAmount() bool {
+	if o != nil && !IsNil(o.OriginalAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetOriginalAmount gets a reference to the given decimal.Decimal and assigns it to the OriginalAmount field.
+func (o *CurrencyConversion) SetOriginalAmount(v decimal.Decimal) {
+	o.OriginalAmount = &v
+}
+
+// GetOriginalCurrencyCode returns the OriginalCurrencyCode field value if set, zero value otherwise.
+func (o *CurrencyConversion) GetOriginalCurrencyCode() string {
+	if o == nil || IsNil(o.OriginalCurrencyCode) {
+		var ret string
+		return ret
+	}
+	return *o.OriginalCurrencyCode
+}
+
+// GetOriginalCurrencyCodeOk returns a tuple with the OriginalCurrencyCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CurrencyConversion) GetOriginalCurrencyCodeOk() (*string, bool) {
+	if o == nil || IsNil(o.OriginalCurrencyCode) {
+		return nil, false
+	}
+	return o.OriginalCurrencyCode, true
+}
+
+// HasOriginalCurrencyCode returns a boolean if a field has been set.
+func (o *CurrencyConversion) HasOriginalCurrencyCode() bool {
+	if o != nil && !IsNil(o.OriginalCurrencyCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetOriginalCurrencyCode gets a reference to the given string and assigns it to the OriginalCurrencyCode field.
+func (o *CurrencyConversion) SetOriginalCurrencyCode(v string) {
+	o.OriginalCurrencyCode = &v
+}
+
+// GetSettlementData returns the SettlementData field value if set, zero value otherwise.
+func (o *CurrencyConversion) GetSettlementData() SettlementData {
+	if o == nil || IsNil(o.SettlementData) {
+		var ret SettlementData
+		return ret
+	}
+	return *o.SettlementData
+}
+
+// GetSettlementDataOk returns a tuple with the SettlementData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CurrencyConversion) GetSettlementDataOk() (*SettlementData, bool) {
+	if o == nil || IsNil(o.SettlementData) {
+		return nil, false
+	}
+	return o.SettlementData, true
+}
+
+// HasSettlementData returns a boolean if a field has been set.
+func (o *CurrencyConversion) HasSettlementData() bool {
+	if o != nil && !IsNil(o.SettlementData) {
+		return true
+	}
+
+	return false
+}
+
+// SetSettlementData gets a reference to the given SettlementData and assigns it to the SettlementData field.
+func (o *CurrencyConversion) SetSettlementData(v SettlementData) {
+	o.SettlementData = &v
 }
 
 func (o CurrencyConversion) MarshalJSON() ([]byte, error) {
@@ -82,8 +223,20 @@ func (o CurrencyConversion) MarshalJSON() ([]byte, error) {
 
 func (o CurrencyConversion) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Network) {
-		toSerialize["network"] = o.Network
+	if !IsNil(o.ConversionRate) {
+		toSerialize["conversion_rate"] = o.ConversionRate
+	}
+	if !IsNil(o.DynamicCurrencyConversion) {
+		toSerialize["dynamic_currency_conversion"] = o.DynamicCurrencyConversion
+	}
+	if !IsNil(o.OriginalAmount) {
+		toSerialize["original_amount"] = o.OriginalAmount
+	}
+	if !IsNil(o.OriginalCurrencyCode) {
+		toSerialize["original_currency_code"] = o.OriginalCurrencyCode
+	}
+	if !IsNil(o.SettlementData) {
+		toSerialize["settlement_data"] = o.SettlementData
 	}
 	return toSerialize, nil
 }
