@@ -20,7 +20,7 @@ var _ MappedNullable = &SimulationResponseModel{}
 
 // SimulationResponseModel struct for SimulationResponseModel
 type SimulationResponseModel struct {
-	RawIso8583 map[string]map[string]interface{} `json:"raw_iso8583,omitempty"`
+	// RawIso8583 map[string]map[string]interface{} `json:"raw_iso8583,omitempty"`
 	Transaction *TransactionModel `json:"transaction,omitempty"`
 }
 
@@ -42,36 +42,36 @@ func NewSimulationResponseModelWithDefaults() *SimulationResponseModel {
 }
 
 // GetRawIso8583 returns the RawIso8583 field value if set, zero value otherwise.
-func (o *SimulationResponseModel) GetRawIso8583() map[string]map[string]interface{} {
-	if o == nil || IsNil(o.RawIso8583) {
-		var ret map[string]map[string]interface{}
-		return ret
-	}
-	return o.RawIso8583
-}
+// func (o *SimulationResponseModel) GetRawIso8583() map[string]map[string]interface{} {
+// 	if o == nil || IsNil(o.RawIso8583) {
+// 		var ret map[string]map[string]interface{}
+// 		return ret
+// 	}
+// 	return o.RawIso8583
+// }
 
 // GetRawIso8583Ok returns a tuple with the RawIso8583 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimulationResponseModel) GetRawIso8583Ok() (map[string]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RawIso8583) {
-		return map[string]map[string]interface{}{}, false
-	}
-	return o.RawIso8583, true
-}
+// func (o *SimulationResponseModel) GetRawIso8583Ok() (map[string]map[string]interface{}, bool) {
+// 	if o == nil || IsNil(o.RawIso8583) {
+// 		return map[string]map[string]interface{}{}, false
+// 	}
+// 	return o.RawIso8583, true
+// }
 
 // HasRawIso8583 returns a boolean if a field has been set.
-func (o *SimulationResponseModel) HasRawIso8583() bool {
-	if o != nil && !IsNil(o.RawIso8583) {
-		return true
-	}
+// func (o *SimulationResponseModel) HasRawIso8583() bool {
+// 	if o != nil && !IsNil(o.RawIso8583) {
+// 		return true
+// 	}
 
-	return false
-}
+// 	return false
+// }
 
 // SetRawIso8583 gets a reference to the given map[string]map[string]interface{} and assigns it to the RawIso8583 field.
-func (o *SimulationResponseModel) SetRawIso8583(v map[string]map[string]interface{}) {
-	o.RawIso8583 = v
-}
+// func (o *SimulationResponseModel) SetRawIso8583(v map[string]map[string]interface{}) {
+// 	o.RawIso8583 = v
+// }
 
 // GetTransaction returns the Transaction field value if set, zero value otherwise.
 func (o *SimulationResponseModel) GetTransaction() TransactionModel {
@@ -115,9 +115,9 @@ func (o SimulationResponseModel) MarshalJSON() ([]byte, error) {
 
 func (o SimulationResponseModel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RawIso8583) {
-		toSerialize["raw_iso8583"] = o.RawIso8583
-	}
+	// if !IsNil(o.RawIso8583) {
+	// 	toSerialize["raw_iso8583"] = o.RawIso8583
+	// }
 	if !IsNil(o.Transaction) {
 		toSerialize["transaction"] = o.Transaction
 	}
