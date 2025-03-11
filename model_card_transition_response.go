@@ -896,7 +896,6 @@ func (o *CardTransitionResponse) UnmarshalJSON(data []byte) (err error) {
 	varCardTransitionResponse := _CardTransitionResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardTransitionResponse)
 
 	if err != nil {
