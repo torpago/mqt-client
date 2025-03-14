@@ -472,7 +472,7 @@ func (o *ProgramReserveTransactionResponse) UnmarshalJSON(data []byte) (err erro
 	varProgramReserveTransactionResponse := _ProgramReserveTransactionResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramReserveTransactionResponse)
 
 	if err != nil {

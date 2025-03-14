@@ -345,7 +345,7 @@ func (o *BusinessTransitionResponse) UnmarshalJSON(data []byte) (err error) {
 	varBusinessTransitionResponse := _BusinessTransitionResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBusinessTransitionResponse)
 
 	if err != nil {

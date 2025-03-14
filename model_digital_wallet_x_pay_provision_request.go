@@ -254,7 +254,7 @@ func (o *DigitalWalletXPayProvisionRequest) UnmarshalJSON(data []byte) (err erro
 	varDigitalWalletXPayProvisionRequest := _DigitalWalletXPayProvisionRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDigitalWalletXPayProvisionRequest)
 
 	if err != nil {

@@ -526,7 +526,7 @@ func (o *PolicyDocumentCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varPolicyDocumentCreateReq := _PolicyDocumentCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyDocumentCreateReq)
 
 	if err != nil {

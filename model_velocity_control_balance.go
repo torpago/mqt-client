@@ -472,7 +472,7 @@ func (o *VelocityControlBalance) UnmarshalJSON(data []byte) (err error) {
 	varVelocityControlBalance := _VelocityControlBalance{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varVelocityControlBalance)
 
 	if err != nil {

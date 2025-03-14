@@ -312,7 +312,7 @@ func (o *SendingProvisioningDataToGooglePayBackendRequest) UnmarshalJSON(data []
 	varSendingProvisioningDataToGooglePayBackendRequest := _SendingProvisioningDataToGooglePayBackendRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varSendingProvisioningDataToGooglePayBackendRequest)
 
 	if err != nil {

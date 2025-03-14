@@ -309,7 +309,7 @@ func (o *PushToCardDisburseRequest) UnmarshalJSON(data []byte) (err error) {
 	varPushToCardDisburseRequest := _PushToCardDisburseRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPushToCardDisburseRequest)
 
 	if err != nil {

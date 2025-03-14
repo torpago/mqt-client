@@ -137,7 +137,7 @@ func (o *CardSecurityCodeVerification) UnmarshalJSON(data []byte) (err error) {
 	varCardSecurityCodeVerification := _CardSecurityCodeVerification{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardSecurityCodeVerification)
 
 	if err != nil {

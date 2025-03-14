@@ -167,7 +167,7 @@ func (o *StatementInterestChargesPage) UnmarshalJSON(data []byte) (err error) {
 	varStatementInterestChargesPage := _StatementInterestChargesPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varStatementInterestChargesPage)
 
 	if err != nil {

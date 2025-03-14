@@ -136,7 +136,7 @@ func (o *InternalServerError) UnmarshalJSON(data []byte) (err error) {
 	varInternalServerError := _InternalServerError{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varInternalServerError)
 
 	if err != nil {

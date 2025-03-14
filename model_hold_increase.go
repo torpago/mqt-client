@@ -141,7 +141,7 @@ func (o *HoldIncrease) UnmarshalJSON(data []byte) (err error) {
 	varHoldIncrease := _HoldIncrease{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varHoldIncrease)
 
 	if err != nil {

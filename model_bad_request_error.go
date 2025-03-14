@@ -136,7 +136,7 @@ func (o *BadRequestError) UnmarshalJSON(data []byte) (err error) {
 	varBadRequestError := _BadRequestError{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBadRequestError)
 
 	if err != nil {

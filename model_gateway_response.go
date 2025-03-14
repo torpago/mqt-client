@@ -145,7 +145,7 @@ func (o *GatewayResponse) UnmarshalJSON(data []byte) (err error) {
 	varGatewayResponse := _GatewayResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varGatewayResponse)
 
 	if err != nil {

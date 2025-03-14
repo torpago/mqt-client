@@ -212,7 +212,7 @@ func (o *DisputeTransitionReq) UnmarshalJSON(data []byte) (err error) {
 	varDisputeTransitionReq := _DisputeTransitionReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDisputeTransitionReq)
 
 	if err != nil {

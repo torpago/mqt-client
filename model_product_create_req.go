@@ -605,7 +605,7 @@ func (o *ProductCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varProductCreateReq := _ProductCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProductCreateReq)
 
 	if err != nil {

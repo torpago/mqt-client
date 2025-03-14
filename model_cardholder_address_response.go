@@ -630,7 +630,7 @@ func (o *CardholderAddressResponse) UnmarshalJSON(data []byte) (err error) {
 	varCardholderAddressResponse := _CardholderAddressResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardholderAddressResponse)
 
 	if err != nil {

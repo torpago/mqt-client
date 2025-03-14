@@ -137,7 +137,7 @@ func (o *CardholderBalances) UnmarshalJSON(data []byte) (err error) {
 	varCardholderBalances := _CardholderBalances{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardholderBalances)
 
 	if err != nil {

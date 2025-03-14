@@ -249,7 +249,7 @@ func (o *AprScheduleResponse) UnmarshalJSON(data []byte) (err error) {
 	varAprScheduleResponse := _AprScheduleResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAprScheduleResponse)
 
 	if err != nil {

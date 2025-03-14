@@ -390,7 +390,7 @@ func (o *ProgramTransfer) UnmarshalJSON(data []byte) (err error) {
 	varProgramTransfer := _ProgramTransfer{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramTransfer)
 
 	if err != nil {

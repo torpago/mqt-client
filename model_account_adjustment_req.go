@@ -354,7 +354,7 @@ func (o *AccountAdjustmentReq) UnmarshalJSON(data []byte) (err error) {
 	varAccountAdjustmentReq := _AccountAdjustmentReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAccountAdjustmentReq)
 
 	if err != nil {

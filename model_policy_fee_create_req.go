@@ -211,7 +211,7 @@ func (o *PolicyFeeCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varPolicyFeeCreateReq := _PolicyFeeCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyFeeCreateReq)
 
 	if err != nil {

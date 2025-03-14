@@ -225,7 +225,7 @@ func (o *ProgramFundingPage) UnmarshalJSON(data []byte) (err error) {
 	varProgramFundingPage := _ProgramFundingPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramFundingPage)
 
 	if err != nil {

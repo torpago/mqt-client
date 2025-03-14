@@ -393,7 +393,7 @@ func (o *FeeRequest) UnmarshalJSON(data []byte) (err error) {
 	varFeeRequest := _FeeRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varFeeRequest)
 
 	if err != nil {

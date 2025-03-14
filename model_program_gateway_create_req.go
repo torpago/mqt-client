@@ -393,7 +393,7 @@ func (o *ProgramGatewayCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varProgramGatewayCreateReq := _ProgramGatewayCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramGatewayCreateReq)
 
 	if err != nil {

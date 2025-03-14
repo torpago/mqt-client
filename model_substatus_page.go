@@ -224,7 +224,7 @@ func (o *SubstatusPage) UnmarshalJSON(data []byte) (err error) {
 	varSubstatusPage := _SubstatusPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varSubstatusPage)
 
 	if err != nil {

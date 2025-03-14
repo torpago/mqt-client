@@ -217,7 +217,7 @@ func (o *CardPersonalization) UnmarshalJSON(data []byte) (err error) {
 	varCardPersonalization := _CardPersonalization{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardPersonalization)
 
 	if err != nil {

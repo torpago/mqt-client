@@ -225,7 +225,7 @@ func (o *StatementSummaryPage) UnmarshalJSON(data []byte) (err error) {
 	varStatementSummaryPage := _StatementSummaryPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varStatementSummaryPage)
 
 	if err != nil {

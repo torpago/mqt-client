@@ -293,7 +293,7 @@ func (o *ApplicationTransitionRequest) UnmarshalJSON(data []byte) (err error) {
 	varApplicationTransitionRequest := _ApplicationTransitionRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varApplicationTransitionRequest)
 
 	if err != nil {

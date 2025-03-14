@@ -145,7 +145,7 @@ func (o *AccountTransitionReq) UnmarshalJSON(data []byte) (err error) {
 	varAccountTransitionReq := _AccountTransitionReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAccountTransitionReq)
 
 	if err != nil {

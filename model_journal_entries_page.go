@@ -225,7 +225,7 @@ func (o *JournalEntriesPage) UnmarshalJSON(data []byte) (err error) {
 	varJournalEntriesPage := _JournalEntriesPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varJournalEntriesPage)
 
 	if err != nil {

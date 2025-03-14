@@ -183,7 +183,7 @@ func (o *IdentificationRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varIdentificationRequestModel := _IdentificationRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varIdentificationRequestModel)
 
 	if err != nil {

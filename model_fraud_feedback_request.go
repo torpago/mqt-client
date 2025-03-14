@@ -222,7 +222,7 @@ func (o *FraudFeedbackRequest) UnmarshalJSON(data []byte) (err error) {
 	varFraudFeedbackRequest := _FraudFeedbackRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varFraudFeedbackRequest)
 
 	if err != nil {

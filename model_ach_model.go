@@ -463,7 +463,7 @@ func (o *AchModel) UnmarshalJSON(data []byte) (err error) {
 	varAchModel := _AchModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAchModel)
 
 	if err != nil {

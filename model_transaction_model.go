@@ -3441,7 +3441,7 @@ func (o *TransactionModel) UnmarshalJSON(data []byte) (err error) {
 	varTransactionModel := _TransactionModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	//decoder.DisallowUnknownFields()
+	//// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varTransactionModel)
 
 	if err != nil {

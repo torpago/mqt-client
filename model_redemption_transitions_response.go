@@ -261,7 +261,7 @@ func (o *RedemptionTransitionsResponse) UnmarshalJSON(data []byte) (err error) {
 	varRedemptionTransitionsResponse := _RedemptionTransitionsResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRedemptionTransitionsResponse)
 
 	if err != nil {

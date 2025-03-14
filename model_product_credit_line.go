@@ -139,7 +139,7 @@ func (o *ProductCreditLine) UnmarshalJSON(data []byte) (err error) {
 	varProductCreditLine := _ProductCreditLine{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProductCreditLine)
 
 	if err != nil {

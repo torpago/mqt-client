@@ -309,7 +309,7 @@ func (o *WithdrawalRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varWithdrawalRequestModel := _WithdrawalRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varWithdrawalRequestModel)
 
 	if err != nil {

@@ -225,7 +225,7 @@ func (o *PeriodicFeeSchedulePage) UnmarshalJSON(data []byte) (err error) {
 	varPeriodicFeeSchedulePage := _PeriodicFeeSchedulePage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPeriodicFeeSchedulePage)
 
 	if err != nil {

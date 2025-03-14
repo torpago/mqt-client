@@ -373,7 +373,7 @@ func (o *OrignalcreditRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varOrignalcreditRequestModel := _OrignalcreditRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varOrignalcreditRequestModel)
 
 	if err != nil {

@@ -326,7 +326,7 @@ func (o *AchPartnerRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varAchPartnerRequestModel := _AchPartnerRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAchPartnerRequestModel)
 
 	if err != nil {

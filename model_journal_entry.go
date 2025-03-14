@@ -717,7 +717,7 @@ func (o *JournalEntry) UnmarshalJSON(data []byte) (err error) {
 	varJournalEntry := _JournalEntry{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varJournalEntry)
 
 	if err != nil {

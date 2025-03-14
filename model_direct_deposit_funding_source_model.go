@@ -130,7 +130,7 @@ func (o *DirectDepositFundingSourceModel) UnmarshalJSON(data []byte) (err error)
 	varDirectDepositFundingSourceModel := _DirectDepositFundingSourceModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDirectDepositFundingSourceModel)
 
 	if err != nil {

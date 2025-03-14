@@ -176,7 +176,7 @@ func (o *ConfigFeeScheduleEntry) UnmarshalJSON(data []byte) (err error) {
 	varConfigFeeScheduleEntry := _ConfigFeeScheduleEntry{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varConfigFeeScheduleEntry)
 
 	if err != nil {

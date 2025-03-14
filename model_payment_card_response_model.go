@@ -420,7 +420,7 @@ func (o *PaymentCardResponseModel) UnmarshalJSON(data []byte) (err error) {
 	varPaymentCardResponseModel := _PaymentCardResponseModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPaymentCardResponseModel)
 
 	if err != nil {

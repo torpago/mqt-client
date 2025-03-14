@@ -138,7 +138,7 @@ func (o *ReturnedDetails) UnmarshalJSON(data []byte) (err error) {
 	varReturnedDetails := _ReturnedDetails{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varReturnedDetails)
 
 	if err != nil {

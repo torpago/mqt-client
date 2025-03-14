@@ -219,7 +219,7 @@ func (o *PolicyAprUpdateReq) UnmarshalJSON(data []byte) (err error) {
 	varPolicyAprUpdateReq := _PolicyAprUpdateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyAprUpdateReq)
 
 	if err != nil {

@@ -381,7 +381,7 @@ func (o *PaymentScheduleCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varPaymentScheduleCreateReq := _PaymentScheduleCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPaymentScheduleCreateReq)
 
 	if err != nil {

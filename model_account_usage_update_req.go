@@ -145,7 +145,7 @@ func (o *AccountUsageUpdateReq) UnmarshalJSON(data []byte) (err error) {
 	varAccountUsageUpdateReq := _AccountUsageUpdateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAccountUsageUpdateReq)
 
 	if err != nil {

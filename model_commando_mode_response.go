@@ -321,7 +321,7 @@ func (o *CommandoModeResponse) UnmarshalJSON(data []byte) (err error) {
 	varCommandoModeResponse := _CommandoModeResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCommandoModeResponse)
 
 	if err != nil {

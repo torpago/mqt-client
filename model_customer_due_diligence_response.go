@@ -248,7 +248,7 @@ func (o *CustomerDueDiligenceResponse) UnmarshalJSON(data []byte) (err error) {
 	varCustomerDueDiligenceResponse := _CustomerDueDiligenceResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCustomerDueDiligenceResponse)
 
 	if err != nil {

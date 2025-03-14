@@ -214,7 +214,7 @@ func (o *CommandoModeNestedTransition) UnmarshalJSON(data []byte) (err error) {
 	varCommandoModeNestedTransition := _CommandoModeNestedTransition{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCommandoModeNestedTransition)
 
 	if err != nil {

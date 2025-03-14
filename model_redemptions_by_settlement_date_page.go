@@ -233,7 +233,7 @@ func (o *RedemptionsBySettlementDatePage) UnmarshalJSON(data []byte) (err error)
 	varRedemptionsBySettlementDatePage := _RedemptionsBySettlementDatePage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRedemptionsBySettlementDatePage)
 
 	if err != nil {

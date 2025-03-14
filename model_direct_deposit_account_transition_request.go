@@ -244,7 +244,7 @@ func (o *DirectDepositAccountTransitionRequest) UnmarshalJSON(data []byte) (err 
 	varDirectDepositAccountTransitionRequest := _DirectDepositAccountTransitionRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDirectDepositAccountTransitionRequest)
 
 	if err != nil {

@@ -108,7 +108,7 @@ func (o *DDARequest) UnmarshalJSON(data []byte) (err error) {
 	varDDARequest := _DDARequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDDARequest)
 
 	if err != nil {

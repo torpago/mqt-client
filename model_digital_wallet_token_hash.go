@@ -146,7 +146,7 @@ func (o *DigitalWalletTokenHash) UnmarshalJSON(data []byte) (err error) {
 	varDigitalWalletTokenHash := _DigitalWalletTokenHash{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDigitalWalletTokenHash)
 
 	if err != nil {

@@ -191,7 +191,7 @@ func (o *TokenUpdateRequest) UnmarshalJSON(data []byte) (err error) {
 	varTokenUpdateRequest := _TokenUpdateRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varTokenUpdateRequest)
 
 	if err != nil {

@@ -282,7 +282,7 @@ func (o *WebhookConfigModel) UnmarshalJSON(data []byte) (err error) {
 	varWebhookConfigModel := _WebhookConfigModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varWebhookConfigModel)
 
 	if err != nil {

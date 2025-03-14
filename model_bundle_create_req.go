@@ -393,7 +393,7 @@ func (o *BundleCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varBundleCreateReq := _BundleCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBundleCreateReq)
 
 	if err != nil {

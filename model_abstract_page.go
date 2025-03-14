@@ -196,7 +196,7 @@ func (o *AbstractPage) UnmarshalJSON(data []byte) (err error) {
 	varAbstractPage := _AbstractPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAbstractPage)
 
 	if err != nil {

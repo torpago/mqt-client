@@ -109,7 +109,7 @@ func (o *ResetUserPasswordEmailModel) UnmarshalJSON(data []byte) (err error) {
 	varResetUserPasswordEmailModel := _ResetUserPasswordEmailModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varResetUserPasswordEmailModel)
 
 	if err != nil {

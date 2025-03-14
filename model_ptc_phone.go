@@ -144,7 +144,7 @@ func (o *PTCPhone) UnmarshalJSON(data []byte) (err error) {
 	varPTCPhone := _PTCPhone{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPTCPhone)
 
 	if err != nil {

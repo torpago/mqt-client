@@ -702,7 +702,7 @@ func (o *GpaResponse) UnmarshalJSON(data []byte) (err error) {
 	varGpaResponse := _GpaResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varGpaResponse)
 
 	if err != nil {

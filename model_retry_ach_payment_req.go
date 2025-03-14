@@ -136,7 +136,7 @@ func (o *RetryAchPaymentReq) UnmarshalJSON(data []byte) (err error) {
 	varRetryAchPaymentReq := _RetryAchPaymentReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRetryAchPaymentReq)
 
 	if err != nil {

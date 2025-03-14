@@ -245,7 +245,7 @@ func (o *AuthorizationAdviceModel) UnmarshalJSON(data []byte) (err error) {
 	varAuthorizationAdviceModel := _AuthorizationAdviceModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAuthorizationAdviceModel)
 
 	if err != nil {

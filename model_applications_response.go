@@ -1099,7 +1099,7 @@ func (o *ApplicationsResponse) UnmarshalJSON(data []byte) (err error) {
 	varApplicationsResponse := _ApplicationsResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varApplicationsResponse)
 
 	if err != nil {

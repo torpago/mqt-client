@@ -347,7 +347,7 @@ func (o *ProductConfig) UnmarshalJSON(data []byte) (err error) {
 	varProductConfig := _ProductConfig{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProductConfig)
 
 	if err != nil {

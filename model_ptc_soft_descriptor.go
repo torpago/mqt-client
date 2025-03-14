@@ -208,7 +208,7 @@ func (o *PTCSoftDescriptor) UnmarshalJSON(data []byte) (err error) {
 	varPTCSoftDescriptor := _PTCSoftDescriptor{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPTCSoftDescriptor)
 
 	if err != nil {

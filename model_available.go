@@ -178,7 +178,7 @@ func (o *Available) UnmarshalJSON(data []byte) (err error) {
 	varAvailable := _Available{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAvailable)
 
 	if err != nil {

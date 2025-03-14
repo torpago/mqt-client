@@ -319,7 +319,7 @@ func (o *InterestCalculation) UnmarshalJSON(data []byte) (err error) {
 	varInterestCalculation := _InterestCalculation{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varInterestCalculation)
 
 	if err != nil {

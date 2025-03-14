@@ -493,7 +493,7 @@ func (o *AuthRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varAuthRequestModel := _AuthRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAuthRequestModel)
 
 	if err != nil {

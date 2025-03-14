@@ -411,7 +411,7 @@ func (o *SubstatusResponse) UnmarshalJSON(data []byte) (err error) {
 	varSubstatusResponse := _SubstatusResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varSubstatusResponse)
 
 	if err != nil {

@@ -234,7 +234,7 @@ func (o *SubstatusEventResponseDetails) UnmarshalJSON(data []byte) (err error) {
 	varSubstatusEventResponseDetails := _SubstatusEventResponseDetails{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varSubstatusEventResponseDetails)
 
 	if err != nil {

@@ -463,7 +463,7 @@ func (o *BankTransferRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varBankTransferRequestModel := _BankTransferRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBankTransferRequestModel)
 
 	if err != nil {

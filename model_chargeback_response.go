@@ -456,7 +456,7 @@ func (o *ChargebackResponse) UnmarshalJSON(data []byte) (err error) {
 	varChargebackResponse := _ChargebackResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varChargebackResponse)
 
 	if err != nil {

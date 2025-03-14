@@ -225,7 +225,7 @@ func (o *RewardProgramsRulesConfigsPage) UnmarshalJSON(data []byte) (err error) 
 	varRewardProgramsRulesConfigsPage := _RewardProgramsRulesConfigsPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRewardProgramsRulesConfigsPage)
 
 	if err != nil {

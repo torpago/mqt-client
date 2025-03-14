@@ -109,7 +109,7 @@ func (o *PolicyDocumentTemplateReq) UnmarshalJSON(data []byte) (err error) {
 	varPolicyDocumentTemplateReq := _PolicyDocumentTemplateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyDocumentTemplateReq)
 
 	if err != nil {

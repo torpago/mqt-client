@@ -158,7 +158,7 @@ func (o *ChargebackFundingSourceModel) UnmarshalJSON(data []byte) (err error) {
 	varChargebackFundingSourceModel := _ChargebackFundingSourceModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varChargebackFundingSourceModel)
 
 	if err != nil {

@@ -697,7 +697,7 @@ func (o *MsaReturns) UnmarshalJSON(data []byte) (err error) {
 	varMsaReturns := _MsaReturns{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varMsaReturns)
 
 	if err != nil {

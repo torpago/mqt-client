@@ -174,7 +174,7 @@ func (o *AccountFee) UnmarshalJSON(data []byte) (err error) {
 	varAccountFee := _AccountFee{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAccountFee)
 
 	if err != nil {

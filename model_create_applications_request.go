@@ -628,7 +628,7 @@ func (o *CreateApplicationsRequest) UnmarshalJSON(data []byte) (err error) {
 	varCreateApplicationsRequest := _CreateApplicationsRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCreateApplicationsRequest)
 
 	if err != nil {

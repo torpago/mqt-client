@@ -312,7 +312,7 @@ func (o *AccountCreditBalanceRefundResponse) UnmarshalJSON(data []byte) (err err
 	varAccountCreditBalanceRefundResponse := _AccountCreditBalanceRefundResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAccountCreditBalanceRefundResponse)
 
 	if err != nil {

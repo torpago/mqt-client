@@ -331,7 +331,7 @@ func (o *AuthControlExemptMidsRequest) UnmarshalJSON(data []byte) (err error) {
 	varAuthControlExemptMidsRequest := _AuthControlExemptMidsRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAuthControlExemptMidsRequest)
 
 	if err != nil {

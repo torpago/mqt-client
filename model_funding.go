@@ -218,7 +218,7 @@ func (o *Funding) UnmarshalJSON(data []byte) (err error) {
 	varFunding := _Funding{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varFunding)
 
 	if err != nil {

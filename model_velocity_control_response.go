@@ -646,7 +646,7 @@ func (o *VelocityControlResponse) UnmarshalJSON(data []byte) (err error) {
 	varVelocityControlResponse := _VelocityControlResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varVelocityControlResponse)
 
 	if err != nil {

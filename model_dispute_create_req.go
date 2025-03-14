@@ -241,7 +241,7 @@ func (o *DisputeCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varDisputeCreateReq := _DisputeCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDisputeCreateReq)
 
 	if err != nil {

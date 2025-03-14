@@ -130,7 +130,7 @@ func (o *ProgramFundingSourceModel) UnmarshalJSON(data []byte) (err error) {
 	varProgramFundingSourceModel := _ProgramFundingSourceModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramFundingSourceModel)
 
 	if err != nil {

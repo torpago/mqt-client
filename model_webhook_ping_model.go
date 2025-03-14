@@ -109,7 +109,7 @@ func (o *WebhookPingModel) UnmarshalJSON(data []byte) (err error) {
 	varWebhookPingModel := _WebhookPingModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varWebhookPingModel)
 
 	if err != nil {

@@ -147,7 +147,7 @@ func (o *PolicyRewardRuleOutcome) UnmarshalJSON(data []byte) (err error) {
 	varPolicyRewardRuleOutcome := _PolicyRewardRuleOutcome{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyRewardRuleOutcome)
 
 	if err != nil {

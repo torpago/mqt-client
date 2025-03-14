@@ -144,7 +144,7 @@ func (o *FulfillmentRequest) UnmarshalJSON(data []byte) (err error) {
 	varFulfillmentRequest := _FulfillmentRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varFulfillmentRequest)
 
 	if err != nil {

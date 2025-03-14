@@ -225,7 +225,7 @@ func (o *AccountTransitionsPage) UnmarshalJSON(data []byte) (err error) {
 	varAccountTransitionsPage := _AccountTransitionsPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAccountTransitionsPage)
 
 	if err != nil {

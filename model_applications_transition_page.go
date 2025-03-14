@@ -225,7 +225,7 @@ func (o *ApplicationsTransitionPage) UnmarshalJSON(data []byte) (err error) {
 	varApplicationsTransitionPage := _ApplicationsTransitionPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varApplicationsTransitionPage)
 
 	if err != nil {

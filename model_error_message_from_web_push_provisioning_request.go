@@ -138,7 +138,7 @@ func (o *ErrorMessageFromWebPushProvisioningRequest) UnmarshalJSON(data []byte) 
 	varErrorMessageFromWebPushProvisioningRequest := _ErrorMessageFromWebPushProvisioningRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varErrorMessageFromWebPushProvisioningRequest)
 
 	if err != nil {

@@ -146,7 +146,7 @@ func (o *CreateRedemptionTransitionsRequest) UnmarshalJSON(data []byte) (err err
 	varCreateRedemptionTransitionsRequest := _CreateRedemptionTransitionsRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCreateRedemptionTransitionsRequest)
 
 	if err != nil {

@@ -233,7 +233,7 @@ func (o *RedemptionsPage) UnmarshalJSON(data []byte) (err error) {
 	varRedemptionsPage := _RedemptionsPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRedemptionsPage)
 
 	if err != nil {

@@ -351,7 +351,7 @@ func (o *CardTransitionRequest) UnmarshalJSON(data []byte) (err error) {
 	varCardTransitionRequest := _CardTransitionRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardTransitionRequest)
 
 	if err != nil {

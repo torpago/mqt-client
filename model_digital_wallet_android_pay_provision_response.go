@@ -196,7 +196,7 @@ func (o *DigitalWalletAndroidPayProvisionResponse) UnmarshalJSON(data []byte) (e
 	varDigitalWalletAndroidPayProvisionResponse := _DigitalWalletAndroidPayProvisionResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDigitalWalletAndroidPayProvisionResponse)
 
 	if err != nil {

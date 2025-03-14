@@ -387,7 +387,7 @@ func (o *DelinquencyStateResponse) UnmarshalJSON(data []byte) (err error) {
 	varDelinquencyStateResponse := _DelinquencyStateResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDelinquencyStateResponse)
 
 	if err != nil {

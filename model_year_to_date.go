@@ -272,7 +272,7 @@ func (o *YearToDate) UnmarshalJSON(data []byte) (err error) {
 	varYearToDate := _YearToDate{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varYearToDate)
 
 	if err != nil {
