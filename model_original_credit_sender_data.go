@@ -576,7 +576,7 @@ func (o *OriginalCreditSenderData) UnmarshalJSON(data []byte) (err error) {
 	varOriginalCreditSenderData := _OriginalCreditSenderData{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varOriginalCreditSenderData)
 
 	if err != nil {

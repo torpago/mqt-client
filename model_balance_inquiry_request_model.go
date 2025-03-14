@@ -300,7 +300,7 @@ func (o *BalanceInquiryRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varBalanceInquiryRequestModel := _BalanceInquiryRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBalanceInquiryRequestModel)
 
 	if err != nil {

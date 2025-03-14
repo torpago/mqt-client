@@ -138,7 +138,7 @@ func (o *ProductConfigPeriodicFeesInner) UnmarshalJSON(data []byte) (err error) 
 	varProductConfigPeriodicFeesInner := _ProductConfigPeriodicFeesInner{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProductConfigPeriodicFeesInner)
 
 	if err != nil {

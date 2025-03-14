@@ -138,7 +138,7 @@ func (o *CardSwapHash) UnmarshalJSON(data []byte) (err error) {
 	varCardSwapHash := _CardSwapHash{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardSwapHash)
 
 	if err != nil {

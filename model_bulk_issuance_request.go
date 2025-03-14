@@ -390,7 +390,7 @@ func (o *BulkIssuanceRequest) UnmarshalJSON(data []byte) (err error) {
 	varBulkIssuanceRequest := _BulkIssuanceRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBulkIssuanceRequest)
 
 	if err != nil {

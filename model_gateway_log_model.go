@@ -281,7 +281,7 @@ func (o *GatewayLogModel) UnmarshalJSON(data []byte) (err error) {
 	varGatewayLogModel := _GatewayLogModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varGatewayLogModel)
 
 	if err != nil {

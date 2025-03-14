@@ -285,7 +285,7 @@ func (o *CreateRedemptionsRequest) UnmarshalJSON(data []byte) (err error) {
 	varCreateRedemptionsRequest := _CreateRedemptionsRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCreateRedemptionsRequest)
 
 	if err != nil {

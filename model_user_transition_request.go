@@ -307,7 +307,7 @@ func (o *UserTransitionRequest) UnmarshalJSON(data []byte) (err error) {
 	varUserTransitionRequest := _UserTransitionRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varUserTransitionRequest)
 
 	if err != nil {

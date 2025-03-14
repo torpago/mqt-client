@@ -816,7 +816,7 @@ func (o *FundingAccountResponseModel) UnmarshalJSON(data []byte) (err error) {
 	varFundingAccountResponseModel := _FundingAccountResponseModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varFundingAccountResponseModel)
 
 	if err != nil {

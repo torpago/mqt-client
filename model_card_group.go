@@ -324,7 +324,7 @@ func (o *CardGroup) UnmarshalJSON(data []byte) (err error) {
 	varCardGroup := _CardGroup{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardGroup)
 
 	if err != nil {

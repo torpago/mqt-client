@@ -701,7 +701,7 @@ func (o *AchResponseModel) UnmarshalJSON(data []byte) (err error) {
 	varAchResponseModel := _AchResponseModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAchResponseModel)
 
 	if err != nil {

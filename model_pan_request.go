@@ -183,7 +183,7 @@ func (o *PanRequest) UnmarshalJSON(data []byte) (err error) {
 	varPanRequest := _PanRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPanRequest)
 
 	if err != nil {

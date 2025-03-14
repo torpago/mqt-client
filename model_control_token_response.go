@@ -109,7 +109,7 @@ func (o *ControlTokenResponse) UnmarshalJSON(data []byte) (err error) {
 	varControlTokenResponse := _ControlTokenResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varControlTokenResponse)
 
 	if err != nil {

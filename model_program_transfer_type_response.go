@@ -287,7 +287,7 @@ func (o *ProgramTransferTypeResponse) UnmarshalJSON(data []byte) (err error) {
 	varProgramTransferTypeResponse := _ProgramTransferTypeResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramTransferTypeResponse)
 
 	if err != nil {

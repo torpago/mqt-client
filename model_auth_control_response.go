@@ -334,7 +334,7 @@ func (o *AuthControlResponse) UnmarshalJSON(data []byte) (err error) {
 	varAuthControlResponse := _AuthControlResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAuthControlResponse)
 
 	if err != nil {

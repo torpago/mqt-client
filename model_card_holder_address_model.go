@@ -595,7 +595,7 @@ func (o *CardHolderAddressModel) UnmarshalJSON(data []byte) (err error) {
 	varCardHolderAddressModel := _CardHolderAddressModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardHolderAddressModel)
 
 	if err != nil {

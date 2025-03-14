@@ -225,7 +225,7 @@ func (o *BundleResponsePage) UnmarshalJSON(data []byte) (err error) {
 	varBundleResponsePage := _BundleResponsePage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBundleResponsePage)
 
 	if err != nil {

@@ -361,7 +361,7 @@ func (o *ClearingModel) UnmarshalJSON(data []byte) (err error) {
 	varClearingModel := _ClearingModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varClearingModel)
 
 	if err != nil {

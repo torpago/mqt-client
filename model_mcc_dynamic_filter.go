@@ -109,7 +109,7 @@ func (o *MccDynamicFilter) UnmarshalJSON(data []byte) (err error) {
 	varMccDynamicFilter := _MccDynamicFilter{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varMccDynamicFilter)
 
 	if err != nil {

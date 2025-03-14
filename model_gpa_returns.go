@@ -525,7 +525,7 @@ func (o *GpaReturns) UnmarshalJSON(data []byte) (err error) {
 	varGpaReturns := _GpaReturns{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varGpaReturns)
 
 	if err != nil {

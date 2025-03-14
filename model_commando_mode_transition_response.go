@@ -294,7 +294,7 @@ func (o *CommandoModeTransitionResponse) UnmarshalJSON(data []byte) (err error) 
 	varCommandoModeTransitionResponse := _CommandoModeTransitionResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCommandoModeTransitionResponse)
 
 	if err != nil {

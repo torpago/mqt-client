@@ -167,7 +167,7 @@ func (o *ProductMinPaymentCalculation) UnmarshalJSON(data []byte) (err error) {
 	varProductMinPaymentCalculation := _ProductMinPaymentCalculation{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProductMinPaymentCalculation)
 
 	if err != nil {

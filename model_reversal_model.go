@@ -285,7 +285,7 @@ func (o *ReversalModel) UnmarshalJSON(data []byte) (err error) {
 	varReversalModel := _ReversalModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varReversalModel)
 
 	if err != nil {

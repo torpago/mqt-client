@@ -167,7 +167,7 @@ func (o *PolicyDocumentAssetURLs) UnmarshalJSON(data []byte) (err error) {
 	varPolicyDocumentAssetURLs := _PolicyDocumentAssetURLs{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyDocumentAssetURLs)
 
 	if err != nil {

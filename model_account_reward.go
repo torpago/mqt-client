@@ -174,7 +174,7 @@ func (o *AccountReward) UnmarshalJSON(data []byte) (err error) {
 	varAccountReward := _AccountReward{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAccountReward)
 
 	if err != nil {

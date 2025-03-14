@@ -137,7 +137,7 @@ func (o *AprScheduleCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varAprScheduleCreateReq := _AprScheduleCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAprScheduleCreateReq)
 
 	if err != nil {

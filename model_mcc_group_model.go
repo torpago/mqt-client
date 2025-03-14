@@ -252,7 +252,7 @@ func (o *MccGroupModel) UnmarshalJSON(data []byte) (err error) {
 	varMccGroupModel := _MccGroupModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varMccGroupModel)
 
 	if err != nil {

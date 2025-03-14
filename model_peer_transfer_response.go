@@ -419,7 +419,7 @@ func (o *PeerTransferResponse) UnmarshalJSON(data []byte) (err error) {
 	varPeerTransferResponse := _PeerTransferResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPeerTransferResponse)
 
 	if err != nil {

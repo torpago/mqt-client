@@ -615,7 +615,7 @@ func (o *PushToCardResponse) UnmarshalJSON(data []byte) (err error) {
 	varPushToCardResponse := _PushToCardResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPushToCardResponse)
 
 	if err != nil {

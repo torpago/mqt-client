@@ -397,7 +397,7 @@ func (o *KycResponse) UnmarshalJSON(data []byte) (err error) {
 	varKycResponse := _KycResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varKycResponse)
 
 	if err != nil {

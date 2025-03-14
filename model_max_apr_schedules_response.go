@@ -198,7 +198,7 @@ func (o *MaxAPRSchedulesResponse) UnmarshalJSON(data []byte) (err error) {
 	varMaxAPRSchedulesResponse := _MaxAPRSchedulesResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varMaxAPRSchedulesResponse)
 
 	if err != nil {

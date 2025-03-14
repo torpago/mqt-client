@@ -330,7 +330,7 @@ func (o *PolicyProductPaymentConfiguration) UnmarshalJSON(data []byte) (err erro
 	varPolicyProductPaymentConfiguration := _PolicyProductPaymentConfiguration{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyProductPaymentConfiguration)
 
 	if err != nil {

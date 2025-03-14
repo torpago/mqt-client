@@ -358,7 +358,7 @@ func (o *CardCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varCardCreateReq := _CardCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCardCreateReq)
 
 	if err != nil {

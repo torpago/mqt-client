@@ -384,7 +384,7 @@ func (o *AutoReloadResponseModel) UnmarshalJSON(data []byte) (err error) {
 	varAutoReloadResponseModel := _AutoReloadResponseModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAutoReloadResponseModel)
 
 	if err != nil {

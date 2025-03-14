@@ -165,7 +165,7 @@ func (o *Msa) UnmarshalJSON(data []byte) (err error) {
 	varMsa := _Msa{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varMsa)
 
 	if err != nil {

@@ -195,7 +195,7 @@ func (o *CreditBureau) UnmarshalJSON(data []byte) (err error) {
 	varCreditBureau := _CreditBureau{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCreditBureau)
 
 	if err != nil {

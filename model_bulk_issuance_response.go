@@ -687,7 +687,7 @@ func (o *BulkIssuanceResponse) UnmarshalJSON(data []byte) (err error) {
 	varBulkIssuanceResponse := _BulkIssuanceResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBulkIssuanceResponse)
 
 	if err != nil {

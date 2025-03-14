@@ -328,7 +328,7 @@ func (o *BundleUpdateReq) UnmarshalJSON(data []byte) (err error) {
 	varBundleUpdateReq := _BundleUpdateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBundleUpdateReq)
 
 	if err != nil {

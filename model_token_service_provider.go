@@ -479,7 +479,7 @@ func (o *TokenServiceProvider) UnmarshalJSON(data []byte) (err error) {
 	varTokenServiceProvider := _TokenServiceProvider{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varTokenServiceProvider)
 
 	if err != nil {

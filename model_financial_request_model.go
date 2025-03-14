@@ -377,7 +377,7 @@ func (o *FinancialRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varFinancialRequestModel := _FinancialRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varFinancialRequestModel)
 
 	if err != nil {

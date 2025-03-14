@@ -225,7 +225,7 @@ func (o *DelinquencyTransitionsResponsePage) UnmarshalJSON(data []byte) (err err
 	varDelinquencyTransitionsResponsePage := _DelinquencyTransitionsResponsePage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDelinquencyTransitionsResponsePage)
 
 	if err != nil {

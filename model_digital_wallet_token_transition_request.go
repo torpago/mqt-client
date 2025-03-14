@@ -322,7 +322,7 @@ func (o *DigitalWalletTokenTransitionRequest) UnmarshalJSON(data []byte) (err er
 	varDigitalWalletTokenTransitionRequest := _DigitalWalletTokenTransitionRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDigitalWalletTokenTransitionRequest)
 
 	if err != nil {

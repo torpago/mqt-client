@@ -461,7 +461,7 @@ func (o *RewardProgramsEntriesResponse) UnmarshalJSON(data []byte) (err error) {
 	varRewardProgramsEntriesResponse := _RewardProgramsEntriesResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRewardProgramsEntriesResponse)
 
 	if err != nil {

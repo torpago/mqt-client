@@ -180,7 +180,7 @@ func (o *Text) UnmarshalJSON(data []byte) (err error) {
 	varText := _Text{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varText)
 
 	if err != nil {

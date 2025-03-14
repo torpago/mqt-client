@@ -108,7 +108,7 @@ func (o *BundleTransitionReq) UnmarshalJSON(data []byte) (err error) {
 	varBundleTransitionReq := _BundleTransitionReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBundleTransitionReq)
 
 	if err != nil {

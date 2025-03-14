@@ -281,7 +281,7 @@ func (o *RealTimeFeeGroup) UnmarshalJSON(data []byte) (err error) {
 	varRealTimeFeeGroup := _RealTimeFeeGroup{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRealTimeFeeGroup)
 
 	if err != nil {

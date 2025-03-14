@@ -108,7 +108,7 @@ func (o *PaymentSourceUpdateReq) UnmarshalJSON(data []byte) (err error) {
 	varPaymentSourceUpdateReq := _PaymentSourceUpdateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPaymentSourceUpdateReq)
 
 	if err != nil {

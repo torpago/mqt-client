@@ -139,7 +139,7 @@ func (o *Gpa) UnmarshalJSON(data []byte) (err error) {
 	varGpa := _Gpa{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varGpa)
 
 	if err != nil {

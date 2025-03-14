@@ -195,7 +195,7 @@ func (o *WebPushProvisioningApplePayJWSModel) UnmarshalJSON(data []byte) (err er
 	varWebPushProvisioningApplePayJWSModel := _WebPushProvisioningApplePayJWSModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varWebPushProvisioningApplePayJWSModel)
 
 	if err != nil {

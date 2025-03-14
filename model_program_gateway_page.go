@@ -225,7 +225,7 @@ func (o *ProgramGatewayPage) UnmarshalJSON(data []byte) (err error) {
 	varProgramGatewayPage := _ProgramGatewayPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramGatewayPage)
 
 	if err != nil {

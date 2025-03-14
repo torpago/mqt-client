@@ -243,7 +243,7 @@ func (o *RewardCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varRewardCreateReq := _RewardCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRewardCreateReq)
 
 	if err != nil {

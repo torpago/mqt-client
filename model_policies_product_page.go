@@ -225,7 +225,7 @@ func (o *PoliciesProductPage) UnmarshalJSON(data []byte) (err error) {
 	varPoliciesProductPage := _PoliciesProductPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPoliciesProductPage)
 
 	if err != nil {

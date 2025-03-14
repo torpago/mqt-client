@@ -146,7 +146,7 @@ func (o *ControlTokenRequest) UnmarshalJSON(data []byte) (err error) {
 	varControlTokenRequest := _ControlTokenRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varControlTokenRequest)
 
 	if err != nil {

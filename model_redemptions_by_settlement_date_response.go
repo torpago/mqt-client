@@ -405,7 +405,7 @@ func (o *RedemptionsBySettlementDateResponse) UnmarshalJSON(data []byte) (err er
 	varRedemptionsBySettlementDateResponse := _RedemptionsBySettlementDateResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRedemptionsBySettlementDateResponse)
 
 	if err != nil {

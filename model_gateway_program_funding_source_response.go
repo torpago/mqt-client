@@ -468,7 +468,7 @@ func (o *GatewayProgramFundingSourceResponse) UnmarshalJSON(data []byte) (err er
 	varGatewayProgramFundingSourceResponse := _GatewayProgramFundingSourceResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varGatewayProgramFundingSourceResponse)
 
 	if err != nil {

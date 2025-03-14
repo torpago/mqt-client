@@ -225,7 +225,7 @@ func (o *LedgerEntriesPage) UnmarshalJSON(data []byte) (err error) {
 	varLedgerEntriesPage := _LedgerEntriesPage{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varLedgerEntriesPage)
 
 	if err != nil {

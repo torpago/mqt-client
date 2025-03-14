@@ -316,7 +316,7 @@ func (o *BankAccountFundingSourceModel) UnmarshalJSON(data []byte) (err error) {
 	varBankAccountFundingSourceModel := _BankAccountFundingSourceModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBankAccountFundingSourceModel)
 
 	if err != nil {

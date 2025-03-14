@@ -347,7 +347,7 @@ func (o *PaymentCreateReq) UnmarshalJSON(data []byte) (err error) {
 	varPaymentCreateReq := _PaymentCreateReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPaymentCreateReq)
 
 	if err != nil {

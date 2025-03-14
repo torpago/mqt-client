@@ -902,7 +902,7 @@ func (o *StoreResponseModel) UnmarshalJSON(data []byte) (err error) {
 	varStoreResponseModel := _StoreResponseModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varStoreResponseModel)
 
 	if err != nil {

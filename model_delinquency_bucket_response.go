@@ -256,7 +256,7 @@ func (o *DelinquencyBucketResponse) UnmarshalJSON(data []byte) (err error) {
 	varDelinquencyBucketResponse := _DelinquencyBucketResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDelinquencyBucketResponse)
 
 	if err != nil {

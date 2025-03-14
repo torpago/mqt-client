@@ -334,7 +334,7 @@ func (o *AuthControlUpdateRequest) UnmarshalJSON(data []byte) (err error) {
 	varAuthControlUpdateRequest := _AuthControlUpdateRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAuthControlUpdateRequest)
 
 	if err != nil {

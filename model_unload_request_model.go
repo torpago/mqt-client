@@ -287,7 +287,7 @@ func (o *UnloadRequestModel) UnmarshalJSON(data []byte) (err error) {
 	varUnloadRequestModel := _UnloadRequestModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varUnloadRequestModel)
 
 	if err != nil {

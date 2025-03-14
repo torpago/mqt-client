@@ -146,7 +146,7 @@ func (o *RequestForApplePayWppJWT) UnmarshalJSON(data []byte) (err error) {
 	varRequestForApplePayWppJWT := _RequestForApplePayWppJWT{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRequestForApplePayWppJWT)
 
 	if err != nil {

@@ -255,7 +255,7 @@ func (o *DigitalWalletApplePayProvisionResponse) UnmarshalJSON(data []byte) (err
 	varDigitalWalletApplePayProvisionResponse := _DigitalWalletApplePayProvisionResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDigitalWalletApplePayProvisionResponse)
 
 	if err != nil {

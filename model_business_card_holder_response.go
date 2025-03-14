@@ -1437,7 +1437,7 @@ func (o *BusinessCardHolderResponse) UnmarshalJSON(data []byte) (err error) {
 	varBusinessCardHolderResponse := _BusinessCardHolderResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBusinessCardHolderResponse)
 
 	if err != nil {

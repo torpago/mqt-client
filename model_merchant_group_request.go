@@ -224,7 +224,7 @@ func (o *MerchantGroupRequest) UnmarshalJSON(data []byte) (err error) {
 	varMerchantGroupRequest := _MerchantGroupRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varMerchantGroupRequest)
 
 	if err != nil {

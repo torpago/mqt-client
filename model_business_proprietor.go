@@ -471,7 +471,7 @@ func (o *BusinessProprietor) UnmarshalJSON(data []byte) (err error) {
 	varBusinessProprietor := _BusinessProprietor{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varBusinessProprietor)
 
 	if err != nil {

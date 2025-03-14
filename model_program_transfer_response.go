@@ -493,7 +493,7 @@ func (o *ProgramTransferResponse) UnmarshalJSON(data []byte) (err error) {
 	varProgramTransferResponse := _ProgramTransferResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varProgramTransferResponse)
 
 	if err != nil {

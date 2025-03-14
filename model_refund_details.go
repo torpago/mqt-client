@@ -137,7 +137,7 @@ func (o *RefundDetails) UnmarshalJSON(data []byte) (err error) {
 	varRefundDetails := _RefundDetails{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRefundDetails)
 
 	if err != nil {

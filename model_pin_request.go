@@ -138,7 +138,7 @@ func (o *PinRequest) UnmarshalJSON(data []byte) (err error) {
 	varPinRequest := _PinRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPinRequest)
 
 	if err != nil {

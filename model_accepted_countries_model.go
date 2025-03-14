@@ -281,7 +281,7 @@ func (o *AcceptedCountriesModel) UnmarshalJSON(data []byte) (err error) {
 	varAcceptedCountriesModel := _AcceptedCountriesModel{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varAcceptedCountriesModel)
 
 	if err != nil {

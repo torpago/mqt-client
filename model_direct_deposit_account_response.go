@@ -373,7 +373,7 @@ func (o *DirectDepositAccountResponse) UnmarshalJSON(data []byte) (err error) {
 	varDirectDepositAccountResponse := _DirectDepositAccountResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varDirectDepositAccountResponse)
 
 	if err != nil {

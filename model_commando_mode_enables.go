@@ -265,7 +265,7 @@ func (o *CommandoModeEnables) UnmarshalJSON(data []byte) (err error) {
 	varCommandoModeEnables := _CommandoModeEnables{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCommandoModeEnables)
 
 	if err != nil {

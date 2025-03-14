@@ -342,7 +342,7 @@ func (o *MsaAggregatedBalances) UnmarshalJSON(data []byte) (err error) {
 	varMsaAggregatedBalances := _MsaAggregatedBalances{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varMsaAggregatedBalances)
 
 	if err != nil {

@@ -183,7 +183,7 @@ func (o *PolicyAprPurchaseReq) UnmarshalJSON(data []byte) (err error) {
 	varPolicyAprPurchaseReq := _PolicyAprPurchaseReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPolicyAprPurchaseReq)
 
 	if err != nil {

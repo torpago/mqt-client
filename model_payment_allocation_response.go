@@ -139,7 +139,7 @@ func (o *PaymentAllocationResponse) UnmarshalJSON(data []byte) (err error) {
 	varPaymentAllocationResponse := _PaymentAllocationResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varPaymentAllocationResponse)
 
 	if err != nil {

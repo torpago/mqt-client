@@ -144,7 +144,7 @@ func (o *JitProgramResponse) UnmarshalJSON(data []byte) (err error) {
 	varJitProgramResponse := _JitProgramResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varJitProgramResponse)
 
 	if err != nil {

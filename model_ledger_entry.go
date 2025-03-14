@@ -673,7 +673,7 @@ func (o *LedgerEntry) UnmarshalJSON(data []byte) (err error) {
 	varLedgerEntry := _LedgerEntry{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varLedgerEntry)
 
 	if err != nil {

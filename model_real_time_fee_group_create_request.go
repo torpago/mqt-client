@@ -224,7 +224,7 @@ func (o *RealTimeFeeGroupCreateRequest) UnmarshalJSON(data []byte) (err error) {
 	varRealTimeFeeGroupCreateRequest := _RealTimeFeeGroupCreateRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varRealTimeFeeGroupCreateRequest)
 
 	if err != nil {

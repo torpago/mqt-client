@@ -214,7 +214,7 @@ func (o *CreateRewardProgramsEntriesRequest) UnmarshalJSON(data []byte) (err err
 	varCreateRewardProgramsEntriesRequest := _CreateRewardProgramsEntriesRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
+	// decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCreateRewardProgramsEntriesRequest)
 
 	if err != nil {
