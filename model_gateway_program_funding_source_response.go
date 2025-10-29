@@ -437,18 +437,18 @@ func (o *GatewayProgramFundingSourceResponse) UnmarshalJSON(data []byte) (err er
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"account",
+		// "account",
 		"basic_auth_password",
 		"basic_auth_username",
-		"created_time",
-		"custom_header",
-		"last_modified_time",
-		"name",
-		"timeout_millis",
+		// "created_time",
+		// "custom_header",
+		// "last_modified_time",
+		// "name",
+		// "timeout_millis",
 		"token",
 		"url",
-		"use_mtls",
-		"version",
+		// "use_mtls",
+		// "version",
 	}
 
 	allProperties := make(map[string]interface{})

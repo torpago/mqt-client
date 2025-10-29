@@ -239,9 +239,9 @@ func (o *ProgramFundingSourceResponse) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"account",
-		"created_time",
-		"last_modified_time",
+		// "account",
+		// "created_time",
+		// "last_modified_time",
 		"name",
 		"token",
 	}
