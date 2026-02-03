@@ -12,8 +12,8 @@ Contact: support@marqeta.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -30,6 +30,8 @@ type WebhookConfigModel struct {
 	CustomHeader *map[string]string `json:"custom_header,omitempty"`
 	// Randomly chosen string used for implementing HMAC-SHA1.  HMAC-SHA1 provides an added layer of security by authenticating the message and validating message integrity. Using this functionality requires that your webhook endpoint verify the message signature. For information about implementing this functionality, see <</developer-guides/signature-verification, Signature Verification>>.
 	Secret *string `json:"secret,omitempty"`
+	// Algorithm used for signature verification.
+	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
 	// URL of your webhook endpoint.
 	Url string `json:"url"`
 	// Set to `true` to use MTLS for the webhook.
@@ -231,7 +233,7 @@ func (o *WebhookConfigModel) SetUseMtls(v bool) {
 }
 
 func (o WebhookConfigModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,10 +272,10 @@ func (o *WebhookConfigModel) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -329,5 +331,3 @@ func (v *NullableWebhookConfigModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
