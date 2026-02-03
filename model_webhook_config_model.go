@@ -250,6 +250,9 @@ func (o WebhookConfigModel) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Secret) {
 		toSerialize["secret"] = o.Secret
 	}
+	if !IsNil(o.SignatureAlgorithm) {
+		toSerialize["signature_algorithm"] = o.SignatureAlgorithm
+	}
 	toSerialize["url"] = o.Url
 	if !IsNil(o.UseMtls) {
 		toSerialize["use_mtls"] = o.UseMtls
